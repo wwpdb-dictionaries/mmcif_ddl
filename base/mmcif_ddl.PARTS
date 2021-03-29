@@ -1,0 +1,8 @@
+base/mmcif_ddl-header.dic
+base/mmcif_ddl-data.dic
+base/mmcif_ddl-def-core.dic
+extensions/mmcif_ddl-ext-ndb.dic
+extensions/mmcif_ddl-ext-pdbx.dic
+extensions/mmcif_ddl-ext-compose.dic
+extensions/mmcif_ddl-ext-condition.dic
+base/mmcif_ddl-def-ilg.dic

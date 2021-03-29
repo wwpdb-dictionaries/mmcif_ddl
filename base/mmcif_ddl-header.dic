@@ -1,0 +1,314 @@
+###########################################################################
+#
+# File:  mmcif_ddl-header.dic
+#
+#            mmCIF DDL Core Dictionary with NDB & PDBX extensions
+#
+# This DDL dictionary is a mirror of ddl_core.dic-org with all implicit
+# data items fully expanded and with NDB & PDBX extensions added.
+#
+#                           Header Section
+#
+#
+###########################################################################
+
+data_mmcif_ddl.dic
+
+    _datablock.id                          mmcif_ddl.dic
+    _datablock.description
+;
+     This data block holds the core DDL.
+;
+
+    _dictionary.datablock_id               mmcif_ddl.dic
+    _dictionary.title                      mmcif_ddl.dic
+    _dictionary.version                    2.2.2
+
+     loop_
+    _dictionary_history.version
+    _dictionary_history.update
+    _dictionary_history.revision
+
+       1.1   1994-07-25
+;
+       DDL 1.1 from Syd Hall et. al.
+;
+       1.2.1   1994-09-18
+;
+       Changes:.........etc. etc. John Westbrook
+;
+       1.2.9   1994-10-05
+;
+       Reflect the results of the Treaty of Brussels. JW.
+;
+       2.0.1   1994-10-15
+;
+       Adapted for closer mapping to DDL1.3 and clearer presentation. SRH/NS.
+;
+       2.0.2   1994-10-16
+;
+       Even closer...................  SRH/NS.
+;
+       2.0.3   1994-10-17
+;
+       Coming to grips with the links and dependencies..... SRH/NS.
+;
+       2.0.4   1994-10-20
+;
+       Backed in changes from mm-ddl 1.2.12
+       Many other changes  ...  (JW)
+;
+       2.0.5   1994-10-20
+;
+       Some small adjustments..........SRH.
+;
+       2.0.6   1994-10-20
+;
+       More small adjustments..........JW.
+;
+       2.0.7   1994-11-03
+;
+       Changes:  (JW)
+         + Place all item and item_linked category definitions with the parent
+           item.
+         + Fixed a number of not so trivial typos.
+         + Corrected errors in the data type conversion table.
+         + Corrected key item inconsistencies.
+         + Added the item_aliases category.
+;
+       2.0.8   1994-11-10
+;
+       Miscellaneous corrections:  (JW)
+         +    defined sub_category_group
+         +    corrected typo in category_examples.id definition
+         +    added  _item_type_conditions.name in item category
+         +    added  _item_structure.name in item category
+         +    corrected typo in item_aliases category definition
+         +    corrected typo in sub_category.method_id  definition
+;
+       2.0.9   1994-11-14
+;
+       Changes: (JW)
+         +    added ITEM_UNITS, ITEM_UNITS_LIST, and UNITS_CONVERSION
+              categories.
+         +    added an additional primitive type for character type items
+              for which comparisons must be case insensitive.
+              Since it is customary to permit item names and category
+              identifiers to be specified in mixed case, it is necessary
+              to declare that case should NOT be considered in any
+              comparisons of these items.
+;
+       2.0.10  1994-11-23
+;
+       Changes: (JW)
+         +    Several name category changes for the sake of consistency:
+                enumeration         -> item_enumeration
+                enumeration_default -> item_enumeration_default
+                enumeration_limit   -> item_enumeration_limit
+                units_conversion    -> item_units_conversion
+         +    Added _item_related.function_code alternate_exclusive
+              to identify mutually exclusive alternative declarations
+              of the same item.
+         +    Added structure options for real symmetric matrices.
+         +    Changed from zero based indices to one based indices
+              for compatibility with existing matrix component
+              definitions.
+         +    Add _item_linked.parent_name to the key of the item_linked
+              category.
+         +    Reorder items in the DDL so be alphabetical within
+              category groups.
+;
+       2.0.11  1994-11-28
+;
+       Changes: (JW)
+         +    Corrected spelling error for the data type code in
+              the DICTIONARY_HISTORY category.
+         +    Add category BLOCK to hold the data block name and data
+              block description.  The block identifier was also added
+              to  the key of the item category.  The block identifier
+              can be implicitly derived from the STAR "data_" delimiter.
+              This identifier is required to form the key for categories
+              which are conceptually related to the data block as a
+              whole.
+;
+       2.0.12  1994-11-30
+;
+       Changes: (JW)
+         +    Added a data item _block.scope to indicate the scope of
+              data item names defined within included data blocks.
+;
+       2.0.13  1994-12-12
+;
+       Changes: (JW)
+         +    Deleted data item _block.scope.
+         +    Changed DICTIONARY category key to _dictionary.block_id
+              to guarantee only one dictionary definition per block.
+         +    Deleted data item _item.block_id as this will be replaced
+              by an item address syntax that will include block, save
+              frame, and url.
+;
+       2.0.14  1994-12-15
+;
+       Changes: (JW)
+         +    Made some terminology changes suggested by PMDF
+              _item_enumeration.code   -> _item_enumeration.value
+              ITEM_ENUMERATION_DEFAULT -> ITEM_DEFAULT
+              ITEM_ENUMERATION_LIMIT   -> ITEM_RANGE
+         +    Added item _item_type_list.detail
+         +    Version 2.0.14 is being frozen and exported.
+;
+       2.0.15  1995-02-13
+;
+       Changes: (JW)
+         +    Added '_' prefix to all data item save frame names.
+              References to data item names now always include
+              a leading underscore independent of the usage context.
+         +    A few miscellaneous corrections.
+;
+       2.0.16  1995-06-18
+;
+       Changes: (JW)
+         +    Revised the block level categories in the following ways:
+                Changed category BLOCK to DATA_BLOCK.
+                Added connection from _data_block.id to _category.implicit_key
+                in order to provide a formal means of merging the contents
+                of categories between data blocks.
+         +    Moved ennumerations for _method_list.code and
+              method_list.language to examples.
+         +    Removed symmetric matrix options from the ennumerations
+              for _item_structure.organization.
+         +    Added _item_related.function codes for 'associated_value',
+              'associated_esd', 'replaces' and 'replacedby'
+         +    Added data items _item_aliases.dictionary and
+              _item_aliases.dictionary_version.
+         +    Reorganized method categories such that multiple methods can
+              be applied at each level of data structure.  Introduced a
+              consistent set of categories to hold method associations:
+              ITEM_METHODS, CATEGORY_METHODS, SUB_CATEGORY_METHODS, and
+              DATA_BLOCK_METHODS.  Removed data items  _category.method_id
+              _sub_category.method_id.
+;
+       2.0.17  1995-06-22
+;
+       Changes: (JW)
+         +    Quoted data vaules containing the leading string  'data_'.
+;
+       2.1.0  1995-07-20
+;
+       Changes: (JW)
+       Final adjustments before the first release of the mmCIF dictionary:
+             + changed data_block to datablock to avoid any problems with
+               the STAR data_ reserved token.
+             + created new category to hold item subcategory associations
+               and deleted the subcategory attribute from ITEM category.
+             + modified regular expressions to reflect limitations observed
+               on several platforms.
+             + expanded the ennumeration of _item_related.function_code.
+             + removed default value from _item.manadatory_code.
+             + removed type construct for date and changed date data type
+               to yyyy-mm-dd
+             + added less restrictive data type for alias names.
+;
+       2.1.1  1995-09-26
+;
+       Changes: (JW)
+             + Changed regular expressions for type code to permit
+               single quote.
+             + Corrected regular expression syntax for type name and
+               type date.
+             + Corrected lower bound description for item_range.minimum.
+               The incorrect <= condition is changed to <.
+             + _item_mandatory.code has been now a mandatory item.
+             + _item_aliases.dictionary and _item_aliases.dictionary_version
+               are added to the composite key for category ITEM_ALIASES.
+             + _datablock.id data type changes to type code.
+             + Shortened the name _item_aliases.dictionary_version to
+               _item_aliases.version
+;
+       2.1.2  1997-01-24
+;
+       Changes: (JW)
+             + Added associated_error to the enumeration list of
+               _item_related.function_code.
+;
+
+       2.1.3  2000-10-16
+;
+       Changes: (JW)
+             + Changed data type for regular expression in
+               _item_type_list.construct to type text.
+;
+       2.1.5  2003-06-23
+;      Changes: (JW)
+             + NDB extensions adopted into ddl_core
+             + New partitioning scheme implemented
+;
+       2.1.6  2004-04-15
+;      Changes: (JW)
+             + Name changed to mmcif_ddl.dic
+;
+       2.1.7  2007-05-30
+;      Changes: (JW)
+	_items_examples.case, _item_range.minimum/maximum made mandatory.
+;
+       2.1.8  2008-10-31
+;      Changes: (JW)
+	+ added categories pdbx_item_link_group and pdbx_item_link_group_list
+;
+       2.1.9  2009-01-15
+;      Changes: (JW)
+       + _ndb_item_examples.detail make optional
+;
+       2.1.10  2009-01-19
+;      Changes: (JW)
+       + added _item.mandatory_code enumeration implicit-ordinal to provide
+         an automatically generated ordinal index data item.   This feature
+         is added to address problems where the natural category key may
+         contain an undefined value (e.g. '.').
+;
+       2.1.11  2009-11-02
+;      Changes: (JW)
+       + added categories pdbx_item_context and pdbx_category_context
+;
+       2.1.12  2012-09-01
+;      Changes: (JW) -
+       + Added categories ndb_item_range, ndb_item and ndb_item_type
+       + Added alternate categories under PDBx prefix:
+	pdbx_item_range,pdbx_item_type,pdbx_item,pdbx_category_description,
+	pdbx_category_examples,pdbx_item_description,pdbx_item_enumeration,
+	and pdbx_item_examples.
+;
+       2.1.13  2013-09-23
+;      Changes: (JW) -
+       + Added _category.NX_mapping_details for Nexus correspondences.
+;
+       2.1.14  2013-10-14
+;      Changes: (JW) -
+       + Add category pdbx_item_enumeration_details describing additional controls
+         for enumerated data items at deposition.
+;
+       2.1.15  2014-03-10
+;      Changes: (JW) -
+       + Add enumerations for pdbx_item_enumeration_details.closed_flag
+;
+       2.1.16  2017-08-17
+;      Changes: (JW) -
+       + Add extension categories pdbx_include_dictionary, pdbx_include_category,
+         pdbx_include_item, pdbx_dictionary_component and pdbx_dictionary_component_history,
+         pdbx_item_linked, pdbx_item_value_condition, and pdbx_item_value_condition_list.
+;
+       2.1.17 2019-04-04
+;     Changes: (JW)
+      + Add extension item _item_sub_category.pdbx_label
+;
+       2.2.1 2019-06-05
+;      Changes (JW):
+       +  Add items _method_list.method_source and _method_list.implementation_source
+       +  Make item _method_list.inline optional
+       +  Update examples for items in category method_list
+;
+       2.2.2 2020-06-05
+;      Changes (JW):
+       +  Add items _item_enumeration.rcsb_detail_brief and _item_enumeration.rcsb_type_units_code
+;
+### EOF mmcif_ddl-header.dic ####

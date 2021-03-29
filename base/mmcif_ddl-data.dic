@@ -1,0 +1,89 @@
+###########################################################################
+#
+# File:  mmcif_ddl-data.dic
+#
+#            mmCIF DDL Core Dictionary with extensions
+#
+# This DDL dictionary is a mirror of ddl_core.dic-org with all implicit
+# data items fully expanded and with extensions added.
+#
+#                           Data Section
+#
+#
+###########################################################################
+
+
+#              DATA TYPE CONVERSION TABLE
+#              --------------------------
+
+     loop_
+    _item_type_list.code
+    _item_type_list.primitive_code
+    _item_type_list.detail
+    _item_type_list.construct
+     code    char      'A single word'
+      '[^\t\n "]*'
+     char    char      'A single line of text'
+      '[^\n]*'
+     text    char      'Text which may span lines'
+      '.*'
+     int     numb      'Unsigned integer data'
+      '[0-9]+'
+     name    uchar     'A data item name (restrictive type)'
+      '_[_A-Za-z0-9]+[.][][_A-Za-z0-9\<\>%/-]+'
+aliasname    uchar     'A DDL 1.4 data item name (less restrictive type)'
+      '_[^\t\n "]+'
+     idname  uchar     'A data item name component or identifier'
+      '[_A-Za-z0-9]+'
+     any     char      'Any data type'
+     '.*'
+     yyyy-mm-dd char   'A date format'
+      '[0-9][0-9][0-9][0-9]-[0-9]?[0-9]-[0-9][0-9]'
+#
+     url    char      'Universal resource locator (URL) pattern'
+;(?i)\b((?:[a-z][\w-]+:(?:/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))
+;
+
+#
+     loop_
+    _category_group_list.id
+    _category_group_list.parent_id
+    _category_group_list.description
+
+     'ddl_group'                               .
+;
+     Component categories of the macromolecular DDL
+;
+     'datablock_group'                         'ddl_group'
+;
+     Categories that describe the characteristics of data blocks.
+;
+     'category_group'                          'ddl_group'
+;
+     Categories that describe the characteristics of categories.
+;
+     'sub_category_group'                      'ddl_group'
+;
+     Categories that describe the characteristics of subcategories.
+;
+     'item_group'                              'ddl_group'
+;
+     Categories that describe the characteristics of data items.
+;
+     'dictionary_group'                        'ddl_group'
+;
+     Categories that describe the dictionary.
+;
+     'compliance_group'                        'ddl_group'
+;
+     Categories that are retained specifically for compliance with
+     older versions of the DDL.
+;
+     'extension_group'                        'ddl_group'
+;
+     Categories that contain extensions used by the NDB and wwPDB.
+;
+
+
+
+###  EOF  mmcif_ddl-data.dic

@@ -1,0 +1,488 @@
+
+###########################################################################
+#
+# File:  mmcif_ddl-def-2.dic                                             
+# 
+#            mmCIF DDL Core Dictionary with NDB extensions                
+#
+# This DDL dictionary is a mirror of ddl_core.dic-org with all implicit 
+# data items fully expanded and with NDB extensions added.  
+#
+#                           Definition Section 2.
+#                        (NDB Extension Definitions) 
+# 
+#                                                                        
+###########################################################################
+
+save_ndb_category_description
+    _category.description
+;
+     Alternate description of data items in this category.
+;
+    _category.id                        ndb_category_description
+    _category.mandatory_code            no
+    _category.implicit_key              mmcif_ddl.dic
+     loop_
+    _category_key.id  
+    _category_key.name
+         ndb_category_description     '_ndb_category_description.id'
+         ndb_category_description     '_ndb_category_description.description'
+     loop_
+    _category_group.id
+    _category_group.category_id
+         'ddl_group'                     ndb_category_description
+         'category_group'                ndb_category_description
+         'extension_group'               ndb_category_description
+     save_
+
+save__ndb_category_description.id
+    _item.name                        '_ndb_category_description.id'
+    _item.category_id                   ndb_category_description
+    _item.mandatory_code                implicit
+    _item_type.name                   '_ndb_category_description.id'
+    _item_type.code                     idname
+    _item_linked.child_name           '_ndb_category_description.id'
+    _item_linked.parent_name          '_category.id'
+     save_
+
+save__ndb_category_description.description
+    _item_description.name             '_ndb_category_description.description'
+    _item_description.description
+;
+     Alternate text description of a category.
+;
+    _item.name                         '_ndb_category_description.description'
+    _item.category_id                    ndb_category_description
+    _item.mandatory_code                 yes
+    _item_type.name                    '_ndb_category_description.description'
+    _item_type.code                      text
+     save_
+
+# --------------------------------------------------------------------------
+
+save_ndb_category_examples
+    _category.description
+;
+     Alternate example applications and descriptions of data items in this
+category.
+;
+    _category.id                         ndb_category_examples
+    _category.mandatory_code             no
+    _category.implicit_key               mmcif_ddl.dic
+     loop_
+    _category_key.id
+    _category_key.name
+         ndb_category_examples        '_ndb_category_examples.id'
+         ndb_category_examples        '_ndb_category_examples.case'
+     loop_
+    _category_group.id
+    _category_group.category_id
+         'ddl_group'                     ndb_category_examples
+         'category_group'                ndb_category_examples
+         'extension_group'               ndb_category_examples
+
+     save_
+
+save__ndb_category_examples.id
+    _item.name                        '_ndb_category_examples.id'
+    _item.category_id                   ndb_category_examples
+    _item.mandatory_code                implicit
+    _item_type.name                   '_ndb_category_examples.id'
+    _item_type.code                     idname
+    _item_linked.child_name           '_ndb_category_examples.id'
+    _item_linked.parent_name          '_category.id'
+     save_
+
+save__ndb_category_examples.case
+    _item_description.name            '_ndb_category_examples.case'
+    _item_description.description
+;
+     Alternate case of examples involving items in this category.
+;
+    _item.name                        '_ndb_category_examples.case'
+    _item.category_id                   ndb_category_examples
+    _item.mandatory_code                yes
+    _item_type.name                   '_ndb_category_examples.case'
+    _item_type.code                     text
+     save_
+
+save__ndb_category_examples.detail
+    _item_description.name            '_ndb_category_examples.detail'
+    _item_description.description
+;
+     Alternate description of an example _category_examples.case
+;
+    _item.name                        '_ndb_category_examples.detail'
+    _item.category_id                   ndb_category_examples
+    _item.mandatory_code                no
+    _item_type.name                   '_ndb_category_examples.detail'
+    _item_type.code                     text
+     save_
+
+#--------------------------------------------------------------------------
+
+save_ndb_item_description
+    _category.description
+;
+     This category holds the alternate descriptions of each data item.
+;
+    _category.id                         ndb_item_description
+    _category.mandatory_code             no
+    _category.implicit_key               mmcif_ddl.dic
+     loop_
+    _category_key.id
+    _category_key.name                 
+         ndb_item_description          '_ndb_item_description.name'
+         ndb_item_description          '_ndb_item_description.description'
+     loop_
+    _category_group.id    
+    _category_group.category_id
+         'ddl_group'                     ndb_item_description
+         'item_group'                    ndb_item_description
+         'extension_group'               ndb_item_description
+     save_
+
+save__ndb_item_description.name
+    _item_description.name             '_ndb_item_description.name'
+    _item_description.description
+;
+     Data name of the defined item.
+;
+    _item.name                         '_ndb_item_description.name'
+    _item.category_id                    ndb_item_description
+    _item.mandatory_code                 implicit
+    _item_type.name                    '_ndb_item_description.name'
+    _item_type.code                      name
+    _item_linked.child_name            '_ndb_item_description.name'
+    _item_linked.parent_name           '_item.name'
+     save_
+
+
+save__ndb_item_description.description
+    _item_description.name             '_ndb_item_description.description'
+    _item_description.description
+;
+     Alternate text description of the defined data item.
+;
+    _item.name                         '_ndb_item_description.description'
+    _item.category_id                    ndb_item_description
+    _item.mandatory_code                 yes
+    _item_type.name                    '_ndb_item_description.description'
+    _item_type.code                      text
+     save_
+
+# --------------------------------------------------------------------------
+
+save_ndb_item_enumeration
+    _category.description
+;
+     Attributes which specify the permitted enumeration of the items.
+;
+    _category.id                         ndb_item_enumeration
+    _category.mandatory_code             no
+    _category.implicit_key               mmcif_ddl.dic
+     loop_
+    _category_key.id
+    _category_key.name
+         ndb_item_enumeration          '_ndb_item_enumeration.name'
+         ndb_item_enumeration          '_ndb_item_enumeration.value'
+      loop_
+    _category_group.category_id
+    _category_group.id                
+         ndb_item_enumeration            'ddl_group'
+         ndb_item_enumeration            'item_group'
+         ndb_item_enumeration            'extension_group'
+     save_
+
+save__ndb_item_enumeration.name
+    _item.name                         '_ndb_item_enumeration.name'
+    _item.category_id                    ndb_item_enumeration
+    _item.mandatory_code                 implicit
+    _item_type.name                    '_ndb_item_enumeration.name'
+    _item_type.code                      name
+    _item_linked.child_name            '_ndb_item_enumeration.name'
+    _item_linked.parent_name           '_item.name'
+     save_
+
+save__ndb_item_enumeration.value
+    _item_description.name             '_ndb_item_enumeration.value'
+    _item_description.description
+;
+     A permissible value, character or number, for the defined item.
+;
+    _item.name                         '_ndb_item_enumeration.value'
+    _item.category_id                    ndb_item_enumeration
+    _item.mandatory_code                 yes
+    _item_type.name                    '_ndb_item_enumeration.value'
+    _item_type.code                      any
+     save_
+
+save__ndb_item_enumeration.detail
+    _item_description.name             '_ndb_item_enumeration.detail'
+    _item_description.description
+;
+     A description of a permissible value for the defined item.
+;
+    _item.name                         '_ndb_item_enumeration.detail'
+    _item.category_id                    ndb_item_enumeration
+    _item.mandatory_code                 no
+    _item_type.name                    '_ndb_item_enumeration.detail'
+    _item_type.code                      text
+     save_
+
+# --------------------------------------------------------------------------
+
+save_ndb_item_examples
+    _category.description
+;
+    Attributes for describing application examples of the data item.
+;
+    _category.id                         ndb_item_examples
+    _category.mandatory_code             no
+    _category.implicit_key               mmcif_ddl.dic
+     loop_
+    _category_key.id 
+    _category_key.name                
+         ndb_item_examples             '_ndb_item_examples.name'
+         ndb_item_examples             '_ndb_item_examples.case'
+     loop_
+     _category_group.id       
+    _category_group.category_id
+         'ddl_group'                     ndb_item_examples
+         'item_group'                    ndb_item_examples
+         'extension_group'               ndb_item_examples
+     save_
+
+save__ndb_item_examples.case
+    _item_description.name             '_ndb_item_examples.case'
+    _item_description.description
+;
+     Alternate example application of the defined data item.
+;
+    _item.name                         '_ndb_item_examples.case'
+    _item.category_id                    ndb_item_examples
+    _item.mandatory_code                 yes
+    _item_type.name                    '_ndb_item_examples.case'
+    _item_type.code                      text
+     save_
+
+save__ndb_item_examples.detail
+    _item_description.name             '_ndb_item_examples.detail'
+    _item_description.description
+;
+     Alternate description of an example specified in _ndb_item_example.case
+;
+    _item.name                         '_ndb_item_examples.detail'
+    _item.category_id                    ndb_item_examples
+    _item.mandatory_code                 no
+    _item_type.name                    '_ndb_item_examples.detail'
+    _item_type.code                      text
+     save_
+
+save__ndb_item_examples.name
+    _item.name                         '_ndb_item_examples.name'
+    _item.category_id                    ndb_item_examples
+    _item.mandatory_code                 implicit
+    _item_type.name                    '_ndb_item_examples.name'
+    _item_type.code                      name
+    _item_linked.child_name            '_ndb_item_examples.name'
+    _item_linked.parent_name           '_item.name'
+     save_
+
+
+# --------------------------------------------------------------------------
+
+
+
+save_ndb_item_range
+
+    _category.description
+;
+     An alternative set of permissible range values of a data item.  
+     When multiple ranges are specified they are interpreted sequentially 
+     using a logical OR.  To specify that an item value may be
+     equal to a boundary value,  specify an item range where the 
+     maximum and mimimum values equal the boundary value.
+;
+    _category.id                         ndb_item_range
+    _category.mandatory_code             no 
+    _category.implicit_key               mmcif_ddl.dic
+     loop_
+    _category_key.id
+    _category_key.name
+         ndb_item_range                    '_ndb_item_range.ordinal'
+     loop_
+    _category_group.id
+    _category_group.category_id
+         'ddl_group'                     ndb_item_range
+         'item_group'                    ndb_item_range
+         'extension_group'               ndb_item_range
+     save_
+
+save__ndb_item_range.ordinal
+
+    _item_description.name             '_ndb_item_range.ordinal'
+    _item_description.description
+;
+     Name of data item ...
+;
+    _item.name                         '_ndb_item_range.ordinal'
+    _item.category_id                    ndb_item_range
+    _item.mandatory_code                 implicit-ordinal
+    _item_type.name                    '_ndb_item_range.ordinal'
+    _item_type.code                      int
+     save_
+
+
+save__ndb_item_range.name
+
+    _item_description.name             '_ndb_item_range.name'
+    _item_description.description
+;
+     Name of data item ...
+;
+    _item.name                         '_ndb_item_range.name'
+    _item.category_id                    ndb_item_range
+    _item.mandatory_code                 implicit
+    _item_type.name                    '_ndb_item_range.name'
+    _item_type.code                      name
+    _item_linked.child_name            '_ndb_item_range.name'
+    _item_linked.parent_name           '_item.name'
+     save_
+
+save__ndb_item_range.minimum
+
+    _item_description.name             '_ndb_item_range.minimum'
+    _item_description.description
+;
+     Alternate minimum permissible value of a data item or the lower bound
+     of a permissible range.  ( minimum value <  data value)
+;
+    _item.name                         '_ndb_item_range.minimum'
+    _item.category_id                    ndb_item_range
+    _item.mandatory_code                 yes
+    _item_type.name                    '_ndb_item_range.minimum'
+    _item_type.code                      any
+     save_
+
+
+save__ndb_item_range.maximum
+
+    _item_description.name             '_ndb_item_range.maximum'
+    _item_description.description
+;
+     Alternate maximum permissible value of a data item or the upper bound
+     of a permissible range.  ( maximum value >  data value)
+;
+    _item.name                         '_ndb_item_range.maximum'
+    _item.category_id                    ndb_item_range
+    _item.mandatory_code                 yes
+    _item_type.name                    '_ndb_item_range.maximum'
+    _item_type.code                      any
+     save_
+
+# ----------------------------------------------------------------------------
+
+save_ndb_item_type
+
+    _category.description
+;
+     Attributes for specifying an alternate data type code for each data item.
+;
+    _category.id                         ndb_item_type
+    _category.mandatory_code             no
+    _category.implicit_key               mmcif_ddl.dic
+    _category_key.id                     ndb_item_type
+    _category_key.name                 '_ndb_item_type.name'
+     loop_
+    _category_group.id
+    _category_group.category_id
+         'ddl_group'                     ndb_item_type
+         'item_group'                    ndb_item_type
+         'extension_group'               ndb_item_type
+     save_
+
+save__ndb_item_type.name
+
+    _item_description.name             '_ndb_item_type.name'
+    _item_description.description
+;
+    The name of data item
+;
+    _item.name                         '_ndb_item_type.name'
+    _item.category_id                    ndb_item_type
+    _item.mandatory_code                 implicit
+    _item_type.name                    '_ndb_item_type.name'
+    _item_type.code                      name
+
+    save_
+
+save__ndb_item_type.code
+
+    _item_description.name             '_ndb_item_type.code'
+    _item_description.description
+;
+    Alternate data type of defined data item
+;
+    _item.name                         '_ndb_item_type.code'
+    _item.category_id                    ndb_item_type
+    _item.mandatory_code                 yes
+    _item_type.name                    '_ndb_item_type.code'
+    _item_type.code                      code
+
+    save_
+
+##
+##
+save_ndb_item
+
+    _category.description
+;
+     Attributes for specifying an alternate mandatory  code for each data item.
+;
+    _category.id                         ndb_item
+    _category.mandatory_code             no
+    _category.implicit_key               mmcif_ddl.dic
+    _category_key.id                     ndb_item
+    _category_key.name                 '_ndb_item.name'
+     loop_
+    _category_group.id
+    _category_group.category_id
+         'ddl_group'                     ndb_item
+         'item_group'                    ndb_item
+         'extension_group'               ndb_item
+     save_
+
+save__ndb_item.name
+
+    _item_description.name             '_ndb_item.name'
+    _item_description.description
+;
+    The name of data item
+;
+    _item.name                         '_ndb_item.name'
+    _item.category_id                    ndb_item
+    _item.mandatory_code                 implicit
+    _item_type.name                    '_ndb_item.name'
+    _item_type.code                      name
+
+    save_
+
+save__ndb_item.mandatory_code
+
+    _item_description.name             '_ndb_item.mandatory_code'
+    _item_description.description
+;
+    Alternate mandatory code for defined data item
+;
+    _item.name                         '_ndb_item.mandatory_code'
+    _item.category_id                    ndb_item
+    _item.mandatory_code                 yes
+    _item_type.name                    '_ndb_item.mandatory_code'
+    _item_type.code                      code
+
+    save_
+
+
+#### EOF mmcif_ddl-def-2.dic 
+

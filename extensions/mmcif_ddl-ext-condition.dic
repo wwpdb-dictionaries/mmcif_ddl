@@ -1,0 +1,307 @@
+
+
+
+save_pdbx_item_value_condition_list
+
+    _category.description
+;
+     Attributes which define value conditions among dependent items.
+;
+    _category.id                         pdbx_item_value_condition_list
+    _category.mandatory_code             no
+    _category.implicit_key               mmcif_ddl.dic
+    _category_key.id                     pdbx_item_value_condition_list
+    _category_key.name                 '_pdbx_item_value_condition_list.cond_id'
+     loop_
+    _category_group.id
+    _category_group.category_id
+         'ddl_group'                     pdbx_item_value_condition_list
+         'item_group'                    pdbx_item_value_condition_list
+         'extension_group'               pdbx_item_value_condition_list
+     save_
+
+save__pdbx_item_value_condition_list.cond_id
+
+    _item_description.name             '_pdbx_item_value_condition_list.cond_id'
+    _item_description.description
+;
+     The unique idenfier for each value condition.
+;
+    _item.name                         '_pdbx_item_value_condition_list.cond_id'
+    _item.category_id                    pdbx_item_value_condition_list
+    _item.mandatory_code                 yes
+
+    _item_type.name                    '_pdbx_item_value_condition_list.cond_id'
+    _item_type.code                      int
+     save_
+
+save__pdbx_item_value_condition_list.target_item_name
+
+    _item_description.name             '_pdbx_item_value_condition_list.target_item_name'
+    _item_description.description
+;
+     Name of the target data item for the value condition.
+;
+    _item.name                         '_pdbx_item_value_condition_list.target_item_name'
+    _item.category_id                    pdbx_item_value_condition_list
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_item_value_condition_list.target_item_name'
+    _item_type.code                      name
+    _item_linked.child_name             '_pdbx_item_value_condition_list.target_item_name'
+    _item_linked.parent_name           '_item.name'
+
+     save_
+
+save__pdbx_item_value_condition_list.target_item_value
+
+    _item_description.name             '_pdbx_item_value_condition_list.target_item_value'
+    _item_description.description
+;
+     Value of the dependent data item for the value condition.
+;
+    _item.name                         '_pdbx_item_value_condition_list.target_item_value'
+    _item.category_id                    pdbx_item_value_condition_list
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_item_value_condition_list.target_item_value'
+    _item_type.code                      any
+     save_
+
+save__pdbx_item_value_condition_list.dependent_item_name
+
+    _item_description.name             '_pdbx_item_value_condition_list.dependent_item_name'
+    _item_description.description
+;
+     Name of the dependent data item for the value condition.
+;
+    _item.name                         '_pdbx_item_value_condition_list.dependent_item_name'
+    _item.category_id                    pdbx_item_value_condition_list
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_item_value_condition_list.dependent_item_name'
+    _item_type.code                      name
+    _item_linked.child_name             '_pdbx_item_value_condition_list.dependent_item_name'
+    _item_linked.parent_name           '_item.name'
+
+     save_
+
+save__pdbx_item_value_condition_list.dependent_item_value
+
+    _item_description.name             '_pdbx_item_value_condition_list.dependent_item_value'
+    _item_description.description
+;
+     Value of the dependent data item for the value condition.
+;
+    _item.name                         '_pdbx_item_value_condition_list.dependent_item_value'
+    _item.category_id                    pdbx_item_value_condition_list
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_item_value_condition_list.dependent_item_value'
+    _item_type.code                      any
+     save_
+
+save__pdbx_item_value_condition_list.dependent_item_cmp_op
+
+    _item_description.name             '_pdbx_item_value_condition_list.dependent_item_cmp_op'
+    _item_description.description
+;
+     Comparison operation for the value condition
+;
+    _item.name                         '_pdbx_item_value_condition_list.dependent_item_cmp_op'
+    _item.category_id                    pdbx_item_value_condition_list
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_item_value_condition_list.dependent_item_cmp_op'
+    _item_type.code                      char
+     save_
+
+
+save_pdbx_item_value_condition
+
+    _category.description
+;
+     Attributes which describe those items sharing conditional dependency relationship
+     where the value of a target item depends on the values of its dependent partner items.
+;
+    _category.id                         pdbx_item_value_condition
+    _category.mandatory_code             no
+    _category.implicit_key               mmcif_ddl.dic
+     loop_
+    _category_key.id
+    _category_key.name
+         pdbx_item_value_condition                   '_pdbx_item_value_condition.item_name'
+         pdbx_item_value_condition                   '_pdbx_item_value_condition.dependent_item_name'
+     loop_
+    _category_group.id
+    _category_group.category_id
+         'ddl_group'                     pdbx_item_value_condition
+         'item_group'                    pdbx_item_value_condition
+         'extension_group'               pdbx_item_value_condition
+     save_
+
+
+save__pdbx_item_value_condition.item_name
+
+    _item_description.name             '_pdbx_item_value_condition.item_name'
+    _item_description.description
+;
+     Name of the taget data item.
+;
+    _item.name                         '_pdbx_item_value_condition.item_name'
+    _item.category_id                    pdbx_item_value_condition
+    _item.mandatory_code                 implicit
+    _item_type.name                    '_pdbx_item_value_condition.item_name'
+    _item_type.code                      name
+    _item_linked.child_name            '_pdbx_item_value_condition.item_name'
+    _item_linked.parent_name           '_pdbx_item_value_condition_list.target_item_name'
+     save_
+
+
+save__pdbx_item_value_condition.dependent_item_name
+
+    _item_description.name             '_pdbx_item_value_condition.dependent_item_name'
+    _item_description.description
+;
+     Name of a dependent data item.
+;
+    _item.name                         '_pdbx_item_value_condition.dependent_item_name'
+    _item.category_id                    pdbx_item_value_condition
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_item_value_condition.dependent_item_name'
+    _item_type.code                      name
+    _item_linked.child_name            '_pdbx_item_value_condition.dependent_item_name'
+    _item_linked.parent_name           '_pdbx_item_value_condition_list.dependent_item_name'
+     save_
+
+
+save_pdbx_item_linked
+
+    _category.description
+;
+     Attributes which describe how equivalent data items are linked
+     within categories and across different categories subject to
+     value conditions within the child data category.
+;
+    _category.id                         pdbx_item_linked
+    _category.mandatory_code             no
+    _category.implicit_key               mmcif_ddl.dic
+     loop_
+    _category_key.id
+    _category_key.name
+         pdbx_item_linked                '_pdbx_item_linked.id'
+     loop_
+    _category_group.id
+    _category_group.category_id
+         'ddl_group'                     pdbx_item_linked
+         'item_group'                    pdbx_item_linked
+         'extension_group'               pdbx_item_linked
+     save_
+
+save__pdbx_item_linked.id
+
+    _item_description.name             '_pdbx_item_linked.id'
+    _item_description.description
+;
+     A unique identifier for each record.
+;
+    _item.name                         '_pdbx_item_linked.id'
+    _item.category_id                    pdbx_item_linked
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_item_linked.id'
+    _item_type.code                      int
+     save_
+
+save__pdbx_item_linked.child_name
+
+    _item_description.name             '_pdbx_item_linked.child_name'
+    _item_description.description
+;
+     Name of the child data item.
+;
+    _item.name                         '_pdbx_item_linked.child_name'
+    _item.category_id                    pdbx_item_linked
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_item_linked.child_name'
+    _item_type.code                      name
+    _item_linked.child_name            '_pdbx_item_linked.child_name'
+    _item_linked.parent_name           '_item.name'
+     save_
+
+
+save__pdbx_item_linked.parent_name
+
+    _item_description.name             '_pdbx_item_linked.parent_name'
+    _item_description.description
+;
+     Name of the parent data item.
+;
+    _item.name                         '_pdbx_item_linked.parent_name'
+    _item.category_id                    pdbx_item_linked
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_item_linked.parent_name'
+    _item_type.code                      name
+    _item_linked.child_name            '_pdbx_item_linked.parent_name'
+    _item_linked.parent_name           '_item.name'
+     save_
+
+save__pdbx_item_linked.condition_id
+
+    _item_description.name             '_pdbx_item_linked.condition_id'
+    _item_description.description
+;
+     An identifier for each value condition. A condition may span multiple
+     item and value pairs.
+;
+    _item.name                         '_pdbx_item_linked.condition_id'
+    _item.category_id                    pdbx_item_linked
+    _item.mandatory_code                 no
+    _item_type.name                    '_pdbx_item_linked.condition_id'
+    _item_type.code                      int
+     save_
+
+
+save__pdbx_item_linked.condition_child_name
+
+    _item_description.name             '_pdbx_item_linked.condition_child_name'
+    _item_description.description
+;
+     Name of the child data item subject to the value condition.
+;
+    _item.name                         '_pdbx_item_linked.condition_child_name'
+    _item.category_id                    pdbx_item_linked
+    _item.mandatory_code                 no
+    _item_type.name                    '_pdbx_item_linked.condition_child_name'
+    _item_type.code                      name
+    _item_linked.child_name            '_pdbx_item_linked.condition_child_name'
+    _item_linked.parent_name           '_item.name'
+     save_
+
+save__pdbx_item_linked.condition_child_value
+
+    _item_description.name             '_pdbx_item_linked.condition_child_value'
+    _item_description.description
+;
+     The data value for the child value condition.
+;
+    _item.name                         '_pdbx_item_linked.condition_child_value'
+    _item.category_id                    pdbx_item_linked
+    _item.mandatory_code                 no
+    _item_type.name                    '_pdbx_item_linked.condition_child_value'
+    _item_type.code                      any
+     save_
+
+save__pdbx_item_linked.condition_child_operation
+
+    _item_description.name             '_pdbx_item_linked.condition_child_operation'
+    _item_description.description
+;
+     The comparison operation for the child value condition
+;
+    _item.name                         '_pdbx_item_linked.condition_child_operation'
+    _item.category_id                    pdbx_item_linked
+    _item.mandatory_code                 no
+    _item_type.name                    '_pdbx_item_linked.condition_child_operation'
+    _item_type.code                      char
+     save_
+
+
+
+
+#### EOF mmcif_ddl-def-5.dic
+

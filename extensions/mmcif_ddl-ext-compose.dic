@@ -1,0 +1,491 @@
+###########################################################################
+#
+# File:  mmcif_ddl-def-4.dic
+# Date:  1-Dec-2014   J. Westbrook
+#
+#            mmCIF DDL Core Dictionary with PDBx extensions
+#
+#                           Definition Section 4.
+#             PDBx Extensions related to dictionary composition
+#
+###########################################################################
+
+#  New pattern required --
+#     loop_
+#    _item_type_list.code
+#    _item_type_list.primitive_code
+#    _item_type_list.detail
+#    _item_type_list.construct
+#     url    char      'Universal resource locator (URL) pattern'
+
+
+##
+##  PDBX_INCLUDE_DICTIONARY
+##
+
+save_pdbx_include_dictionary
+    _category.description
+;
+      Category describing details of dictionary composition acheived through
+      dictionary-level content inclusion from external sources.
+
+      Inclusion directives in this category may be used to include the
+      contents of complete dictionary text files.  A finer level of
+      control may be obtained by combining dictionary as well as category
+      item-level include directives in categories PDBX_INCLUDE_CATEGORY
+      and PDBX_INCLUDE_ITEM.
+;
+    _category.id                        pdbx_include_dictionary
+    _category.mandatory_code            no
+    _category.implicit_key              mmcif_ddl.dic
+    _category_key.id                    pdbx_include_dictionary
+    _category_key.name                '_pdbx_include_dictionary.dictionary_id'
+     loop_
+    _category_group.id
+    _category_group.category_id
+         'ddl_group'                     pdbx_include_dictionary
+         'dictionary_group'              pdbx_include_dictionary
+         'extension_group'               pdbx_include_dictionary
+     save_
+
+save__pdbx_include_dictionary.dictionary_id
+    _item_description.name             '_pdbx_include_dictionary.dictionary_id'
+    _item_description.description
+;
+    Unique identifer for included dictionary.
+;
+    _item.name                        '_pdbx_include_dictionary.dictionary_id'
+    _item.category_id                   pdbx_include_dictionary
+    _item.mandatory_code                yes
+    _item_type.name                   '_pdbx_include_dictionary.dictionary_id'
+    _item_type.code                     code
+     save_
+
+save__pdbx_include_dictionary.dictionary_locator
+    _item_description.name             '_pdbx_include_dictionary.dictionary_locator'
+    _item_description.description
+;
+    Network accessible locator for the included dictionary text.
+;
+
+    _item.name                        '_pdbx_include_dictionary.dictionary_locator'
+    _item.category_id                   pdbx_include_dictionary
+    _item.mandatory_code                yes
+    _item_type.name                   '_pdbx_include_dictionary.dictionary_locator'
+    _item_type.code                     url
+    _item_examples.name                '_pdbx_include_dictionary.dictionary_locator'
+    _item_examples.case                'http://mmcif.wwpdb.org/dictionaries/ascii/mmcif_pdbx_v40.dic'
+    _item_examples.detail              'URL linking to the PDBx/mmCIF dictionary'
+     save_
+
+save__pdbx_include_dictionary.include_mode
+    _item_description.name             '_pdbx_include_dictionary.include_mode'
+    _item_description.description
+;
+     Item definition describing the action of taken to resolve name category name conflicts on including dictionary content.
+;
+    _item.name                         '_pdbx_include_dictionary.include_mode'
+    _item.category_id                    pdbx_include_dictionary
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_include_dictionary.include_mode'
+    _item_type.code                      char
+     loop_
+    _item_enumeration.name
+    _item_enumeration.value
+    _item_enumeration.detail
+    '_pdbx_include_dictionary.include_mode'  'replace'  'Content of included categories replaces any exiting category content of the same name'
+    '_pdbx_include_dictionary.include_mode'  'extend'   'Content of included categories extends any exiting category content of the same name'
+    save_
+
+save__pdbx_include_dictionary.dictionary_namespace_prefix
+    _item_description.name             '_pdbx_include_dictionary.dictionary_namespace_prefix'
+    _item_description.description
+;
+    The namespace prefix used in the source dictionary that is included.
+;
+
+    _item.name                        '_pdbx_include_dictionary.dictionary_namespace_prefix'
+    _item.category_id                   pdbx_include_dictionary
+    _item.mandatory_code                no
+    _item_type.name                   '_pdbx_include_dictionary.dictionary_namespace_prefix'
+    _item_type.code                     code
+    _item_examples.name                '_pdbx_include_dictionary.dictionary_namespace_prefix'
+    _item_examples.case                'pdbx_'
+    _item_examples.detail              'Namespace prefix used by the wwPDB in the PDBx/mmCIF dictionary'
+     save_
+
+save__pdbx_include_dictionary.dictionary_namespace_prefix_replace
+    _item_description.name             '_pdbx_include_dictionary.dictionary_namespace_prefix'
+    _item_description.description
+;
+    The namespace prefix used in the destination dictionary. Definitions the namespace used in the
+    source dictionary is replaced by this namespace prefix.
+;
+
+    _item.name                        '_pdbx_include_dictionary.dictionary_namespace_prefix_replace'
+    _item.category_id                   pdbx_include_dictionary
+    _item.mandatory_code                no
+    _item_type.name                   '_pdbx_include_dictionary.dictionary_namespace_prefix_replace'
+    _item_type.code                     code
+    _item_examples.name                '_pdbx_include_dictionary.dictionary_namespace_prefix_replace'
+    _item_examples.case                'lcl_'
+    _item_examples.detail              'Replacement namespace prefix.'
+     save_
+
+##
+##  PDBX_INCLUDE_CATEGORY
+##
+
+save_pdbx_include_category
+    _category.description
+;
+      Category describing details of dictionary composition acheived through
+      category-level content inclusion from external sources.
+
+      Inclusion directives in this category take precedence over any
+      dictionary-level include directives in category PDBX_INCLUDE_DICTIONARY.
+;
+    _category.id                        pdbx_include_category
+    _category.mandatory_code            no
+    _category.implicit_key              mmcif_ddl.dic
+    loop_
+    _category_key.id
+    _category_key.name
+        pdbx_include_category   '_pdbx_include_category.category_id'
+        pdbx_include_category   '_pdbx_include_category.dictionary_id'
+
+     loop_
+    _category_group.id
+    _category_group.category_id
+         'ddl_group'                     pdbx_include_category
+         'category_group'                pdbx_include_category
+         'extension_group'               pdbx_include_category
+
+     save_
+
+save__pdbx_include_category.category_id
+    _item_description.name             '_pdbx_include_category.category_id'
+    _item_description.description
+;
+    Unique identifer for a source category within the included dictionary.
+;
+    _item.name                        '_pdbx_include_category.category_id'
+    _item.category_id                   pdbx_include_category
+    _item.mandatory_code                yes
+    _item_type.name                   '_pdbx_include_category.category_id'
+    _item_type.code                     idname
+     save_
+
+save__pdbx_include_category.dictionary_id
+    _item_description.name             '_pdbx_include_category.dictionary_id'
+    _item_description.description
+;
+    Unique identifer for included dictionary.
+;
+    _item.name                        '_pdbx_include_category.dictionary_id'
+    _item.category_id                   pdbx_include_category
+    _item.mandatory_code                yes
+    _item_type.name                   '_pdbx_include_category.dictionary_id'
+    _item_type.code                     code
+    _item_linked.child_name           '_pdbx_include_category.dictionary_id'
+    _item_linked.parent_name          '_pdbx_include_dictionary.dictionary_id'
+     save_
+
+save__pdbx_include_category.include_as_category_id
+    _item_description.name             '_pdbx_include_category.include_as_category_id'
+    _item_description.description
+;
+    The identifer for the target category within the destination dictionary.
+;
+    _item.name                        '_pdbx_include_category.include_as_category_id'
+    _item.category_id                   pdbx_include_category
+    _item.mandatory_code                no
+    _item_type.name                   '_pdbx_include_category.include_as_category_id'
+    _item_type.code                     idname
+     save_
+
+save__pdbx_include_category.include_mode
+    _item_description.name             '_pdbx_include_category.include_mode'
+    _item_description.description
+;
+     The action of taken to resolve name category name conflicts subject to the
+     current category-level include directive.
+;
+    _item.name                         '_pdbx_include_category.include_mode'
+    _item.category_id                    pdbx_include_category
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_include_category.include_mode'
+    _item_type.code                      char
+     loop_
+    _item_enumeration.name
+    _item_enumeration.value
+    _item_enumeration.detail
+    '_pdbx_include_category.include_mode'  'replace'  'Content of included categories replaces any exiting category content of the same name'
+    '_pdbx_include_category.include_mode'  'extend'   'Content of included categories extends any exiting category content of the same name'
+    save_
+##
+##  PDBX_INCLUDE_ITEM
+##
+
+save_pdbx_include_item
+    _category.description
+;
+      Category describing details of dictionary composition acheived through
+      item-level content inclusion from external sources.
+
+      Item inclusion directives in this category take precedence over any
+      category-level include directives in category PDBX_INCLUDE_CATEGORY.
+;
+    _category.id                        pdbx_include_item
+    _category.mandatory_code            no
+    _category.implicit_key              mmcif_ddl.dic
+    loop_
+    _category_key.id
+    _category_key.name
+        pdbx_include_item   '_pdbx_include_item.item_name'
+        pdbx_include_item   '_pdbx_include_item.dictionary_id'
+
+     loop_
+    _category_group.id
+    _category_group.category_id
+         'ddl_group'                     pdbx_include_item
+         'item_group'                    pdbx_include_item
+         'extension_group'               pdbx_include_item
+     save_
+
+save__pdbx_include_item.item_name
+    _item_description.name             '_pdbx_include_item.item_name'
+    _item_description.description
+;
+    Unique identifer for a target item within the included dictionary.
+;
+    _item.name                        '_pdbx_include_item.item_name'
+    _item.category_id                   pdbx_include_item
+    _item.mandatory_code                yes
+    _item_type.name                   '_pdbx_include_item.item_name'
+    _item_type.code                     name
+     save_
+
+save__pdbx_include_item.dictionary_id
+    _item_description.name             '_pdbx_include_item.dictionary_id'
+    _item_description.description
+;
+    Unique identifer for included dictionary.
+;
+    _item.name                        '_pdbx_include_item.dictionary_id'
+    _item.category_id                   pdbx_include_item
+    _item.mandatory_code                yes
+    _item_type.name                   '_pdbx_include_item.dictionary_id'
+    _item_type.code                     code
+    _item_linked.child_name           '_pdbx_include_item.dictionary_id'
+    _item_linked.parent_name          '_pdbx_include_dictionary.dictionary_id'
+     save_
+
+save__pdbx_include_item.include_as_item_name
+    _item_description.name             '_pdbx_include_item.include_as_item_name'
+    _item_description.description
+;
+    The identifer for the target item within the destination dictionary.
+;
+    _item.name                        '_pdbx_include_item.include_as_item_name'
+    _item.category_id                   pdbx_include_item
+    _item.mandatory_code                no
+    _item_type.name                   '_pdbx_include_item.include_as_item_name'
+    _item_type.code                     name
+     save_
+
+save__pdbx_include_item.include_mode
+    _item_description.name             '_pdbx_include_item.include_mode'
+    _item_description.description
+;
+     The action of taken to resolve item name conflicts subject to the current item-level include directive.
+;
+    _item.name                         '_pdbx_include_item.include_mode'
+    _item.category_id                    pdbx_include_item
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_include_item.include_mode'
+    _item_type.code                      char
+     loop_
+    _item_enumeration.name
+    _item_enumeration.value
+    _item_enumeration.detail
+    '_pdbx_include_item.include_mode'  'replace'  'Content of included items replaces any exiting item content of the same name'
+    '_pdbx_include_item.include_mode'  'extend'   'Content of included items extends any exiting item content of the same name'
+    save_
+
+##
+save_pdbx_dictionary_component
+
+    _category.description
+;
+     Attributes for specifying a component dictionary title, version and
+     data block identifier.
+;
+    _category.id                         pdbx_dictionary_component
+    _category.mandatory_code             no
+    _category.implicit_key               mmcif_ddl.dic
+
+    loop_
+    _category_key.id
+    _category_key.name
+    pdbx_dictionary_component  '_pdbx_dictionary_component.datablock_id'
+    pdbx_dictionary_component  '_pdbx_dictionary_component.component_id'
+
+     loop_
+    _category_group.id
+    _category_group.category_id
+         'ddl_group'                     pdbx_dictionary_component
+         'datablock_group'               pdbx_dictionary_component
+         'extension_group'               pdbx_dictionary_component
+     save_
+
+
+save__pdbx_dictionary_component.datablock_id
+
+    _item_description.name             '_pdbx_dictionary_component.datablock_id'
+    _item_description.description
+;
+     The identifier for the data block containing the dictionary component.
+;
+    _item.name                         '_pdbx_dictionary_component.datablock_id'
+    _item.category_id                    pdbx_dictionary_component
+    _item.mandatory_code                 implicit
+    _item_type.name                    '_pdbx_dictionary_component.datablock_id'
+    _item_type.code                      code
+     save_
+
+save__pdbx_dictionary_component.component_id
+
+    _item_description.name             '_pdbx_dictionary_component.component_id'
+    _item_description.description
+;
+     The identifier for the dictionary component.
+;
+    _item.name                         '_pdbx_dictionary_component.component_id'
+    _item.category_id                    pdbx_dictionary_component
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_dictionary_component.component_id'
+    _item_type.code                      char
+     save_
+
+
+save__pdbx_dictionary_component.title
+
+    _item_description.name             '_pdbx_dictionary_component.title'
+    _item_description.description
+;
+     Title identification of the dictionary component.
+;
+    _item.name                         '_pdbx_dictionary_component.title'
+    _item.category_id                    pdbx_dictionary_component
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_dictionary_component.title'
+    _item_type.code                      char
+     save_
+
+
+save__pdbx_dictionary_component.version
+
+    _item_description.name             '_pdbx_dictionary_component.version'
+    _item_description.description
+;
+     A unique version identifier for the dictionary component version.
+;
+    _item.name                         '_pdbx_dictionary_component.version'
+    _item.category_id                    pdbx_dictionary_component
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_dictionary_component.version'
+    _item_type.code                      char
+
+     save_
+
+
+# ----------------------------------------------------------------------------
+
+save_pdbx_dictionary_component_history
+
+    _category.description
+;
+   Attributes for specifying the revision history for a dictionary component.
+;
+
+    _category.id                         pdbx_dictionary_component_history
+    _category.mandatory_code             no
+    _category.implicit_key               mmcif_ddl.dic
+    loop_
+    _category_key.id
+    _category_key.name
+    pdbx_dictionary_component_history  '_pdbx_dictionary_component_history.version'
+    pdbx_dictionary_component_history  '_pdbx_dictionary_component_history.dictionary_component_id'
+
+     loop_
+    _category_group.id
+    _category_group.category_id
+         'ddl_group'                          pdbx_dictionary_component_history
+         'dictionary_group'                   pdbx_dictionary_component_history
+         'extension_group'                    pdbx_dictionary_component_history
+     save_
+
+
+save__pdbx_dictionary_component_history.version
+
+    _item_description.name             '_pdbx_dictionary_component_history.version'
+    _item_description.description
+;
+     A unique version identifier for the dictionary component revision.
+;
+    _item.name                         '_pdbx_dictionary_component_history.version'
+    _item.category_id                    pdbx_dictionary_component_history
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_dictionary_component_history.version'
+    _item_type.code                      char
+    _item_linked.parent_name            '_pdbx_dictionary_component_history.version'
+    _item_linked.child_name             '_pdbx_dictionary_component.version'
+     save_
+
+save__pdbx_dictionary_component_history.dictionary_component_id
+
+    _item_description.name             '_pdbx_dictionary_component_history.dictionary_component_id'
+    _item_description.description
+;
+     A unique dictionary component identifier for the dictionary component.
+;
+    _item.name                         '_pdbx_dictionary_component_history.dictionary_component_id'
+    _item.category_id                    pdbx_dictionary_component_history
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_dictionary_component_history.dictionary_component_id'
+    _item_type.code                      char
+    _item_linked.child_name            '_pdbx_dictionary_component_history.dictionary_component_id'
+    _item_linked.parent_name           '_pdbx_dictionary_component.component_id'
+     save_
+
+
+save__pdbx_dictionary_component_history.update
+
+    _item_description.name             '_pdbx_dictionary_component_history.update'
+    _item_description.description
+;
+     The date that the last dictionary component revision took place.
+;
+    _item.name                         '_pdbx_dictionary_component_history.update'
+    _item.category_id                    pdbx_dictionary_component_history
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_dictionary_component_history.update'
+    _item_type.code                      yyyy-mm-dd
+     save_
+
+save__pdbx_dictionary_component_history.revision
+
+    _item_description.name             '_pdbx_dictionary_component_history.revision'
+    _item_description.description
+;
+     Text description of the dictionary component revision.
+;
+    _item.name                         '_pdbx_dictionary_component_history.revision'
+    _item.category_id                    pdbx_dictionary_component_history
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_dictionary_component_history.revision'
+    _item_type.code                      text
+     save_
+
+
