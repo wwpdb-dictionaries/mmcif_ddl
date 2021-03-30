@@ -9,7 +9,8 @@ dict=$1
 TOPDIR="$( builtin cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 
 dictname=$dict.dic
-outdict=$TOPDIR/dist/$dictname
+outdir=$TOPDIR/dist
+outdict=$outdir/$dictname
 basedir=$TOPDIR/base
 
 if [ ! -e $basedir/$dict'.PARTS' ]; then
@@ -17,6 +18,9 @@ if [ ! -e $basedir/$dict'.PARTS' ]; then
     exit 1
 fi
 
+if [ ! -e $outdir ]; then
+    mkdir $outdir
+fi
 
 rm -f $outdict
 for part in `cat $basedir/$dict.PARTS`; do
