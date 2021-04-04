@@ -1,18 +1,45 @@
 
 ###########################################################################
 #
-# File:  mmcif_ddl-def-2.dic                                             
-# 
-#            mmCIF DDL Core Dictionary with NDB extensions                
+# File:  mmcif_ddl-ext-ndb.dic
 #
-# This DDL dictionary is a mirror of ddl_core.dic-org with all implicit 
-# data items fully expanded and with NDB extensions added.  
+#            mmCIF DDL Nucleic Acid Database (NDB) extensions
 #
-#                           Definition Section 2.
-#                        (NDB Extension Definitions) 
-# 
-#                                                                        
 ###########################################################################
+data_mmcif_ddl-ext-ndb.dic
+
+_pdbx_dictionary_component.datablock_id   mmcif_ddl-ext-ndb.dic
+_pdbx_dictionary_component.component_id   mmcif_ddl-ext-ndb.dic
+_pdbx_dictionary_component.title          "mmCIF DDL Nucleic Acid Database (NDB) extensions"
+_pdbx_dictionary_component.version        1.3.0
+
+loop_
+_pdbx_dictionary_component_history.dictionary_component_id
+_pdbx_dictionary_component_history.version
+_pdbx_dictionary_component_history.update
+_pdbx_dictionary_component_history.revision
+mmcif_ddl-ext-ndb.dic 1.0.0  2003-06-23
+;
+Changes: (JW)
++ Preliminary version of NDB extensions including categories ndb_category_description,
+  ndb_category_examples, ndb_item_description, ndb_item_enumeration, and ndb_item_examples
+;
+mmcif_ddl-ext-ndb.dic 1.1.0  2009-01-15
+;
+Changes: (JW)
++ _ndb_item_examples.detail make optional
+;
+mmcif_ddl-ext-ndb.dic 1.2.0  2012-09-01
+;
+Changes: (JW) -
++ Added categories ndb_item_range, ndb_item and ndb_item_type
+;
+mmcif_ddl-ext-ndb.dic 1.3.0 2021-03-30
+;
+Changes (JW):
++ Migrate to dictionary component mmcif_ddl-ext-ndb.dic.
+;
+
 
 save_ndb_category_description
     _category.description
@@ -23,7 +50,7 @@ save_ndb_category_description
     _category.mandatory_code            no
     _category.implicit_key              mmcif_ddl.dic
      loop_
-    _category_key.id  
+    _category_key.id
     _category_key.name
          ndb_category_description     '_ndb_category_description.id'
          ndb_category_description     '_ndb_category_description.description'
@@ -131,11 +158,11 @@ save_ndb_item_description
     _category.implicit_key               mmcif_ddl.dic
      loop_
     _category_key.id
-    _category_key.name                 
+    _category_key.name
          ndb_item_description          '_ndb_item_description.name'
          ndb_item_description          '_ndb_item_description.description'
      loop_
-    _category_group.id    
+    _category_group.id
     _category_group.category_id
          'ddl_group'                     ndb_item_description
          'item_group'                    ndb_item_description
@@ -188,7 +215,7 @@ save_ndb_item_enumeration
          ndb_item_enumeration          '_ndb_item_enumeration.value'
       loop_
     _category_group.category_id
-    _category_group.id                
+    _category_group.id
          ndb_item_enumeration            'ddl_group'
          ndb_item_enumeration            'item_group'
          ndb_item_enumeration            'extension_group'
@@ -241,12 +268,12 @@ save_ndb_item_examples
     _category.mandatory_code             no
     _category.implicit_key               mmcif_ddl.dic
      loop_
-    _category_key.id 
-    _category_key.name                
+    _category_key.id
+    _category_key.name
          ndb_item_examples             '_ndb_item_examples.name'
          ndb_item_examples             '_ndb_item_examples.case'
      loop_
-     _category_group.id       
+     _category_group.id
     _category_group.category_id
          'ddl_group'                     ndb_item_examples
          'item_group'                    ndb_item_examples
@@ -298,14 +325,14 @@ save_ndb_item_range
 
     _category.description
 ;
-     An alternative set of permissible range values of a data item.  
-     When multiple ranges are specified they are interpreted sequentially 
+     An alternative set of permissible range values of a data item.
+     When multiple ranges are specified they are interpreted sequentially
      using a logical OR.  To specify that an item value may be
-     equal to a boundary value,  specify an item range where the 
-     maximum and mimimum values equal the boundary value.
+     equal to a boundary value,  specify an item range where the
+     maximum and minimum values equal the boundary value.
 ;
     _category.id                         ndb_item_range
-    _category.mandatory_code             no 
+    _category.mandatory_code             no
     _category.implicit_key               mmcif_ddl.dic
      loop_
     _category_key.id
@@ -482,7 +509,3 @@ save__ndb_item.mandatory_code
     _item_type.code                      code
 
     save_
-
-
-#### EOF mmcif_ddl-def-2.dic 
-

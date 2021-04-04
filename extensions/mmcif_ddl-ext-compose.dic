@@ -1,22 +1,42 @@
 ###########################################################################
 #
-# File:  mmcif_ddl-def-4.dic
-# Date:  1-Dec-2014   J. Westbrook
+# File:  mmcif_ddl-ext-compose.dic
 #
-#            mmCIF DDL Core Dictionary with PDBx extensions
-#
-#                           Definition Section 4.
-#             PDBx Extensions related to dictionary composition
+#            mmCIF DDL PDBx Dictionary Composition Extensions
 #
 ###########################################################################
+data_mmcif_ddl-ext-compose.dic
 
-#  New pattern required --
-#     loop_
-#    _item_type_list.code
-#    _item_type_list.primitive_code
-#    _item_type_list.detail
-#    _item_type_list.construct
-#     url    char      'Universal resource locator (URL) pattern'
+_pdbx_dictionary_component.datablock_id   mmcif_ddl-ext-compose.dic
+_pdbx_dictionary_component.component_id   mmcif_ddl-ext-compose.dic
+_pdbx_dictionary_component.title          "mmCIF DDL PDBx Dictionary Composition Extensions"
+_pdbx_dictionary_component.version        1.1.0
+
+loop_
+_pdbx_dictionary_component_history.dictionary_component_id
+_pdbx_dictionary_component_history.version
+_pdbx_dictionary_component_history.update
+_pdbx_dictionary_component_history.revision
+mmcif_ddl-ext-compose.dic 1.0.0  2017-08-17
+;
+Changes (JW):
++ Preliminary versions of categories pdbx_include_dictionary, pdbx_include_category,
+  pdbx_include_item, pdbx_dictionary_component and pdbx_dictionary_component_history
+;
+mmcif_ddl-ext-compose.dic 1.1.0 2021-03-30
+;
+Changes (JW):
++ Migrate to dictionary component mmcif_ddl-ext-compose.dic.
+;
+
+loop_
+_item_type_list.code
+_item_type_list.primitive_code
+_item_type_list.detail
+_item_type_list.construct
+     url    char      'Universal resource locator (URL) pattern'
+;(?i)\b((?:[a-z][\w-]+:(?:/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))
+;
 
 
 ##
@@ -26,7 +46,7 @@
 save_pdbx_include_dictionary
     _category.description
 ;
-      Category describing details of dictionary composition acheived through
+      Category describing the details of dictionary composition achieved through
       dictionary-level content inclusion from external sources.
 
       Inclusion directives in this category may be used to include the
@@ -38,8 +58,12 @@ save_pdbx_include_dictionary
     _category.id                        pdbx_include_dictionary
     _category.mandatory_code            no
     _category.implicit_key              mmcif_ddl.dic
-    _category_key.id                    pdbx_include_dictionary
-    _category_key.name                '_pdbx_include_dictionary.dictionary_id'
+    loop_
+    _category_key.id
+    _category_key.name
+      pdbx_include_dictionary '_pdbx_include_dictionary.datablock_id'
+      pdbx_include_dictionary '_pdbx_include_dictionary.dictionary_id'
+
      loop_
     _category_group.id
     _category_group.category_id
@@ -48,11 +72,25 @@ save_pdbx_include_dictionary
          'extension_group'               pdbx_include_dictionary
      save_
 
+save__pdbx_include_dictionary.datablock_id
+
+    _item_description.name             '_pdbx_include_dictionary.datablock_id'
+    _item_description.description
+;
+     Identifier of data block.
+;
+    _item.name                         '_pdbx_include_dictionary.datablock_id'
+    _item.category_id                    pdbx_include_dictionary
+    _item.mandatory_code                 implicit
+    _item_type.name                    '_pdbx_include_dictionary.datablock_id'
+    _item_type.code                      code
+     save_
+
 save__pdbx_include_dictionary.dictionary_id
     _item_description.name             '_pdbx_include_dictionary.dictionary_id'
     _item_description.description
 ;
-    Unique identifer for included dictionary.
+    Unique identifier for the included dictionary or dictionary component.
 ;
     _item.name                        '_pdbx_include_dictionary.dictionary_id'
     _item.category_id                   pdbx_include_dictionary
@@ -82,7 +120,7 @@ save__pdbx_include_dictionary.include_mode
     _item_description.name             '_pdbx_include_dictionary.include_mode'
     _item_description.description
 ;
-     Item definition describing the action of taken to resolve name category name conflicts on including dictionary content.
+     Item definition describing the action undertaken to resolve name category name conflicts on including dictionary content.
 ;
     _item.name                         '_pdbx_include_dictionary.include_mode'
     _item.category_id                    pdbx_include_dictionary
@@ -101,7 +139,7 @@ save__pdbx_include_dictionary.dictionary_namespace_prefix
     _item_description.name             '_pdbx_include_dictionary.dictionary_namespace_prefix'
     _item_description.description
 ;
-    The namespace prefix used in the source dictionary that is included.
+    The namespace prefix used in the included source dictionary.
 ;
 
     _item.name                        '_pdbx_include_dictionary.dictionary_namespace_prefix'
@@ -118,8 +156,8 @@ save__pdbx_include_dictionary.dictionary_namespace_prefix_replace
     _item_description.name             '_pdbx_include_dictionary.dictionary_namespace_prefix'
     _item_description.description
 ;
-    The namespace prefix used in the destination dictionary. Definitions the namespace used in the
-    source dictionary is replaced by this namespace prefix.
+    The namespace prefix used in the destination dictionary. Definitions with the source namespace
+    are replaced by this namespace prefix.
 ;
 
     _item.name                        '_pdbx_include_dictionary.dictionary_namespace_prefix_replace'
@@ -139,8 +177,8 @@ save__pdbx_include_dictionary.dictionary_namespace_prefix_replace
 save_pdbx_include_category
     _category.description
 ;
-      Category describing details of dictionary composition acheived through
-      category-level content inclusion from external sources.
+      Category describing the details of dictionary composition achieved through
+      category-level content inclusion from external dictionary sources.
 
       Inclusion directives in this category take precedence over any
       dictionary-level include directives in category PDBX_INCLUDE_DICTIONARY.
@@ -167,7 +205,7 @@ save__pdbx_include_category.category_id
     _item_description.name             '_pdbx_include_category.category_id'
     _item_description.description
 ;
-    Unique identifer for a source category within the included dictionary.
+    Unique identifier for a source category within the included dictionary.
 ;
     _item.name                        '_pdbx_include_category.category_id'
     _item.category_id                   pdbx_include_category
@@ -180,7 +218,7 @@ save__pdbx_include_category.dictionary_id
     _item_description.name             '_pdbx_include_category.dictionary_id'
     _item_description.description
 ;
-    Unique identifer for included dictionary.
+    Unique identifier for the included dictionary.
 ;
     _item.name                        '_pdbx_include_category.dictionary_id'
     _item.category_id                   pdbx_include_category
@@ -195,7 +233,7 @@ save__pdbx_include_category.include_as_category_id
     _item_description.name             '_pdbx_include_category.include_as_category_id'
     _item_description.description
 ;
-    The identifer for the target category within the destination dictionary.
+    The identifier for the target category within the destination dictionary.
 ;
     _item.name                        '_pdbx_include_category.include_as_category_id'
     _item.category_id                   pdbx_include_category
@@ -208,7 +246,7 @@ save__pdbx_include_category.include_mode
     _item_description.name             '_pdbx_include_category.include_mode'
     _item_description.description
 ;
-     The action of taken to resolve name category name conflicts subject to the
+     The action undertaken to resolve category name conflicts subject to the
      current category-level include directive.
 ;
     _item.name                         '_pdbx_include_category.include_mode'
@@ -230,7 +268,7 @@ save__pdbx_include_category.include_mode
 save_pdbx_include_item
     _category.description
 ;
-      Category describing details of dictionary composition acheived through
+      Category describing the details of dictionary composition achieved through
       item-level content inclusion from external sources.
 
       Item inclusion directives in this category take precedence over any
@@ -257,7 +295,7 @@ save__pdbx_include_item.item_name
     _item_description.name             '_pdbx_include_item.item_name'
     _item_description.description
 ;
-    Unique identifer for a target item within the included dictionary.
+    Unique identifier for a target item within the included dictionary.
 ;
     _item.name                        '_pdbx_include_item.item_name'
     _item.category_id                   pdbx_include_item
@@ -270,7 +308,7 @@ save__pdbx_include_item.dictionary_id
     _item_description.name             '_pdbx_include_item.dictionary_id'
     _item_description.description
 ;
-    Unique identifer for included dictionary.
+    Unique identifier for included dictionary.
 ;
     _item.name                        '_pdbx_include_item.dictionary_id'
     _item.category_id                   pdbx_include_item
@@ -285,7 +323,7 @@ save__pdbx_include_item.include_as_item_name
     _item_description.name             '_pdbx_include_item.include_as_item_name'
     _item_description.description
 ;
-    The identifer for the target item within the destination dictionary.
+    The identifier for the target item within the destination dictionary.
 ;
     _item.name                        '_pdbx_include_item.include_as_item_name'
     _item.category_id                   pdbx_include_item

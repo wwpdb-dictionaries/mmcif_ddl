@@ -4,12 +4,8 @@
 #
 #                     mmCIF DDL Core Dictionary Definitions
 #
-#                           Definition Section 1.
-#                            (Core Definitions)
-#
 ###########################################################################
-# ----------------------------------------------------------------------------
-
+data_mmcif_ddl-def-core.dic
 
 save_datablock
 
@@ -217,26 +213,6 @@ save__category.mandatory_code
     _item_type.name                    '_category.mandatory_code'
     _item_type.code                      code
      save_
-
-
-save__category.NX_mapping_details
-
-    _item_description.name             '_category.NX_mapping_details'
-    _item_description.description
-;
-     Records data correspondences between the items in this data category and
-     and related data items in Nexus data dictionary.
-;
-    _item.name                         '_category.NX_mapping_details'
-    _item.category_id                    category
-    _item.mandatory_code                 no
-
-    _item_type.name                    '_category.NX_mapping_details'
-    _item_type.code                      text
-     save_
-
-
-
 
 # ----------------------------------------------------------------------------
 
@@ -1082,7 +1058,7 @@ save__item_description.description
     _item_description.name             '_item_description.description'
     _item_description.description
 ;
-     Text decription of the defined data item.
+     Text description of the defined data item.
 ;
     _item.name                         '_item_description.description'
     _item.category_id                    item_description
@@ -1158,35 +1134,7 @@ save__item_enumeration.detail
     _item_type.code                      text
      save_
 
-save__item_enumeration.rcsb_detail_brief
-
-    _item_description.name             '_item_enumeration.rcsb_detail_brief'
-    _item_description.description
-;
-     A brief description of a permissible value for the defined item.
-;
-    _item.name                         '_item_enumeration.rcsb_detail_brief'
-    _item.category_id                    item_enumeration
-    _item.mandatory_code                 no
-    _item_type.name                    '_item_enumeration.rcsb_detail_brief'
-    _item_type.code                      text
-     save_
-
-save__item_enumeration.rcsb_type_units_code
-
-    _item_description.name             '_item_enumeration.rcsb_type_units_code'
-    _item_description.description
-;
-     Where the enumeration refers to a type, the code for the units of expression for this type.
-;
-    _item.name                         '_item_enumeration.rcsb_type_units_code'
-    _item.category_id                    item_enumeration
-    _item.mandatory_code                 no
-    _item_type.name                    '_item_enumeration.rcsb_type_units_code'
-    _item_type.code                      code
-     save_
-
-# ----------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 
 
 save_item_examples
@@ -1253,7 +1201,6 @@ save__item_examples.detail
     _item_type.code                      text
      save_
 
-
 # ----------------------------------------------------------------------------
 
 
@@ -1309,10 +1256,7 @@ save__item_linked.parent_name
     _item_type.code                      name
      save_
 
-
 # ----------------------------------------------------------------------------
-
-
 save_item_methods
 
     _category.description
@@ -1353,7 +1297,7 @@ save__item_methods.method_id
     _item_description.name             '_item_methods.method_id'
     _item_description.description
 ;
-     The name of itemthe method
+     The name of the item method
 ;
     _item.name                         '_item_methods.method_id'
     _item.category_id                    item_methods
@@ -1361,10 +1305,6 @@ save__item_methods.method_id
     _item_type.name                    '_item_methods.method_id'
     _item_type.code                      idname
      save_
-
-
-
-
 
 # ----------------------------------------------------------------------------
 
@@ -1377,7 +1317,7 @@ save_item_range
      ranges are specified they are interpreted sequentially
      using a logical OR.  To specify that an item value may be
      equal to a boundary value,  specify an item range where the
-     maximum and mimimum values equal the boundary value.
+     maximum and minimum values equal the boundary value.
 ;
     _category.id                         item_range
     _category.mandatory_code             no
@@ -1805,20 +1745,6 @@ save__item_sub_category.id
 
     save_
 
-save__item_sub_category.pdbx_label
-
-    _item_description.name             '_item_sub_category.pdbx_label'
-    _item_description.description
-;
-    An optional label for an instance of a subcategory within a category
-;
-    _item.name                         '_item_sub_category.pdbx_label'
-    _item.category_id                    item_sub_category
-    _item.mandatory_code                 no
-    _item_type.name                    '_item_sub_category.pdbx_label'
-    _item_type.code                      code
-
-    save_
 
 # ----------------------------------------------------------------------------
 
@@ -2022,7 +1948,7 @@ save__item_type_list.construct
     characters, or optional characters, or data names (for which the
     definition is also available), it is specified as a construction.
     The rules of construction conform to the the regular expression
-    (REGEX) specificatiopns detailed in the IEEE document P1003.2
+    (REGEX) specifications detailed in the IEEE document P1003.2
     Draft 11.2 Sept 1991 (ftp file '/doc/POSIX/1003.2/p121-140').
     Resolved data names for which _item_type_list.construct
     specifications exist are replaced by these constructions,
@@ -2403,7 +2329,7 @@ save__method_list.language
     _item_description.name             '_method_list.language'
     _item_description.description
 ;
-     Implemetnation language in which the method is expressed.
+     Implementation language in which the method is expressed.
 ;
     _item.name                         '_method_list.language'
     _item.category_id                    method_list

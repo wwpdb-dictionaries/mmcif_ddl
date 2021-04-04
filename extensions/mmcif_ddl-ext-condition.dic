@@ -1,8 +1,35 @@
+###########################################################################
+#
+# File:  mmcif_ddl-ext-condition.dic
+#
+#            mmCIF DDL PDBx Conditional Value Extensions
+#
+###########################################################################
+data_mmcif_ddl-ext-condition.dic
 
+_pdbx_dictionary_component.datablock_id   mmcif_ddl-ext-condition.dic
+_pdbx_dictionary_component.component_id   mmcif_ddl-ext-condition.dic
+_pdbx_dictionary_component.title          "mmCIF DDL PDBx Conditional Value Extensions"
+_pdbx_dictionary_component.version        1.1.0
 
+loop_
+_pdbx_dictionary_component_history.dictionary_component_id
+_pdbx_dictionary_component_history.version
+_pdbx_dictionary_component_history.update
+_pdbx_dictionary_component_history.revision
+mmcif_ddl-ext-condition.dic 1.0.0  2017-08-17
+;
+Changes (JW):
++ Preliminary versions of categories  pdbx_item_linked, pdbx_item_value_condition, and pdbx_item_value_condition_list
+;
+mmcif_ddl-ext-condition.dic 1.1.0 2021-03-30
+;
+Changes (JW):
++ Migrate to dictionary component mmcif_ddl-ext-condition.dic.
+;
 
+#
 save_pdbx_item_value_condition_list
-
     _category.description
 ;
      Attributes which define value conditions among dependent items.
@@ -25,7 +52,7 @@ save__pdbx_item_value_condition_list.cond_id
     _item_description.name             '_pdbx_item_value_condition_list.cond_id'
     _item_description.description
 ;
-     The unique idenfier for each value condition.
+     The unique identifier for each value condition.
 ;
     _item.name                         '_pdbx_item_value_condition_list.cond_id'
     _item.category_id                    pdbx_item_value_condition_list
@@ -141,7 +168,7 @@ save__pdbx_item_value_condition.item_name
     _item_description.name             '_pdbx_item_value_condition.item_name'
     _item_description.description
 ;
-     Name of the taget data item.
+     Name of the target data item.
 ;
     _item.name                         '_pdbx_item_value_condition.item_name'
     _item.category_id                    pdbx_item_value_condition
@@ -299,9 +326,3 @@ save__pdbx_item_linked.condition_child_operation
     _item_type.name                    '_pdbx_item_linked.condition_child_operation'
     _item_type.code                      char
      save_
-
-
-
-
-#### EOF mmcif_ddl-def-5.dic
-
