@@ -309,4 +309,5 @@ data_mmcif_ddl-header.dic
        + Add generator for pdbx_dictionary_include/pdbx_category_include/pdbx_item_include
        + Miscellaneous updates in item/category descriptions
 ;
+
 ### EOF mmcif_ddl-header.dic ####
