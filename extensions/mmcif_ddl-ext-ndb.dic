@@ -11,7 +11,7 @@ data_mmcif_ddl-ext-ndb.dic
 _pdbx_dictionary_component.datablock_id   mmcif_ddl-ext-ndb.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_ddl-ext-ndb.dic
 _pdbx_dictionary_component.title          "mmCIF DDL Nucleic Acid Database (NDB) extensions"
-_pdbx_dictionary_component.version        1.3.0
+_pdbx_dictionary_component.version        1.4.0
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -39,7 +39,44 @@ mmcif_ddl-ext-ndb.dic 1.3.0 2021-03-30
 Changes (JW):
 + Migrate to dictionary component mmcif_ddl-ext-ndb.dic.
 ;
-
+mmcif_ddl-ext-ndb.dic 1.4.0 2021-04-05
+;
+Changes (JW):
++ Add to pdbx_item_linked_group and pdbx_item_linked_group_list details
+;
+#
+loop_
+_pdbx_item_linked_group.category_id
+_pdbx_item_linked_group.link_group_id
+_pdbx_item_linked_group.label
+_pdbx_item_linked_group.context
+_pdbx_item_linked_group.condition_id
+#
+ndb_item_range              1 ndb_item_range:item:1                                . .
+ndb_item_type               1 ndb_item_type:item:1                                 . .
+ndb_item                    1 ndb_item:item:1                                      . .
+ndb_category_description    1 ndb_category_description:category:1                  . .
+ndb_category_examples       1 ndb_category_examples:category:1                     . .
+ndb_item_description        1 ndb_item_description:item:1                          . .
+ndb_item_enumeration        1 ndb_item_enumeration:item:1                          . .
+ndb_item_examples           1 ndb_item_examples:item:1                             . .
+#
+loop_
+_pdbx_item_linked_group_list.child_category_id
+_pdbx_item_linked_group_list.link_group_id
+_pdbx_item_linked_group_list.child_name
+_pdbx_item_linked_group_list.parent_name
+_pdbx_item_linked_group_list.parent_category_id
+#
+ndb_category_description    1 '_ndb_category_description.id'                    '_category.id'                          category
+ndb_category_examples       1 '_ndb_category_examples.id'                       '_category.id'                          category
+ndb_item_description        1 '_ndb_item_description.name'                      '_item.name'                            item
+ndb_item_enumeration        1 '_ndb_item_enumeration.name'                      '_item.name'                            item
+ndb_item_examples           1 '_ndb_item_examples.name'                         '_item.name'                            item
+ndb_item_range              1 '_ndb_item_range.name'                            '_item.name'                            item
+ndb_item_type               1 '_ndb_item_type.name'                             '_item.name'                            item
+ndb_item                    1 '_ndb_item.name'                                  '_item.name'                            item
+#
 
 save_ndb_category_description
     _category.description
