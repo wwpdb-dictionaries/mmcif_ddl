@@ -165,7 +165,7 @@ ndb_item                    1 '_ndb_item.name'                                  
 pdbx_include_item                 1  '_pdbx_include_item.dictionary_id'                           '_pdbx_include_dictionary.dictionary_id'   pdbx_include_dictionary
 pdbx_include_category             1  '_pdbx_include_category.dictionary_id'                       '_pdbx_include_dictionary.dictionary_id'   pdbx_include_dictionary
 pdbx_dictionary_component         1  '_pdbx_dictionary_component.version'                         '_pdbx_dictionary_component_history.version'      pdbx_dictionary_component_history
-pdbx_dictionary_component_history 1  '_pdbx_dictionary_component_history.dictionary_component_id' '_pdbx_dictionary_component.component_id'  pdbx_dictionary_component
+pdbx_dictionary_component_history 1  '_pdbx_dictionary_component_history.dictionary_component_id' '_pdbx_dictionary_component.dictionary_component_id'  pdbx_dictionary_component
 #
 pdbx_item_value_condition      1  '_pdbx_item_value_condition.item_name'                '_pdbx_item_value_condition_list.target_item_name'     pdbx_item_value_condition_list
 pdbx_item_value_condition      1  '_pdbx_item_value_condition.dependent_item_name'      '_pdbx_item_value_condition_list.dependent_item_name'  pdbx_item_value_condition_list

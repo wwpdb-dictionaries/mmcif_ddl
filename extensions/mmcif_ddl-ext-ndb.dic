@@ -9,7 +9,7 @@
 data_mmcif_ddl-ext-ndb.dic
 
 _pdbx_dictionary_component.datablock_id   mmcif_ddl-ext-ndb.dic
-_pdbx_dictionary_component.component_id   mmcif_ddl-ext-ndb.dic
+_pdbx_dictionary_component.dictionary_component_id   mmcif_ddl-ext-ndb.dic
 _pdbx_dictionary_component.title          "mmCIF DDL Nucleic Acid Database (NDB) extensions"
 _pdbx_dictionary_component.version        1.3.0
 

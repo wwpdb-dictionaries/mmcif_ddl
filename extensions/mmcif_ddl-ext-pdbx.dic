@@ -8,7 +8,7 @@
 data_mmcif_ddl-ext-pdbx.dic
 
 _pdbx_dictionary_component.datablock_id   mmcif_ddl-ext-pdbx.dic
-_pdbx_dictionary_component.component_id   mmcif_ddl-ext-pdbx.dic
+_pdbx_dictionary_component.dictionary_component_id   mmcif_ddl-ext-pdbx.dic
 _pdbx_dictionary_component.title          "mmCIF DDL Protein Data Bank (PDBx) extensions"
 _pdbx_dictionary_component.version        1.6.0
 

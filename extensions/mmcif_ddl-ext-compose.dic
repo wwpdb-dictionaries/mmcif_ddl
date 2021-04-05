@@ -8,7 +8,7 @@
 data_mmcif_ddl-ext-compose.dic
 
 _pdbx_dictionary_component.datablock_id   mmcif_ddl-ext-compose.dic
-_pdbx_dictionary_component.component_id   mmcif_ddl-ext-compose.dic
+_pdbx_dictionary_component.dictionary_component_id   mmcif_ddl-ext-compose.dic
 _pdbx_dictionary_component.title          "mmCIF DDL PDBx Dictionary Composition Extensions"
 _pdbx_dictionary_component.version        1.1.0
 
@@ -498,7 +498,7 @@ save__pdbx_dictionary_component_history.dictionary_component_id
     _item_type.name                    '_pdbx_dictionary_component_history.dictionary_component_id'
     _item_type.code                      char
     _item_linked.child_name            '_pdbx_dictionary_component_history.dictionary_component_id'
-    _item_linked.parent_name           '_pdbx_dictionary_component.component_id'
+    _item_linked.parent_name           '_pdbx_dictionary_component.dictionary_component_id'
      save_
 
 
