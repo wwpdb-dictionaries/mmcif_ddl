@@ -28,7 +28,11 @@ mmcif_ddl-ext-compose.dic 1.1.0 2021-03-30
 Changes (JW):
 + Migrate to dictionary component mmcif_ddl-ext-compose.dic.
 ;
-
+mmcif_ddl-ext-compose.dic 1.2.0 2021-04-05
+;
+Changes (JW):
++ Correct typo in pdbx_dictionary_component.dictionary_component_id item name.
+;
 loop_
 _item_type_list.code
 _item_type_list.primitive_code
@@ -367,7 +371,7 @@ save_pdbx_dictionary_component
     _category_key.id
     _category_key.name
     pdbx_dictionary_component  '_pdbx_dictionary_component.datablock_id'
-    pdbx_dictionary_component  '_pdbx_dictionary_component.component_id'
+    pdbx_dictionary_component  '_pdbx_dictionary_component.dictionary_component_id'
 
      loop_
     _category_group.id
@@ -392,17 +396,17 @@ save__pdbx_dictionary_component.datablock_id
     _item_type.code                      code
      save_
 
-save__pdbx_dictionary_component.component_id
+save__pdbx_dictionary_component.dictionary_component_id
 
-    _item_description.name             '_pdbx_dictionary_component.component_id'
+    _item_description.name             '_pdbx_dictionary_component.dictionary_component_id'
     _item_description.description
 ;
      The identifier for the dictionary component.
 ;
-    _item.name                         '_pdbx_dictionary_component.component_id'
+    _item.name                         '_pdbx_dictionary_component.dictionary_component_id'
     _item.category_id                    pdbx_dictionary_component
     _item.mandatory_code                 yes
-    _item_type.name                    '_pdbx_dictionary_component.component_id'
+    _item_type.name                    '_pdbx_dictionary_component.dictionary_component_id'
     _item_type.code                      char
      save_
 
