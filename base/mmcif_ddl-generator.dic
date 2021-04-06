@@ -18,6 +18,8 @@ mmcif_ddl-ext-nx.dic        https://raw.githubusercontent.com/wwpdb-dictionaries
 mmcif_ddl-ext-ndb.dic       https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/extensions/mmcif_ddl-ext-ndb.dic       extend ndb   ndb
 mmcif_ddl-ext-pdbx.dic      https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/extensions/mmcif_ddl-ext-pdbx.dic      extend pdbx  pdbx
 #
+mmcif_ddl-ext-rcsb.dic      https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/extensions/mmcif_ddl-ext-rcsb.dic      extend rcsb  rcsb
+#
 mmcif_ddl-data-ilg.dic      https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/base/mmcif_ddl-data-ilg.dic extend . .
 
 loop_
