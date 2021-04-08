@@ -1,33 +1,11 @@
 data_mmcif_ddl
 
-loop_
-_pdbx_include_dictionary.dictionary_id
-_pdbx_include_dictionary.dictionary_locator
-_pdbx_include_dictionary.include_mode
-_pdbx_include_dictionary.dictionary_namespace_prefix
-_pdbx_include_dictionary.dictionary_namespace_prefix_replace
-mmcif_ddl-header.dic         https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/base/mmcif_ddl-header.dic               extend  .     .     
-mmcif_ddl-data.dic           https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/base/mmcif_ddl-data.dic                 extend  .     .     
-mmcif_ddl-def-core.dic       https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/base/mmcif_ddl-def-core.dic             extend  .     .     
-mmcif_ddl-ext-nx.dic         https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/extensions/mmcif_ddl-ext-nx.dic         extend  nx    nx    
-mmcif_ddl-ext-ndb.dic        https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/extensions/mmcif_ddl-ext-ndb.dic        extend  ndb   ndb   
-mmcif_ddl-ext-pdbx.dic       https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/extensions/mmcif_ddl-ext-pdbx.dic       extend  pdbx  pdbx  
-mmcif_ddl-ext-rcsb.dic       https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/extensions/mmcif_ddl-ext-rcsb.dic       extend  rcsb  rcsb  
-mmcif_ddl-data-ilg.dic       https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/base/mmcif_ddl-data-ilg.dic             extend  .     .     
-mmcif_ddl-ext-compose.dic    https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/extensions/mmcif_ddl-ext-compose.dic    extend  pdbx  pdbx  
-mmcif_ddl-ext-condition.dic  https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/extensions/mmcif_ddl-ext-condition.dic  extend  pdbx  pdbx  
-#
-loop_
-_pdbx_include_item.item_name
-_pdbx_include_item.dictionary_id
-_pdbx_include_item.include_as_item_name
-_pdbx_include_item.include_mode
-"_category.NX_mapping_details"            mmcif_ddl-ext-nx.dic    "_category.NX_mapping_details"            extend  
-"_item_enumeration.rcsb_detail_brief"     mmcif_ddl-ext-rcsb.dic  "_item_enumeration.rcsb_detail_brief"     extend  
-"_item_enumeration.rcsb_type_units_code"  mmcif_ddl-ext-rcsb.dic  "_item_enumeration.rcsb_type_units_code"  extend  
-#
 _datablock.id           mmcif_ddl.dic
-_datablock.description  "     This data block holds the core DDL."
+_datablock.description  
+;
+     This data block holds the core DDL.
+;
+
 #
 _dictionary.datablock_id  mmcif_ddl.dic
 _dictionary.title         mmcif_ddl.dic
@@ -37,46 +15,333 @@ loop_
 _dictionary_history.version
 _dictionary_history.update
 _dictionary_history.revision
-1.1     1994-07-25  "       DDL 1.1 from Syd Hall et. al."  
-1.2.1   1994-09-18  "       Changes:.........etc. etc. John Westbrook"  
-1.2.9   1994-10-05  "       Reflect the results of the Treaty of Brussels. JW."  
-2.0.1   1994-10-15  "       Adapted for closer mapping to DDL1.3 and clearer presentation. SRH/NS."  
-2.0.2   1994-10-16  "       Even closer...................  SRH/NS."  
-2.0.3   1994-10-17  "       Coming to grips with the links and dependencies..... SRH/NS."  
-2.0.4   1994-10-20  "       Backed in changes from mm-ddl 1.2.12       Many other changes  ...  (JW)"  
-2.0.5   1994-10-20  "       Some small adjustments..........SRH."  
-2.0.6   1994-10-20  "       More small adjustments..........JW."  
-2.0.7   1994-11-03  "       Changes:  (JW)         + Place all item and item_linked category definitions with the parent           item.         + Fixed a number of not so trivial typos.         + Corrected errors in the data type conversion table.         + Corrected key item inconsistencies.         + Added the item_aliases category."  
-2.0.8   1994-11-10  "       Miscellaneous corrections:  (JW)         +    defined sub_category_group         +    corrected typo in category_examples.id definition         +    added  _item_type_conditions.name in item category         +    added  _item_structure.name in item category         +    corrected typo in item_aliases category definition         +    corrected typo in sub_category.method_id  definition"  
-2.0.9   1994-11-14  "       Changes: (JW)         +    added ITEM_UNITS, ITEM_UNITS_LIST, and UNITS_CONVERSION              categories.         +    added an additional primitive type for character type items              for which comparisons must be case insensitive.              Since it is customary to permit item names and category              identifiers to be specified in mixed case, it is necessary              to declare that case should NOT be considered in any              comparisons of these items."  
-2.0.10  1994-11-23  "       Changes: (JW)         +    Several name category changes for the sake of consistency:                enumeration         -> item_enumeration                enumeration_default -> item_enumeration_default                enumeration_limit   -> item_enumeration_limit                units_conversion    -> item_units_conversion         +    Added _item_related.function_code alternate_exclusive              to identify mutually exclusive alternative declarations              of the same item.         +    Added structure options for real symmetric matrices.         +    Changed from zero based indices to one based indices              for compatibility with existing matrix component              definitions.         +    Add _item_linked.parent_name to the key of the item_linked              category.         +    Reorder items in the DDL so be alphabetical within              category groups."  
-2.0.11  1994-11-28  '       Changes: (JW)         +    Corrected spelling error for the data type code in              the DICTIONARY_HISTORY category.         +    Add category BLOCK to hold the data block name and data              block description.  The block identifier was also added              to  the key of the item category.  The block identifier              can be implicitly derived from the STAR "data_" delimiter.              This identifier is required to form the key for categories              which are conceptually related to the data block as a              whole.'  
-2.0.12  1994-11-30  "       Changes: (JW)         +    Added a data item _block.scope to indicate the scope of              data item names defined within included data blocks."  
-2.0.13  1994-12-12  "       Changes: (JW)         +    Deleted data item _block.scope.         +    Changed DICTIONARY category key to _dictionary.block_id              to guarantee only one dictionary definition per block.         +    Deleted data item _item.block_id as this will be replaced              by an item address syntax that will include block, save              frame, and url."  
-2.0.14  1994-12-15  "       Changes: (JW)         +    Made some terminology changes suggested by PMDF              _item_enumeration.code   -> _item_enumeration.value              ITEM_ENUMERATION_DEFAULT -> ITEM_DEFAULT              ITEM_ENUMERATION_LIMIT   -> ITEM_RANGE         +    Added item _item_type_list.detail         +    Version 2.0.14 is being frozen and exported."  
-2.0.15  1995-02-13  "       Changes: (JW)         +    Added '_' prefix to all data item save frame names.              References to data item names now always include              a leading underscore independent of the usage context.         +    A few miscellaneous corrections."  
-2.0.16  1995-06-18  "       Changes: (JW)         +    Revised the block level categories in the following ways:                Changed category BLOCK to DATA_BLOCK.                Added connection from _data_block.id to _category.implicit_key                in order to provide a formal means of merging the contents                of categories between data blocks.         +    Moved enumerations for _method_list.code and              method_list.language to examples.         +    Removed symmetric matrix options from the enumerations              for _item_structure.organization.         +    Added _item_related.function codes for 'associated_value',              'associated_esd', 'replaces' and 'replacedby'         +    Added data items _item_aliases.dictionary and              _item_aliases.dictionary_version.         +    Reorganized method categories such that multiple methods can              be applied at each level of data structure.  Introduced a              consistent set of categories to hold method associations:              ITEM_METHODS, CATEGORY_METHODS, SUB_CATEGORY_METHODS, and              DATA_BLOCK_METHODS.  Removed data items  _category.method_id              _sub_category.method_id."  
-2.0.17  1995-06-22  "       Changes: (JW)         +    Quoted data values containing the leading string  'data_'."  
-2.1.0   1995-07-20  "       Changes: (JW)       Final adjustments before the first release of the mmCIF dictionary:             + changed data_block to datablock to avoid any problems with               the STAR data_ reserved token.             + created new category to hold item subcategory associations               and deleted the subcategory attribute from ITEM category.             + modified regular expressions to reflect limitations observed               on several platforms.             + expanded the enumeration of _item_related.function_code.             + removed default value from _item.mandatory_code.             + removed type construct for date and changed date data type               to yyyy-mm-dd             + added less restrictive data type for alias names."  
-2.1.1   1995-09-26  "       Changes: (JW)             + Changed regular expressions for type code to permit               single quote.             + Corrected regular expression syntax for type name and               type date.             + Corrected lower bound description for item_range.minimum.               The incorrect <= condition is changed to <.             + _item_mandatory.code has been now a mandatory item.             + _item_aliases.dictionary and _item_aliases.dictionary_version               are added to the composite key for category ITEM_ALIASES.             + _datablock.id data type changes to type code.             + Shortened the name _item_aliases.dictionary_version to               _item_aliases.version"  
-2.1.2   1997-01-24  "       Changes: (JW)             + Added associated_error to the enumeration list of               _item_related.function_code."  
-2.1.3   2000-10-16  "       Changes: (JW)             + Changed data type for regular expression in               _item_type_list.construct to type text."  
-2.1.5   2003-06-23  "      Changes: (JW)             + NDB extensions adopted into ddl_core             + New partitioning scheme implemented"  
-2.1.6   2004-04-15  "      Changes: (JW)             + Name changed to mmcif_ddl.dic"  
-2.1.7   2007-05-30  "      Changes: (JW)	_items_examples.case, _item_range.minimum/maximum made mandatory."  
-2.1.8   2008-10-31  "      Changes: (JW)	+ Add categories pdbx_item_link_group and pdbx_item_link_group_list"  
-2.1.9   2009-01-15  "      Changes: (JW)       + _ndb_item_examples.detail made optional"  
-2.1.10  2009-01-19  "      Changes: (JW)       + Add _item.mandatory_code enumeration implicit-ordinal to provide         an automatically generated ordinal index data item.   This feature         is added to address problems where the natural category key may         contain an undefined value (e.g. '.')."  
-2.1.11  2009-11-02  "      Changes: (JW)       + Add categories pdbx_item_context and pdbx_category_context"  
-2.1.12  2012-09-01  "      Changes: (JW) -       + Add categories ndb_item_range, ndb_item and ndb_item_type       + Add alternate categories under PDBx prefix:	pdbx_item_range,pdbx_item_type,pdbx_item,pdbx_category_description,	pdbx_category_examples,pdbx_item_description,pdbx_item_enumeration,	and pdbx_item_examples."  
-2.1.13  2013-09-23  "      Changes: (JW) -       + Add _category.NX_mapping_details for Nexus correspondences."  
-2.1.14  2013-10-14  "      Changes: (JW) -       + Add category pdbx_item_enumeration_details describing additional controls         for enumerated data items at deposition."  
-2.1.15  2014-03-10  "      Changes: (JW) -       + Add enumerations for pdbx_item_enumeration_details.closed_flag"  
-2.1.16  2017-08-17  "      Changes: (JW) -       + Add extension categories pdbx_include_dictionary, pdbx_include_category,         pdbx_include_item, pdbx_dictionary_component and pdbx_dictionary_component_history,         pdbx_item_linked, pdbx_item_value_condition, and pdbx_item_value_condition_list."  
-2.1.17  2019-04-04  "     Changes: (JW)      + Add extension item _item_sub_category.pdbx_label"  
-2.2.1   2019-06-05  "      Changes (JW):       +  Add items _method_list.method_source and _method_list.implementation_source       +  Make item _method_list.inline optional       +  Update examples for items in category method_list"  
-2.2.2   2020-06-05  "      Changes (JW):       +  Add items _item_enumeration.rcsb_detail_brief and _item_enumeration.rcsb_type_units_code"  
-2.3.0   2020-06-05  "      Changes (JW):       + Add generator for pdbx_dictionary_include/pdbx_category_include/pdbx_item_include       + Miscellaneous updates in item/category descriptions"  
+1.1     1994-07-25  
+;
+       DDL 1.1 from Syd Hall et. al.
+;
+  
+1.2.1   1994-09-18  
+;
+       Changes:.........etc. etc. John Westbrook
+;
+  
+1.2.9   1994-10-05  
+;
+       Reflect the results of the Treaty of Brussels. JW.
+;
+  
+2.0.1   1994-10-15  
+;
+       Adapted for closer mapping to DDL1.3 and clearer presentation. SRH/NS.
+;
+  
+2.0.2   1994-10-16  
+;
+       Even closer...................  SRH/NS.
+;
+  
+2.0.3   1994-10-17  
+;
+       Coming to grips with the links and dependencies..... SRH/NS.
+;
+  
+2.0.4   1994-10-20  
+;
+       Backed in changes from mm-ddl 1.2.12
+       Many other changes  ...  (JW)
+;
+  
+2.0.5   1994-10-20  
+;
+       Some small adjustments..........SRH.
+;
+  
+2.0.6   1994-10-20  
+;
+       More small adjustments..........JW.
+;
+  
+2.0.7   1994-11-03  
+;
+       Changes:  (JW)
+         + Place all item and item_linked category definitions with the parent
+           item.
+         + Fixed a number of not so trivial typos.
+         + Corrected errors in the data type conversion table.
+         + Corrected key item inconsistencies.
+         + Added the item_aliases category.
+;
+  
+2.0.8   1994-11-10  
+;
+       Miscellaneous corrections:  (JW)
+         +    defined sub_category_group
+         +    corrected typo in category_examples.id definition
+         +    added  _item_type_conditions.name in item category
+         +    added  _item_structure.name in item category
+         +    corrected typo in item_aliases category definition
+         +    corrected typo in sub_category.method_id  definition
+;
+  
+2.0.9   1994-11-14  
+;
+       Changes: (JW)
+         +    added ITEM_UNITS, ITEM_UNITS_LIST, and UNITS_CONVERSION
+              categories.
+         +    added an additional primitive type for character type items
+              for which comparisons must be case insensitive.
+              Since it is customary to permit item names and category
+              identifiers to be specified in mixed case, it is necessary
+              to declare that case should NOT be considered in any
+              comparisons of these items.
+;
+  
+2.0.10  1994-11-23  
+;
+       Changes: (JW)
+         +    Several name category changes for the sake of consistency:
+                enumeration         -> item_enumeration
+                enumeration_default -> item_enumeration_default
+                enumeration_limit   -> item_enumeration_limit
+                units_conversion    -> item_units_conversion
+         +    Added _item_related.function_code alternate_exclusive
+              to identify mutually exclusive alternative declarations
+              of the same item.
+         +    Added structure options for real symmetric matrices.
+         +    Changed from zero based indices to one based indices
+              for compatibility with existing matrix component
+              definitions.
+         +    Add _item_linked.parent_name to the key of the item_linked
+              category.
+         +    Reorder items in the DDL so be alphabetical within
+              category groups.
+;
+  
+2.0.11  1994-11-28  
+;
+       Changes: (JW)
+         +    Corrected spelling error for the data type code in
+              the DICTIONARY_HISTORY category.
+         +    Add category BLOCK to hold the data block name and data
+              block description.  The block identifier was also added
+              to  the key of the item category.  The block identifier
+              can be implicitly derived from the STAR "data_" delimiter.
+              This identifier is required to form the key for categories
+              which are conceptually related to the data block as a
+              whole.
+;
+  
+2.0.12  1994-11-30  
+;
+       Changes: (JW)
+         +    Added a data item _block.scope to indicate the scope of
+              data item names defined within included data blocks.
+;
+  
+2.0.13  1994-12-12  
+;
+       Changes: (JW)
+         +    Deleted data item _block.scope.
+         +    Changed DICTIONARY category key to _dictionary.block_id
+              to guarantee only one dictionary definition per block.
+         +    Deleted data item _item.block_id as this will be replaced
+              by an item address syntax that will include block, save
+              frame, and url.
+;
+  
+2.0.14  1994-12-15  
+;
+       Changes: (JW)
+         +    Made some terminology changes suggested by PMDF
+              _item_enumeration.code   -> _item_enumeration.value
+              ITEM_ENUMERATION_DEFAULT -> ITEM_DEFAULT
+              ITEM_ENUMERATION_LIMIT   -> ITEM_RANGE
+         +    Added item _item_type_list.detail
+         +    Version 2.0.14 is being frozen and exported.
+;
+  
+2.0.15  1995-02-13  
+;
+       Changes: (JW)
+         +    Added '_' prefix to all data item save frame names.
+              References to data item names now always include
+              a leading underscore independent of the usage context.
+         +    A few miscellaneous corrections.
+;
+  
+2.0.16  1995-06-18  
+;
+       Changes: (JW)
+         +    Revised the block level categories in the following ways:
+                Changed category BLOCK to DATA_BLOCK.
+                Added connection from _data_block.id to _category.implicit_key
+                in order to provide a formal means of merging the contents
+                of categories between data blocks.
+         +    Moved enumerations for _method_list.code and
+              method_list.language to examples.
+         +    Removed symmetric matrix options from the enumerations
+              for _item_structure.organization.
+         +    Added _item_related.function codes for 'associated_value',
+              'associated_esd', 'replaces' and 'replacedby'
+         +    Added data items _item_aliases.dictionary and
+              _item_aliases.dictionary_version.
+         +    Reorganized method categories such that multiple methods can
+              be applied at each level of data structure.  Introduced a
+              consistent set of categories to hold method associations:
+              ITEM_METHODS, CATEGORY_METHODS, SUB_CATEGORY_METHODS, and
+              DATA_BLOCK_METHODS.  Removed data items  _category.method_id
+              _sub_category.method_id.
+;
+  
+2.0.17  1995-06-22  
+;
+       Changes: (JW)
+         +    Quoted data values containing the leading string  'data_'.
+;
+  
+2.1.0   1995-07-20  
+;
+       Changes: (JW)
+       Final adjustments before the first release of the mmCIF dictionary:
+             + changed data_block to datablock to avoid any problems with
+               the STAR data_ reserved token.
+             + created new category to hold item subcategory associations
+               and deleted the subcategory attribute from ITEM category.
+             + modified regular expressions to reflect limitations observed
+               on several platforms.
+             + expanded the enumeration of _item_related.function_code.
+             + removed default value from _item.mandatory_code.
+             + removed type construct for date and changed date data type
+               to yyyy-mm-dd
+             + added less restrictive data type for alias names.
+;
+  
+2.1.1   1995-09-26  
+;
+       Changes: (JW)
+             + Changed regular expressions for type code to permit
+               single quote.
+             + Corrected regular expression syntax for type name and
+               type date.
+             + Corrected lower bound description for item_range.minimum.
+               The incorrect <= condition is changed to <.
+             + _item_mandatory.code has been now a mandatory item.
+             + _item_aliases.dictionary and _item_aliases.dictionary_version
+               are added to the composite key for category ITEM_ALIASES.
+             + _datablock.id data type changes to type code.
+             + Shortened the name _item_aliases.dictionary_version to
+               _item_aliases.version
+;
+  
+2.1.2   1997-01-24  
+;
+       Changes: (JW)
+             + Added associated_error to the enumeration list of
+               _item_related.function_code.
+;
+  
+2.1.3   2000-10-16  
+;
+       Changes: (JW)
+             + Changed data type for regular expression in
+               _item_type_list.construct to type text.
+;
+  
+2.1.5   2003-06-23  
+;      Changes: (JW)
+             + NDB extensions adopted into ddl_core
+             + New partitioning scheme implemented
+;
+  
+2.1.6   2004-04-15  
+;      Changes: (JW)
+             + Name changed to mmcif_ddl.dic
+;
+  
+2.1.7   2007-05-30  
+;      Changes: (JW)
+	_items_examples.case, _item_range.minimum/maximum made mandatory.
+;
+  
+2.1.8   2008-10-31  
+;      Changes: (JW)
+	+ Add categories pdbx_item_link_group and pdbx_item_link_group_list
+;
+  
+2.1.9   2009-01-15  
+;      Changes: (JW)
+       + _ndb_item_examples.detail made optional
+;
+  
+2.1.10  2009-01-19  
+;      Changes: (JW)
+       + Add _item.mandatory_code enumeration implicit-ordinal to provide
+         an automatically generated ordinal index data item.   This feature
+         is added to address problems where the natural category key may
+         contain an undefined value (e.g. '.').
+;
+  
+2.1.11  2009-11-02  
+;      Changes: (JW)
+       + Add categories pdbx_item_context and pdbx_category_context
+;
+  
+2.1.12  2012-09-01  
+;      Changes: (JW) -
+       + Add categories ndb_item_range, ndb_item and ndb_item_type
+       + Add alternate categories under PDBx prefix:
+	pdbx_item_range,pdbx_item_type,pdbx_item,pdbx_category_description,
+	pdbx_category_examples,pdbx_item_description,pdbx_item_enumeration,
+	and pdbx_item_examples.
+;
+  
+2.1.13  2013-09-23  
+;      Changes: (JW) -
+       + Add _category.NX_mapping_details for Nexus correspondences.
+;
+  
+2.1.14  2013-10-14  
+;      Changes: (JW) -
+       + Add category pdbx_item_enumeration_details describing additional controls
+         for enumerated data items at deposition.
+;
+  
+2.1.15  2014-03-10  
+;      Changes: (JW) -
+       + Add enumerations for pdbx_item_enumeration_details.closed_flag
+;
+  
+2.1.16  2017-08-17  
+;      Changes: (JW) -
+       + Add extension categories pdbx_include_dictionary, pdbx_include_category,
+         pdbx_include_item, pdbx_dictionary_component and pdbx_dictionary_component_history,
+         pdbx_item_linked, pdbx_item_value_condition, and pdbx_item_value_condition_list.
+;
+  
+2.1.17  2019-04-04  
+;     Changes: (JW)
+      + Add extension item _item_sub_category.pdbx_label
+;
+  
+2.2.1   2019-06-05  
+;      Changes (JW):
+       +  Add items _method_list.method_source and _method_list.implementation_source
+       +  Make item _method_list.inline optional
+       +  Update examples for items in category method_list
+;
+  
+2.2.2   2020-06-05  
+;      Changes (JW):
+       +  Add items _item_enumeration.rcsb_detail_brief and _item_enumeration.rcsb_type_units_code
+;
+  
+2.3.0   2021-06-07  
+;      Changes (JW):
+       + Add generator for pdbx_dictionary_include/pdbx_category_include/pdbx_item_include
+       + Miscellaneous updates in item/category descriptions
+       + Add DATA or DEFINITION contexts to all DDL categories.
+;
+  
 #
 loop_
 _item_type_list.code
@@ -101,14 +366,47 @@ loop_
 _category_group_list.id
 _category_group_list.parent_id
 _category_group_list.description
-ddl_group           .          "     Component categories of the macromolecular DDL"  
-datablock_group     ddl_group  "     Categories that describe the characteristics of data blocks."  
-category_group      ddl_group  "     Categories that describe the characteristics of categories."  
-sub_category_group  ddl_group  "     Categories that describe the characteristics of subcategories."  
-item_group          ddl_group  "     Categories that describe the characteristics of data items."  
-dictionary_group    ddl_group  "     Categories that describe the dictionary."  
-compliance_group    ddl_group  "     Categories that are retained specifically for compliance with     older versions of the DDL."  
-extension_group     ddl_group  "     Categories that contain extensions used by the NDB and wwPDB."  
+ddl_group           .          
+;
+     Component categories of the macromolecular DDL
+;
+  
+datablock_group     ddl_group  
+;
+     Categories that describe the characteristics of data blocks.
+;
+  
+category_group      ddl_group  
+;
+     Categories that describe the characteristics of categories.
+;
+  
+sub_category_group  ddl_group  
+;
+     Categories that describe the characteristics of subcategories.
+;
+  
+item_group          ddl_group  
+;
+     Categories that describe the characteristics of data items.
+;
+  
+dictionary_group    ddl_group  
+;
+     Categories that describe the dictionary.
+;
+  
+compliance_group    ddl_group  
+;
+     Categories that are retained specifically for compliance with
+     older versions of the DDL.
+;
+  
+extension_group     ddl_group  
+;
+     Categories that contain extensions used by the NDB and wwPDB.
+;
+  
 #
 loop_
 _pdbx_dictionary_component.datablock_id
@@ -119,7 +417,7 @@ mmcif_ddl-ext-nx.dic         mmcif_ddl-ext-nx.dic         "mmCIF DDL Nexus (NX) 
 mmcif_ddl-ext-ndb.dic        mmcif_ddl-ext-ndb.dic        "mmCIF DDL Nucleic Acid Database (NDB) extensions"   1.4.0  
 mmcif_ddl-ext-pdbx.dic       mmcif_ddl-ext-pdbx.dic       "mmCIF DDL Protein Data Bank (PDBx) extensions"      1.7.0  
 mmcif_ddl-ext-compose.dic    mmcif_ddl-ext-compose.dic    "mmCIF DDL PDBx Dictionary Composition Extensions"   1.1.0  
-mmcif_ddl-ext-condition.dic  mmcif_ddl-ext-condition.dic  "mmCIF DDL PDBx Conditional Value Extensions"        1.1.0  
+mmcif_ddl-ext-condition.dic  mmcif_ddl-ext-condition.dic  "mmCIF DDL PDBx Conditional Value Extensions"        1.2.0  
 mmcif_ddl-ext-rcsb.dic       mmcif_ddl-ext-rcsb.dic       "mmCIF DDL RCSB Protein Data Bank (PDB) extensions"  1.1.0  
 #
 loop_
@@ -127,28 +425,153 @@ _pdbx_dictionary_component_history.dictionary_component_id
 _pdbx_dictionary_component_history.version
 _pdbx_dictionary_component_history.update
 _pdbx_dictionary_component_history.revision
-mmcif_ddl-ext-nx.dic         1.0.0  2013-09-23  "Changes: (JW) -+ Add item _category.NX_mapping_details for Nexus correspondences."  
-mmcif_ddl-ext-nx.dic         1.1.0  2021-03-30  "Changes (JW):+ Migrate to dictionary component mmcif_ddl-ext-nx.dic."  
-mmcif_ddl-ext-ndb.dic        1.0.0  2003-06-23  "Changes: (JW)+ Preliminary version of NDB extensions including categories ndb_category_description,  ndb_category_examples, ndb_item_description, ndb_item_enumeration, and ndb_item_examples"  
-mmcif_ddl-ext-ndb.dic        1.1.0  2009-01-15  "Changes: (JW)+ _ndb_item_examples.detail make optional"  
-mmcif_ddl-ext-ndb.dic        1.2.0  2012-09-01  "Changes: (JW) -+ Added categories ndb_item_range, ndb_item and ndb_item_type"  
-mmcif_ddl-ext-ndb.dic        1.3.0  2021-03-30  "Changes (JW):+ Migrate to dictionary component mmcif_ddl-ext-ndb.dic."  
-mmcif_ddl-ext-ndb.dic        1.4.0  2021-04-05  "Changes (JW):+ Add to pdbx_item_linked_group and pdbx_item_linked_group_list details"  
-mmcif_ddl-ext-pdbx.dic       1.0.0  2008-10-31  "Changes: (JW)+ Add categories pdbx_item_link_group and pdbx_item_link_group_list"  
-mmcif_ddl-ext-pdbx.dic       1.1.0  2009-11-02  "Changes: (JW)+ Add categories pdbx_item_context and pdbx_category_context"  
-mmcif_ddl-ext-pdbx.dic       1.2.0  2012-09-01  "Changes: (JW) -+ Add alternate categories under PDBx prefix:  pdbx_item_range,pdbx_item_type,pdbx_item,pdbx_category_description,  pdbx_category_examples,pdbx_item_description,pdbx_item_enumeration,  and pdbx_item_examples."  
-mmcif_ddl-ext-pdbx.dic       1.3.0  2013-10-14  "Changes: (JW) -+ Add category pdbx_item_enumeration_details describing additional controls  for enumerated data items at deposition."  
-mmcif_ddl-ext-pdbx.dic       1.4.0  2014-03-10  "Changes: (JW) -+ Add enumerations for pdbx_item_enumeration_details.closed_flag"  
-mmcif_ddl-ext-pdbx.dic       1.5.0  2019-04-04  "Changes: (JW)+ Add extension item _item_sub_category.pdbx_label"  
-mmcif_ddl-ext-pdbx.dic       1.6.0  2021-03-30  "Changes (JW):+ Migrate to dictionary component mmcif_ddl-ext-pdbx.dic."  
-mmcif_ddl-ext-ndb.dic        1.7.0  2021-04-05  "Changes (JW):+ Add pdbx_include_dictionary/pdbx_include_category for dictionary compose and value conditions extensions+ Add to pdbx_item_linked_group and pdbx_item_linked_group_list details"  
-mmcif_ddl-ext-compose.dic    1.0.0  2017-08-17  "Changes (JW):+ Preliminary versions of categories pdbx_include_dictionary, pdbx_include_category,  pdbx_include_item, pdbx_dictionary_component and pdbx_dictionary_component_history"  
-mmcif_ddl-ext-compose.dic    1.1.0  2021-03-30  "Changes (JW):+ Migrate to dictionary component mmcif_ddl-ext-compose.dic."  
-mmcif_ddl-ext-compose.dic    1.2.0  2021-04-05  "Changes (JW):+ Correct typo in pdbx_dictionary_component.dictionary_component_id item name."  
-mmcif_ddl-ext-condition.dic  1.0.0  2017-08-17  "Changes (JW):+ Preliminary versions of categories  pdbx_item_linked, pdbx_item_value_condition, and pdbx_item_value_condition_list"  
-mmcif_ddl-ext-condition.dic  1.1.0  2021-03-30  "Changes (JW):+ Migrate to dictionary component mmcif_ddl-ext-condition.dic."  
-mmcif_ddl-ext-rcsb.dic       1.0.0  2020-06-05  "Changes (JW):+  Add items _item_enumeration.rcsb_detail_brief and _item_enumeration.rcsb_type_units_code"  
-mmcif_ddl-ext-rcsb.dic       1.1.0  2021-03-30  "Changes (JW):+ Migrate to dictionary component mmcif_ddl-ext-rcsb.dic."  
+mmcif_ddl-ext-nx.dic         1.0.0  2013-09-23  
+;
+Changes: (JW) -
++ Add item _category.NX_mapping_details for Nexus correspondences.
+;
+  
+mmcif_ddl-ext-nx.dic         1.1.0  2021-03-30  
+;
+Changes (JW):
++ Migrate to dictionary component mmcif_ddl-ext-nx.dic.
+;
+  
+mmcif_ddl-ext-ndb.dic        1.0.0  2003-06-23  
+;
+Changes: (JW)
++ Preliminary version of NDB extensions including categories ndb_category_description,
+  ndb_category_examples, ndb_item_description, ndb_item_enumeration, and ndb_item_examples
+;
+  
+mmcif_ddl-ext-ndb.dic        1.1.0  2009-01-15  
+;
+Changes: (JW)
++ _ndb_item_examples.detail make optional
+;
+  
+mmcif_ddl-ext-ndb.dic        1.2.0  2012-09-01  
+;
+Changes: (JW) -
++ Added categories ndb_item_range, ndb_item and ndb_item_type
+;
+  
+mmcif_ddl-ext-ndb.dic        1.3.0  2021-03-30  
+;
+Changes (JW):
++ Migrate to dictionary component mmcif_ddl-ext-ndb.dic.
+;
+  
+mmcif_ddl-ext-ndb.dic        1.4.0  2021-04-05  
+;
+Changes (JW):
++ Add to pdbx_item_linked_group and pdbx_item_linked_group_list details
+;
+  
+mmcif_ddl-ext-pdbx.dic       1.0.0  2008-10-31  
+;
+Changes: (JW)
++ Add categories pdbx_item_link_group and pdbx_item_link_group_list
+;
+  
+mmcif_ddl-ext-pdbx.dic       1.1.0  2009-11-02  
+;
+Changes: (JW)
++ Add categories pdbx_item_context and pdbx_category_context
+;
+  
+mmcif_ddl-ext-pdbx.dic       1.2.0  2012-09-01  
+;
+Changes: (JW) -
++ Add alternate categories under PDBx prefix:
+  pdbx_item_range,pdbx_item_type,pdbx_item,pdbx_category_description,
+  pdbx_category_examples,pdbx_item_description,pdbx_item_enumeration,
+  and pdbx_item_examples.
+;
+  
+mmcif_ddl-ext-pdbx.dic       1.3.0  2013-10-14  
+;
+Changes: (JW) -
++ Add category pdbx_item_enumeration_details describing additional controls
+  for enumerated data items at deposition.
+;
+  
+mmcif_ddl-ext-pdbx.dic       1.4.0  2014-03-10  
+;
+Changes: (JW) -
++ Add enumerations for pdbx_item_enumeration_details.closed_flag
+;
+  
+mmcif_ddl-ext-pdbx.dic       1.5.0  2019-04-04  
+;
+Changes: (JW)
++ Add extension item _item_sub_category.pdbx_label
+;
+  
+mmcif_ddl-ext-pdbx.dic       1.6.0  2021-03-30  
+;
+Changes (JW):
++ Migrate to dictionary component mmcif_ddl-ext-pdbx.dic.
+;
+  
+mmcif_ddl-ext-ndb.dic        1.7.0  2021-04-05  
+;
+Changes (JW):
++ Add pdbx_include_dictionary/pdbx_include_category for dictionary compose and value conditions extensions
++ Add to pdbx_item_linked_group and pdbx_item_linked_group_list details
+;
+  
+mmcif_ddl-ext-compose.dic    1.0.0  2017-08-17  
+;
+Changes (JW):
++ Preliminary versions of categories pdbx_include_dictionary, pdbx_include_category,
+  pdbx_include_item, pdbx_dictionary_component and pdbx_dictionary_component_history
+;
+  
+mmcif_ddl-ext-compose.dic    1.1.0  2021-03-30  
+;
+Changes (JW):
++ Migrate to dictionary component mmcif_ddl-ext-compose.dic.
+;
+  
+mmcif_ddl-ext-compose.dic    1.2.0  2021-04-05  
+;
+Changes (JW):
++ Correct typo in pdbx_dictionary_component.dictionary_component_id item name.
+;
+  
+mmcif_ddl-ext-condition.dic  1.0.0  2017-08-17  
+;
+Changes (JW):
++ Preliminary versions of categories  pdbx_item_linked, pdbx_item_value_condition, and pdbx_item_value_condition_list
+;
+  
+mmcif_ddl-ext-condition.dic  1.1.0  2021-03-30  
+;
+Changes (JW):
++ Migrate to dictionary component mmcif_ddl-ext-condition.dic.
+;
+  
+mmcif_ddl-ext-condition.dic  1.2.0  2021-04-06  
+;
+Changes (JW):
++ Add data category pdbx_comparison_operator_list and items
+ _pdbx_item_linked.condition_child_log_op, _pdbx_item_linked.condition_child_target_name,
+ _pdbx_item_value_condition_list.log_op
+;
+  
+mmcif_ddl-ext-rcsb.dic       1.0.0  2020-06-05  
+;
+Changes (JW):
++  Add items _item_enumeration.rcsb_detail_brief and _item_enumeration.rcsb_type_units_code
+;
+  
+mmcif_ddl-ext-rcsb.dic       1.1.0  2021-03-30  
+;
+Changes (JW):
++ Migrate to dictionary component mmcif_ddl-ext-rcsb.dic.
+;
+  
 #
 loop_
 _pdbx_item_linked_group.category_id
@@ -387,20 +810,13 @@ pdbx_item_value_condition_list     2  "_pdbx_item_value_condition_list.dependent
 pdbx_item_linked                   1  "_pdbx_item_linked.child_name"                                "_item.name"                                           item                               
 pdbx_item_linked                   2  "_pdbx_item_linked.parent_name"                               "_item.name"                                           item                               
 pdbx_item_linked                   3  "_pdbx_item_linked.condition_child_name"                      "_item.name"                                           item                               
-#
-loop_
-_pdbx_include_category.category_id
-_pdbx_include_category.dictionary_id
-_pdbx_include_category.include_as_category_id
-_pdbx_include_category.include_mode
-pdbx_include_dictionary            mmcif_ddl-ext-compose.dic  pdbx_include_dictionary            extend  
-pdbx_include_category              mmcif_ddl-ext-compose.dic  pdbx_include_category              extend  
-pdbx_include_item                  mmcif_ddl-ext-compose.dic  pdbx_include_item                  extend  
-pdbx_dictionary_component          mmcif_ddl-ext-compose.dic  pdbx_dictionary_component          extend  
-pdbx_dictionary_component_history  mmcif_ddl-ext-compose.dic  pdbx_dictionary_component_history  extend  
 ##
 save_datablock
-   _category.description     "     Attributes defining the characteristics of a data block."
+   _category.description     
+;
+     Attributes defining the characteristics of a data block.
+;
+
    _category.id              datablock
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -414,11 +830,18 @@ save_datablock
      ddl_group        datablock  
      datablock_group  datablock  
    #
+   _pdbx_category_context.category_id  datablock
+   _pdbx_category_context.type         DATA
+   #
 save_
 #
 save__datablock.id
    _item_description.name         "_datablock.id"
-   _item_description.description  "     The identity of the data block."
+   _item_description.description  
+;
+     The identity of the data block.
+;
+
    #
    _item.name            "_datablock.id"
    _item.category_id     datablock
@@ -438,7 +861,11 @@ save_
 #
 save__datablock.description
    _item_description.name         "_datablock.description"
-   _item_description.description  "     Text description of the data block."
+   _item_description.description  
+;
+     Text description of the data block.
+;
+
    #
    _item.name            "_datablock.description"
    _item.category_id     datablock
@@ -450,7 +877,11 @@ save__datablock.description
 save_
 #
 save_datablock_methods
-   _category.description     "    Attributes specifying the association between data blocks and methods."
+   _category.description     
+;
+    Attributes specifying the association between data blocks and methods.
+;
+
    _category.id              datablock_methods
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -467,11 +898,18 @@ save_datablock_methods
      ddl_group        datablock_methods  
      datablock_group  datablock_methods  
    #
+   _pdbx_category_context.category_id  datablock_methods
+   _pdbx_category_context.type         DATA
+   #
 save_
 #
 save__datablock_methods.datablock_id
    _item_description.name         "_datablock_methods.datablock_id"
-   _item_description.description  "     Identifier of data block."
+   _item_description.description  
+;
+     Identifier of data block.
+;
+
    #
    _item.name            "_datablock_methods.datablock_id"
    _item.category_id     datablock_methods
@@ -484,7 +922,11 @@ save_
 #
 save__datablock_methods.method_id
    _item_description.name         "_datablock_methods.method_id"
-   _item_description.description  "     Unique method identifier associated with a data block."
+   _item_description.description  
+;
+     Unique method identifier associated with a data block.
+;
+
    #
    _item.name            "_datablock_methods.method_id"
    _item.category_id     datablock_methods
@@ -496,7 +938,11 @@ save__datablock_methods.method_id
 save_
 #
 save_category
-   _category.description     "     Attributes defining the functionality for the entire category."
+   _category.description     
+;
+     Attributes defining the functionality for the entire category.
+;
+
    _category.id              category
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -510,11 +956,19 @@ save_category
      ddl_group       category  
      category_group  category  
    #
+   _pdbx_category_context.category_id  category
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__category.id
    _item_description.name         "_category.id"
-   _item_description.description  "     The identity of the data category. Data items may only be looped     with items of the same category."
+   _item_description.description  
+;
+     The identity of the data category. Data items may only be looped
+     with items of the same category.
+;
+
    #
    _item.name            "_category.id"
    _item.category_id     category
@@ -536,7 +990,11 @@ save_
 #
 save__category.description
    _item_description.name         "_category.description"
-   _item_description.description  "     Text description of a category."
+   _item_description.description  
+;
+     Text description of a category.
+;
+
    #
    _item.name            "_category.description"
    _item.category_id     category
@@ -549,7 +1007,12 @@ save_
 #
 save__category.implicit_key
    _item_description.name         "_category.implicit_key"
-   _item_description.description  "     An identifier that may be used to distinguish the contents of     like categories between data blocks."
+   _item_description.description  
+;
+     An identifier that may be used to distinguish the contents of
+     like categories between data blocks.
+;
+
    #
    _item.name            "_category.implicit_key"
    _item.category_id     category
@@ -562,7 +1025,11 @@ save_
 #
 save__category.mandatory_code
    _item_description.name         "_category.mandatory_code"
-   _item_description.description  "     Whether the category must be specified in a dictionary."
+   _item_description.description  
+;
+     Whether the category must be specified in a dictionary.
+;
+
    #
    _item.name            "_category.mandatory_code"
    _item.category_id     category
@@ -574,7 +1041,11 @@ save__category.mandatory_code
 save_
 #
 save_category_examples
-   _category.description     "     Example applications and descriptions of data items in this category."
+   _category.description     
+;
+     Example applications and descriptions of data items in this category.
+;
+
    _category.id              category_examples
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -585,11 +1056,18 @@ save_category_examples
      category_examples  "_category_examples.id"  
      category_examples  "_category_examples.case"  
    #
+   _pdbx_category_context.category_id  category_examples
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__category_examples.id
    _item_description.name         "_category_examples.id"
-   _item_description.description  "     The name of category."
+   _item_description.description  
+;
+     The name of category.
+;
+
    #
    _item.name            "_category_examples.id"
    _item.category_id     category_examples
@@ -602,7 +1080,11 @@ save_
 #
 save__category_examples.case
    _item_description.name         "_category_examples.case"
-   _item_description.description  "     A case of examples involving items in this category."
+   _item_description.description  
+;
+     A case of examples involving items in this category.
+;
+
    #
    _item.name            "_category_examples.case"
    _item.category_id     category_examples
@@ -615,7 +1097,11 @@ save_
 #
 save__category_examples.detail
    _item_description.name         "_category_examples.detail"
-   _item_description.description  "     A description of an example _category_examples.case"
+   _item_description.description  
+;
+     A description of an example _category_examples.case
+;
+
    #
    _item.name            "_category_examples.detail"
    _item.category_id     category_examples
@@ -627,7 +1113,12 @@ save__category_examples.detail
 save_
 #
 save_category_key
-   _category.description     "     This category holds a list of the item names that uniquely     identify the elements of the category."
+   _category.description     
+;
+     This category holds a list of the item names that uniquely
+     identify the elements of the category.
+;
+
    _category.id              category_key
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -644,11 +1135,19 @@ save_category_key
      ddl_group       category_key  
      category_group  category_key  
    #
+   _pdbx_category_context.category_id  category_key
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__category_key.name
    _item_description.name         "_category_key.name"
-   _item_description.description  "     The name of a data item that serves as a key identifier for the     category (eg. a component of  the primary key)."
+   _item_description.description  
+;
+     The name of a data item that serves as a key identifier for the
+     category (eg. a component of  the primary key).
+;
+
    #
    _item.name            "_category_key.name"
    _item.category_id     category_key
@@ -661,7 +1160,11 @@ save_
 #
 save__category_key.id
    _item_description.name         "_category_key.id"
-   _item_description.description  "     The identifier of the category (eg. a component of  the primary key)."
+   _item_description.description  
+;
+     The identifier of the category (eg. a component of  the primary key).
+;
+
    #
    _item.name            "_category_key.id"
    _item.category_id     category_key
@@ -673,7 +1176,12 @@ save__category_key.id
 save_
 #
 save_category_group
-   _category.description     "     Provides a list of category groups to which the base category     belongs."
+   _category.description     
+;
+     Provides a list of category groups to which the base category
+     belongs.
+;
+
    _category.id              category_group
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -690,11 +1198,18 @@ save_category_group
      ddl_group       category_group  
      category_group  category_group  
    #
+   _pdbx_category_context.category_id  category_group
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__category_group.id
    _item_description.name         "_category_group.id"
-   _item_description.description  "     The name of a category group ..."
+   _item_description.description  
+;
+     The name of a category group ...
+;
+
    #
    _item.name            "_category_group.id"
    _item.category_id     category_group
@@ -707,7 +1222,11 @@ save_
 #
 save__category_group.category_id
    _item_description.name         "_category_group.category_id"
-   _item_description.description  "     The name of a category  ..."
+   _item_description.description  
+;
+     The name of a category  ...
+;
+
    #
    _item.name            "_category_group.category_id"
    _item.category_id     category_group
@@ -719,7 +1238,12 @@ save__category_group.category_id
 save_
 #
 save_category_group_list
-   _category.description     "     This category provides the definition of each category group.     A category group is a collection of related categories."
+   _category.description     
+;
+     This category provides the definition of each category group.
+     A category group is a collection of related categories.
+;
+
    _category.id              category_group_list
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -733,11 +1257,18 @@ save_category_group_list
      ddl_group       category_group_list  
      category_group  category_group_list  
    #
+   _pdbx_category_context.category_id  category_group_list
+   _pdbx_category_context.type         DATA
+   #
 save_
 #
 save__category_group_list.id
    _item_description.name         "_category_group_list.id"
-   _item_description.description  "     The name of a category group ..."
+   _item_description.description  
+;
+     The name of a category group ...
+;
+
    #
    _item.name            "_category_group_list.id"
    _item.category_id     category_group_list
@@ -756,7 +1287,11 @@ save_
 #
 save__category_group_list.description
    _item_description.name         "_category_group_list.description"
-   _item_description.description  "     Text description of a category group..."
+   _item_description.description  
+;
+     Text description of a category group...
+;
+
    #
    _item.name            "_category_group_list.description"
    _item.category_id     category_group_list
@@ -769,7 +1304,11 @@ save_
 #
 save__category_group_list.parent_id
    _item_description.name         "_category_group_list.parent_id"
-   _item_description.description  "     The name of the optional parent category group."
+   _item_description.description  
+;
+     The name of the optional parent category group.
+;
+
    #
    _item.name            "_category_group_list.parent_id"
    _item.category_id     category_group_list
@@ -781,7 +1320,11 @@ save__category_group_list.parent_id
 save_
 #
 save_category_methods
-   _category.description     "    Attributes specifying the association between categories and methods."
+   _category.description     
+;
+    Attributes specifying the association between categories and methods.
+;
+
    _category.id              category_methods
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -798,11 +1341,18 @@ save_category_methods
      ddl_group       category_methods  
      category_group  category_methods  
    #
+   _pdbx_category_context.category_id  category_methods
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__category_methods.category_id
    _item_description.name         "_category_methods.category_id"
-   _item_description.description  "     The name of the category"
+   _item_description.description  
+;
+     The name of the category
+;
+
    #
    _item.name            "_category_methods.category_id"
    _item.category_id     category_methods
@@ -815,7 +1365,11 @@ save_
 #
 save__category_methods.method_id
    _item_description.name         "_category_methods.method_id"
-   _item_description.description  "     The name of the method"
+   _item_description.description  
+;
+     The name of the method
+;
+
    #
    _item.name            "_category_methods.method_id"
    _item.category_id     category_methods
@@ -827,7 +1381,15 @@ save__category_methods.method_id
 save_
 #
 save_sub_category
-   _category.description     "     The purpose of a sub-category is to define an association between     data items within a category and optionally provide a method to     validate the collection of items.   The sub-category named     'cartesian' might be applied to the data items for the coordinates      x,  y, and z."
+   _category.description     
+;
+     The purpose of a sub-category is to define an association between
+     data items within a category and optionally provide a method to
+     validate the collection of items.   The sub-category named
+     'cartesian' might be applied to the data items for the coordinates
+      x,  y, and z.
+;
+
    _category.id              sub_category
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -841,11 +1403,18 @@ save_sub_category
      ddl_group           sub_category  
      sub_category_group  sub_category  
    #
+   _pdbx_category_context.category_id  sub_category
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__sub_category.id
    _item_description.name         "_sub_category.id"
-   _item_description.description  "     The identity of the sub-category."
+   _item_description.description  
+;
+     The identity of the sub-category.
+;
+
    #
    _item.name            "_sub_category.id"
    _item.category_id     sub_category
@@ -865,7 +1434,11 @@ save_
 #
 save__sub_category.description
    _item_description.name         "_sub_category.description"
-   _item_description.description  "     Description of the sub-category."
+   _item_description.description  
+;
+     Description of the sub-category.
+;
+
    #
    _item.name            "_sub_category.description"
    _item.category_id     sub_category
@@ -877,7 +1450,11 @@ save__sub_category.description
 save_
 #
 save_sub_category_examples
-   _category.description     "     Example applications and descriptions of data items in this subcategory."
+   _category.description     
+;
+     Example applications and descriptions of data items in this subcategory.
+;
+
    _category.id              sub_category_examples
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -894,11 +1471,18 @@ save_sub_category_examples
      ddl_group           sub_category_examples  
      sub_category_group  sub_category_examples  
    #
+   _pdbx_category_context.category_id  sub_category_examples
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__sub_category_examples.id
    _item_description.name         "_sub_category_examples.id"
-   _item_description.description  "     The name for the subcategory."
+   _item_description.description  
+;
+     The name for the subcategory.
+;
+
    #
    _item.name            "_sub_category_examples.id"
    _item.category_id     sub_category_examples
@@ -911,7 +1495,11 @@ save_
 #
 save__sub_category_examples.case
    _item_description.name         "_sub_category_examples.case"
-   _item_description.description  "     An example involving items in this subcategory."
+   _item_description.description  
+;
+     An example involving items in this subcategory.
+;
+
    #
    _item.name            "_sub_category_examples.case"
    _item.category_id     sub_category_examples
@@ -924,7 +1512,11 @@ save_
 #
 save__sub_category_examples.detail
    _item_description.name         "_sub_category_examples.detail"
-   _item_description.description  "     A description of an example _sub_category_examples.case"
+   _item_description.description  
+;
+     A description of an example _sub_category_examples.case
+;
+
    #
    _item.name            "_sub_category_examples.detail"
    _item.category_id     sub_category_examples
@@ -936,7 +1528,11 @@ save__sub_category_examples.detail
 save_
 #
 save_sub_category_methods
-   _category.description     "    Attributes specifying the association between subcategories and methods."
+   _category.description     
+;
+    Attributes specifying the association between subcategories and methods.
+;
+
    _category.id              sub_category_methods
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -953,11 +1549,18 @@ save_sub_category_methods
      ddl_group           sub_category_methods  
      sub_category_group  sub_category_methods  
    #
+   _pdbx_category_context.category_id  sub_category_methods
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__sub_category_methods.sub_category_id
    _item_description.name         "_sub_category_methods.sub_category_id"
-   _item_description.description  "     The name of the subcategory"
+   _item_description.description  
+;
+     The name of the subcategory
+;
+
    #
    _item.name            "_sub_category_methods.sub_category_id"
    _item.category_id     sub_category_methods
@@ -970,7 +1573,11 @@ save_
 #
 save__sub_category_methods.method_id
    _item_description.name         "_sub_category_methods.method_id"
-   _item_description.description  "     The name of the method"
+   _item_description.description  
+;
+     The name of the method
+;
+
    #
    _item.name            "_sub_category_methods.method_id"
    _item.category_id     sub_category_methods
@@ -982,7 +1589,11 @@ save__sub_category_methods.method_id
 save_
 #
 save_item
-   _category.description     "     Attributes which describe the characteristics of a data item."
+   _category.description     
+;
+     Attributes which describe the characteristics of a data item.
+;
+
    _category.id              item
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -996,11 +1607,18 @@ save_item
      ddl_group   item  
      item_group  item  
    #
+   _pdbx_category_context.category_id  item
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__item.name
    _item_description.name         "_item.name"
-   _item_description.description  "     Data name of the defined item."
+   _item_description.description  
+;
+     Data name of the defined item.
+;
+
    #
    _item_type.name  "_item.name"
    _item_type.code  name
@@ -1036,7 +1654,12 @@ save_
 #
 save__item.mandatory_code
    _item_description.name         "_item.mandatory_code"
-   _item_description.description  "     Signals if the defined item is mandatory for the proper description     of its category."
+   _item_description.description  
+;
+     Signals if the defined item is mandatory for the proper description
+     of its category.
+;
+
    #
    _item.name            "_item.mandatory_code"
    _item.category_id     item
@@ -1058,7 +1681,11 @@ save_
 #
 save__item.category_id
    _item_description.name         "_item.category_id"
-   _item_description.description  "     This is category id of the item."
+   _item_description.description  
+;
+     This is category id of the item.
+;
+
    #
    _item.name            "_item.category_id"
    _item.category_id     item
@@ -1070,7 +1697,13 @@ save__item.category_id
 save_
 #
 save_item_aliases
-   _category.description     "    This category holds a list of possible alias names or synonyms for    each data item.  Each alias name is identified by the name and    version of the dictionary to which it belongs."
+   _category.description     
+;
+    This category holds a list of possible alias names or synonyms for
+    each data item.  Each alias name is identified by the name and
+    version of the dictionary to which it belongs.
+;
+
    _category.id              item_aliases
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -1082,11 +1715,18 @@ save_item_aliases
      item_aliases  "_item_aliases.dictionary"  
      item_aliases  "_item_aliases.version"  
    #
+   _pdbx_category_context.category_id  item_aliases
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__item_aliases.name
    _item_description.name         "_item_aliases.name"
-   _item_description.description  "     Name for the data item."
+   _item_description.description  
+;
+     Name for the data item.
+;
+
    #
    _item.name            "_item_aliases.name"
    _item.category_id     item_aliases
@@ -1099,7 +1739,11 @@ save_
 #
 save__item_aliases.alias_name
    _item_description.name         "_item_aliases.alias_name"
-   _item_description.description  "     Alias name for the data item."
+   _item_description.description  
+;
+     Alias name for the data item.
+;
+
    #
    _item.name            "_item_aliases.alias_name"
    _item.category_id     item_aliases
@@ -1112,7 +1756,11 @@ save_
 #
 save__item_aliases.dictionary
    _item_description.name         "_item_aliases.dictionary"
-   _item_description.description  "     The dictionary in which the alias name is defined."
+   _item_description.description  
+;
+     The dictionary in which the alias name is defined.
+;
+
    #
    _item.name            "_item_aliases.dictionary"
    _item.category_id     item_aliases
@@ -1125,7 +1773,11 @@ save_
 #
 save__item_aliases.version
    _item_description.name         "_item_aliases.version"
-   _item_description.description  "     The version of the dictionary in which the alias name is defined."
+   _item_description.description  
+;
+     The version of the dictionary in which the alias name is defined.
+;
+
    #
    _item.name            "_item_aliases.version"
    _item.category_id     item_aliases
@@ -1137,7 +1789,11 @@ save__item_aliases.version
 save_
 #
 save_item_default
-   _category.description     "     Attributes specifying the default value for a data item."
+   _category.description     
+;
+     Attributes specifying the default value for a data item.
+;
+
    _category.id              item_default
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -1151,11 +1807,18 @@ save_item_default
      ddl_group   item_default  
      item_group  item_default  
    #
+   _pdbx_category_context.category_id  item_default
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__item_default.name
    _item_description.name         "_item_default.name"
-   _item_description.description  "     The name of item for which the default value is defined"
+   _item_description.description  
+;
+     The name of item for which the default value is defined
+;
+
    #
    _item.name            "_item_default.name"
    _item.category_id     item_default
@@ -1168,7 +1831,13 @@ save_
 #
 save__item_default.value
    _item_description.name         "_item_default.value"
-   _item_description.description  "     The default value for the defined item if it is not specified     explicitly. If a data value is not declared, the default is     assumed to be the most likely or natural value."
+   _item_description.description  
+;
+     The default value for the defined item if it is not specified
+     explicitly. If a data value is not declared, the default is
+     assumed to be the most likely or natural value.
+;
+
    #
    _item.name            "_item_default.value"
    _item.category_id     item_default
@@ -1180,7 +1849,12 @@ save__item_default.value
 save_
 #
 save_item_dependent
-   _category.description     "     Attributes which identify other data items that must be specified     for the defined data item to be valid."
+   _category.description     
+;
+     Attributes which identify other data items that must be specified
+     for the defined data item to be valid.
+;
+
    _category.id              item_dependent
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -1191,11 +1865,18 @@ save_item_dependent
      item_dependent  "_item_dependent.name"  
      item_dependent  "_item_dependent.dependent_name"  
    #
+   _pdbx_category_context.category_id  item_dependent
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__item_dependent.name
    _item_description.name         "_item_dependent.name"
-   _item_description.description  "     Item name of a dependent item."
+   _item_description.description  
+;
+     Item name of a dependent item.
+;
+
    #
    _item.name            "_item_dependent.name"
    _item.category_id     item_dependent
@@ -1208,7 +1889,11 @@ save_
 #
 save__item_dependent.dependent_name
    _item_description.name         "_item_dependent.dependent_name"
-   _item_description.description  "     Data name of a dependent item."
+   _item_description.description  
+;
+     Data name of a dependent item.
+;
+
    #
    _item.name            "_item_dependent.dependent_name"
    _item.category_id     item_dependent
@@ -1220,7 +1905,11 @@ save__item_dependent.dependent_name
 save_
 #
 save_item_description
-   _category.description     "     This category holds the descriptions of each data item."
+   _category.description     
+;
+     This category holds the descriptions of each data item.
+;
+
    _category.id              item_description
    _category.mandatory_code  yes
    _category.implicit_key    mmcif_ddl.dic
@@ -1237,11 +1926,18 @@ save_item_description
      ddl_group   item_description  
      item_group  item_description  
    #
+   _pdbx_category_context.category_id  item_description
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__item_description.name
    _item_description.name         "_item_description.name"
-   _item_description.description  "    Tne name of data item."
+   _item_description.description  
+;
+    Tne name of data item.
+;
+
    #
    _item.name            "_item_description.name"
    _item.category_id     item_description
@@ -1254,7 +1950,11 @@ save_
 #
 save__item_description.description
    _item_description.name         "_item_description.description"
-   _item_description.description  "     Text description of the defined data item."
+   _item_description.description  
+;
+     Text description of the defined data item.
+;
+
    #
    _item.name            "_item_description.description"
    _item.category_id     item_description
@@ -1266,7 +1966,11 @@ save__item_description.description
 save_
 #
 save_item_enumeration
-   _category.description     "     Attributes which specify the permitted enumeration of the items."
+   _category.description     
+;
+     Attributes which specify the permitted enumeration of the items.
+;
+
    _category.id              item_enumeration
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -1283,11 +1987,18 @@ save_item_enumeration
      ddl_group   item_enumeration  
      item_group  item_enumeration  
    #
+   _pdbx_category_context.category_id  item_enumeration
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__item_enumeration.name
    _item_description.name         "_item_enumeration.name"
-   _item_description.description  "     Name of data item."
+   _item_description.description  
+;
+     Name of data item.
+;
+
    #
    _item.name            "_item_enumeration.name"
    _item.category_id     item_enumeration
@@ -1300,7 +2011,11 @@ save_
 #
 save__item_enumeration.value
    _item_description.name         "_item_enumeration.value"
-   _item_description.description  "     A permissible value, character or number, for the defined item."
+   _item_description.description  
+;
+     A permissible value, character or number, for the defined item.
+;
+
    #
    _item.name            "_item_enumeration.value"
    _item.category_id     item_enumeration
@@ -1313,7 +2028,11 @@ save_
 #
 save__item_enumeration.detail
    _item_description.name         "_item_enumeration.detail"
-   _item_description.description  "     A description of a permissible value for the defined item."
+   _item_description.description  
+;
+     A description of a permissible value for the defined item.
+;
+
    #
    _item.name            "_item_enumeration.detail"
    _item.category_id     item_enumeration
@@ -1325,7 +2044,11 @@ save__item_enumeration.detail
 save_
 #
 save_item_examples
-   _category.description     "    Attributes for describing application examples of the data item."
+   _category.description     
+;
+    Attributes for describing application examples of the data item.
+;
+
    _category.id              item_examples
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -1342,11 +2065,18 @@ save_item_examples
      ddl_group   item_examples  
      item_group  item_examples  
    #
+   _pdbx_category_context.category_id  item_examples
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__item_examples.name
    _item_description.name         "_item_examples.name"
-   _item_description.description  "     The name of data item for the example."
+   _item_description.description  
+;
+     The name of data item for the example.
+;
+
    #
    _item.name            "_item_examples.name"
    _item.category_id     item_examples
@@ -1359,7 +2089,11 @@ save_
 #
 save__item_examples.case
    _item_description.name         "_item_examples.case"
-   _item_description.description  "     An example application of the defined data item."
+   _item_description.description  
+;
+     An example application of the defined data item.
+;
+
    #
    _item.name            "_item_examples.case"
    _item.category_id     item_examples
@@ -1372,7 +2106,11 @@ save_
 #
 save__item_examples.detail
    _item_description.name         "_item_examples.detail"
-   _item_description.description  "     A description of an example specified in _item_example.case"
+   _item_description.description  
+;
+     A description of an example specified in _item_example.case
+;
+
    #
    _item.name            "_item_examples.detail"
    _item.category_id     item_examples
@@ -1384,7 +2122,12 @@ save__item_examples.detail
 save_
 #
 save_item_linked
-   _category.description     "     Attributes which describe how equivalent data items are linked     within categories and across different categories."
+   _category.description     
+;
+     Attributes which describe how equivalent data items are linked
+     within categories and across different categories.
+;
+
    _category.id              item_linked
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -1401,11 +2144,18 @@ save_item_linked
      ddl_group   item_linked  
      item_group  item_linked  
    #
+   _pdbx_category_context.category_id  item_linked
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__item_linked.child_name
    _item_description.name         "_item_linked.child_name"
-   _item_description.description  "     Name of the child data item."
+   _item_description.description  
+;
+     Name of the child data item.
+;
+
    #
    _item.name            "_item_linked.child_name"
    _item.category_id     item_linked
@@ -1418,7 +2168,11 @@ save_
 #
 save__item_linked.parent_name
    _item_description.name         "_item_linked.parent_name"
-   _item_description.description  "     Name of the parent data item."
+   _item_description.description  
+;
+     Name of the parent data item.
+;
+
    #
    _item.name            "_item_linked.parent_name"
    _item.category_id     item_linked
@@ -1430,7 +2184,11 @@ save__item_linked.parent_name
 save_
 #
 save_item_methods
-   _category.description     "    Attributes specifying the association between data items and methods."
+   _category.description     
+;
+    Attributes specifying the association between data items and methods.
+;
+
    _category.id              item_methods
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -1447,11 +2205,18 @@ save_item_methods
      ddl_group   item_methods  
      item_group  item_methods  
    #
+   _pdbx_category_context.category_id  item_methods
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__item_methods.name
    _item_description.name         "_item_methods.name"
-   _item_description.description  "     The name of the item"
+   _item_description.description  
+;
+     The name of the item
+;
+
    #
    _item.name            "_item_methods.name"
    _item.category_id     item_methods
@@ -1464,7 +2229,11 @@ save_
 #
 save__item_methods.method_id
    _item_description.name         "_item_methods.method_id"
-   _item_description.description  "     The name of the item method"
+   _item_description.description  
+;
+     The name of the item method
+;
+
    #
    _item.name            "_item_methods.method_id"
    _item.category_id     item_methods
@@ -1476,7 +2245,15 @@ save__item_methods.method_id
 save_
 #
 save_item_range
-   _category.description     "     The range of permissible values of a data item.  When multiple     ranges are specified they are interpreted sequentially     using a logical OR.  To specify that an item value may be     equal to a boundary value,  specify an item range where the     maximum and minimum values equal the boundary value."
+   _category.description     
+;
+     The range of permissible values of a data item.  When multiple
+     ranges are specified they are interpreted sequentially
+     using a logical OR.  To specify that an item value may be
+     equal to a boundary value,  specify an item range where the
+     maximum and minimum values equal the boundary value.
+;
+
    _category.id              item_range
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -1490,11 +2267,18 @@ save_item_range
      ddl_group   item_range  
      item_group  item_range  
    #
+   _pdbx_category_context.category_id  item_range
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__item_range.ordinal
    _item_description.name         "_item_range.ordinal"
-   _item_description.description  "     Name of data item ..."
+   _item_description.description  
+;
+     Name of data item ...
+;
+
    #
    _item.name            "_item_range.ordinal"
    _item.category_id     item_range
@@ -1507,7 +2291,11 @@ save_
 #
 save__item_range.name
    _item_description.name         "_item_range.name"
-   _item_description.description  "     Name of data item ..."
+   _item_description.description  
+;
+     Name of data item ...
+;
+
    #
    _item.name            "_item_range.name"
    _item.category_id     item_range
@@ -1520,7 +2308,12 @@ save_
 #
 save__item_range.minimum
    _item_description.name         "_item_range.minimum"
-   _item_description.description  "     Minimum permissible value of a data item or the lower bound     of a permissible range.  ( minimum value <  data value)"
+   _item_description.description  
+;
+     Minimum permissible value of a data item or the lower bound
+     of a permissible range.  ( minimum value <  data value)
+;
+
    #
    _item.name            "_item_range.minimum"
    _item.category_id     item_range
@@ -1533,7 +2326,12 @@ save_
 #
 save__item_range.maximum
    _item_description.name         "_item_range.maximum"
-   _item_description.description  "     Maximum permissible value of a data item or the upper bound     of a permissible range.  ( maximum value >  data value)"
+   _item_description.description  
+;
+     Maximum permissible value of a data item or the upper bound
+     of a permissible range.  ( maximum value >  data value)
+;
+
    #
    _item.name            "_item_range.maximum"
    _item.category_id     item_range
@@ -1545,7 +2343,11 @@ save__item_range.maximum
 save_
 #
 save_item_related
-   _category.description     "    Attributes which specify recognized relationships between data items."
+   _category.description     
+;
+    Attributes which specify recognized relationships between data items.
+;
+
    _category.id              item_related
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -1563,11 +2365,18 @@ save_item_related
      ddl_group   item_related  
      item_group  item_related  
    #
+   _pdbx_category_context.category_id  item_related
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__item_related.name
    _item_description.name         "_item_related.name"
-   _item_description.description  "     Identifies a defined data item ..."
+   _item_description.description  
+;
+     Identifies a defined data item ...
+;
+
    #
    _item.name            "_item_related.name"
    _item.category_id     item_related
@@ -1580,7 +2389,12 @@ save_
 #
 save__item_related.related_name
    _item_description.name         "_item_related.related_name"
-   _item_description.description  "     Identifies a data item by name which is closely related to the     defined data item by the manner described by _item_related.function_code"
+   _item_description.description  
+;
+     Identifies a data item by name which is closely related to the
+     defined data item by the manner described by _item_related.function_code
+;
+
    #
    _item.name            "_item_related.related_name"
    _item.category_id     item_related
@@ -1593,7 +2407,47 @@ save_
 #
 save__item_related.function_code
    _item_description.name         "_item_related.function_code"
-   _item_description.description  "     The code for the type of relationship of the item identified by     _item_related.name and the defined item.      ALTERNATE  indicates that the item identified in      _item_related.related_name is an alternative expression in terms      of its application and attributes to the item in this definition.      ALTERNATE_EXCLUSIVE indicates that the item identified in      _item_related.related_name is an alternative expression in terms      of its application and attributes to the item in this definition.      Only one of the alternative forms may be specified.      CONVENTION  indicates that the item identified in      _item_related.related_name differs from the defined item only      in terms of a convention in its expression.      CONVERSION_CONSTANT indicates that the item identified in      _item_related.related_name differs from the defined item only      by a known constant.      CONVERSION_ARBITRARY indicates that the item identified in      _item_related.related_name differs from the defined item only      by a arbitrary constant.      REPLACES  indicates that the defined item replaces the item identified      in _item_related.related_name.      REPLACEDBY  indicates that the defined item is replaced by the      item identified in  _item_related.related_name.      ASSOCIATED_VALUE indicates that the item identified in      _item_related.related_name is meaningful when associated with the      defined item.      ASSOCIATED_ESD indicates that the item identified in      _item_related.related_name is the estimated standard deviation of      of the defined item."
+   _item_description.description  
+;
+     The code for the type of relationship of the item identified by
+     _item_related.name and the defined item.
+
+      ALTERNATE  indicates that the item identified in
+      _item_related.related_name is an alternative expression in terms
+      of its application and attributes to the item in this definition.
+
+      ALTERNATE_EXCLUSIVE indicates that the item identified in
+      _item_related.related_name is an alternative expression in terms
+      of its application and attributes to the item in this definition.
+      Only one of the alternative forms may be specified.
+
+      CONVENTION  indicates that the item identified in
+      _item_related.related_name differs from the defined item only
+      in terms of a convention in its expression.
+
+      CONVERSION_CONSTANT indicates that the item identified in
+      _item_related.related_name differs from the defined item only
+      by a known constant.
+
+      CONVERSION_ARBITRARY indicates that the item identified in
+      _item_related.related_name differs from the defined item only
+      by a arbitrary constant.
+
+      REPLACES  indicates that the defined item replaces the item identified
+      in _item_related.related_name.
+
+      REPLACEDBY  indicates that the defined item is replaced by the
+      item identified in  _item_related.related_name.
+
+      ASSOCIATED_VALUE indicates that the item identified in
+      _item_related.related_name is meaningful when associated with the
+      defined item.
+
+      ASSOCIATED_ESD indicates that the item identified in
+      _item_related.related_name is the estimated standard deviation of
+      of the defined item.
+;
+
    #
    _item.name            "_item_related.function_code"
    _item.category_id     item_related
@@ -1620,7 +2474,12 @@ save__item_related.function_code
 save_
 #
 save_item_structure
-   _category.description     "    This category holds the association between data items and    named vector/matrix declarations."
+   _category.description     
+;
+    This category holds the association between data items and
+    named vector/matrix declarations.
+;
+
    _category.id              item_structure
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -1634,11 +2493,18 @@ save_item_structure
      ddl_group   item_structure  
      item_group  item_structure  
    #
+   _pdbx_category_context.category_id  item_structure
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__item_structure.name
    _item_description.name         "_item_structure.name"
-   _item_description.description  "     The name of data item"
+   _item_description.description  
+;
+     The name of data item
+;
+
    #
    _item.name            "_item_structure.name"
    _item.category_id     item_structure
@@ -1651,7 +2517,12 @@ save_
 #
 save__item_structure.code
    _item_description.name         "_item_structure.code"
-   _item_description.description  "     Provides an indirect reference into the list of structure     type definition in category item_structure_list."
+   _item_description.description  
+;
+     Provides an indirect reference into the list of structure
+     type definition in category item_structure_list.
+;
+
    #
    _item.name            "_item_structure.code"
    _item.category_id     item_structure
@@ -1664,7 +2535,12 @@ save_
 #
 save__item_structure.organization
    _item_description.name         "_item_structure.organization"
-   _item_description.description  "     Identifies if the struct is defined in column or row major order.     Only the unique elements of symmetric matrices are specified."
+   _item_description.description  
+;
+     Identifies if the struct is defined in column or row major order.
+     Only the unique elements of symmetric matrices are specified.
+;
+
    #
    _item.name            "_item_structure.organization"
    _item.category_id     item_structure
@@ -1683,7 +2559,11 @@ save__item_structure.organization
 save_
 #
 save_item_structure_list
-   _category.description     "     This category holds a description for each structure type."
+   _category.description     
+;
+     This category holds a description for each structure type.
+;
+
    _category.id              item_structure_list
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -1700,11 +2580,18 @@ save_item_structure_list
      ddl_group   item_structure_list  
      item_group  item_structure_list  
    #
+   _pdbx_category_context.category_id  item_structure_list
+   _pdbx_category_context.type         DATA
+   #
 save_
 #
 save__item_structure_list.code
    _item_description.name         "_item_structure_list.code"
-   _item_description.description  "     The name of the matrix/vector structure declaration."
+   _item_description.description  
+;
+     The name of the matrix/vector structure declaration.
+;
+
    #
    _item.name            "_item_structure_list.code"
    _item.category_id     item_structure_list
@@ -1720,7 +2607,11 @@ save_
 #
 save__item_structure_list.index
    _item_description.name         "_item_structure_list.index"
-   _item_description.description  "    Identifies the one based index of a row/column of the structure."
+   _item_description.description  
+;
+    Identifies the one based index of a row/column of the structure.
+;
+
    #
    _item.name            "_item_structure_list.index"
    _item.category_id     item_structure_list
@@ -1740,7 +2631,11 @@ save_
 #
 save__item_structure_list.dimension
    _item_description.name         "_item_structure_list.dimension"
-   _item_description.description  "    Identifies the length of this row/column of the structure."
+   _item_description.description  
+;
+    Identifies the length of this row/column of the structure.
+;
+
    #
    _item.name            "_item_structure_list.dimension"
    _item.category_id     item_structure_list
@@ -1759,7 +2654,11 @@ save__item_structure_list.dimension
 save_
 #
 save_item_sub_category
-   _category.description     "     This category assigns data items to subcategories."
+   _category.description     
+;
+     This category assigns data items to subcategories.
+;
+
    _category.id              item_sub_category
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -1776,11 +2675,18 @@ save_item_sub_category
      sub_category_group  item_sub_category  
      item_group          item_sub_category  
    #
+   _pdbx_category_context.category_id  item_sub_category
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__item_sub_category.name
    _item_description.name         "_item_sub_category.name"
-   _item_description.description  "    The name of data item"
+   _item_description.description  
+;
+    The name of data item
+;
+
    #
    _item.name            "_item_sub_category.name"
    _item.category_id     item_sub_category
@@ -1793,7 +2699,11 @@ save_
 #
 save__item_sub_category.id
    _item_description.name         "_item_sub_category.id"
-   _item_description.description  "    The identifier of subcategory"
+   _item_description.description  
+;
+    The identifier of subcategory
+;
+
    #
    _item.name            "_item_sub_category.id"
    _item.category_id     item_sub_category
@@ -1805,7 +2715,11 @@ save__item_sub_category.id
 save_
 #
 save_item_type
-   _category.description     "     Attributes for specifying the data type code for each data item."
+   _category.description     
+;
+     Attributes for specifying the data type code for each data item.
+;
+
    _category.id              item_type
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -1819,11 +2733,18 @@ save_item_type
      ddl_group   item_type  
      item_group  item_type  
    #
+   _pdbx_category_context.category_id  item_type
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__item_type.name
    _item_description.name         "_item_type.name"
-   _item_description.description  "    The name of data item"
+   _item_description.description  
+;
+    The name of data item
+;
+
    #
    _item.name            "_item_type.name"
    _item.category_id     item_type
@@ -1836,7 +2757,11 @@ save_
 #
 save__item_type.code
    _item_description.name         "_item_type.code"
-   _item_description.description  "    Data type of defined data item"
+   _item_description.description  
+;
+    Data type of defined data item
+;
+
    #
    _item.name            "_item_type.code"
    _item.category_id     item_type
@@ -1848,7 +2773,12 @@ save__item_type.code
 save_
 #
 save_item_type_conditions
-   _category.description     "    Attributes for specifying additional conditions associated with    the data type of the item."
+   _category.description     
+;
+    Attributes for specifying additional conditions associated with
+    the data type of the item.
+;
+
    _category.id              item_type_conditions
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -1863,11 +2793,18 @@ save_item_type_conditions
      item_group        item_type_conditions  
      compliance_group  item_type_conditions  
    #
+   _pdbx_category_context.category_id  item_type_conditions
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__item_type_conditions.name
    _item_description.name         "_item_type_conditions.name"
-   _item_description.description  "     The name of data item"
+   _item_description.description  
+;
+     The name of data item
+;
+
    #
    _item.name            "_item_type_conditions.name"
    _item.category_id     item_type_conditions
@@ -1880,7 +2817,24 @@ save_
 #
 save__item_type_conditions.code
    _item_description.name         "_item_type_conditions.code"
-   _item_description.description  "     Codes defining conditions on the _item_type.code specification.     'esd' permits a number string to contain an appended standard           deviation number enclosed within parentheses. E.g. 4.37(5)     'seq' permits data to be declared as a sequence of values           separated by a comma <,> or a colon <:>.           * The sequence v1,v2,v3,. signals that v1, v2, v3, etc.             are alternative values or the data item.           * The sequence v1:v2 signals that v1 and v2 are the boundary             values of a continuous range of values. This mechanism             was used to specify permitted ranges of an item in             previous DDL versions.      Combinations of alternate and range sequences are permitted."
+   _item_description.description  
+;
+     Codes defining conditions on the _item_type.code specification.
+
+     'esd' permits a number string to contain an appended standard
+           deviation number enclosed within parentheses. E.g. 4.37(5)
+
+     'seq' permits data to be declared as a sequence of values
+           separated by a comma <,> or a colon <:>.
+           * The sequence v1,v2,v3,. signals that v1, v2, v3, etc.
+             are alternative values or the data item.
+           * The sequence v1:v2 signals that v1 and v2 are the boundary
+             values of a continuous range of values. This mechanism
+             was used to specify permitted ranges of an item in
+             previous DDL versions.
+      Combinations of alternate and range sequences are permitted.
+;
+
    #
    _item.name            "_item_type_conditions.code"
    _item.category_id     item_type_conditions
@@ -1900,7 +2854,11 @@ save__item_type_conditions.code
 save_
 #
 save_item_type_list
-   _category.description     "     Attributes which define each type code."
+   _category.description     
+;
+     Attributes which define each type code.
+;
+
    _category.id              item_type_list
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -1914,11 +2872,18 @@ save_item_type_list
      ddl_group   item_type_list  
      item_group  item_type_list  
    #
+   _pdbx_category_context.category_id  item_type_list
+   _pdbx_category_context.type         DATA
+   #
 save_
 #
 save__item_type_list.code
    _item_description.name         "_item_type_list.code"
-   _item_description.description  "     The codes specifying the nature of the data value."
+   _item_description.description  
+;
+     The codes specifying the nature of the data value.
+;
+
    #
    _item.name            "_item_type_list.code"
    _item.category_id     item_type_list
@@ -1934,7 +2899,11 @@ save_
 #
 save__item_type_list.primitive_code
    _item_description.name         "_item_type_list.primitive_code"
-   _item_description.description  "     The codes specifying the primitive type of the data value."
+   _item_description.description  
+;
+     The codes specifying the primitive type of the data value.
+;
+
    #
    _item.name            "_item_type_list.primitive_code"
    _item.category_id     item_type_list
@@ -1956,7 +2925,19 @@ save_
 #
 save__item_type_list.construct
    _item_description.name         "_item_type_list.construct"
-   _item_description.description  "    When a data value can be defined as a pre-determined sequence of    characters, or optional characters, or data names (for which the    definition is also available), it is specified as a construction.    The rules of construction conform to the the regular expression    (REGEX) specifications detailed in the IEEE document P1003.2    Draft 11.2 Sept 1991 (ftp file '/doc/POSIX/1003.2/p121-140').    Resolved data names for which _item_type_list.construct    specifications exist are replaced by these constructions,    otherwise the data name string is not replaced."
+   _item_description.description  
+;
+    When a data value can be defined as a pre-determined sequence of
+    characters, or optional characters, or data names (for which the
+    definition is also available), it is specified as a construction.
+    The rules of construction conform to the the regular expression
+    (REGEX) specifications detailed in the IEEE document P1003.2
+    Draft 11.2 Sept 1991 (ftp file '/doc/POSIX/1003.2/p121-140').
+    Resolved data names for which _item_type_list.construct
+    specifications exist are replaced by these constructions,
+    otherwise the data name string is not replaced.
+;
+
    #
    _item.name            "_item_type_list.construct"
    _item.category_id     item_type_list
@@ -1973,7 +2954,11 @@ save_
 #
 save__item_type_list.detail
    _item_description.name         "_item_type_list.detail"
-   _item_description.description  "     An optional description of the data type"
+   _item_description.description  
+;
+     An optional description of the data type
+;
+
    #
    _item.name            "_item_type_list.detail"
    _item.category_id     item_type_list
@@ -1985,7 +2970,11 @@ save__item_type_list.detail
 save_
 #
 save_item_units
-   _category.description     "     Specifies the physical units in which data items are expressed."
+   _category.description     
+;
+     Specifies the physical units in which data items are expressed.
+;
+
    _category.id              item_units
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -1999,11 +2988,18 @@ save_item_units
      ddl_group   item_units  
      item_group  item_units  
    #
+   _pdbx_category_context.category_id  item_units
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__item_units.name
    _item_description.name         "_item_units.name"
-   _item_description.description  "     The name of data item"
+   _item_description.description  
+;
+     The name of data item
+;
+
    #
    _item.name            "_item_units.name"
    _item.category_id     item_units
@@ -2016,7 +3012,11 @@ save_
 #
 save__item_units.code
    _item_description.name         "_item_units.code"
-   _item_description.description  "     The identifier of unit in which the data item is expressed."
+   _item_description.description  
+;
+     The identifier of unit in which the data item is expressed.
+;
+
    #
    _item.name            "_item_units.code"
    _item.category_id     item_units
@@ -2028,7 +3028,12 @@ save__item_units.code
 save_
 #
 save_item_units_conversion
-   _category.description     "     Conversion factors between the various units of measure defined     in the item_units_list category."
+   _category.description     
+;
+     Conversion factors between the various units of measure defined
+     in the item_units_list category.
+;
+
    _category.id              item_units_conversion
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -2045,11 +3050,21 @@ save_item_units_conversion
      ddl_group   item_units_conversion  
      item_group  item_units_conversion  
    #
+   _pdbx_category_context.category_id  items_units_conversion
+   _pdbx_category_context.type         DATA
+   #
 save_
 #
 save__item_units_conversion.from_code
    _item_description.name         "_item_units_conversion.from_code"
-   _item_description.description  "     The unit system on which the conversion operation is applied     to produce the unit system specified in _item_units_conversion.to_code.         <to_code> =  <from_code> <operator> <factor>"
+   _item_description.description  
+;
+     The unit system on which the conversion operation is applied
+     to produce the unit system specified in _item_units_conversion.to_code.
+
+         <to_code> =  <from_code> <operator> <factor>
+;
+
    #
    _item.name            "_item_units_conversion.from_code"
    _item.category_id     item_units_conversion
@@ -2062,7 +3077,14 @@ save_
 #
 save__item_units_conversion.to_code
    _item_description.name         "_item_units_conversion.to_code"
-   _item_description.description  "     The unit system produced after an operation is applied to the unit     system specified by  _item_units_conversion.from_code.         <to_code> =  <from_code> <operator> <factor>"
+   _item_description.description  
+;
+     The unit system produced after an operation is applied to the unit
+     system specified by  _item_units_conversion.from_code.
+
+         <to_code> =  <from_code> <operator> <factor>
+;
+
    #
    _item.name            "_item_units_conversion.to_code"
    _item.category_id     item_units_conversion
@@ -2075,7 +3097,13 @@ save_
 #
 save__item_units_conversion.operator
    _item_description.name         "_item_units_conversion.operator"
-   _item_description.description  "     The arithmetic operator required to convert between the     unit systems:         <to_code> =  <from_code> <operator> <factor>"
+   _item_description.description  
+;
+     The arithmetic operator required to convert between the
+     unit systems:
+         <to_code> =  <from_code> <operator> <factor>
+;
+
    #
    _item.name            "_item_units_conversion.operator"
    _item.category_id     item_units_conversion
@@ -2097,7 +3125,13 @@ save_
 #
 save__item_units_conversion.factor
    _item_description.name         "_item_units_conversion.factor"
-   _item_description.description  "     The arithmetic operation required to convert between the     unit systems:         <to_code> =  <from_code> <operator> <factor>"
+   _item_description.description  
+;
+     The arithmetic operation required to convert between the
+     unit systems:
+         <to_code> =  <from_code> <operator> <factor>
+;
+
    #
    _item.name            "_item_units_conversion.factor"
    _item.category_id     item_units_conversion
@@ -2109,7 +3143,12 @@ save__item_units_conversion.factor
 save_
 #
 save_item_units_list
-   _category.description     "     Attributes which describe the physical units of measure     in which data items may be expressed."
+   _category.description     
+;
+     Attributes which describe the physical units of measure
+     in which data items may be expressed.
+;
+
    _category.id              item_units_list
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -2123,11 +3162,18 @@ save_item_units_list
      ddl_group   item_units_list  
      item_group  item_units_list  
    #
+   _pdbx_category_context.category_id  item_units_list
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__item_units_list.code
    _item_description.name         "_item_units_list.code"
-   _item_description.description  "     The code specifying the name of the unit of measure."
+   _item_description.description  
+;
+     The code specifying the name of the unit of measure.
+;
+
    #
    _item.name            "_item_units_list.code"
    _item.category_id     item_units_list
@@ -2148,7 +3194,11 @@ save_
 #
 save__item_units_list.detail
    _item_description.name         "_item_units_list.detail"
-   _item_description.description  "     A description of the unit of measure."
+   _item_description.description  
+;
+     A description of the unit of measure.
+;
+
    #
    _item.name            "_item_units_list.detail"
    _item.category_id     item_units_list
@@ -2160,7 +3210,12 @@ save__item_units_list.detail
 save_
 #
 save_method_list
-   _category.description     "    Attributes specifying the list of methods applicable to data items,    sub-categories, and categories."
+   _category.description     
+;
+    Attributes specifying the list of methods applicable to data items,
+    sub-categories, and categories.
+;
+
    _category.id              method_list
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -2175,11 +3230,18 @@ save_method_list
      item_group      method_list  
      category_group  method_list  
    #
+   _pdbx_category_context.category_id  method_list
+   _pdbx_category_context.type         DATA
+   #
 save_
 #
 save__method_list.id
    _item_description.name         "_method_list.id"
-   _item_description.description  "     Identity of method in the list referenced by _method.id"
+   _item_description.description  
+;
+     Identity of method in the list referenced by _method.id
+;
+
    #
    _item.name            "_method_list.id"
    _item.category_id     method_list
@@ -2200,7 +3262,11 @@ save_
 #
 save__method_list.detail
    _item_description.name         "_method_list.detail"
-   _item_description.description  "     Description of application method in _method_list.id"
+   _item_description.description  
+;
+     Description of application method in _method_list.id
+;
+
    #
    _item.name            "_method_list.detail"
    _item.category_id     method_list
@@ -2213,7 +3279,11 @@ save_
 #
 save__method_list.implementation_source
    _item_description.name         "_method_list.implementation_source"
-   _item_description.description  "     A code that describes the source of the method implementation."
+   _item_description.description  
+;
+     A code that describes the source of the method implementation.
+;
+
    #
    _item.name            "_method_list.implementation_source"
    _item.category_id     method_list
@@ -2233,7 +3303,11 @@ save_
 #
 save__method_list.inline
    _item_description.name         "_method_list.inline"
-   _item_description.description  "     Inline text of the method implementation."
+   _item_description.description  
+;
+     Inline text of the method implementation.
+;
+
    #
    _item.name            "_method_list.inline"
    _item.category_id     method_list
@@ -2246,7 +3320,11 @@ save_
 #
 save__method_list.implementation
    _item_description.name         "_method_list.implementation"
-   _item_description.description  "     A language specific reference to the implementation of the method."
+   _item_description.description  
+;
+     A language specific reference to the implementation of the method.
+;
+
    #
    _item.name            "_method_list.implementation"
    _item.category_id     method_list
@@ -2259,7 +3337,11 @@ save_
 #
 save__method_list.code
    _item_description.name         "_method_list.code"
-   _item_description.description  "     A code that describes the function of the method."
+   _item_description.description  
+;
+     A code that describes the function of the method.
+;
+
    #
    _item.name            "_method_list.code"
    _item.category_id     method_list
@@ -2285,7 +3367,11 @@ save_
 #
 save__method_list.language
    _item_description.name         "_method_list.language"
-   _item_description.description  "     Implementation language in which the method is expressed."
+   _item_description.description  
+;
+     Implementation language in which the method is expressed.
+;
+
    #
    _item.name            "_method_list.language"
    _item.category_id     method_list
@@ -2309,7 +3395,12 @@ save__method_list.language
 save_
 #
 save_dictionary
-   _category.description     "     Attributes for specifying the dictionary title, version and     data block identifier."
+   _category.description     
+;
+     Attributes for specifying the dictionary title, version and
+     data block identifier.
+;
+
    _category.id              dictionary
    _category.mandatory_code  yes
    _category.implicit_key    mmcif_ddl.dic
@@ -2324,11 +3415,18 @@ save_dictionary
      datablock_group   dictionary  
      dictionary_group  dictionary  
    #
+   _pdbx_category_context.category_id  dictionary
+   _pdbx_category_context.type         DATA
+   #
 save_
 #
 save__dictionary.datablock_id
    _item_description.name         "_dictionary.datablock_id"
-   _item_description.description  "     The identifier for the data block containing the dictionary."
+   _item_description.description  
+;
+     The identifier for the data block containing the dictionary.
+;
+
    #
    _item.name            "_dictionary.datablock_id"
    _item.category_id     dictionary
@@ -2341,7 +3439,11 @@ save_
 #
 save__dictionary.title
    _item_description.name         "_dictionary.title"
-   _item_description.description  "     Title identification of the dictionary."
+   _item_description.description  
+;
+     Title identification of the dictionary.
+;
+
    #
    _item.name            "_dictionary.title"
    _item.category_id     dictionary
@@ -2354,7 +3456,11 @@ save_
 #
 save__dictionary.version
    _item_description.name         "_dictionary.version"
-   _item_description.description  "     A unique version identifier for the dictionary."
+   _item_description.description  
+;
+     A unique version identifier for the dictionary.
+;
+
    #
    _item.name            "_dictionary.version"
    _item.category_id     dictionary
@@ -2366,7 +3472,11 @@ save__dictionary.version
 save_
 #
 save_dictionary_history
-   _category.description     "   Attributes for specifying the revision history of the dictionary."
+   _category.description     
+;
+   Attributes for specifying the revision history of the dictionary.
+;
+
    _category.id              dictionary_history
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -2380,11 +3490,18 @@ save_dictionary_history
      ddl_group         dictionary_history  
      dictionary_group  dictionary_history  
    #
+   _pdbx_category_context.category_id  dictionary_history
+   _pdbx_category_context.type         DATA
+   #
 save_
 #
 save__dictionary_history.version
    _item_description.name         "_dictionary_history.version"
-   _item_description.description  "     A unique version identifier for the dictionary revision."
+   _item_description.description  
+;
+     A unique version identifier for the dictionary revision.
+;
+
    #
    _item.name            "_dictionary_history.version"
    _item.category_id     dictionary_history
@@ -2400,7 +3517,11 @@ save_
 #
 save__dictionary_history.update
    _item_description.name         "_dictionary_history.update"
-   _item_description.description  "     The date that the last dictionary revision took place."
+   _item_description.description  
+;
+     The date that the last dictionary revision took place.
+;
+
    #
    _item.name            "_dictionary_history.update"
    _item.category_id     dictionary_history
@@ -2413,7 +3534,11 @@ save_
 #
 save__dictionary_history.revision
    _item_description.name         "_dictionary_history.revision"
-   _item_description.description  "     Text description of the dictionary revision."
+   _item_description.description  
+;
+     Text description of the dictionary revision.
+;
+
    #
    _item.name            "_dictionary_history.revision"
    _item.category_id     dictionary_history
@@ -2426,7 +3551,12 @@ save_
 #
 save__category.NX_mapping_details
    _item_description.name         "_category.NX_mapping_details"
-   _item_description.description  "     Records data correspondences between the items in this data category and     and related data items in Nexus data dictionary."
+   _item_description.description  
+;
+     Records data correspondences between the items in this data category and
+     and related data items in Nexus data dictionary.
+;
+
    #
    _item.name            "_category.NX_mapping_details"
    _item.category_id     category
@@ -2438,7 +3568,11 @@ save__category.NX_mapping_details
 save_
 #
 save_ndb_category_description
-   _category.description     "     Alternate description of data items in this category."
+   _category.description     
+;
+     Alternate description of data items in this category.
+;
+
    _category.id              ndb_category_description
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -2455,6 +3589,9 @@ save_ndb_category_description
      ddl_group        ndb_category_description  
      category_group   ndb_category_description  
      extension_group  ndb_category_description  
+   #
+   _pdbx_category_context.category_id  ndb_category_description
+   _pdbx_category_context.type         DEFINITION
    #
 save_
 #
@@ -2473,7 +3610,11 @@ save_
 #
 save__ndb_category_description.description
    _item_description.name         "_ndb_category_description.description"
-   _item_description.description  "     Alternate text description of a category."
+   _item_description.description  
+;
+     Alternate text description of a category.
+;
+
    #
    _item.name            "_ndb_category_description.description"
    _item.category_id     ndb_category_description
@@ -2485,7 +3626,12 @@ save__ndb_category_description.description
 save_
 #
 save_ndb_category_examples
-   _category.description     "     Alternate example applications and descriptions of data items in thiscategory."
+   _category.description     
+;
+     Alternate example applications and descriptions of data items in this
+category.
+;
+
    _category.id              ndb_category_examples
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -2502,6 +3648,9 @@ save_ndb_category_examples
      ddl_group        ndb_category_examples  
      category_group   ndb_category_examples  
      extension_group  ndb_category_examples  
+   #
+   _pdbx_category_context.category_id  ndb_category_examples
+   _pdbx_category_context.type         DEFINITION
    #
 save_
 #
@@ -2520,7 +3669,11 @@ save_
 #
 save__ndb_category_examples.case
    _item_description.name         "_ndb_category_examples.case"
-   _item_description.description  "     Alternate case of examples involving items in this category."
+   _item_description.description  
+;
+     Alternate case of examples involving items in this category.
+;
+
    #
    _item.name            "_ndb_category_examples.case"
    _item.category_id     ndb_category_examples
@@ -2533,7 +3686,11 @@ save_
 #
 save__ndb_category_examples.detail
    _item_description.name         "_ndb_category_examples.detail"
-   _item_description.description  "     Alternate description of an example _category_examples.case"
+   _item_description.description  
+;
+     Alternate description of an example _category_examples.case
+;
+
    #
    _item.name            "_ndb_category_examples.detail"
    _item.category_id     ndb_category_examples
@@ -2545,7 +3702,11 @@ save__ndb_category_examples.detail
 save_
 #
 save_ndb_item_description
-   _category.description     "     This category holds the alternate descriptions of each data item."
+   _category.description     
+;
+     This category holds the alternate descriptions of each data item.
+;
+
    _category.id              ndb_item_description
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -2563,11 +3724,18 @@ save_ndb_item_description
      item_group       ndb_item_description  
      extension_group  ndb_item_description  
    #
+   _pdbx_category_context.category_id  ndb_item_description
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__ndb_item_description.name
    _item_description.name         "_ndb_item_description.name"
-   _item_description.description  "     Data name of the defined item."
+   _item_description.description  
+;
+     Data name of the defined item.
+;
+
    #
    _item.name            "_ndb_item_description.name"
    _item.category_id     ndb_item_description
@@ -2583,7 +3751,11 @@ save_
 #
 save__ndb_item_description.description
    _item_description.name         "_ndb_item_description.description"
-   _item_description.description  "     Alternate text description of the defined data item."
+   _item_description.description  
+;
+     Alternate text description of the defined data item.
+;
+
    #
    _item.name            "_ndb_item_description.description"
    _item.category_id     ndb_item_description
@@ -2595,7 +3767,11 @@ save__ndb_item_description.description
 save_
 #
 save_ndb_item_enumeration
-   _category.description     "     Attributes which specify the permitted enumeration of the items."
+   _category.description     
+;
+     Attributes which specify the permitted enumeration of the items.
+;
+
    _category.id              ndb_item_enumeration
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -2612,6 +3788,9 @@ save_ndb_item_enumeration
      ndb_item_enumeration  ddl_group        
      ndb_item_enumeration  item_group       
      ndb_item_enumeration  extension_group  
+   #
+   _pdbx_category_context.category_id  ndb_item_enumeration
+   _pdbx_category_context.type         DEFINITION
    #
 save_
 #
@@ -2630,7 +3809,11 @@ save_
 #
 save__ndb_item_enumeration.value
    _item_description.name         "_ndb_item_enumeration.value"
-   _item_description.description  "     A permissible value, character or number, for the defined item."
+   _item_description.description  
+;
+     A permissible value, character or number, for the defined item.
+;
+
    #
    _item.name            "_ndb_item_enumeration.value"
    _item.category_id     ndb_item_enumeration
@@ -2643,7 +3826,11 @@ save_
 #
 save__ndb_item_enumeration.detail
    _item_description.name         "_ndb_item_enumeration.detail"
-   _item_description.description  "     A description of a permissible value for the defined item."
+   _item_description.description  
+;
+     A description of a permissible value for the defined item.
+;
+
    #
    _item.name            "_ndb_item_enumeration.detail"
    _item.category_id     ndb_item_enumeration
@@ -2655,7 +3842,11 @@ save__ndb_item_enumeration.detail
 save_
 #
 save_ndb_item_examples
-   _category.description     "    Attributes for describing application examples of the data item."
+   _category.description     
+;
+    Attributes for describing application examples of the data item.
+;
+
    _category.id              ndb_item_examples
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -2673,11 +3864,18 @@ save_ndb_item_examples
      item_group       ndb_item_examples  
      extension_group  ndb_item_examples  
    #
+   _pdbx_category_context.category_id  ndb_item_examples
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__ndb_item_examples.case
    _item_description.name         "_ndb_item_examples.case"
-   _item_description.description  "     Alternate example application of the defined data item."
+   _item_description.description  
+;
+     Alternate example application of the defined data item.
+;
+
    #
    _item.name            "_ndb_item_examples.case"
    _item.category_id     ndb_item_examples
@@ -2690,7 +3888,11 @@ save_
 #
 save__ndb_item_examples.detail
    _item_description.name         "_ndb_item_examples.detail"
-   _item_description.description  "     Alternate description of an example specified in _ndb_item_example.case"
+   _item_description.description  
+;
+     Alternate description of an example specified in _ndb_item_example.case
+;
+
    #
    _item.name            "_ndb_item_examples.detail"
    _item.category_id     ndb_item_examples
@@ -2715,7 +3917,15 @@ save__ndb_item_examples.name
 save_
 #
 save_ndb_item_range
-   _category.description     "     An alternative set of permissible range values of a data item.     When multiple ranges are specified they are interpreted sequentially     using a logical OR.  To specify that an item value may be     equal to a boundary value,  specify an item range where the     maximum and minimum values equal the boundary value."
+   _category.description     
+;
+     An alternative set of permissible range values of a data item.
+     When multiple ranges are specified they are interpreted sequentially
+     using a logical OR.  To specify that an item value may be
+     equal to a boundary value,  specify an item range where the
+     maximum and minimum values equal the boundary value.
+;
+
    _category.id              ndb_item_range
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -2730,11 +3940,18 @@ save_ndb_item_range
      item_group       ndb_item_range  
      extension_group  ndb_item_range  
    #
+   _pdbx_category_context.category_id  ndb_item_range
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__ndb_item_range.ordinal
    _item_description.name         "_ndb_item_range.ordinal"
-   _item_description.description  "     Name of data item ..."
+   _item_description.description  
+;
+     Name of data item ...
+;
+
    #
    _item.name            "_ndb_item_range.ordinal"
    _item.category_id     ndb_item_range
@@ -2747,7 +3964,11 @@ save_
 #
 save__ndb_item_range.name
    _item_description.name         "_ndb_item_range.name"
-   _item_description.description  "     Name of data item ..."
+   _item_description.description  
+;
+     Name of data item ...
+;
+
    #
    _item.name            "_ndb_item_range.name"
    _item.category_id     ndb_item_range
@@ -2763,7 +3984,12 @@ save_
 #
 save__ndb_item_range.minimum
    _item_description.name         "_ndb_item_range.minimum"
-   _item_description.description  "     Alternate minimum permissible value of a data item or the lower bound     of a permissible range.  ( minimum value <  data value)"
+   _item_description.description  
+;
+     Alternate minimum permissible value of a data item or the lower bound
+     of a permissible range.  ( minimum value <  data value)
+;
+
    #
    _item.name            "_ndb_item_range.minimum"
    _item.category_id     ndb_item_range
@@ -2776,7 +4002,12 @@ save_
 #
 save__ndb_item_range.maximum
    _item_description.name         "_ndb_item_range.maximum"
-   _item_description.description  "     Alternate maximum permissible value of a data item or the upper bound     of a permissible range.  ( maximum value >  data value)"
+   _item_description.description  
+;
+     Alternate maximum permissible value of a data item or the upper bound
+     of a permissible range.  ( maximum value >  data value)
+;
+
    #
    _item.name            "_ndb_item_range.maximum"
    _item.category_id     ndb_item_range
@@ -2788,7 +4019,11 @@ save__ndb_item_range.maximum
 save_
 #
 save_ndb_item_type
-   _category.description     "     Attributes for specifying an alternate data type code for each data item."
+   _category.description     
+;
+     Attributes for specifying an alternate data type code for each data item.
+;
+
    _category.id              ndb_item_type
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -2803,11 +4038,18 @@ save_ndb_item_type
      item_group       ndb_item_type  
      extension_group  ndb_item_type  
    #
+   _pdbx_category_context.category_id  ndb_item_type
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__ndb_item_type.name
    _item_description.name         "_ndb_item_type.name"
-   _item_description.description  "    The name of data item"
+   _item_description.description  
+;
+    The name of data item
+;
+
    #
    _item.name            "_ndb_item_type.name"
    _item.category_id     ndb_item_type
@@ -2820,7 +4062,11 @@ save_
 #
 save__ndb_item_type.code
    _item_description.name         "_ndb_item_type.code"
-   _item_description.description  "    Alternate data type of defined data item"
+   _item_description.description  
+;
+    Alternate data type of defined data item
+;
+
    #
    _item.name            "_ndb_item_type.code"
    _item.category_id     ndb_item_type
@@ -2832,7 +4078,11 @@ save__ndb_item_type.code
 save_
 #
 save_ndb_item
-   _category.description     "     Attributes for specifying an alternate mandatory  code for each data item."
+   _category.description     
+;
+     Attributes for specifying an alternate mandatory  code for each data item.
+;
+
    _category.id              ndb_item
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -2847,11 +4097,18 @@ save_ndb_item
      item_group       ndb_item  
      extension_group  ndb_item  
    #
+   _pdbx_category_context.category_id  ndb_item
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__ndb_item.name
    _item_description.name         "_ndb_item.name"
-   _item_description.description  "    The name of data item"
+   _item_description.description  
+;
+    The name of data item
+;
+
    #
    _item.name            "_ndb_item.name"
    _item.category_id     ndb_item
@@ -2864,7 +4121,11 @@ save_
 #
 save__ndb_item.mandatory_code
    _item_description.name         "_ndb_item.mandatory_code"
-   _item_description.description  "    Alternate mandatory code for defined data item"
+   _item_description.description  
+;
+    Alternate mandatory code for defined data item
+;
+
    #
    _item.name            "_ndb_item.mandatory_code"
    _item.category_id     ndb_item
@@ -2876,7 +4137,12 @@ save__ndb_item.mandatory_code
 save_
 #
 save_pdbx_category_context
-   _category.description     "      Category definition context describing the scope of usage and      distribution for the category."
+   _category.description     
+;
+      Category definition context describing the scope of usage and
+      distribution for the category.
+;
+
    _category.id              pdbx_category_context
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -2890,6 +4156,9 @@ save_pdbx_category_context
      ddl_group        pdbx_category_context  
      category_group   pdbx_category_context  
      extension_group  pdbx_category_context  
+   #
+   _pdbx_category_context.category_id  pdbx_category_context
+   _pdbx_category_context.type         DEFINITION
    #
 save_
 #
@@ -2908,7 +4177,11 @@ save_
 #
 save__pdbx_category_context.type
    _item_description.name         "_pdbx_category_context.type"
-   _item_description.description  "     Category context type"
+   _item_description.description  
+;
+     Category context type
+;
+
    #
    _item.name            "_pdbx_category_context.type"
    _item.category_id     pdbx_category_context
@@ -2924,7 +4197,12 @@ save__pdbx_category_context.type
 save_
 #
 save_pdbx_item_context
-   _category.description     "      Item definition context describing the scope of usage and      distribution for the category."
+   _category.description     
+;
+      Item definition context describing the scope of usage and
+      distribution for the category.
+;
+
    _category.id              pdbx_item_context
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -2938,6 +4216,9 @@ save_pdbx_item_context
      ddl_group        pdbx_item_context  
      item_group       pdbx_item_context  
      extension_group  pdbx_item_context  
+   #
+   _pdbx_category_context.category_id  pdbx_item_context
+   _pdbx_category_context.type         DEFINITION
    #
 save_
 #
@@ -2956,7 +4237,11 @@ save_
 #
 save__pdbx_item_context.type
    _item_description.name         "_pdbx_item_context.type"
-   _item_description.description  "     Item definition context type"
+   _item_description.description  
+;
+     Item definition context type
+;
+
    #
    _item.name            "_pdbx_item_context.type"
    _item.category_id     pdbx_item_context
@@ -2974,7 +4259,11 @@ save_
 save_pdbx_item_enumeration_details
    _category.id              pdbx_item_enumeration_details
    _category.mandatory_code  no
-   _category.description     "      Attributes describing the additional details about the enumeration of the data item."
+   _category.description     
+;
+      Attributes describing the additional details about the enumeration of the data item.
+;
+
    _category.implicit_key    mmcif_ddl.dic
    #
    _category_key.id    pdbx_item_enumeration_details
@@ -2987,6 +4276,9 @@ save_pdbx_item_enumeration_details
      item_group       pdbx_item_enumeration_details  
      extension_group  pdbx_item_enumeration_details  
    #
+   _pdbx_category_context.category_id  pdbx_item_enumeration_details
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__pdbx_item_enumeration_details.name
@@ -2995,7 +4287,11 @@ save__pdbx_item_enumeration_details.name
    _item.mandatory_code  implicit
    #
    _item_description.name         "_pdbx_item_enumeration_details.name"
-   _item_description.description  "     Data name of the defined item."
+   _item_description.description  
+;
+     Data name of the defined item.
+;
+
    #
    _item_type.name  "_pdbx_item_enumeration_details.name"
    _item_type.code  name
@@ -3011,7 +4307,11 @@ save__pdbx_item_enumeration_details.closed_flag
    _item.mandatory_code  no
    #
    _item_description.name         "_pdbx_item_enumeration_details.closed_flag"
-   _item_description.description  "     A flag to indicate that this item may assume values outside of its specified enumeration list at deposition."
+   _item_description.description  
+;
+     A flag to indicate that this item may assume values outside of its specified enumeration list at deposition.
+;
+
    #
    _item_type.name  "_pdbx_item_enumeration_details.closed_flag"
    _item_type.code  code
@@ -3030,7 +4330,11 @@ save__pdbx_item_enumeration_details.closed_flag
 save_
 #
 save_pdbx_item_linked_group
-   _category.description     "    Attributes describing logical groups among item link relationships."
+   _category.description     
+;
+    Attributes describing logical groups among item link relationships.
+;
+
    _category.id              pdbx_item_linked_group
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -3048,11 +4352,18 @@ save_pdbx_item_linked_group
      category_group   pdbx_item_linked_group  
      extension_group  pdbx_item_linked_group  
    #
+   _pdbx_category_context.category_id  pdbx_item_linked_group
+   _pdbx_category_context.type         DATA
+   #
 save_
 #
 save__pdbx_item_linked_group.category_id
    _item_description.name         "_pdbx_item_linked_group.category_id"
-   _item_description.description  "     The category containing the item link group."
+   _item_description.description  
+;
+     The category containing the item link group.
+;
+
    #
    _item.name            "_pdbx_item_linked_group.category_id"
    _item.category_id     pdbx_item_linked_group
@@ -3068,7 +4379,11 @@ save_
 #
 save__pdbx_item_linked_group.link_group_id
    _item_description.name         "_pdbx_item_linked_group.link_group_id"
-   _item_description.description  "     The unique identifier for the link group within the category."
+   _item_description.description  
+;
+     The unique identifier for the link group within the category.
+;
+
    #
    _item.name            "_pdbx_item_linked_group.link_group_id"
    _item.category_id     pdbx_item_linked_group
@@ -3110,7 +4425,11 @@ save__pdbx_item_linked_group.condition_id
 save_
 #
 save_pdbx_item_linked_group_list
-   _category.description     "    Enumeration of item link membership within each item linked group."
+   _category.description     
+;
+    Enumeration of item link membership within each item linked group.
+;
+
    _category.id              pdbx_item_linked_group_list
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -3131,11 +4450,18 @@ save_pdbx_item_linked_group_list
      item_group       pdbx_item_linked_group_list  
      extension_group  pdbx_item_linked_group_list  
    #
+   _pdbx_category_context.category_id  pdbx_item_linked_group_list
+   _pdbx_category_context.type         DATA
+   #
 save_
 #
 save__pdbx_item_linked_group_list.child_category_id
    _item_description.name         "_pdbx_item_linked_group_list.child_category_id"
-   _item_description.description  "     The child category containing the item link group."
+   _item_description.description  
+;
+     The child category containing the item link group.
+;
+
    #
    _item.name            "_pdbx_item_linked_group_list.child_category_id"
    _item.category_id     pdbx_item_linked_group_list
@@ -3151,7 +4477,11 @@ save_
 #
 save__pdbx_item_linked_group_list.link_group_id
    _item_description.name         "_pdbx_item_linked_group_list.link_group_id"
-   _item_description.description  "     The unique identifier for the link group within the category."
+   _item_description.description  
+;
+     The unique identifier for the link group within the category.
+;
+
    #
    _item.name            "_pdbx_item_linked_group_list.link_group_id"
    _item.category_id     pdbx_item_linked_group_list
@@ -3167,7 +4497,11 @@ save_
 #
 save__pdbx_item_linked_group_list.child_name
    _item_description.name         "_pdbx_item_linked_group_list.child_name"
-   _item_description.description  "     The item name of the child item in the item linked relationship."
+   _item_description.description  
+;
+     The item name of the child item in the item linked relationship.
+;
+
    #
    _item.name            "_pdbx_item_linked_group_list.child_name"
    _item.category_id     pdbx_item_linked_group_list
@@ -3183,7 +4517,11 @@ save_
 #
 save__pdbx_item_linked_group_list.parent_name
    _item_description.name         "_pdbx_item_linked_group_list.parent_name"
-   _item_description.description  "     The item name of the parent item in the item linked relationship."
+   _item_description.description  
+;
+     The item name of the parent item in the item linked relationship.
+;
+
    #
    _item.name            "_pdbx_item_linked_group_list.parent_name"
    _item.category_id     pdbx_item_linked_group_list
@@ -3199,7 +4537,11 @@ save_
 #
 save__pdbx_item_linked_group_list.parent_category_id
    _item_description.name         "_pdbx_item_linked_group_list.parent_category_id"
-   _item_description.description  "     The parent category containing the target of the item link relationship."
+   _item_description.description  
+;
+     The parent category containing the target of the item link relationship.
+;
+
    #
    _item.name            "_pdbx_item_linked_group_list.parent_category_id"
    _item.category_id     pdbx_item_linked_group_list
@@ -3214,7 +4556,15 @@ save__pdbx_item_linked_group_list.parent_category_id
 save_
 #
 save_pdbx_item_range
-   _category.description     "     An alternative set of permissible range values of a data item.     When multiple ranges are specified they are interpreted sequentially     using a logical OR.  To specify that an item value may be     equal to a boundary value,  specify an item range where the     maximum and minimum values equal the boundary value."
+   _category.description     
+;
+     An alternative set of permissible range values of a data item.
+     When multiple ranges are specified they are interpreted sequentially
+     using a logical OR.  To specify that an item value may be
+     equal to a boundary value,  specify an item range where the
+     maximum and minimum values equal the boundary value.
+;
+
    _category.id              pdbx_item_range
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -3229,11 +4579,18 @@ save_pdbx_item_range
      item_group       pdbx_item_range  
      extension_group  pdbx_item_range  
    #
+   _pdbx_category_context.category_id  pdbx_item_range
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__pdbx_item_range.ordinal
    _item_description.name         "_pdbx_item_range.ordinal"
-   _item_description.description  "     Name of data item ..."
+   _item_description.description  
+;
+     Name of data item ...
+;
+
    #
    _item.name            "_pdbx_item_range.ordinal"
    _item.category_id     pdbx_item_range
@@ -3246,7 +4603,11 @@ save_
 #
 save__pdbx_item_range.name
    _item_description.name         "_pdbx_item_range.name"
-   _item_description.description  "     Name of data item ..."
+   _item_description.description  
+;
+     Name of data item ...
+;
+
    #
    _item.name            "_pdbx_item_range.name"
    _item.category_id     pdbx_item_range
@@ -3262,7 +4623,12 @@ save_
 #
 save__pdbx_item_range.minimum
    _item_description.name         "_pdbx_item_range.minimum"
-   _item_description.description  "     Alternate minimum permissible value of a data item or the lower bound     of a permissible range.  ( minimum value <  data value)"
+   _item_description.description  
+;
+     Alternate minimum permissible value of a data item or the lower bound
+     of a permissible range.  ( minimum value <  data value)
+;
+
    #
    _item.name            "_pdbx_item_range.minimum"
    _item.category_id     pdbx_item_range
@@ -3275,7 +4641,12 @@ save_
 #
 save__pdbx_item_range.maximum
    _item_description.name         "_pdbx_item_range.maximum"
-   _item_description.description  "     Alternate maximum permissible value of a data item or the upper bound     of a permissible range.  ( maximum value >  data value)"
+   _item_description.description  
+;
+     Alternate maximum permissible value of a data item or the upper bound
+     of a permissible range.  ( maximum value >  data value)
+;
+
    #
    _item.name            "_pdbx_item_range.maximum"
    _item.category_id     pdbx_item_range
@@ -3287,7 +4658,11 @@ save__pdbx_item_range.maximum
 save_
 #
 save_pdbx_item_type
-   _category.description     "     Attributes for specifying an alternate data type code for each data item."
+   _category.description     
+;
+     Attributes for specifying an alternate data type code for each data item.
+;
+
    _category.id              pdbx_item_type
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -3302,11 +4677,18 @@ save_pdbx_item_type
      item_group       pdbx_item_type  
      extension_group  pdbx_item_type  
    #
+   _pdbx_category_context.category_id  pdbx_item_type
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__pdbx_item_type.name
    _item_description.name         "_pdbx_item_type.name"
-   _item_description.description  "    The name of data item"
+   _item_description.description  
+;
+    The name of data item
+;
+
    #
    _item.name            "_pdbx_item_type.name"
    _item.category_id     pdbx_item_type
@@ -3319,7 +4701,11 @@ save_
 #
 save__pdbx_item_type.code
    _item_description.name         "_pdbx_item_type.code"
-   _item_description.description  "    Alternate data type of defined data item"
+   _item_description.description  
+;
+    Alternate data type of defined data item
+;
+
    #
    _item.name            "_pdbx_item_type.code"
    _item.category_id     pdbx_item_type
@@ -3331,7 +4717,11 @@ save__pdbx_item_type.code
 save_
 #
 save_pdbx_item
-   _category.description     "     Attributes for specifying an alternate mandatory  code for each data item."
+   _category.description     
+;
+     Attributes for specifying an alternate mandatory  code for each data item.
+;
+
    _category.id              pdbx_item
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -3346,11 +4736,18 @@ save_pdbx_item
      item_group       pdbx_item  
      extension_group  pdbx_item  
    #
+   _pdbx_category_context.category_id  pdbx_item
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__pdbx_item.name
    _item_description.name         "_pdbx_item.name"
-   _item_description.description  "    The name of data item"
+   _item_description.description  
+;
+    The name of data item
+;
+
    #
    _item.name            "_pdbx_item.name"
    _item.category_id     pdbx_item
@@ -3363,7 +4760,11 @@ save_
 #
 save__pdbx_item.mandatory_code
    _item_description.name         "_pdbx_item.mandatory_code"
-   _item_description.description  "    Alternate mandatory code for defined data item"
+   _item_description.description  
+;
+    Alternate mandatory code for defined data item
+;
+
    #
    _item.name            "_pdbx_item.mandatory_code"
    _item.category_id     pdbx_item
@@ -3376,7 +4777,11 @@ save_
 #
 save__pdbx_item.category_id
    _item_description.name         "_pdbx_item.category_id"
-   _item_description.description  "     This is category id of the item."
+   _item_description.description  
+;
+     This is category id of the item.
+;
+
    #
    _item.name            "_pdbx_item.category_id"
    _item.category_id     pdbx_item
@@ -3388,7 +4793,11 @@ save__pdbx_item.category_id
 save_
 #
 save_pdbx_category_description
-   _category.description     "     Alternate description of data items in this category."
+   _category.description     
+;
+     Alternate description of data items in this category.
+;
+
    _category.id              pdbx_category_description
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -3405,6 +4814,9 @@ save_pdbx_category_description
      ddl_group        pdbx_category_description  
      category_group   pdbx_category_description  
      extension_group  pdbx_category_description  
+   #
+   _pdbx_category_context.category_id  pdbx_category_description
+   _pdbx_category_context.type         DEFINITION
    #
 save_
 #
@@ -3423,7 +4835,11 @@ save_
 #
 save__pdbx_category_description.description
    _item_description.name         "_pdbx_category_description.description"
-   _item_description.description  "     Alternate text description of a category."
+   _item_description.description  
+;
+     Alternate text description of a category.
+;
+
    #
    _item.name            "_pdbx_category_description.description"
    _item.category_id     pdbx_category_description
@@ -3435,7 +4851,12 @@ save__pdbx_category_description.description
 save_
 #
 save_pdbx_category_examples
-   _category.description     "     Alternate example applications and descriptions of data items in thiscategory."
+   _category.description     
+;
+     Alternate example applications and descriptions of data items in this
+category.
+;
+
    _category.id              pdbx_category_examples
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -3470,7 +4891,11 @@ save_
 #
 save__pdbx_category_examples.case
    _item_description.name         "_pdbx_category_examples.case"
-   _item_description.description  "     Alternate case of examples involving items in this category."
+   _item_description.description  
+;
+     Alternate case of examples involving items in this category.
+;
+
    #
    _item.name            "_pdbx_category_examples.case"
    _item.category_id     pdbx_category_examples
@@ -3483,7 +4908,11 @@ save_
 #
 save__pdbx_category_examples.detail
    _item_description.name         "_pdbx_category_examples.detail"
-   _item_description.description  "     Alternate description of an example _category_examples.case"
+   _item_description.description  
+;
+     Alternate description of an example _category_examples.case
+;
+
    #
    _item.name            "_pdbx_category_examples.detail"
    _item.category_id     pdbx_category_examples
@@ -3495,7 +4924,11 @@ save__pdbx_category_examples.detail
 save_
 #
 save_pdbx_item_description
-   _category.description     "     This category holds the alternate descriptions of each data item."
+   _category.description     
+;
+     This category holds the alternate descriptions of each data item.
+;
+
    _category.id              pdbx_item_description
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -3513,11 +4946,18 @@ save_pdbx_item_description
      item_group       pdbx_item_description  
      extension_group  pdbx_item_description  
    #
+   _pdbx_category_context.category_id  pdbx_item_description
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__pdbx_item_description.name
    _item_description.name         "_pdbx_item_description.name"
-   _item_description.description  "     Data name of the defined item."
+   _item_description.description  
+;
+     Data name of the defined item.
+;
+
    #
    _item.name            "_pdbx_item_description.name"
    _item.category_id     pdbx_item_description
@@ -3533,7 +4973,11 @@ save_
 #
 save__pdbx_item_description.description
    _item_description.name         "_pdbx_item_description.description"
-   _item_description.description  "     Alternate text description of the defined data item."
+   _item_description.description  
+;
+     Alternate text description of the defined data item.
+;
+
    #
    _item.name            "_pdbx_item_description.description"
    _item.category_id     pdbx_item_description
@@ -3545,7 +4989,11 @@ save__pdbx_item_description.description
 save_
 #
 save_pdbx_item_enumeration
-   _category.description     "     Attributes which specify the permitted enumeration of the items."
+   _category.description     
+;
+     Attributes which specify the permitted enumeration of the items.
+;
+
    _category.id              pdbx_item_enumeration
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -3562,6 +5010,9 @@ save_pdbx_item_enumeration
      pdbx_item_enumeration  ddl_group        
      pdbx_item_enumeration  item_group       
      pdbx_item_enumeration  extension_group  
+   #
+   _pdbx_category_context.category_id  pdbx_item_enumeration
+   _pdbx_category_context.type         DEFINITION
    #
 save_
 #
@@ -3580,7 +5031,11 @@ save_
 #
 save__pdbx_item_enumeration.value
    _item_description.name         "_pdbx_item_enumeration.value"
-   _item_description.description  "     A permissible value, character or number, for the defined item."
+   _item_description.description  
+;
+     A permissible value, character or number, for the defined item.
+;
+
    #
    _item.name            "_pdbx_item_enumeration.value"
    _item.category_id     pdbx_item_enumeration
@@ -3593,7 +5048,11 @@ save_
 #
 save__pdbx_item_enumeration.detail
    _item_description.name         "_pdbx_item_enumeration.detail"
-   _item_description.description  "     A description of a permissible value for the defined item."
+   _item_description.description  
+;
+     A description of a permissible value for the defined item.
+;
+
    #
    _item.name            "_pdbx_item_enumeration.detail"
    _item.category_id     pdbx_item_enumeration
@@ -3605,7 +5064,11 @@ save__pdbx_item_enumeration.detail
 save_
 #
 save_pdbx_item_examples
-   _category.description     "    Attributes for describing application examples of the data item."
+   _category.description     
+;
+    Attributes for describing application examples of the data item.
+;
+
    _category.id              pdbx_item_examples
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -3623,11 +5086,18 @@ save_pdbx_item_examples
      item_group       pdbx_item_examples  
      extension_group  pdbx_item_examples  
    #
+   _pdbx_category_context.category_id  pdbx_item_examples
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__pdbx_item_examples.case
    _item_description.name         "_pdbx_item_examples.case"
-   _item_description.description  "     Alternate example application of the defined data item."
+   _item_description.description  
+;
+     Alternate example application of the defined data item.
+;
+
    #
    _item.name            "_pdbx_item_examples.case"
    _item.category_id     pdbx_item_examples
@@ -3640,7 +5110,11 @@ save_
 #
 save__pdbx_item_examples.detail
    _item_description.name         "_pdbx_item_examples.detail"
-   _item_description.description  "     Alternate description of an example specified in _pdbx_item_example.case"
+   _item_description.description  
+;
+     Alternate description of an example specified in _pdbx_item_example.case
+;
+
    #
    _item.name            "_pdbx_item_examples.detail"
    _item.category_id     pdbx_item_examples
@@ -3666,7 +5140,11 @@ save_
 #
 save__item_sub_category.pdbx_label
    _item_description.name         "_item_sub_category.pdbx_label"
-   _item_description.description  "    An optional label for an instance of a subcategory within a category"
+   _item_description.description  
+;
+    An optional label for an instance of a subcategory within a category
+;
+
    #
    _item.name            "_item_sub_category.pdbx_label"
    _item.category_id     item_sub_category
@@ -3678,7 +5156,18 @@ save__item_sub_category.pdbx_label
 save_
 #
 save_pdbx_include_dictionary
-   _category.description     "      Category describing the details of dictionary composition achieved through      dictionary-level content inclusion from external sources.      Inclusion directives in this category may be used to include the      contents of complete dictionary text files.  A finer level of      control may be obtained by combining dictionary as well as category      item-level include directives in categories PDBX_INCLUDE_CATEGORY      and PDBX_INCLUDE_ITEM."
+   _category.description     
+;
+      Category describing the details of dictionary composition achieved through
+      dictionary-level content inclusion from external sources.
+
+      Inclusion directives in this category may be used to include the
+      contents of complete dictionary text files.  A finer level of
+      control may be obtained by combining dictionary as well as category
+      item-level include directives in categories PDBX_INCLUDE_CATEGORY
+      and PDBX_INCLUDE_ITEM.
+;
+
    _category.id              pdbx_include_dictionary
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -3696,11 +5185,18 @@ save_pdbx_include_dictionary
      dictionary_group  pdbx_include_dictionary  
      extension_group   pdbx_include_dictionary  
    #
+   _pdbx_category_context.category_id  pdbx_include_dictionary
+   _pdbx_category_context.type         DATA
+   #
 save_
 #
 save__pdbx_include_dictionary.datablock_id
    _item_description.name         "_pdbx_include_dictionary.datablock_id"
-   _item_description.description  "     Identifier of data block."
+   _item_description.description  
+;
+     Identifier of data block.
+;
+
    #
    _item.name            "_pdbx_include_dictionary.datablock_id"
    _item.category_id     pdbx_include_dictionary
@@ -3713,7 +5209,11 @@ save_
 #
 save__pdbx_include_dictionary.dictionary_id
    _item_description.name         "_pdbx_include_dictionary.dictionary_id"
-   _item_description.description  "    Unique identifier for the included dictionary or dictionary component."
+   _item_description.description  
+;
+    Unique identifier for the included dictionary or dictionary component.
+;
+
    #
    _item.name            "_pdbx_include_dictionary.dictionary_id"
    _item.category_id     pdbx_include_dictionary
@@ -3726,7 +5226,11 @@ save_
 #
 save__pdbx_include_dictionary.dictionary_locator
    _item_description.name         "_pdbx_include_dictionary.dictionary_locator"
-   _item_description.description  "    Network accessible locator for the included dictionary text."
+   _item_description.description  
+;
+    Network accessible locator for the included dictionary text.
+;
+
    #
    _item.name            "_pdbx_include_dictionary.dictionary_locator"
    _item.category_id     pdbx_include_dictionary
@@ -3743,7 +5247,11 @@ save_
 #
 save__pdbx_include_dictionary.include_mode
    _item_description.name         "_pdbx_include_dictionary.include_mode"
-   _item_description.description  "     Item definition describing the action undertaken to resolve name category name conflicts on including dictionary content."
+   _item_description.description  
+;
+     Item definition describing the action undertaken to resolve name category name conflicts on including dictionary content.
+;
+
    #
    _item.name            "_pdbx_include_dictionary.include_mode"
    _item.category_id     pdbx_include_dictionary
@@ -3763,7 +5271,11 @@ save_
 #
 save__pdbx_include_dictionary.dictionary_namespace_prefix
    _item_description.name         "_pdbx_include_dictionary.dictionary_namespace_prefix"
-   _item_description.description  "    The namespace prefix used in the included source dictionary."
+   _item_description.description  
+;
+    The namespace prefix used in the included source dictionary.
+;
+
    #
    _item.name            "_pdbx_include_dictionary.dictionary_namespace_prefix"
    _item.category_id     pdbx_include_dictionary
@@ -3780,7 +5292,12 @@ save_
 #
 save__pdbx_include_dictionary.dictionary_namespace_prefix_replace
    _item_description.name         "_pdbx_include_dictionary.dictionary_namespace_prefix"
-   _item_description.description  "    The namespace prefix used in the destination dictionary. Definitions with the source namespace    are replaced by this namespace prefix."
+   _item_description.description  
+;
+    The namespace prefix used in the destination dictionary. Definitions with the source namespace
+    are replaced by this namespace prefix.
+;
+
    #
    _item.name            "_pdbx_include_dictionary.dictionary_namespace_prefix_replace"
    _item.category_id     pdbx_include_dictionary
@@ -3796,7 +5313,15 @@ save__pdbx_include_dictionary.dictionary_namespace_prefix_replace
 save_
 #
 save_pdbx_include_category
-   _category.description     "      Category describing the details of dictionary composition achieved through      category-level content inclusion from external dictionary sources.      Inclusion directives in this category take precedence over any      dictionary-level include directives in category PDBX_INCLUDE_DICTIONARY."
+   _category.description     
+;
+      Category describing the details of dictionary composition achieved through
+      category-level content inclusion from external dictionary sources.
+
+      Inclusion directives in this category take precedence over any
+      dictionary-level include directives in category PDBX_INCLUDE_DICTIONARY.
+;
+
    _category.id              pdbx_include_category
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -3814,11 +5339,18 @@ save_pdbx_include_category
      category_group   pdbx_include_category  
      extension_group  pdbx_include_category  
    #
+   _pdbx_category_context.category_id  pdbx_include_category
+   _pdbx_category_context.type         DATA
+   #
 save_
 #
 save__pdbx_include_category.category_id
    _item_description.name         "_pdbx_include_category.category_id"
-   _item_description.description  "    Unique identifier for a source category within the included dictionary."
+   _item_description.description  
+;
+    Unique identifier for a source category within the included dictionary.
+;
+
    #
    _item.name            "_pdbx_include_category.category_id"
    _item.category_id     pdbx_include_category
@@ -3831,7 +5363,11 @@ save_
 #
 save__pdbx_include_category.dictionary_id
    _item_description.name         "_pdbx_include_category.dictionary_id"
-   _item_description.description  "    Unique identifier for the included dictionary."
+   _item_description.description  
+;
+    Unique identifier for the included dictionary.
+;
+
    #
    _item.name            "_pdbx_include_category.dictionary_id"
    _item.category_id     pdbx_include_category
@@ -3847,7 +5383,11 @@ save_
 #
 save__pdbx_include_category.include_as_category_id
    _item_description.name         "_pdbx_include_category.include_as_category_id"
-   _item_description.description  "    The identifier for the target category within the destination dictionary."
+   _item_description.description  
+;
+    The identifier for the target category within the destination dictionary.
+;
+
    #
    _item.name            "_pdbx_include_category.include_as_category_id"
    _item.category_id     pdbx_include_category
@@ -3860,7 +5400,12 @@ save_
 #
 save__pdbx_include_category.include_mode
    _item_description.name         "_pdbx_include_category.include_mode"
-   _item_description.description  "     The action undertaken to resolve category name conflicts subject to the     current category-level include directive."
+   _item_description.description  
+;
+     The action undertaken to resolve category name conflicts subject to the
+     current category-level include directive.
+;
+
    #
    _item.name            "_pdbx_include_category.include_mode"
    _item.category_id     pdbx_include_category
@@ -3879,7 +5424,15 @@ save__pdbx_include_category.include_mode
 save_
 #
 save_pdbx_include_item
-   _category.description     "      Category describing the details of dictionary composition achieved through      item-level content inclusion from external sources.      Item inclusion directives in this category take precedence over any      category-level include directives in category PDBX_INCLUDE_CATEGORY."
+   _category.description     
+;
+      Category describing the details of dictionary composition achieved through
+      item-level content inclusion from external sources.
+
+      Item inclusion directives in this category take precedence over any
+      category-level include directives in category PDBX_INCLUDE_CATEGORY.
+;
+
    _category.id              pdbx_include_item
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -3897,11 +5450,18 @@ save_pdbx_include_item
      item_group       pdbx_include_item  
      extension_group  pdbx_include_item  
    #
+   _pdbx_category_context.category_id  pdbx_include_item
+   _pdbx_category_context.type         DATA
+   #
 save_
 #
 save__pdbx_include_item.item_name
    _item_description.name         "_pdbx_include_item.item_name"
-   _item_description.description  "    Unique identifier for a target item within the included dictionary."
+   _item_description.description  
+;
+    Unique identifier for a target item within the included dictionary.
+;
+
    #
    _item.name            "_pdbx_include_item.item_name"
    _item.category_id     pdbx_include_item
@@ -3914,7 +5474,11 @@ save_
 #
 save__pdbx_include_item.dictionary_id
    _item_description.name         "_pdbx_include_item.dictionary_id"
-   _item_description.description  "    Unique identifier for included dictionary."
+   _item_description.description  
+;
+    Unique identifier for included dictionary.
+;
+
    #
    _item.name            "_pdbx_include_item.dictionary_id"
    _item.category_id     pdbx_include_item
@@ -3930,7 +5494,11 @@ save_
 #
 save__pdbx_include_item.include_as_item_name
    _item_description.name         "_pdbx_include_item.include_as_item_name"
-   _item_description.description  "    The identifier for the target item within the destination dictionary."
+   _item_description.description  
+;
+    The identifier for the target item within the destination dictionary.
+;
+
    #
    _item.name            "_pdbx_include_item.include_as_item_name"
    _item.category_id     pdbx_include_item
@@ -3943,7 +5511,11 @@ save_
 #
 save__pdbx_include_item.include_mode
    _item_description.name         "_pdbx_include_item.include_mode"
-   _item_description.description  "     The action of taken to resolve item name conflicts subject to the current item-level include directive."
+   _item_description.description  
+;
+     The action of taken to resolve item name conflicts subject to the current item-level include directive.
+;
+
    #
    _item.name            "_pdbx_include_item.include_mode"
    _item.category_id     pdbx_include_item
@@ -3962,7 +5534,12 @@ save__pdbx_include_item.include_mode
 save_
 #
 save_pdbx_dictionary_component
-   _category.description     "     Attributes for specifying a component dictionary title, version and     data block identifier."
+   _category.description     
+;
+     Attributes for specifying a component dictionary title, version and
+     data block identifier.
+;
+
    _category.id              pdbx_dictionary_component
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -3980,11 +5557,18 @@ save_pdbx_dictionary_component
      datablock_group  pdbx_dictionary_component  
      extension_group  pdbx_dictionary_component  
    #
+   _pdbx_category_context.category_id  pdbx_dictionary_component
+   _pdbx_category_context.type         DATA
+   #
 save_
 #
 save__pdbx_dictionary_component.datablock_id
    _item_description.name         "_pdbx_dictionary_component.datablock_id"
-   _item_description.description  "     The identifier for the data block containing the dictionary component."
+   _item_description.description  
+;
+     The identifier for the data block containing the dictionary component.
+;
+
    #
    _item.name            "_pdbx_dictionary_component.datablock_id"
    _item.category_id     pdbx_dictionary_component
@@ -3997,7 +5581,11 @@ save_
 #
 save__pdbx_dictionary_component.dictionary_component_id
    _item_description.name         "_pdbx_dictionary_component.dictionary_component_id"
-   _item_description.description  "     The identifier for the dictionary component."
+   _item_description.description  
+;
+     The identifier for the dictionary component.
+;
+
    #
    _item.name            "_pdbx_dictionary_component.dictionary_component_id"
    _item.category_id     pdbx_dictionary_component
@@ -4010,7 +5598,11 @@ save_
 #
 save__pdbx_dictionary_component.title
    _item_description.name         "_pdbx_dictionary_component.title"
-   _item_description.description  "     Title identification of the dictionary component."
+   _item_description.description  
+;
+     Title identification of the dictionary component.
+;
+
    #
    _item.name            "_pdbx_dictionary_component.title"
    _item.category_id     pdbx_dictionary_component
@@ -4023,7 +5615,11 @@ save_
 #
 save__pdbx_dictionary_component.version
    _item_description.name         "_pdbx_dictionary_component.version"
-   _item_description.description  "     A unique version identifier for the dictionary component version."
+   _item_description.description  
+;
+     A unique version identifier for the dictionary component version.
+;
+
    #
    _item.name            "_pdbx_dictionary_component.version"
    _item.category_id     pdbx_dictionary_component
@@ -4035,7 +5631,11 @@ save__pdbx_dictionary_component.version
 save_
 #
 save_pdbx_dictionary_component_history
-   _category.description     "   Attributes for specifying the revision history for a dictionary component."
+   _category.description     
+;
+   Attributes for specifying the revision history for a dictionary component.
+;
+
    _category.id              pdbx_dictionary_component_history
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -4053,11 +5653,18 @@ save_pdbx_dictionary_component_history
      dictionary_group  pdbx_dictionary_component_history  
      extension_group   pdbx_dictionary_component_history  
    #
+   _pdbx_category_context.category_id  pdbx_dictionary_component_history
+   _pdbx_category_context.type         DATA
+   #
 save_
 #
 save__pdbx_dictionary_component_history.version
    _item_description.name         "_pdbx_dictionary_component_history.version"
-   _item_description.description  "     A unique version identifier for the dictionary component revision."
+   _item_description.description  
+;
+     A unique version identifier for the dictionary component revision.
+;
+
    #
    _item.name            "_pdbx_dictionary_component_history.version"
    _item.category_id     pdbx_dictionary_component_history
@@ -4073,7 +5680,11 @@ save_
 #
 save__pdbx_dictionary_component_history.dictionary_component_id
    _item_description.name         "_pdbx_dictionary_component_history.dictionary_component_id"
-   _item_description.description  "     A unique dictionary component identifier for the dictionary component."
+   _item_description.description  
+;
+     A unique dictionary component identifier for the dictionary component.
+;
+
    #
    _item.name            "_pdbx_dictionary_component_history.dictionary_component_id"
    _item.category_id     pdbx_dictionary_component_history
@@ -4089,7 +5700,11 @@ save_
 #
 save__pdbx_dictionary_component_history.update
    _item_description.name         "_pdbx_dictionary_component_history.update"
-   _item_description.description  "     The date that the last dictionary component revision took place."
+   _item_description.description  
+;
+     The date that the last dictionary component revision took place.
+;
+
    #
    _item.name            "_pdbx_dictionary_component_history.update"
    _item.category_id     pdbx_dictionary_component_history
@@ -4102,7 +5717,11 @@ save_
 #
 save__pdbx_dictionary_component_history.revision
    _item_description.name         "_pdbx_dictionary_component_history.revision"
-   _item_description.description  "     Text description of the dictionary component revision."
+   _item_description.description  
+;
+     Text description of the dictionary component revision.
+;
+
    #
    _item.name            "_pdbx_dictionary_component_history.revision"
    _item.category_id     pdbx_dictionary_component_history
@@ -4114,7 +5733,11 @@ save__pdbx_dictionary_component_history.revision
 save_
 #
 save_pdbx_item_value_condition_list
-   _category.description     "     Attributes which define value conditions among dependent items."
+   _category.description     
+;
+     Attributes which define value conditions among dependent items.
+;
+
    _category.id              pdbx_item_value_condition_list
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -4129,11 +5752,18 @@ save_pdbx_item_value_condition_list
      item_group       pdbx_item_value_condition_list  
      extension_group  pdbx_item_value_condition_list  
    #
+   _pdbx_category_context.category_id  pdbx_item_value_condition_list
+   _pdbx_category_context.type         DATA
+   #
 save_
 #
 save__pdbx_item_value_condition_list.cond_id
    _item_description.name         "_pdbx_item_value_condition_list.cond_id"
-   _item_description.description  "     The unique identifier for each value condition."
+   _item_description.description  
+;
+     The unique identifier for each value condition.
+;
+
    #
    _item.name            "_pdbx_item_value_condition_list.cond_id"
    _item.category_id     pdbx_item_value_condition_list
@@ -4146,7 +5776,11 @@ save_
 #
 save__pdbx_item_value_condition_list.target_item_name
    _item_description.name         "_pdbx_item_value_condition_list.target_item_name"
-   _item_description.description  "     Name of the target data item for the value condition."
+   _item_description.description  
+;
+     Name of the target data item for the value condition.
+;
+
    #
    _item.name            "_pdbx_item_value_condition_list.target_item_name"
    _item.category_id     pdbx_item_value_condition_list
@@ -4162,7 +5796,11 @@ save_
 #
 save__pdbx_item_value_condition_list.target_item_value
    _item_description.name         "_pdbx_item_value_condition_list.target_item_value"
-   _item_description.description  "     Value of the dependent data item for the value condition."
+   _item_description.description  
+;
+     Value of the dependent data item for the value condition.
+;
+
    #
    _item.name            "_pdbx_item_value_condition_list.target_item_value"
    _item.category_id     pdbx_item_value_condition_list
@@ -4175,7 +5813,11 @@ save_
 #
 save__pdbx_item_value_condition_list.dependent_item_name
    _item_description.name         "_pdbx_item_value_condition_list.dependent_item_name"
-   _item_description.description  "     Name of the dependent data item for the value condition."
+   _item_description.description  
+;
+     Name of the dependent data item for the value condition.
+;
+
    #
    _item.name            "_pdbx_item_value_condition_list.dependent_item_name"
    _item.category_id     pdbx_item_value_condition_list
@@ -4191,7 +5833,11 @@ save_
 #
 save__pdbx_item_value_condition_list.dependent_item_value
    _item_description.name         "_pdbx_item_value_condition_list.dependent_item_value"
-   _item_description.description  "     Value of the dependent data item for the value condition."
+   _item_description.description  
+;
+     Value of the dependent data item for the value condition.
+;
+
    #
    _item.name            "_pdbx_item_value_condition_list.dependent_item_value"
    _item.category_id     pdbx_item_value_condition_list
@@ -4204,7 +5850,11 @@ save_
 #
 save__pdbx_item_value_condition_list.dependent_item_cmp_op
    _item_description.name         "_pdbx_item_value_condition_list.dependent_item_cmp_op"
-   _item_description.description  "     Comparison operation for the value condition"
+   _item_description.description  
+;
+     Comparison operation for the value condition.
+;
+
    #
    _item.name            "_pdbx_item_value_condition_list.dependent_item_cmp_op"
    _item.category_id     pdbx_item_value_condition_list
@@ -4213,10 +5863,44 @@ save__pdbx_item_value_condition_list.dependent_item_cmp_op
    _item_type.name  "_pdbx_item_value_condition_list.dependent_item_cmp_op"
    _item_type.code  char
    #
+   _item_linked.child_name   "_pdbx_item_value_condition_list.dependent_item_cmp_op"
+   _item_linked.parent_name  "_pdbx_comparison_operator_list.code"
+   #
+save_
+#
+save__pdbx_item_value_condition_list.log_op
+   _item_description.name         "_pdbx_item_value_condition_list.log_op"
+   _item_description.description  
+;
+     The logical conjunction for combining multiple conditions.
+;
+
+   #
+   _item.name            "_pdbx_item_value_condition_list.log_op"
+   _item.category_id     pdbx_item_value_condition_list
+   _item.mandatory_code  no
+   #
+   _item_type.name  "_pdbx_item_value_condition_list.log_op"
+   _item_type.code  code
+   #
+   _item_default.name   "_pdbx_item_value_condition_list.log_op"
+   _item_default.value  and
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+     and  "conditions are satisfied simultaneously"  
+     or   "any condition is satisfied"  
+   #
 save_
 #
 save_pdbx_item_value_condition
-   _category.description     "     Attributes which describe those items sharing conditional dependency relationship     where the value of a target item depends on the values of its dependent partner items."
+   _category.description     
+;
+     Attributes which describe those items sharing conditional dependency relationship
+     where the value of a target item depends on the values of its dependent partner items.
+;
+
    _category.id              pdbx_item_value_condition
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -4234,11 +5918,18 @@ save_pdbx_item_value_condition
      item_group       pdbx_item_value_condition  
      extension_group  pdbx_item_value_condition  
    #
+   _pdbx_category_context.category_id  pdbx_item_value_condition
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__pdbx_item_value_condition.item_name
    _item_description.name         "_pdbx_item_value_condition.item_name"
-   _item_description.description  "     Name of the target data item."
+   _item_description.description  
+;
+     Name of the target data item.
+;
+
    #
    _item.name            "_pdbx_item_value_condition.item_name"
    _item.category_id     pdbx_item_value_condition
@@ -4254,7 +5945,11 @@ save_
 #
 save__pdbx_item_value_condition.dependent_item_name
    _item_description.name         "_pdbx_item_value_condition.dependent_item_name"
-   _item_description.description  "     Name of a dependent data item."
+   _item_description.description  
+;
+     Name of a dependent data item.
+;
+
    #
    _item.name            "_pdbx_item_value_condition.dependent_item_name"
    _item.category_id     pdbx_item_value_condition
@@ -4269,7 +5964,13 @@ save__pdbx_item_value_condition.dependent_item_name
 save_
 #
 save_pdbx_item_linked
-   _category.description     "     Attributes which describe how equivalent data items are linked     within categories and across different categories subject to     value conditions within the child data category."
+   _category.description     
+;
+     Attributes which describe how equivalent data items are linked
+     within categories and across different categories subject to
+     value conditions within the child data category.
+;
+
    _category.id              pdbx_item_linked
    _category.mandatory_code  no
    _category.implicit_key    mmcif_ddl.dic
@@ -4284,11 +5985,18 @@ save_pdbx_item_linked
      item_group       pdbx_item_linked  
      extension_group  pdbx_item_linked  
    #
+   _pdbx_category_context.category_id  pdbx_item_linked
+   _pdbx_category_context.type         DEFINITION
+   #
 save_
 #
 save__pdbx_item_linked.id
    _item_description.name         "_pdbx_item_linked.id"
-   _item_description.description  "     A unique identifier for each record."
+   _item_description.description  
+;
+     A unique identifier for each record.
+;
+
    #
    _item.name            "_pdbx_item_linked.id"
    _item.category_id     pdbx_item_linked
@@ -4301,7 +6009,11 @@ save_
 #
 save__pdbx_item_linked.child_name
    _item_description.name         "_pdbx_item_linked.child_name"
-   _item_description.description  "     Name of the child data item."
+   _item_description.description  
+;
+     Name of the child data item.
+;
+
    #
    _item.name            "_pdbx_item_linked.child_name"
    _item.category_id     pdbx_item_linked
@@ -4317,7 +6029,11 @@ save_
 #
 save__pdbx_item_linked.parent_name
    _item_description.name         "_pdbx_item_linked.parent_name"
-   _item_description.description  "     Name of the parent data item."
+   _item_description.description  
+;
+     Name of the parent data item.
+;
+
    #
    _item.name            "_pdbx_item_linked.parent_name"
    _item.category_id     pdbx_item_linked
@@ -4333,7 +6049,12 @@ save_
 #
 save__pdbx_item_linked.condition_id
    _item_description.name         "_pdbx_item_linked.condition_id"
-   _item_description.description  "     An identifier for each value condition. A condition may span multiple     item and value pairs."
+   _item_description.description  
+;
+     An identifier for each value condition. A condition may span multiple
+     item and value pairs.
+;
+
    #
    _item.name            "_pdbx_item_linked.condition_id"
    _item.category_id     pdbx_item_linked
@@ -4346,7 +6067,11 @@ save_
 #
 save__pdbx_item_linked.condition_child_name
    _item_description.name         "_pdbx_item_linked.condition_child_name"
-   _item_description.description  "     Name of the child data item subject to the value condition."
+   _item_description.description  
+;
+     Name of the child data item subject to the value condition.
+;
+
    #
    _item.name            "_pdbx_item_linked.condition_child_name"
    _item.category_id     pdbx_item_linked
@@ -4362,7 +6087,11 @@ save_
 #
 save__pdbx_item_linked.condition_child_value
    _item_description.name         "_pdbx_item_linked.condition_child_value"
-   _item_description.description  "     The data value for the child value condition."
+   _item_description.description  
+;
+     The data value for the child value condition.
+;
+
    #
    _item.name            "_pdbx_item_linked.condition_child_value"
    _item.category_id     pdbx_item_linked
@@ -4373,22 +6102,137 @@ save__pdbx_item_linked.condition_child_value
    #
 save_
 #
-save__pdbx_item_linked.condition_child_operation
-   _item_description.name         "_pdbx_item_linked.condition_child_operation"
-   _item_description.description  "     The comparison operation for the child value condition"
+save__pdbx_item_linked.condition_child_target_name
+   _item_description.name         "_pdbx_item_linked.condition_child_target_name"
+   _item_description.description  
+;
+     Name of the data item which is the target of the value condition.
+;
+
    #
-   _item.name            "_pdbx_item_linked.condition_child_operation"
+   _item.name            "_pdbx_item_linked.condition_child_target_name"
    _item.category_id     pdbx_item_linked
    _item.mandatory_code  no
    #
-   _item_type.name  "_pdbx_item_linked.condition_child_operation"
+   _item_type.name  "_pdbx_item_linked.condition_child_target_name"
+   _item_type.code  name
+   #
+   _item_linked.child_name   "_pdbx_item_linked.condition_child_target_name"
+   _item_linked.parent_name  "_item.name"
+   #
+save_
+#
+save__pdbx_item_linked.condition_child_cmp_op
+   _item_description.name         "_pdbx_item_linked.condition_child_cmp_op"
+   _item_description.description  
+;
+     The comparison operation for the child value condition
+;
+
+   #
+   _item.name            "_pdbx_item_linked.condition_child_cmp_op"
+   _item.category_id     pdbx_item_linked
+   _item.mandatory_code  no
+   #
+   _item_type.name  "_pdbx_item_linked.condition_child_cmp_op"
    _item_type.code  char
+   #
+   _item_linked.child_name   "_pdbx_item_linked.condition_child_cmp_op"
+   _item_linked.parent_name  "_pdbx_comparison_operator_list.code"
+   #
+save_
+#
+save__pdbx_item_linked.condition_child_log_op
+   _item_description.name         "_pdbx_item_linked.condition_child_log_op"
+   _item_description.description  
+;
+     The logical conjunction for combining multiple conditions.
+;
+
+   #
+   _item.name            "_pdbx_item_linked.condition_child_log_op"
+   _item.category_id     pdbx_item_linked
+   _item.mandatory_code  no
+   #
+   _item_type.name  "_pdbx_item_linked.condition_child_log_op"
+   _item_type.code  code
+   #
+   _item_default.name   "_pdbx_item_linked.condition_child_log_op"
+   _item_default.value  and
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+     and  "conditions are satisfied simultaneously"  
+     or   "any condition is satisfied"  
+   #
+save_
+#
+save_pdbx_comparison_operator_list
+   _category.description     
+;
+     Specifies the operators available for value condition comparisons.
+;
+
+   _category.id              pdbx_comparison_operator_list
+   _category.mandatory_code  no
+   _category.implicit_key    mmcif_ddl.dic
+   #
+   _category_key.id    pdbx_comparison_operator_list
+   _category_key.name  "_pdbx_comparison_operator_list.code"
+   #
+   loop_
+   _category_group.id
+   _category_group.category_id
+     ddl_group   pdbx_comparison_operator_list  
+     item_group  pdbx_comparison_operator_list  
+   #
+   _pdbx_category_context.category_id  pdbx_comparison_operator_list
+   _pdbx_category_context.type         DATA
+   #
+save_
+#
+save__pdbx_comparison_operator_list.code
+   _item_description.name         "_pdbx_comparison_operator_list.code"
+   _item_description.description  
+;
+     A code for the comparison operator.
+;
+
+   #
+   _item.name            "_pdbx_comparison_operator_list.code"
+   _item.category_id     pdbx_comparison_operator_list
+   _item.mandatory_code  yes
+   #
+   _item_type.name  "_pdbx_comparison_operator_list.code"
+   _item_type.code  char
+   #
+save_
+#
+save__pdbx_comparison_operator_list.description
+   _item_description.name         "_pdbx_comparison_operator_list.description"
+   _item_description.description  
+;
+     Description of the comparison operator.
+;
+
+   #
+   _item.name            "_pdbx_comparison_operator_list.description"
+   _item.category_id     pdbx_comparison_operator_list
+   _item.mandatory_code  yes
+   #
+   _item_type.name  "_pdbx_comparison_operator_list.description"
+   _item_type.code  text
    #
 save_
 #
 save__item_enumeration.rcsb_detail_brief
    _item_description.name         "_item_enumeration.rcsb_detail_brief"
-   _item_description.description  "     A brief description of a permissible value for the defined item."
+   _item_description.description  
+;
+     A brief description of a permissible value for the defined item.
+;
+
    #
    _item.name            "_item_enumeration.rcsb_detail_brief"
    _item.category_id     item_enumeration
@@ -4401,7 +6245,11 @@ save_
 #
 save__item_enumeration.rcsb_type_units_code
    _item_description.name         "_item_enumeration.rcsb_type_units_code"
-   _item_description.description  "     Where the enumeration refers to a type, the code for the units of expression for this type."
+   _item_description.description  
+;
+     Where the enumeration refers to a type, the code for the units of expression for this type.
+;
+
    #
    _item.name            "_item_enumeration.rcsb_type_units_code"
    _item.category_id     item_enumeration

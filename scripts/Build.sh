@@ -24,7 +24,7 @@ if [ ! -e $outdir ]; then
 fi
 
 rm -f $outdict
-build_dict_cli --op build --input_dict_path $generator --output_dict_path $outdict
+build_dict_cli --op build --input_dict_path $generator --output_dict_path $outdict --cleanup
 version=`build_dict_cli --op get_version --input_dict_path $outdict`
 #
 archivefile=$TOPDIR/archive/$dict-v$version'.dic'
