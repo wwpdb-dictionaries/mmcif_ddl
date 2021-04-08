@@ -30,7 +30,6 @@ Changes (JW):
 mmcif_ddl-ext-condition.dic 1.2.0 2021-04-06
 ;
 Changes (JW):
-;
 + Add data category pdbx_comparison_operator_list and items
  _pdbx_item_linked.condition_child_log_op, _pdbx_item_linked.condition_child_target_name,
  _pdbx_item_value_condition_list.log_op
