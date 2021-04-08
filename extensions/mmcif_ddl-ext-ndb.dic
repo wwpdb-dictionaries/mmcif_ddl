@@ -97,6 +97,8 @@ save_ndb_category_description
          'ddl_group'                     ndb_category_description
          'category_group'                ndb_category_description
          'extension_group'               ndb_category_description
+    _pdbx_category_context.category_id  ndb_category_description
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__ndb_category_description.id
@@ -144,7 +146,8 @@ category.
          'ddl_group'                     ndb_category_examples
          'category_group'                ndb_category_examples
          'extension_group'               ndb_category_examples
-
+    _pdbx_category_context.category_id  ndb_category_examples
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__ndb_category_examples.id
@@ -204,6 +207,8 @@ save_ndb_item_description
          'ddl_group'                     ndb_item_description
          'item_group'                    ndb_item_description
          'extension_group'               ndb_item_description
+    _pdbx_category_context.category_id  ndb_item_description
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__ndb_item_description.name
@@ -256,6 +261,8 @@ save_ndb_item_enumeration
          ndb_item_enumeration            'ddl_group'
          ndb_item_enumeration            'item_group'
          ndb_item_enumeration            'extension_group'
+    _pdbx_category_context.category_id  ndb_item_enumeration
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__ndb_item_enumeration.name
@@ -315,6 +322,8 @@ save_ndb_item_examples
          'ddl_group'                     ndb_item_examples
          'item_group'                    ndb_item_examples
          'extension_group'               ndb_item_examples
+    _pdbx_category_context.category_id  ndb_item_examples
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__ndb_item_examples.case
@@ -381,6 +390,8 @@ save_ndb_item_range
          'ddl_group'                     ndb_item_range
          'item_group'                    ndb_item_range
          'extension_group'               ndb_item_range
+    _pdbx_category_context.category_id  ndb_item_range
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__ndb_item_range.ordinal
@@ -464,6 +475,8 @@ save_ndb_item_type
          'ddl_group'                     ndb_item_type
          'item_group'                    ndb_item_type
          'extension_group'               ndb_item_type
+    _pdbx_category_context.category_id  ndb_item_type
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__ndb_item_type.name
@@ -515,6 +528,8 @@ save_ndb_item
          'ddl_group'                     ndb_item
          'item_group'                    ndb_item
          'extension_group'               ndb_item
+    _pdbx_category_context.category_id  ndb_item
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__ndb_item.name

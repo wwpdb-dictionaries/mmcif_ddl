@@ -23,6 +23,8 @@ save_datablock
     _category_group.category_id
          'ddl_group'                     datablock
          'datablock_group'               datablock
+     _pdbx_category_context.category_id  datablock
+     _pdbx_category_context.type         DATA
      save_
 
 
@@ -87,6 +89,8 @@ save_datablock_methods
     _category_group.category_id
          'ddl_group'                     datablock_methods
          'datablock_group'               datablock_methods
+    _pdbx_category_context.category_id  datablock_methods
+    _pdbx_category_context.type         DATA
      save_
 
 save__datablock_methods.datablock_id
@@ -138,6 +142,8 @@ save_category
     _category_group.category_id
          'ddl_group'                     category
          'category_group'                category
+    _pdbx_category_context.category_id  category
+    _pdbx_category_context.type         DEFINITION
      save_
 
 
@@ -231,6 +237,8 @@ save_category_examples
     _category_key.name
          category_examples             '_category_examples.id'
          category_examples             '_category_examples.case'
+    _pdbx_category_context.category_id  category_examples
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__category_examples.id
@@ -303,6 +311,8 @@ save_category_key
     _category_group.category_id
          'ddl_group'                     category_key
          'category_group'                category_key
+    _pdbx_category_context.category_id  category_key
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__category_key.name
@@ -363,6 +373,8 @@ save_category_group
     _category_group.category_id
          'ddl_group'                     category_group
          'category_group'                category_group
+    _pdbx_category_context.category_id  category_group
+    _pdbx_category_context.type         DEFINITION
     save_
 
 save__category_group.id
@@ -418,6 +430,8 @@ save_category_group_list
     _category_group.category_id
          'ddl_group'                     category_group_list
          'category_group'                category_group_list
+    _pdbx_category_context.category_id  category_group_list
+    _pdbx_category_context.type         DATA
     save_
 
 save__category_group_list.id
@@ -493,6 +507,8 @@ save_category_methods
     _category_group.category_id
          'ddl_group'                     category_methods
          'category_group'                category_methods
+    _pdbx_category_context.category_id  category_methods
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__category_methods.category_id
@@ -550,6 +566,8 @@ save_sub_category
     _category_group.category_id
          'ddl_group'                     sub_category
          'sub_category_group'            sub_category
+    _pdbx_category_context.category_id  sub_category
+    _pdbx_category_context.type         DEFINITION
      save_
 
 
@@ -611,6 +629,8 @@ save_sub_category_examples
     _category_group.category_id
          'ddl_group'                     sub_category_examples
          'sub_category_group'            sub_category_examples
+    _pdbx_category_context.category_id  sub_category_examples
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__sub_category_examples.id
@@ -681,6 +701,8 @@ save_sub_category_methods
     _category_group.category_id
          'ddl_group'                     sub_category_methods
          'sub_category_group'            sub_category_methods
+    _pdbx_category_context.category_id  sub_category_methods
+    _pdbx_category_context.type         DEFINITION
      save_
 
 
@@ -737,6 +759,8 @@ save_item
     _category_group.category_id
          'ddl_group'                     item
          'item_group'                    item
+    _pdbx_category_context.category_id  item
+    _pdbx_category_context.type         DEFINITION
      save_
 
 
@@ -846,6 +870,8 @@ save_item_aliases
          item_aliases        '_item_aliases.alias_name'
          item_aliases        '_item_aliases.dictionary'
          item_aliases        '_item_aliases.version'
+    _pdbx_category_context.category_id  item_aliases
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__item_aliases.name
@@ -928,6 +954,8 @@ save_item_default
     _category_group.category_id
          'ddl_group'                     item_default
          'item_group'                    item_default
+    _pdbx_category_context.category_id  item_default
+    _pdbx_category_context.type         DEFINITION
      save_
 
 
@@ -982,6 +1010,8 @@ save_item_dependent
     _category_key.name
          item_dependent                '_item_dependent.name'
          item_dependent                '_item_dependent.dependent_name'
+    _pdbx_category_context.category_id  item_dependent
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__item_dependent.name
@@ -1035,6 +1065,8 @@ save_item_description
     _category_group.category_id
          'ddl_group'                     item_description
          'item_group'                    item_description
+    _pdbx_category_context.category_id  item_description
+    _pdbx_category_context.type         DEFINITION
      save_
 
 
@@ -1089,6 +1121,8 @@ save_item_enumeration
     _category_group.category_id
          'ddl_group'                     item_enumeration
          'item_group'                    item_enumeration
+    _pdbx_category_context.category_id  item_enumeration
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__item_enumeration.name
@@ -1156,6 +1190,8 @@ save_item_examples
     _category_group.category_id
          'ddl_group'                     item_examples
          'item_group'                    item_examples
+    _pdbx_category_context.category_id  item_examples
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__item_examples.name
@@ -1224,6 +1260,8 @@ save_item_linked
     _category_group.category_id
          'ddl_group'                     item_linked
          'item_group'                    item_linked
+    _pdbx_category_context.category_id  item_linked
+    _pdbx_category_context.type         DEFINITION
      save_
 
 
@@ -1276,6 +1314,8 @@ save_item_methods
     _category_group.category_id
          'ddl_group'                   item_methods
          'item_group'                  item_methods
+    _pdbx_category_context.category_id  item_methods
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__item_methods.name
@@ -1331,6 +1371,8 @@ save_item_range
     _category_group.category_id
          'ddl_group'                     item_range
          'item_group'                    item_range
+    _pdbx_category_context.category_id  item_range
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__item_range.ordinal
@@ -1417,6 +1459,8 @@ save_item_related
     _category_group.category_id
          'ddl_group'                     item_related
          'item_group'                    item_related
+    _pdbx_category_context.category_id  item_related
+    _pdbx_category_context.type         DEFINITION
      save_
 
 
@@ -1546,6 +1590,8 @@ save_item_structure
     _category_group.category_id
          'ddl_group'                     item_structure
          'item_group'                    item_structure
+    _pdbx_category_context.category_id  item_structure
+    _pdbx_category_context.type         DEFINITION
     save_
 
 
@@ -1624,6 +1670,8 @@ save_item_structure_list
     _category_group.category_id
          'ddl_group'                     item_structure_list
          'item_group'                    item_structure_list
+    _pdbx_category_context.category_id  item_structure_list
+    _pdbx_category_context.type         DATA
     save_
 
 save__item_structure_list.code
@@ -1713,6 +1761,8 @@ save_item_sub_category
     _category_group.category_id
          'sub_category_group'            item_sub_category
          'item_group'                    item_sub_category
+    _pdbx_category_context.category_id  item_sub_category
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__item_sub_category.name
@@ -1765,6 +1815,8 @@ save_item_type
     _category_group.category_id
          'ddl_group'                     item_type
          'item_group'                    item_type
+    _pdbx_category_context.category_id  item_type
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__item_type.name
@@ -1819,6 +1871,8 @@ save_item_type_conditions
          'ddl_group'                     item_type_conditions
          'item_group'                    item_type_conditions
          'compliance_group'              item_type_conditions
+    _pdbx_category_context.category_id  item_type_conditions
+    _pdbx_category_context.type         DEFINITION
      save_
 
 
@@ -1893,6 +1947,8 @@ save_item_type_list
     _category_group.category_id
          'ddl_group'                     item_type_list
          'item_group'                    item_type_list
+    _pdbx_category_context.category_id  item_type_list
+    _pdbx_category_context.type         DATA
      save_
 
 save__item_type_list.code
@@ -1999,6 +2055,8 @@ save_item_units
     _category_group.category_id
          'ddl_group'                     item_units
          'item_group'                    item_units
+    _pdbx_category_context.category_id  item_units
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__item_units.name
@@ -2053,6 +2111,8 @@ save_item_units_conversion
     _category_group.category_id
          'ddl_group'                     item_units_conversion
          'item_group'                    item_units_conversion
+    _pdbx_category_context.category_id  items_units_conversion
+    _pdbx_category_context.type         DATA
      save_
 
 save__item_units_conversion.from_code
@@ -2150,6 +2210,8 @@ save_item_units_list
     _category_group.category_id
          'ddl_group'                     item_units_list
          'item_group'                    item_units_list
+    _pdbx_category_context.category_id  item_units_list
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__item_units_list.code
@@ -2210,6 +2272,8 @@ save_method_list
          'ddl_group'                     method_list
          'item_group'                    method_list
          'category_group'                method_list
+    _pdbx_category_context.category_id  method_list
+    _pdbx_category_context.type         DATA
      save_
 
 
@@ -2377,6 +2441,8 @@ save_dictionary
          'ddl_group'                     dictionary
          'datablock_group'               dictionary
          'dictionary_group'              dictionary
+    _pdbx_category_context.category_id  dictionary
+    _pdbx_category_context.type         DATA
      save_
 
 
@@ -2446,6 +2512,8 @@ save_dictionary_history
     _category_group.category_id
          'ddl_group'                     dictionary_history
          'dictionary_group'              dictionary_history
+    _pdbx_category_context.category_id  dictionary_history
+    _pdbx_category_context.type         DATA
      save_
 
 

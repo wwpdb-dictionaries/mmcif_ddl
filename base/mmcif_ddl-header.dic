@@ -304,10 +304,11 @@ data_mmcif_ddl-header.dic
 ;      Changes (JW):
        +  Add items _item_enumeration.rcsb_detail_brief and _item_enumeration.rcsb_type_units_code
 ;
-       2.3.0 2020-06-05
+       2.3.0 2021-06-07
 ;      Changes (JW):
        + Add generator for pdbx_dictionary_include/pdbx_category_include/pdbx_item_include
        + Miscellaneous updates in item/category descriptions
+       + Add DATA or DEFINITION contexts to all DDL categories.
 ;
 
 ### EOF mmcif_ddl-header.dic ####

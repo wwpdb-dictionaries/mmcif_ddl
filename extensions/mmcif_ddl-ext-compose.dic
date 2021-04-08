@@ -74,6 +74,8 @@ save_pdbx_include_dictionary
          'ddl_group'                     pdbx_include_dictionary
          'dictionary_group'              pdbx_include_dictionary
          'extension_group'               pdbx_include_dictionary
+    _pdbx_category_context.category_id  pdbx_include_dictionary
+    _pdbx_category_context.type         DATA
      save_
 
 save__pdbx_include_dictionary.datablock_id
@@ -202,7 +204,8 @@ save_pdbx_include_category
          'ddl_group'                     pdbx_include_category
          'category_group'                pdbx_include_category
          'extension_group'               pdbx_include_category
-
+    _pdbx_category_context.category_id  pdbx_include_category
+    _pdbx_category_context.type         DATA
      save_
 
 save__pdbx_include_category.category_id
@@ -293,6 +296,8 @@ save_pdbx_include_item
          'ddl_group'                     pdbx_include_item
          'item_group'                    pdbx_include_item
          'extension_group'               pdbx_include_item
+    _pdbx_category_context.category_id  pdbx_include_item
+    _pdbx_category_context.type         DATA
      save_
 
 save__pdbx_include_item.item_name
@@ -379,6 +384,8 @@ save_pdbx_dictionary_component
          'ddl_group'                     pdbx_dictionary_component
          'datablock_group'               pdbx_dictionary_component
          'extension_group'               pdbx_dictionary_component
+    _pdbx_category_context.category_id  pdbx_dictionary_component
+    _pdbx_category_context.type         DATA
      save_
 
 
@@ -466,6 +473,8 @@ save_pdbx_dictionary_component_history
          'ddl_group'                          pdbx_dictionary_component_history
          'dictionary_group'                   pdbx_dictionary_component_history
          'extension_group'                    pdbx_dictionary_component_history
+    _pdbx_category_context.category_id  pdbx_dictionary_component_history
+    _pdbx_category_context.type         DATA
      save_
 
 
