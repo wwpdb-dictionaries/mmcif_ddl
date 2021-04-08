@@ -10,17 +10,17 @@ _pdbx_include_dictionary.dictionary_locator
 _pdbx_include_dictionary.include_mode
 _pdbx_include_dictionary.dictionary_namespace_prefix
 _pdbx_include_dictionary.dictionary_namespace_prefix_replace
-mmcif_ddl-header.dic        https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/base/mmcif_ddl-header.dic   extend . .
-mmcif_ddl-data.dic          https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/base/mmcif_ddl-data.dic     extend . .
-mmcif_ddl-def-core.dic      https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/base/mmcif_ddl-def-core.dic extend . .
+mmcif_ddl-header.dic        https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/master/base/mmcif_ddl-header.dic   extend . .
+mmcif_ddl-data.dic          https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/master/base/mmcif_ddl-data.dic     extend . .
+mmcif_ddl-def-core.dic      https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/master/base/mmcif_ddl-def-core.dic extend . .
 #
-mmcif_ddl-ext-nx.dic        https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/extensions/mmcif_ddl-ext-nx.dic        extend nx    nx
-mmcif_ddl-ext-ndb.dic       https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/extensions/mmcif_ddl-ext-ndb.dic       extend ndb   ndb
-mmcif_ddl-ext-pdbx.dic      https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/extensions/mmcif_ddl-ext-pdbx.dic      extend pdbx  pdbx
+mmcif_ddl-ext-nx.dic        https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/master/extensions/mmcif_ddl-ext-nx.dic        extend nx    nx
+mmcif_ddl-ext-ndb.dic       https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/master/extensions/mmcif_ddl-ext-ndb.dic       extend ndb   ndb
+mmcif_ddl-ext-pdbx.dic      https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/master/extensions/mmcif_ddl-ext-pdbx.dic      extend pdbx  pdbx
 #
-mmcif_ddl-ext-rcsb.dic      https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/extensions/mmcif_ddl-ext-rcsb.dic      extend rcsb  rcsb
+mmcif_ddl-ext-rcsb.dic      https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/master/extensions/mmcif_ddl-ext-rcsb.dic      extend rcsb  rcsb
 #
-mmcif_ddl-data-ilg.dic      https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/base/mmcif_ddl-data-ilg.dic extend . .
+mmcif_ddl-data-ilg.dic      https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/master/base/mmcif_ddl-data-ilg.dic extend . .
 
 loop_
 _pdbx_include_item.item_name
