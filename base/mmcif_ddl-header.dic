@@ -2,17 +2,10 @@
 #
 # File:  mmcif_ddl-header.dic
 #
-#            mmCIF DDL Core Dictionary with NDB & PDBX extensions
-#
-# This DDL dictionary is a mirror of ddl_core.dic-org with all implicit
-# data items fully expanded and with NDB & PDBX extensions added.
-#
-#                           Header Section
-#
+#                   mmCIF DDL Core Dictionary Title/History
 #
 ###########################################################################
-
-data_mmcif_ddl.dic
+data_mmcif_ddl-header.dic
 
     _datablock.id                          mmcif_ddl.dic
     _datablock.description
@@ -22,7 +15,7 @@ data_mmcif_ddl.dic
 
     _dictionary.datablock_id               mmcif_ddl.dic
     _dictionary.title                      mmcif_ddl.dic
-    _dictionary.version                    2.2.2
+    _dictionary.version                    2.3.0
 
      loop_
     _dictionary_history.version
@@ -173,9 +166,9 @@ data_mmcif_ddl.dic
                 Added connection from _data_block.id to _category.implicit_key
                 in order to provide a formal means of merging the contents
                 of categories between data blocks.
-         +    Moved ennumerations for _method_list.code and
+         +    Moved enumerations for _method_list.code and
               method_list.language to examples.
-         +    Removed symmetric matrix options from the ennumerations
+         +    Removed symmetric matrix options from the enumerations
               for _item_structure.organization.
          +    Added _item_related.function codes for 'associated_value',
               'associated_esd', 'replaces' and 'replacedby'
@@ -191,7 +184,7 @@ data_mmcif_ddl.dic
        2.0.17  1995-06-22
 ;
        Changes: (JW)
-         +    Quoted data vaules containing the leading string  'data_'.
+         +    Quoted data values containing the leading string  'data_'.
 ;
        2.1.0  1995-07-20
 ;
@@ -203,8 +196,8 @@ data_mmcif_ddl.dic
                and deleted the subcategory attribute from ITEM category.
              + modified regular expressions to reflect limitations observed
                on several platforms.
-             + expanded the ennumeration of _item_related.function_code.
-             + removed default value from _item.manadatory_code.
+             + expanded the enumeration of _item_related.function_code.
+             + removed default value from _item.mandatory_code.
              + removed type construct for date and changed date data type
                to yyyy-mm-dd
              + added less restrictive data type for alias names.
@@ -253,34 +246,34 @@ data_mmcif_ddl.dic
 ;
        2.1.8  2008-10-31
 ;      Changes: (JW)
-	+ added categories pdbx_item_link_group and pdbx_item_link_group_list
+	+ Add categories pdbx_item_link_group and pdbx_item_link_group_list
 ;
        2.1.9  2009-01-15
 ;      Changes: (JW)
-       + _ndb_item_examples.detail make optional
+       + _ndb_item_examples.detail made optional
 ;
        2.1.10  2009-01-19
 ;      Changes: (JW)
-       + added _item.mandatory_code enumeration implicit-ordinal to provide
+       + Add _item.mandatory_code enumeration implicit-ordinal to provide
          an automatically generated ordinal index data item.   This feature
          is added to address problems where the natural category key may
          contain an undefined value (e.g. '.').
 ;
        2.1.11  2009-11-02
 ;      Changes: (JW)
-       + added categories pdbx_item_context and pdbx_category_context
+       + Add categories pdbx_item_context and pdbx_category_context
 ;
        2.1.12  2012-09-01
 ;      Changes: (JW) -
-       + Added categories ndb_item_range, ndb_item and ndb_item_type
-       + Added alternate categories under PDBx prefix:
+       + Add categories ndb_item_range, ndb_item and ndb_item_type
+       + Add alternate categories under PDBx prefix:
 	pdbx_item_range,pdbx_item_type,pdbx_item,pdbx_category_description,
 	pdbx_category_examples,pdbx_item_description,pdbx_item_enumeration,
 	and pdbx_item_examples.
 ;
        2.1.13  2013-09-23
 ;      Changes: (JW) -
-       + Added _category.NX_mapping_details for Nexus correspondences.
+       + Add _category.NX_mapping_details for Nexus correspondences.
 ;
        2.1.14  2013-10-14
 ;      Changes: (JW) -
@@ -311,4 +304,11 @@ data_mmcif_ddl.dic
 ;      Changes (JW):
        +  Add items _item_enumeration.rcsb_detail_brief and _item_enumeration.rcsb_type_units_code
 ;
+       2.3.0 2021-06-07
+;      Changes (JW):
+       + Add generator for pdbx_dictionary_include/pdbx_category_include/pdbx_item_include
+       + Miscellaneous updates in item/category descriptions
+       + Add DATA or DEFINITION contexts to all DDL categories.
+;
+
 ### EOF mmcif_ddl-header.dic ####

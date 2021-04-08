@@ -1,28 +1,181 @@
 ###########################################################################
 #
-# File:  mmcif_ddl-def-3.dic                                             
-# 
-#            mmCIF DDL Core Dictionary with PDBx extensions                
+# File:  mmcif_ddl-ext-pdbx.dic
 #
-# This DDL dictionary is a mirror of ddl_core.dic-org with all implicit 
-# data items fully expanded and with PDBx & NDB  extensions added.  
+#            mmCIF DDL Protein Data Bank (PDBx) extensions
 #
-#                           Definition Section 3.
-#                        (PDBx Extension Definitions) 
-# 
-#                                                                        
 ###########################################################################
+data_mmcif_ddl-ext-pdbx.dic
 
+#
+loop_
+_pdbx_include_dictionary.dictionary_id
+_pdbx_include_dictionary.dictionary_locator
+_pdbx_include_dictionary.include_mode
+_pdbx_include_dictionary.dictionary_namespace_prefix
+_pdbx_include_dictionary.dictionary_namespace_prefix_replace
+mmcif_ddl-ext-compose.dic   https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/extensions/mmcif_ddl-ext-compose.dic   extend pdbx  pdbx
+mmcif_ddl-ext-condition.dic https://raw.githubusercontent.com/wwpdb-dictionaries/mmcif_ddl/development/extensions/mmcif_ddl-ext-condition.dic extend pdbx  pdbx
+#
+
+loop_
+_pdbx_include_category.category_id
+_pdbx_include_category.dictionary_id
+_pdbx_include_category.include_as_category_id
+_pdbx_include_category.include_mode
+pdbx_include_dictionary           mmcif_ddl-ext-compose.dic pdbx_include_dictionary           extend
+pdbx_include_category             mmcif_ddl-ext-compose.dic pdbx_include_category             extend
+pdbx_include_item                 mmcif_ddl-ext-compose.dic pdbx_include_item                 extend
+pdbx_dictionary_component         mmcif_ddl-ext-compose.dic pdbx_dictionary_component         extend
+pdbx_dictionary_component_history mmcif_ddl-ext-compose.dic pdbx_dictionary_component_history extend
+#
+
+_pdbx_dictionary_component.datablock_id   mmcif_ddl-ext-pdbx.dic
+_pdbx_dictionary_component.dictionary_component_id   mmcif_ddl-ext-pdbx.dic
+_pdbx_dictionary_component.title          "mmCIF DDL Protein Data Bank (PDBx) extensions"
+_pdbx_dictionary_component.version        1.7.0
+
+loop_
+_pdbx_dictionary_component_history.dictionary_component_id
+_pdbx_dictionary_component_history.version
+_pdbx_dictionary_component_history.update
+_pdbx_dictionary_component_history.revision
+mmcif_ddl-ext-pdbx.dic  1.0.0  2008-10-31
+;
+Changes: (JW)
++ Add categories pdbx_item_link_group and pdbx_item_link_group_list
+;
+mmcif_ddl-ext-pdbx.dic  1.1.0  2009-11-02
+;
+Changes: (JW)
++ Add categories pdbx_item_context and pdbx_category_context
+;
+mmcif_ddl-ext-pdbx.dic  1.2.0  2012-09-01
+;
+Changes: (JW) -
++ Add alternate categories under PDBx prefix:
+  pdbx_item_range,pdbx_item_type,pdbx_item,pdbx_category_description,
+  pdbx_category_examples,pdbx_item_description,pdbx_item_enumeration,
+  and pdbx_item_examples.
+;
+mmcif_ddl-ext-pdbx.dic 1.3.0  2013-10-14
+;
+Changes: (JW) -
++ Add category pdbx_item_enumeration_details describing additional controls
+  for enumerated data items at deposition.
+;
+mmcif_ddl-ext-pdbx.dic 1.4.0  2014-03-10
+;
+Changes: (JW) -
++ Add enumerations for pdbx_item_enumeration_details.closed_flag
+;
+mmcif_ddl-ext-pdbx.dic 1.5.0  2019-04-04
+;
+Changes: (JW)
++ Add extension item _item_sub_category.pdbx_label
+;
+mmcif_ddl-ext-pdbx.dic 1.6.0  2021-03-30
+;
+Changes (JW):
++ Migrate to dictionary component mmcif_ddl-ext-pdbx.dic.
+;
+mmcif_ddl-ext-ndb.dic 1.7.0 2021-04-05
+;
+Changes (JW):
++ Add pdbx_include_dictionary/pdbx_include_category for dictionary compose and value conditions extensions
++ Add to pdbx_item_linked_group and pdbx_item_linked_group_list details
+;
+#
+loop_
+_pdbx_item_linked_group.category_id
+_pdbx_item_linked_group.link_group_id
+_pdbx_item_linked_group.label
+_pdbx_item_linked_group.context
+_pdbx_item_linked_group.condition_id
+#
+pdbx_item_linked_group      1 pdbx_item_linked_group:category:1                    . .
+pdbx_item_linked_group_list 1 pdbx_item_linked_group_list:item:1                   . .
+pdbx_item_linked_group_list 2 pdbx_item_linked_group_list:item:2                   . .
+pdbx_item_linked_group_list 3 pdbx_item_linked_group_list:pdbx_item_linked_group:3 . .
+pdbx_category_context       1 pdbx_category_context:category:1                     . .
+pdbx_item_context           1 pdbx_item_context:item:1                             . .
+pdbx_item_enumeration_details 1 pdbx_item_enumeration_details:item:1               . .
+#
+pdbx_item_range              1 pdbx_item_range:item:1                                . .
+pdbx_item_type               1 pdbx_item_type:item:1                                 . .
+pdbx_item                    1 pdbx_item:item:1                                      . .
+pdbx_category_description    1 pdbx_category_description:category:1                  . .
+pdbx_category_examples       1 pdbx_category_examples:category:1                     . .
+pdbx_item_description        1 pdbx_item_description:item:1                          . .
+pdbx_item_enumeration        1 pdbx_item_enumeration:item:1                          . .
+pdbx_item_examples           1 pdbx_item_examples:item:1                             . .
+#
+pdbx_include_category      1 pdbx_include_category:pdbx_include_dictionary:1     .  .
+pdbx_include_item          1 pdbx_include_item:pdbx_include_dictionary:1     .  .
+pdbx_dictionary_component  1 pdbx_dictionary_component:pdbx_dictionary_component_history:1    .  .
+pdbx_dictionary_component_history 1 pdbx_dictionary_component_history:pdbx_dictionary_component:1  .  .
+#
+pdbx_item_value_condition  1 pdbx_item_value_condition:pdbx_item_value_condition_list:1 . .
+pdbx_item_value_condition_list  1 pdbx_item_value_condition_list:item:1  . .
+pdbx_item_value_condition_list  2 pdbx_item_value_condition_list:item:2  . .
+#
+pdbx_item_linked  1 pdbx_item_linked:item:1  . .
+pdbx_item_linked  2 pdbx_item_linked:item:2  . .
+pdbx_item_linked  3 pdbx_item_linked:item:3  . .
+#
+loop_
+_pdbx_item_linked_group_list.child_category_id
+_pdbx_item_linked_group_list.link_group_id
+_pdbx_item_linked_group_list.child_name
+_pdbx_item_linked_group_list.parent_name
+_pdbx_item_linked_group_list.parent_category_id
+#
+pdbx_item_linked_group      1 '_pdbx_item_linked_group.category_id'             '_category.id'                          category
+pdbx_item_linked_group_list 1 '_pdbx_item_linked_group_list.child_name'         '_item.name'                            item
+pdbx_item_linked_group_list 1 '_pdbx_item_linked_group_list.child_category_id'  '_item.category_id'                     item
+pdbx_item_linked_group_list 2 '_pdbx_item_linked_group_list.parent_name'        '_item.name'                            item
+pdbx_item_linked_group_list 2 '_pdbx_item_linked_group_list.parent_category_id' '_item.category_id'                     item
+pdbx_item_linked_group_list 3 '_pdbx_item_linked_group_list.link_group_id'      '_pdbx_item_linked_group.link_group_id' pdbx_item_linked_group
+pdbx_category_context       1 '_pdbx_category_context.category_id'              '_category.id'                          category
+pdbx_item_context           1 '_pdbx_item_context.item_name'                    '_item.name'                            item
+pdbx_item_enumeration_details  1 '_pdbx_item_enumeration_details.name'          '_item.name'                            item
+pdbx_category_description    1 '_pdbx_category_description.id'                    '_category.id'                          category
+pdbx_category_examples       1 '_pdbx_category_examples.id'                       '_category.id'                          category
+pdbx_item_description        1 '_pdbx_item_description.name'                      '_item.name'                            item
+pdbx_item_enumeration        1 '_pdbx_item_enumeration.name'                      '_item.name'                            item
+pdbx_item_examples           1 '_pdbx_item_examples.name'                         '_item.name'                            item
+pdbx_item_range              1 '_pdbx_item_range.name'                            '_item.name'                            item
+pdbx_item_type               1 '_pdbx_item_type.name'                             '_item.name'                            item
+pdbx_item                    1 '_pdbx_item.name'                                  '_item.name'                            item
+#
+pdbx_include_item                 1  '_pdbx_include_item.dictionary_id'                           '_pdbx_include_dictionary.dictionary_id'   pdbx_include_dictionary
+pdbx_include_category             1  '_pdbx_include_category.dictionary_id'                       '_pdbx_include_dictionary.dictionary_id'   pdbx_include_dictionary
+pdbx_dictionary_component         1  '_pdbx_dictionary_component.version'                         '_pdbx_dictionary_component_history.version'      pdbx_dictionary_component_history
+pdbx_dictionary_component_history 1  '_pdbx_dictionary_component_history.dictionary_component_id' '_pdbx_dictionary_component.dictionary_component_id'  pdbx_dictionary_component
+#
+pdbx_item_value_condition      1  '_pdbx_item_value_condition.item_name'                '_pdbx_item_value_condition_list.target_item_name'     pdbx_item_value_condition_list
+pdbx_item_value_condition      1  '_pdbx_item_value_condition.dependent_item_name'      '_pdbx_item_value_condition_list.dependent_item_name'  pdbx_item_value_condition_list
+pdbx_item_value_condition_list 1  '_pdbx_item_value_condition_list.target_item_name'     '_item.name'  item
+pdbx_item_value_condition_list 2  '_pdbx_item_value_condition_list.dependent_item_name'  '_item.name'  item
+#
+pdbx_item_linked    1  '_pdbx_item_linked.child_name'            '_item.name'  item
+pdbx_item_linked    2  '_pdbx_item_linked.parent_name'           '_item.name'  item
+pdbx_item_linked    3  '_pdbx_item_linked.condition_child_name'  '_item.name'  item
+#
+
+
+
+#
 save_pdbx_category_context
     _category.description
 ;
-      Category definition context describing the scope of usage and 
+      Category definition context describing the scope of usage and
       distribution for the category.
 ;
     _category.id                        pdbx_category_context
     _category.mandatory_code            no
     _category.implicit_key              mmcif_ddl.dic
-    _category_key.id                    pdbx_category_context     
+    _category_key.id                    pdbx_category_context
     _category_key.name                '_pdbx_category_context.category_id'
      loop_
     _category_group.id
@@ -30,7 +183,8 @@ save_pdbx_category_context
          'ddl_group'                     pdbx_category_context
          'category_group'                pdbx_category_context
          'extension_group'               pdbx_category_context
-
+    _pdbx_category_context.category_id  pdbx_category_context
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__pdbx_category_context.category_id
@@ -47,7 +201,7 @@ save__pdbx_category_context.type
     _item_description.name             '_pdbx_category_context.type'
     _item_description.description
 ;
-     Category context type 
+     Category context type
 ;
     _item.name                         '_pdbx_category_context.type'
     _item.category_id                    pdbx_category_context
@@ -56,20 +210,20 @@ save__pdbx_category_context.type
     _item_type.code                      char
     _item_examples.name                '_pdbx_category_context.type'
     _item_examples.case                'WWPDB_LOCAL'
-    _item_examples.detail              'An category used internally by the wwPDB and not distributed in archival entries' 
+    _item_examples.detail              'An category used internally by the wwPDB and not distributed in archival entries'
      save_
 
 ##
 save_pdbx_item_context
     _category.description
 ;
-      Item definition context describing the scope of usage and 
+      Item definition context describing the scope of usage and
       distribution for the category.
 ;
     _category.id                        pdbx_item_context
     _category.mandatory_code            no
     _category.implicit_key              mmcif_ddl.dic
-    _category_key.id                    pdbx_item_context     
+    _category_key.id                    pdbx_item_context
     _category_key.name                '_pdbx_item_context.item_name'
      loop_
     _category_group.id
@@ -77,7 +231,8 @@ save_pdbx_item_context
          'ddl_group'                     pdbx_item_context
          'item_group'                    pdbx_item_context
          'extension_group'               pdbx_item_context
-
+    _pdbx_category_context.category_id  pdbx_item_context
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__pdbx_item_context.item_name
@@ -94,7 +249,7 @@ save__pdbx_item_context.type
     _item_description.name             '_pdbx_item_context.type'
     _item_description.description
 ;
-     Item definition context type 
+     Item definition context type
 ;
     _item.name                         '_pdbx_item_context.type'
     _item.category_id                    pdbx_item_context
@@ -103,7 +258,7 @@ save__pdbx_item_context.type
     _item_type.code                      char
     _item_examples.name                '_pdbx_item_context.type'
     _item_examples.case                'WWPDB_LOCAL'
-    _item_examples.detail              'An item used internally by the wwPDB and not distributed in archival entries' 
+    _item_examples.detail              'An item used internally by the wwPDB and not distributed in archival entries'
      save_
 
 ##
@@ -123,7 +278,8 @@ save_pdbx_item_enumeration_details
          'ddl_group'                     pdbx_item_enumeration_details
          'item_group'                    pdbx_item_enumeration_details
          'extension_group'               pdbx_item_enumeration_details
-
+    _pdbx_category_context.category_id  pdbx_item_enumeration_details
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__pdbx_item_enumeration_details.name
@@ -158,7 +314,7 @@ save__pdbx_item_enumeration_details.closed_flag
     _item_examples.detail              'An item which may assume values outside of defined enumeration values at deposition'
      loop_
     _item_enumeration.name
-    _item_enumeration.value         
+    _item_enumeration.value
     _item_enumeration.detail
     '_pdbx_item_enumeration_details.closed_flag'  'no'   'The item may assume values outside of defined enumeration values at deposition'
     '_pdbx_item_enumeration_details.closed_flag'  'yes'  'The item may only assume enumeration values at deposition'
@@ -175,16 +331,18 @@ save_pdbx_item_linked_group
     _category.mandatory_code             no
     _category.implicit_key               mmcif_ddl.dic
      loop_
-    _category_key.id 
-    _category_key.name                
+    _category_key.id
+    _category_key.name
          pdbx_item_linked_group             '_pdbx_item_linked_group.category_id'
          pdbx_item_linked_group             '_pdbx_item_linked_group.link_group_id'
      loop_
-    _category_group.id       
+    _category_group.id
     _category_group.category_id
          'ddl_group'                     pdbx_item_linked_group
          'category_group'                    pdbx_item_linked_group
          'extension_group'                    pdbx_item_linked_group
+    _pdbx_category_context.category_id  pdbx_item_linked_group
+    _pdbx_category_context.type         DATA
      save_
 
 save__pdbx_item_linked_group.category_id
@@ -223,7 +381,7 @@ save__pdbx_item_linked_group.label
     _item_type.code                      text
      save_
 
-save__pdbx_item_linked_group.context 
+save__pdbx_item_linked_group.context
     _item.name                         '_pdbx_item_linked_group.context'
     _item.category_id                    pdbx_item_linked_group
     _item.mandatory_code                 no
@@ -249,19 +407,21 @@ save_pdbx_item_linked_group_list
     _category.mandatory_code             no
     _category.implicit_key               mmcif_ddl.dic
      loop_
-    _category_key.id 
-    _category_key.name                
+    _category_key.id
+    _category_key.name
          pdbx_item_linked_group_list             '_pdbx_item_linked_group_list.child_category_id'
          pdbx_item_linked_group_list             '_pdbx_item_linked_group_list.link_group_id'
          pdbx_item_linked_group_list             '_pdbx_item_linked_group_list.child_name'
          pdbx_item_linked_group_list             '_pdbx_item_linked_group_list.parent_name'
          pdbx_item_linked_group_list             '_pdbx_item_linked_group_list.parent_category_id'
      loop_
-    _category_group.id       
+    _category_group.id
     _category_group.category_id
          'ddl_group'                     pdbx_item_linked_group_list
          'item_group'                    pdbx_item_linked_group_list
          'extension_group'               pdbx_item_linked_group_list
+    _pdbx_category_context.category_id  pdbx_item_linked_group_list
+    _pdbx_category_context.type         DATA
      save_
 
 save__pdbx_item_linked_group_list.child_category_id
@@ -344,14 +504,14 @@ save_pdbx_item_range
 
     _category.description
 ;
-     An alternative set of permissible range values of a data item.  
-     When multiple ranges are specified they are interpreted sequentially 
+     An alternative set of permissible range values of a data item.
+     When multiple ranges are specified they are interpreted sequentially
      using a logical OR.  To specify that an item value may be
-     equal to a boundary value,  specify an item range where the 
-     maximum and mimimum values equal the boundary value.
+     equal to a boundary value,  specify an item range where the
+     maximum and minimum values equal the boundary value.
 ;
     _category.id                         pdbx_item_range
-    _category.mandatory_code             no 
+    _category.mandatory_code             no
     _category.implicit_key               mmcif_ddl.dic
      loop_
     _category_key.id
@@ -363,6 +523,8 @@ save_pdbx_item_range
          'ddl_group'                     pdbx_item_range
          'item_group'                    pdbx_item_range
          'extension_group'               pdbx_item_range
+    _pdbx_category_context.category_id  pdbx_item_range
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__pdbx_item_range.ordinal
@@ -446,6 +608,8 @@ save_pdbx_item_type
          'ddl_group'                     pdbx_item_type
          'item_group'                    pdbx_item_type
          'extension_group'               pdbx_item_type
+    _pdbx_category_context.category_id  pdbx_item_type
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__pdbx_item_type.name
@@ -497,6 +661,8 @@ save_pdbx_item
          'ddl_group'                     pdbx_item
          'item_group'                    pdbx_item
          'extension_group'               pdbx_item
+    _pdbx_category_context.category_id  pdbx_item
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__pdbx_item.name
@@ -555,7 +721,7 @@ save_pdbx_category_description
     _category.mandatory_code            no
     _category.implicit_key              mmcif_ddl.dic
      loop_
-    _category_key.id  
+    _category_key.id
     _category_key.name
          pdbx_category_description     '_pdbx_category_description.id'
          pdbx_category_description     '_pdbx_category_description.description'
@@ -565,6 +731,8 @@ save_pdbx_category_description
          'ddl_group'                     pdbx_category_description
          'category_group'                pdbx_category_description
          'extension_group'               pdbx_category_description
+    _pdbx_category_context.category_id  pdbx_category_description
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__pdbx_category_description.id
@@ -663,15 +831,17 @@ save_pdbx_item_description
     _category.implicit_key               mmcif_ddl.dic
      loop_
     _category_key.id
-    _category_key.name                 
+    _category_key.name
          pdbx_item_description          '_pdbx_item_description.name'
          pdbx_item_description          '_pdbx_item_description.description'
      loop_
-    _category_group.id    
+    _category_group.id
     _category_group.category_id
          'ddl_group'                     pdbx_item_description
          'item_group'                    pdbx_item_description
          'extension_group'               pdbx_item_description
+    _pdbx_category_context.category_id  pdbx_item_description
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__pdbx_item_description.name
@@ -720,10 +890,12 @@ save_pdbx_item_enumeration
          pdbx_item_enumeration          '_pdbx_item_enumeration.value'
       loop_
     _category_group.category_id
-    _category_group.id                
+    _category_group.id
          pdbx_item_enumeration            'ddl_group'
          pdbx_item_enumeration            'item_group'
          pdbx_item_enumeration            'extension_group'
+    _pdbx_category_context.category_id  pdbx_item_enumeration
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__pdbx_item_enumeration.name
@@ -773,16 +945,18 @@ save_pdbx_item_examples
     _category.mandatory_code             no
     _category.implicit_key               mmcif_ddl.dic
      loop_
-    _category_key.id 
-    _category_key.name                
+    _category_key.id
+    _category_key.name
          pdbx_item_examples             '_pdbx_item_examples.name'
          pdbx_item_examples             '_pdbx_item_examples.case'
      loop_
-     _category_group.id       
+     _category_group.id
     _category_group.category_id
          'ddl_group'                     pdbx_item_examples
          'item_group'                    pdbx_item_examples
          'extension_group'               pdbx_item_examples
+    _pdbx_category_context.category_id  pdbx_item_examples
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__pdbx_item_examples.case
@@ -821,6 +995,20 @@ save__pdbx_item_examples.name
     _item_linked.parent_name           '_item.name'
      save_
 
+save__item_sub_category.pdbx_label
 
-#### EOF mmcif_ddl-def-3a.dic 
+    _item_description.name             '_item_sub_category.pdbx_label'
+    _item_description.description
+;
+    An optional label for an instance of a subcategory within a category
+;
+    _item.name                         '_item_sub_category.pdbx_label'
+    _item.category_id                    item_sub_category
+    _item.mandatory_code                 no
+    _item_type.name                    '_item_sub_category.pdbx_label'
+    _item_type.code                      code
+
+    save_
+
+#### EOF mmcif_ddl-def-3a.dic
 

@@ -1,8 +1,41 @@
+###########################################################################
+#
+# File:  mmcif_ddl-ext-condition.dic
+#
+#            mmCIF DDL PDBx Conditional Value Extensions
+#
+###########################################################################
+data_mmcif_ddl-ext-condition.dic
 
+_pdbx_dictionary_component.datablock_id   mmcif_ddl-ext-condition.dic
+_pdbx_dictionary_component.dictionary_component_id   mmcif_ddl-ext-condition.dic
+_pdbx_dictionary_component.title          "mmCIF DDL PDBx Conditional Value Extensions"
+_pdbx_dictionary_component.version        1.2.0
 
-
+loop_
+_pdbx_dictionary_component_history.dictionary_component_id
+_pdbx_dictionary_component_history.version
+_pdbx_dictionary_component_history.update
+_pdbx_dictionary_component_history.revision
+mmcif_ddl-ext-condition.dic 1.0.0  2017-08-17
+;
+Changes (JW):
++ Preliminary versions of categories  pdbx_item_linked, pdbx_item_value_condition, and pdbx_item_value_condition_list
+;
+mmcif_ddl-ext-condition.dic 1.1.0 2021-03-30
+;
+Changes (JW):
++ Migrate to dictionary component mmcif_ddl-ext-condition.dic.
+;
+mmcif_ddl-ext-condition.dic 1.2.0 2021-04-06
+;
+Changes (JW):
++ Add data category pdbx_comparison_operator_list and items
+ _pdbx_item_linked.condition_child_log_op, _pdbx_item_linked.condition_child_target_name,
+ _pdbx_item_value_condition_list.log_op
+;
+#
 save_pdbx_item_value_condition_list
-
     _category.description
 ;
      Attributes which define value conditions among dependent items.
@@ -18,6 +51,8 @@ save_pdbx_item_value_condition_list
          'ddl_group'                     pdbx_item_value_condition_list
          'item_group'                    pdbx_item_value_condition_list
          'extension_group'               pdbx_item_value_condition_list
+    _pdbx_category_context.category_id  pdbx_item_value_condition_list
+    _pdbx_category_context.type         DATA
      save_
 
 save__pdbx_item_value_condition_list.cond_id
@@ -25,7 +60,7 @@ save__pdbx_item_value_condition_list.cond_id
     _item_description.name             '_pdbx_item_value_condition_list.cond_id'
     _item_description.description
 ;
-     The unique idenfier for each value condition.
+     The unique identifier for each value condition.
 ;
     _item.name                         '_pdbx_item_value_condition_list.cond_id'
     _item.category_id                    pdbx_item_value_condition_list
@@ -102,13 +137,36 @@ save__pdbx_item_value_condition_list.dependent_item_cmp_op
     _item_description.name             '_pdbx_item_value_condition_list.dependent_item_cmp_op'
     _item_description.description
 ;
-     Comparison operation for the value condition
+     Comparison operation for the value condition.
 ;
     _item.name                         '_pdbx_item_value_condition_list.dependent_item_cmp_op'
     _item.category_id                    pdbx_item_value_condition_list
     _item.mandatory_code                 yes
     _item_type.name                    '_pdbx_item_value_condition_list.dependent_item_cmp_op'
     _item_type.code                      char
+    _item_linked.child_name            '_pdbx_item_value_condition_list.dependent_item_cmp_op'
+    _item_linked.parent_name           '_pdbx_comparison_operator_list.code'
+     save_
+
+save__pdbx_item_value_condition_list.log_op
+
+    _item_description.name             '_pdbx_item_value_condition_list.log_op'
+    _item_description.description
+;
+     The logical conjunction for combining multiple conditions.
+;
+    _item.name                         '_pdbx_item_value_condition_list.log_op'
+    _item.category_id                    pdbx_item_value_condition_list
+    _item.mandatory_code                 no
+    _item_type.name                    '_pdbx_item_value_condition_list.log_op'
+    _item_type.code                      code
+    _item_default.name                 '_pdbx_item_value_condition_list.log_op'
+    _item_default.value                  'and'
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+          and            'conditions are satisfied simultaneously'
+          or             'any condition is satisfied'
      save_
 
 
@@ -133,6 +191,8 @@ save_pdbx_item_value_condition
          'ddl_group'                     pdbx_item_value_condition
          'item_group'                    pdbx_item_value_condition
          'extension_group'               pdbx_item_value_condition
+    _pdbx_category_context.category_id  pdbx_item_value_condition
+    _pdbx_category_context.type         DEFINITION
      save_
 
 
@@ -141,7 +201,7 @@ save__pdbx_item_value_condition.item_name
     _item_description.name             '_pdbx_item_value_condition.item_name'
     _item_description.description
 ;
-     Name of the taget data item.
+     Name of the target data item.
 ;
     _item.name                         '_pdbx_item_value_condition.item_name'
     _item.category_id                    pdbx_item_value_condition
@@ -191,6 +251,8 @@ save_pdbx_item_linked
          'ddl_group'                     pdbx_item_linked
          'item_group'                    pdbx_item_linked
          'extension_group'               pdbx_item_linked
+    _pdbx_category_context.category_id  pdbx_item_linked
+    _pdbx_category_context.type         DEFINITION
      save_
 
 save__pdbx_item_linked.id
@@ -286,22 +348,104 @@ save__pdbx_item_linked.condition_child_value
     _item_type.code                      any
      save_
 
-save__pdbx_item_linked.condition_child_operation
+save__pdbx_item_linked.condition_child_target_name
 
-    _item_description.name             '_pdbx_item_linked.condition_child_operation'
+    _item_description.name             '_pdbx_item_linked.condition_child_target_name'
+    _item_description.description
+;
+     Name of the data item which is the target of the value condition.
+;
+    _item.name                         '_pdbx_item_linked.condition_child_target_name'
+    _item.category_id                    pdbx_item_linked
+    _item.mandatory_code                 no
+    _item_type.name                    '_pdbx_item_linked.condition_child_target_name'
+    _item_type.code                      name
+    _item_linked.child_name            '_pdbx_item_linked.condition_child_target_name'
+    _item_linked.parent_name           '_item.name'
+     save_
+
+save__pdbx_item_linked.condition_child_cmp_op
+
+    _item_description.name             '_pdbx_item_linked.condition_child_cmp_op'
     _item_description.description
 ;
      The comparison operation for the child value condition
 ;
-    _item.name                         '_pdbx_item_linked.condition_child_operation'
+    _item.name                         '_pdbx_item_linked.condition_child_cmp_op'
     _item.category_id                    pdbx_item_linked
     _item.mandatory_code                 no
-    _item_type.name                    '_pdbx_item_linked.condition_child_operation'
+    _item_type.name                    '_pdbx_item_linked.condition_child_cmp_op'
+    _item_type.code                      char
+    _item_linked.child_name            '_pdbx_item_linked.condition_child_cmp_op'
+    _item_linked.parent_name           '_pdbx_comparison_operator_list.code'
+     save_
+
+save__pdbx_item_linked.condition_child_log_op
+
+    _item_description.name             '_pdbx_item_linked.condition_child_log_op'
+    _item_description.description
+;
+     The logical conjunction for combining multiple conditions.
+;
+    _item.name                         '_pdbx_item_linked.condition_child_log_op'
+    _item.category_id                    pdbx_item_linked
+    _item.mandatory_code                 no
+    _item_type.name                    '_pdbx_item_linked.condition_child_log_op'
+    _item_type.code                      code
+    _item_default.name                 '_pdbx_item_linked.condition_child_log_op'
+    _item_default.value                  'and'
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+          and            'conditions are satisfied simultaneously'
+          or             'any condition is satisfied'
+     save_
+
+save_pdbx_comparison_operator_list
+
+    _category.description
+;
+     Specifies the operators available for value condition comparisons.
+;
+    _category.id                         pdbx_comparison_operator_list
+    _category.mandatory_code             no
+    _category.implicit_key               mmcif_ddl.dic
+    _category_key.id                     pdbx_comparison_operator_list
+    _category_key.name                 '_pdbx_comparison_operator_list.code'
+     loop_
+    _category_group.id
+    _category_group.category_id
+         'ddl_group'                     pdbx_comparison_operator_list
+         'item_group'                    pdbx_comparison_operator_list
+    _pdbx_category_context.category_id  pdbx_comparison_operator_list
+    _pdbx_category_context.type         DATA
+     save_
+
+save__pdbx_comparison_operator_list.code
+
+    _item_description.name             '_pdbx_comparison_operator_list.code'
+    _item_description.description
+;
+     A code for the comparison operator.
+;
+    _item.name                         '_pdbx_comparison_operator_list.code'
+    _item.category_id                    pdbx_comparison_operator_list
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_comparison_operator_list.code'
     _item_type.code                      char
      save_
 
+save__pdbx_comparison_operator_list.description
 
-
-
-#### EOF mmcif_ddl-def-5.dic
+    _item_description.name             '_pdbx_comparison_operator_list.description'
+    _item_description.description
+;
+     Description of the comparison operator.
+;
+    _item.name                         '_pdbx_comparison_operator_list.description'
+    _item.category_id                    pdbx_comparison_operator_list
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_comparison_operator_list.description'
+    _item_type.code                      text
+     save_
 

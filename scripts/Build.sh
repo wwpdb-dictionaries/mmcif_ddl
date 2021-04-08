@@ -12,9 +12,10 @@ dictname=$dict.dic
 outdir=$TOPDIR/dist
 outdict=$outdir/$dictname
 basedir=$TOPDIR/base
+generator=$basedir/$dict'-generator.dic'
 
-if [ ! -e $basedir/$dict'.PARTS' ]; then
-    echo "Missing configuration file $basedir/$dict.PARTS"
+if [ ! -e $generator ]; then
+    echo "Missing configuration file $generator"
     exit 1
 fi
 
@@ -23,16 +24,11 @@ if [ ! -e $outdir ]; then
 fi
 
 rm -f $outdict
-for part in `cat $basedir/$dict.PARTS`; do
-    echo "Appending $part"
-    cat $TOPDIR/$part  >> $outdict
-done
-
-if [ -e $basedir/$dict'.SED' ]; then
-    echo "Running sed"
-    sed -f $basedir/$dict'.SED' < $outdict > $outdict.tmp
-    mv $outdict.tmp $outdict
-fi
+build_dict_cli --op build --input_dict_path $generator --output_dict_path $outdict --cleanup
+version=`build_dict_cli --op get_version --input_dict_path $outdict`
+#
+archivefile=$TOPDIR/archive/$dict-v$version'.dic'
+cp $outdict $archivefile
 
 echo "Completed generation of $dictname"
 exit 0

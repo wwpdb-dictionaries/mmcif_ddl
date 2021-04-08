@@ -1,0 +1,45 @@
+###########################################################################
+#
+# File:  mmcif_ddl-ext-nx.dic
+#
+#            mmCIF DDL Nexus (NX) extensions
+#
+###########################################################################
+data_mmcif_ddl-ext-nx.dic
+
+_pdbx_dictionary_component.datablock_id   mmcif_ddl-ext-nx.dic
+_pdbx_dictionary_component.dictionary_component_id   mmcif_ddl-ext-nx.dic
+_pdbx_dictionary_component.title          "mmCIF DDL Nexus (NX) extensions"
+_pdbx_dictionary_component.version        1.1.0
+
+loop_
+_pdbx_dictionary_component_history.dictionary_component_id
+_pdbx_dictionary_component_history.version
+_pdbx_dictionary_component_history.update
+_pdbx_dictionary_component_history.revision
+mmcif_ddl-ext-nx.dic 1.0.0 2013-09-23
+;
+Changes: (JW) -
++ Add item _category.NX_mapping_details for Nexus correspondences.
+;
+mmcif_ddl-ext-nx.dic 1.1.0 2021-03-30
+;
+Changes (JW):
++ Migrate to dictionary component mmcif_ddl-ext-nx.dic.
+;
+
+save__category.NX_mapping_details
+
+    _item_description.name             '_category.NX_mapping_details'
+    _item_description.description
+;
+     Records data correspondences between the items in this data category and
+     and related data items in Nexus data dictionary.
+;
+    _item.name                         '_category.NX_mapping_details'
+    _item.category_id                    category
+    _item.mandatory_code                 no
+
+    _item_type.name                    '_category.NX_mapping_details'
+    _item_type.code                      text
+     save_
