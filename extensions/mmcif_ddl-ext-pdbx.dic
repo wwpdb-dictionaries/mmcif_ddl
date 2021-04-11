@@ -166,10 +166,8 @@ pdbx_item_linked    1  '_pdbx_item_linked.child_name'                   '_item.n
 pdbx_item_linked    2  '_pdbx_item_linked.parent_name'                  '_item.name'  item
 pdbx_item_linked    3  '_pdbx_item_linked.condition_child_name'         '_item.name'  item
 pdbx_item_linked    4  '_pdbx_item_linked.condition_child_target_name'  '_item.name'  item
-pdbx_item_linked    5  '_pdbx_item_linked.condition_cmp_op'             '_pdbx_comparison_operator_list.code'  pdbx_comparison_operator_list
+pdbx_item_linked    5  '_pdbx_item_linked.condition_child_cmp_op'       '_pdbx_comparison_operator_list.code'  pdbx_comparison_operator_list
 #
-
-
 
 #
 save_pdbx_category_context
