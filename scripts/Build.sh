@@ -5,6 +5,7 @@ if [ "$1" == "" ]; then
     exit 1
 fi
 dict=$1
+genType=$2
 
 TOPDIR="$( builtin cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 
@@ -12,7 +13,14 @@ dictname=$dict.dic
 outdir=$TOPDIR/dist
 outdict=$outdir/$dictname
 basedir=$TOPDIR/base
-generator=$basedir/$dict'-generator.dic'
+
+if [ "$genType" == "" ]; then
+   generator=$basedir/$dict'-generator.dic'
+elif [ "$genType" == "dev" ]; then
+   generator=$basedir/$dict'-generator-dev.dic'
+elif [ "$genType" == "local" ]; then
+   generator=$basedir/$dict'-generator-local.dic'
+fi
 
 if [ ! -e $generator ]; then
     echo "Missing configuration file $generator"
