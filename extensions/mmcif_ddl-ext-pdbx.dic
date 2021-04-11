@@ -118,10 +118,13 @@ pdbx_dictionary_component_history 1 pdbx_dictionary_component_history:pdbx_dicti
 pdbx_item_value_condition  1 pdbx_item_value_condition:pdbx_item_value_condition_list:1 . .
 pdbx_item_value_condition_list  1 pdbx_item_value_condition_list:item:1  . .
 pdbx_item_value_condition_list  2 pdbx_item_value_condition_list:item:2  . .
+pdbx_item_value_condition_list  3 pdbx_item_value_condition_list:pdbx_comparison_operator_list:3  . .
 #
 pdbx_item_linked  1 pdbx_item_linked:item:1  . .
 pdbx_item_linked  2 pdbx_item_linked:item:2  . .
 pdbx_item_linked  3 pdbx_item_linked:item:3  . .
+pdbx_item_linked  4 pdbx_item_linked:item:4  . .
+pdbx_item_linked  5 pdbx_item_linked:pdbx_comparison_operator_list:5  . .
 #
 loop_
 _pdbx_item_linked_group_list.child_category_id
@@ -157,10 +160,13 @@ pdbx_item_value_condition      1  '_pdbx_item_value_condition.item_name'        
 pdbx_item_value_condition      1  '_pdbx_item_value_condition.dependent_item_name'      '_pdbx_item_value_condition_list.dependent_item_name'  pdbx_item_value_condition_list
 pdbx_item_value_condition_list 1  '_pdbx_item_value_condition_list.target_item_name'     '_item.name'  item
 pdbx_item_value_condition_list 2  '_pdbx_item_value_condition_list.dependent_item_name'  '_item.name'  item
+pdbx_item_value_condition_list 3  '_pdbx_item_value_condition_list.dependent_item_cmp_op' '_pdbx_comparison_operator_list.code'  pdbx_comparison_operator_list
 #
-pdbx_item_linked    1  '_pdbx_item_linked.child_name'            '_item.name'  item
-pdbx_item_linked    2  '_pdbx_item_linked.parent_name'           '_item.name'  item
-pdbx_item_linked    3  '_pdbx_item_linked.condition_child_name'  '_item.name'  item
+pdbx_item_linked    1  '_pdbx_item_linked.child_name'                   '_item.name'  item
+pdbx_item_linked    2  '_pdbx_item_linked.parent_name'                  '_item.name'  item
+pdbx_item_linked    3  '_pdbx_item_linked.condition_child_name'         '_item.name'  item
+pdbx_item_linked    4  '_pdbx_item_linked.condition_child_target_name'  '_item.name'  item
+pdbx_item_linked    5  '_pdbx_item_linked.condition_cmp_op'             '_pdbx_comparison_operator_list.code'  pdbx_comparison_operator_list
 #
 
 
