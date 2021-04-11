@@ -2111,8 +2111,8 @@ save_item_units_conversion
     _category_group.category_id
          'ddl_group'                     item_units_conversion
          'item_group'                    item_units_conversion
-    _pdbx_category_context.category_id  items_units_conversion
-    _pdbx_category_context.type         DATA
+    _pdbx_category_context.category_id   item_units_conversion
+    _pdbx_category_context.type          DATA
      save_
 
 save__item_units_conversion.from_code
