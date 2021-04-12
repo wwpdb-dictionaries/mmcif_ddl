@@ -2,7 +2,7 @@
 # mmcif_ddl.dic (generator)
 ##
 
-data_mmcif_ddl
+data_mmcif_ddl.dic
 #
 loop_
 _pdbx_include_dictionary.dictionary_id
