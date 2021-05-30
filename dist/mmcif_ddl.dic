@@ -5022,7 +5022,7 @@ save__pdbx_item_enumeration.value_display
    #
    _item.name            "_pdbx_item_enumeration.value_display"
    _item.category_id     pdbx_item_enumeration
-   _item.mandatory_code  yes
+   _item.mandatory_code  no
    #
    _item_type.name  "_pdbx_item_enumeration.value_display"
    _item_type.code  any
@@ -5039,7 +5039,7 @@ save__item_enumeration.pdbx_value_display
    #
    _item.name            "_item_enumeration.pdbx_value_display"
    _item.category_id     item_enumeration
-   _item.mandatory_code  yes
+   _item.mandatory_code  no
    #
    _item_type.name  "_item_enumeration.pdbx_value_display"
    _item_type.code  any
