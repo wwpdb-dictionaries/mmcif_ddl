@@ -79,11 +79,16 @@ mmcif_ddl-ext-pdbx.dic 1.6.0  2021-03-30
 Changes (JW):
 + Migrate to dictionary component mmcif_ddl-ext-pdbx.dic.
 ;
-mmcif_ddl-ext-ndb.dic 1.7.0 2021-04-05
+mmcif_ddl-ext-pdbx.dic 1.7.0 2021-04-05
 ;
 Changes (JW):
 + Add pdbx_include_dictionary/pdbx_include_category for dictionary compose and value conditions extensions
 + Add to pdbx_item_linked_group and pdbx_item_linked_group_list details
+;
+mmcif_ddl-ext-pdbx.dic 1.8.0 2021-05-29
+;
+Changes (JW):
++ Add _pdbx_item_enumeration.value_display and _item_enumeration.pdbx_value_display
 ;
 #
 loop_
@@ -938,6 +943,31 @@ save__pdbx_item_enumeration.detail
     _item_type.code                      text
      save_
 
+save__pdbx_item_enumeration.value_display
+    _item_description.name             '_pdbx_item_enumeration.value_display'
+    _item_description.description
+;
+     An alternative form of the permissible value for display purposes.
+;
+    _item.name                         '_pdbx_item_enumeration.value_display'
+    _item.category_id                    pdbx_item_enumeration
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_item_enumeration.value_display'
+    _item_type.code                      any
+     save_
+
+save__item_enumeration.pdbx_value_display
+    _item_description.name             '_item_enumeration.pdbx_value_display'
+    _item_description.description
+;
+     An alternative form of the permissible value for display purposes.
+;
+    _item.name                         '_item_enumeration.pdbx_value_display'
+    _item.category_id                    item_enumeration
+    _item.mandatory_code                 yes
+    _item_type.name                    '_item_enumeration.pdbx_value_display'
+    _item_type.code                      any
+     save_
 # --------------------------------------------------------------------------
 
 save_pdbx_item_examples
