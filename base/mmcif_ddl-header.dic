@@ -15,7 +15,7 @@ data_mmcif_ddl-header.dic
 
     _dictionary.datablock_id               mmcif_ddl.dic
     _dictionary.title                      mmcif_ddl.dic
-    _dictionary.version                    2.3.0
+    _dictionary.version                    2.3.1
 
      loop_
     _dictionary_history.version
@@ -304,11 +304,15 @@ data_mmcif_ddl-header.dic
 ;      Changes (JW):
        +  Add items _item_enumeration.rcsb_detail_brief and _item_enumeration.rcsb_type_units_code
 ;
-       2.3.0 2021-06-07
+       2.3.0 2021-04-07
 ;      Changes (JW):
        + Add generator for pdbx_dictionary_include/pdbx_category_include/pdbx_item_include
        + Miscellaneous updates in item/category descriptions
        + Add DATA or DEFINITION contexts to all DDL categories.
 ;
-
+       2.3.1 2021-05-29
+;      Changes (JW):
+       + Updated mmcif_ddl-ext-pdbx.dic extension including new items _pdbx_item_enumeration.value_display
+         and _item_enumeration.pdbx_value_display
+;
 ### EOF mmcif_ddl-header.dic ####
