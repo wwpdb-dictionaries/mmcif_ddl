@@ -33,7 +33,7 @@ pdbx_dictionary_component_history mmcif_ddl-ext-compose.dic pdbx_dictionary_comp
 _pdbx_dictionary_component.datablock_id   mmcif_ddl-ext-pdbx.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_ddl-ext-pdbx.dic
 _pdbx_dictionary_component.title          "mmCIF DDL Protein Data Bank (PDBx) extensions"
-_pdbx_dictionary_component.version        1.7.0
+_pdbx_dictionary_component.version        1.9.0
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -90,6 +90,12 @@ mmcif_ddl-ext-pdbx.dic 1.8.0 2021-05-29
 Changes (JW):
 + Add _pdbx_item_enumeration.value_display and _item_enumeration.pdbx_value_display
 ;
+mmcif_ddl-ext-pdbx.dic 1.9.0 2021-06-02
+;
+Changes (JW):
++ Add categories pdbx_item_set and pdbx_item_set_type_list
+;
+
 #
 loop_
 _pdbx_item_linked_group.category_id
@@ -130,6 +136,10 @@ pdbx_item_linked  2 pdbx_item_linked:item:2  . .
 pdbx_item_linked  3 pdbx_item_linked:item:3  . .
 pdbx_item_linked  4 pdbx_item_linked:item:4  . .
 pdbx_item_linked  5 pdbx_item_linked:pdbx_comparison_operator_list:5  . .
+#
+pdbx_item_set  1 pdbx_item_set:pdbx_item_set_type_list:1          .  .
+pdbx_item_set  2 pdbx_item_set:item:1                             .  .
+
 #
 loop_
 _pdbx_item_linked_group_list.child_category_id
@@ -173,7 +183,8 @@ pdbx_item_linked    3  '_pdbx_item_linked.condition_child_name'         '_item.n
 pdbx_item_linked    4  '_pdbx_item_linked.condition_child_target_name'  '_item.name'  item
 pdbx_item_linked    5  '_pdbx_item_linked.condition_child_cmp_op'       '_pdbx_comparison_operator_list.code'  pdbx_comparison_operator_list
 #
-
+pdbx_item_set     1  '_pdbx_item_set.set_id'    '_pdbx_item_set_type_list.set_id'     pdbx_item_set_type_list
+pdbx_item_set     2  '_pdbx_item_set.item_name' '_item.name'                          item
 #
 save_pdbx_category_context
     _category.description
@@ -1044,5 +1055,154 @@ save__item_sub_category.pdbx_label
 
     save_
 
-#### EOF mmcif_ddl-def-3a.dic
+##
+save_pdbx_item_set
+    _category.description
+;
+      Attributes assigning membership in sets of data items.
+;
+    _category.id                        pdbx_item_set
+    _category.mandatory_code            no
+    _category.implicit_key              mmcif_ddl.dic
+    loop_
+    _category_key.id
+    _category_key.name
+    pdbx_item_set  '_pdbx_item_set.item_name'
+    pdbx_item_set  '_pdbx_item_set.set_id'
 
+     loop_
+    _category_group.id
+    _category_group.category_id
+         'ddl_group'                     pdbx_item_set
+         'item_group'                    pdbx_item_set
+         'extension_group'               pdbx_item_set
+    _pdbx_category_context.category_id  pdbx_item_set
+    _pdbx_category_context.type         DEFINITION
+     save_
+
+save__pdbx_item_set.item_name
+    _item.name                        '_pdbx_item_set.item_name'
+    _item.category_id                   pdbx_item_set
+    _item.mandatory_code                implicit
+    _item_type.name                   '_pdbx_item_set.item_name'
+    _item_type.code                     name
+    _item_linked.child_name           '_pdbx_item_set.item_name'
+    _item_linked.parent_name          '_item.name'
+     save_
+
+save__pdbx_item_set.set_id
+    _item_description.name             '_pdbx_item_set.set_id'
+    _item_description.description
+;
+     An item set identifier.
+;
+    _item.name                         '_pdbx_item_set.set_id'
+    _item.category_id                    pdbx_item_set
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_item_set.set_id'
+    _item_type.code                      code
+    _item_examples.name                '_pdbx_item_set.set_id'
+    _item_examples.case                'RVALUE_ITEM_SET'
+    _item_examples.detail              'The set of data items defining R-value statistics'
+    _item_linked.child_name            '_pdbx_item_set.set_id'
+    _item_linked.parent_name           '_pdbx_item_set_type_list.set_id'
+     save_
+
+save_pdbx_item_set_type_list
+    _category.description
+;
+      Attributes defining the properties of item sets.
+;
+    _category.id                        pdbx_item_set_type_list
+    _category.mandatory_code            no
+    _category.implicit_key              mmcif_ddl.dic
+    _category_key.id                    pdbx_item_set_type_list
+    _category_key.name                  '_pdbx_item_set_type_list.set_id'
+     loop_
+    _category_group.id
+    _category_group.category_id
+         'ddl_group'                     pdbx_item_set_type_list
+         'item_group'                    pdbx_item_set_type_list
+         'extension_group'               pdbx_item_set_type_list
+    _pdbx_category_context.category_id  pdbx_item_set_type_list
+    _pdbx_category_context.type         DEFINITION
+     save_
+
+save__pdbx_item_set_type_list.set_id
+    _item_description.name             '_pdbx_item_set_type_list.set_id'
+    _item_description.description
+;
+     An item set identifier.
+;
+    _item.name                         '_pdbx_item_set_type_list.set_id'
+    _item.category_id                    pdbx_item_set_type_list
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_item_set_type_list.set_id'
+    _item_type.code                      code
+    _item_examples.name                '_pdbx_item_set_type_list.set_id'
+    _item_examples.case                'RVALUE_ITEM_SET'
+    _item_examples.detail              'The set of data items defining R-value statistics'
+
+     save_
+
+save__pdbx_item_set_type_list.set_type
+    _item_description.name             '_pdbx_item_set_type_list.set_type'
+    _item_description.description
+;
+     The item set type.
+;
+    _item.name                         '_pdbx_item_set_type_list.set_type'
+    _item.category_id                    pdbx_item_set_type_list
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_item_set_type_list.set_type'
+    _item_type.code                      char
+    _item_examples.name                '_pdbx_item_set_type_list.set_type'
+    _item_examples.case                'if_one_then_all_required'
+    _item_examples.detail              'If one member of the item set is provided then all members are required'
+    #
+    loop_
+    _item_enumeration.name
+    _item_enumeration.value
+    _item_enumeration.detail
+    '_pdbx_item_set_type_list.set_type' if_one_then_all_required  'If one member of the item set is provided then all members are required'
+    '_pdbx_item_set_type_list.set_type' one_member_required       'One member of the item set must be provided'
+    '_pdbx_item_set_type_list.set_type' all_members_recommended   'It is recommended to provide all members of the item set'
+     save_
+
+
+save__pdbx_item_set_type_list.validation_level
+    _item_description.name             '_pdbx_item_set_type_list.validation_level'
+    _item_description.description
+;
+     The exception level associated with failure to satisfy the requirements of the item set type.
+;
+    _item.name                         '_pdbx_item_set_type_list.validation_level'
+    _item.category_id                    pdbx_item_set_type_list
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_item_set_type_list.validation_level'
+    _item_type.code                      char
+    _item_examples.name                '_pdbx_item_set_type_list.validation_level'
+    _item_examples.case                'error'
+    _item_examples.detail              'Exceptions are considered errors'
+    #
+    loop_
+    _item_enumeration.name
+    _item_enumeration.value
+    _item_enumeration.detail
+    '_pdbx_item_set_type_list.validation_level' error   'Exceptions are considered errors'
+    '_pdbx_item_set_type_list.validation_level' warn    'Exceptions are considered warnings'
+    '_pdbx_item_set_type_list.validation_level' inform  'Exceptions are considered informational'
+     save_
+
+save__pdbx_item_set_type_list.details
+    _item_description.name             '_pdbx_item_set_type_list.details'
+    _item_description.description
+;
+     Additional details describing the item set.
+;
+    _item.name                         '_pdbx_item_set_type_list.details'
+    _item.category_id                    pdbx_item_set_type_list
+    _item.mandatory_code                 no
+    _item_type.name                    '_pdbx_item_set_type_list.details'
+    _item_type.code                      text
+     save_
