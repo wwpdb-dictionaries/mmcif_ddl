@@ -730,7 +730,7 @@ pdbx_item_linked                   3  "_pdbx_item_linked.condition_child_name"  
 pdbx_item_linked                   4  "_pdbx_item_linked.condition_child_target_name"               "_item.name"                                           item                               
 pdbx_item_linked                   5  "_pdbx_item_linked.condition_child_cmp_op"                    "_pdbx_comparison_operator_list.code"                  pdbx_comparison_operator_list      
 pdbx_item_set                      1  "_pdbx_item_set.set_id"                                       "_pdbx_item_set_type_list.set_id"                      pdbx_item_set_type_list            
-pdbx_item_set                      2  "_pdbx_item_set.name"                                         "_item.name"                                           item                               
+pdbx_item_set                      2  "_pdbx_item_set.item_name"                                    "_item.name"                                           item                               
 category                           1  "_category.implicit_key"                                      "_datablock.id"                                        datablock                          
 category_examples                  1  "_category_examples.id"                                       "_category.id"                                         category                           
 category_group                     1  "_category_group.category_id"                                 "_category.id"                                         category                           
