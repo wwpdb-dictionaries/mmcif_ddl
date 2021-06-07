@@ -1100,7 +1100,7 @@ save__pdbx_item_set.set_id
     _item.category_id                    pdbx_item_set
     _item.mandatory_code                 yes
     _item_type.name                    '_pdbx_item_set.set_id'
-    _item_type.code                      char
+    _item_type.code                      code
     _item_examples.name                '_pdbx_item_set.set_id'
     _item_examples.case                'RVALUE_ITEM_SET'
     _item_examples.detail              'The set of data items defining R-value statistics'
@@ -1138,7 +1138,7 @@ save__pdbx_item_set_type_list.set_id
     _item.category_id                    pdbx_item_set_type_list
     _item.mandatory_code                 yes
     _item_type.name                    '_pdbx_item_set_type_list.set_id'
-    _item_type.code                      char
+    _item_type.code                      code
     _item_examples.name                '_pdbx_item_set_type_list.set_id'
     _item_examples.case                'RVALUE_ITEM_SET'
     _item_examples.detail              'The set of data items defining R-value statistics'
