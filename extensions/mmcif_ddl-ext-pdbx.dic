@@ -34,7 +34,7 @@ pdbx_dictionary_component_history mmcif_ddl-ext-compose.dic pdbx_dictionary_comp
 _pdbx_dictionary_component.datablock_id   mmcif_ddl-ext-pdbx.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_ddl-ext-pdbx.dic
 _pdbx_dictionary_component.title          "mmCIF DDL Protein Data Bank (PDBx) extensions"
-_pdbx_dictionary_component.version        1.9.0
+_pdbx_dictionary_component.version        1.10.0
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -95,6 +95,12 @@ mmcif_ddl-ext-pdbx.dic 1.9.0 2021-06-02
 ;
 Changes (JW):
 + Add categories pdbx_item_set and pdbx_item_set_type_list
+;
+mmcif_ddl-ext-pdbx.dic 1.10.0 2021-08-31
+;
+Changes (EP):
++ Add conditional context extension. Adds categories pdbx_category_conditional_context,
+  pdbx_item_conditional_context, pdbx_conditional_context_list.
 ;
 
 #
