@@ -15,7 +15,7 @@ data_mmcif_ddl-header.dic
 
     _dictionary.datablock_id               mmcif_ddl.dic
     _dictionary.title                      mmcif_ddl.dic
-    _dictionary.version                    2.3.2
+    _dictionary.version                    2.3.3
 
      loop_
     _dictionary_history.version
@@ -318,5 +318,11 @@ data_mmcif_ddl-header.dic
        2.3.2 2021-06-02
 ;      Changes (JW):
        + Updated mmcif_ddl-ext-pdbx.dic extension including new categories pdbx_item_set and pdbx_item_set_type_list
+;
+       2.3.3 2021-08-31
+;      Changes (EP):
+       + Updated mmcif_ddl-ext-pdbx.dic extension including new categories
+         pdbx_category_conditional_context, pdbx_item_conditional_context
+	 and pdbx_conditional_context_list
 ;
 ### EOF mmcif_ddl-header.dic ####
