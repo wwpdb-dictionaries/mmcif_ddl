@@ -1,0 +1,340 @@
+data_mmcif_ddl-ext-context.dic
+
+loop_
+_pdbx_item_linked_group.category_id
+_pdbx_item_linked_group.link_group_id
+_pdbx_item_linked_group.label
+_pdbx_item_linked_group.context
+_pdbx_item_linked_group.condition_id
+#
+pdbx_category_conditional_context                1 pdbx_category_conditional_context:category:1                         .  .
+pdbx_category_conditional_context                2 pdbx_category_conditional_context:pdbx_conditional_context_list:2    .  .
+pdbx_conditional_context_list                    1 pdbx_conditional_context_list:item:1                                 .  .
+pdbx_conditional_context_list                    2 pdbx_conditional_context_list:item:2                                 .  .
+pdbx_conditional_context_list                    3 pdbx_conditional_context_list:pdbx_comparison_list:3                 .  .
+pdbx_item_conditional_context                    1 pdbx_item_conditional_context:item:1                                 .  .
+pdbx_item_conditional_context                    2 pdbx_item_conditional_context:pdbx_conditional_context_list:2        .  .
+
+#
+loop_
+_pdbx_item_linked_group_list.child_category_id
+_pdbx_item_linked_group_list.link_group_id
+_pdbx_item_linked_group_list.child_name
+_pdbx_item_linked_group_list.parent_name
+_pdbx_item_linked_group_list.parent_category_id
+#
+pdbx_category_conditional_context      1 '_pdbx_category_conditional_context.category_id'      '_category.id'                                   category
+pdbx_category_conditional_context      2 '_pdbx_category_conditional_context.context_id'       '_pdbx_conditional_context_list.context_id'      pdbx_conditional_context_list
+pdbx_conditional_context_list          1 '_pdbx_conditional_context_list.target_item_name'     '_item.name'                                     item
+pdbx_conditional_context_list          2 '_pdbx_conditional_context_list.dependent_item_name'  '_item.name'                                     item
+pdbx_conditional_context_list          3 '_pdbx_conditional_context_list.cmp_op'               '_pdbx_comparison_operator_list.code'            pdbx_comparison_operator_list
+pdbx_item_conditional_context          1 '_pdbx_item_conditional_context.item_name'            '_item.name'                                     item
+pdbx_item_conditional_context          2 '_pdbx_item_conditional_context.context_id'           '_pdbx_conditional_context_list.context_id'      pdbx_conditional_context_list
+#
+save_pdbx_category_conditional_context
+    _category.description
+;
+      Category definition conditional context describing the scope of usage and
+      distribution for the category.
+;
+    _category.id                        pdbx_category_conditional_context
+    _category.mandatory_code            no
+    _category.implicit_key              mmcif_ddl.dic
+    _category_key.id                    pdbx_category_conditional_context
+    _category_key.name                '_pdbx_category_conditional_context.category_id'
+     loop_
+    _category_group.id
+    _category_group.category_id
+         'ddl_group'                     pdbx_category_conditional_context
+         'category_group'                pdbx_category_conditional_context
+         'extension_group'               pdbx_category_conditional_context
+    _pdbx_category_context.category_id   pdbx_category_conditional_context
+    _pdbx_category_context.type          DEFINITION
+     save_
+
+save__pdbx_category_conditional_context.category_id
+    _item.name                        '_pdbx_category_conditional_context.category_id'
+    _item.category_id                   pdbx_category_conditional_context
+    _item.mandatory_code                implicit
+    _item_type.name                   '_pdbx_category_conditional_context.category_id'
+    _item_type.code                     idname
+    _item_linked.child_name           '_pdbx_category_conditional_context.category_id'
+    _item_linked.parent_name          '_category.id'
+     save_
+
+save__pdbx_category_conditional_context.context_id
+    _item_description.name             '_pdbx_category_conditional_context.context_id'
+    _item_description.description
+;
+     Category conditional context identifier
+;
+    _item.name                         '_pdbx_category_conditional_context.context_id'
+    _item.category_id                    pdbx_category_conditional_context
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_category_conditional_context.context_id'
+    _item_type.code                      code
+    _item_examples.name                '_pdbx_category_conditional_context.context_id'
+    _item_examples.case                'WWPDB_ACCEPT_GDPR_TERMS_CONDITIONS'
+    _item_examples.detail              'A category context that depends on acceptance of GDPR terms and conditions'
+    _item_linked.child_name            '_pdbx_category_conditional_context.context_id'
+    _item_linked.parent_name           '_pdbx_conditional_context_list.context_id'
+     save_
+
+save__pdbx_category_conditional_context.action
+    _item_description.name             '_pdbx_category_conditional_context.action'
+    _item_description.description
+;
+     Category context action.
+;
+    _item.name                         '_pdbx_category_conditional_context.action'
+    _item.category_id                    pdbx_category_conditional_context
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_category_conditional_context.action'
+    _item_type.code                      char
+    _item_examples.name                '_pdbx_category_conditional_context.action'
+    _item_examples.case                suppress
+    _item_examples.detail              'The action to suppress the release of data the category with this context'
+     save_
+## ---
+#
+save_pdbx_item_conditional_context
+    _category.description
+;
+      Category definition conditional context describing the scope of usage and
+      distribution for the category.
+;
+    _category.id                        pdbx_item_conditional_context
+    _category.mandatory_code            no
+    _category.implicit_key              mmcif_ddl.dic
+    _category_key.id                    pdbx_item_conditional_context
+    _category_key.name                  '_pdbx_item_conditional_context.item_name'
+     loop_
+    _category_group.id
+    _category_group.category_id
+         'ddl_group'                     pdbx_item_conditional_context
+         'category_group'                pdbx_item_conditional_context
+         'extension_group'               pdbx_item_conditional_context
+    _pdbx_category_context.category_id   pdbx_item_conditional_context
+    _pdbx_category_context.type          DEFINITION
+     save_
+
+save__pdbx_item_conditional_context.item_name
+    _item.name                        '_pdbx_item_conditional_context.item_name'
+    _item.category_id                   pdbx_item_conditional_context
+    _item.mandatory_code                implicit
+    _item_type.name                   '_pdbx_item_conditional_context.item_name'
+    _item_type.code                     name
+    _item_linked.child_name           '_pdbx_item_conditional_context.item_name'
+    _item_linked.parent_name          '_item.name'
+     save_
+
+save__pdbx_item_conditional_context.context_id
+    _item_description.name             '_pdbx_item_conditional_context.context_id'
+    _item_description.description
+;
+     Item conditional context identifier
+;
+    _item.name                         '_pdbx_item_conditional_context.context_id'
+    _item.category_id                    pdbx_item_conditional_context
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_item_conditional_context.context_id'
+    _item_type.code                      code
+    _item_examples.name                '_pdbx_item_conditional_context.context_id'
+    _item_examples.case                'WWPDB_ACCEPT_GDPR_TERMS_CONDITIONS'
+    _item_examples.detail              'An item context that depends on acceptance of GDPR terms and conditions'
+    _item_linked.child_name            '_pdbx_item_conditional_context.context_id'
+    _item_linked.parent_name           '_pdbx_conditional_context_list.context_id'
+     save_
+
+save__pdbx_item_conditional_context.action
+    _item_description.name             '_pdbx_item_conditional_context.action'
+    _item_description.description
+;
+     Item context action.
+;
+    _item.name                         '_pdbx_item_conditional_context.action'
+    _item.category_id                    pdbx_item_conditional_context
+    _item.mandatory_code                 yes
+    _item_type.name                    '_pdbx_item_conditional_context.action'
+    _item_type.code                      char
+    loop_
+    _item_examples.name                '_pdbx_item_conditional_context.action'
+    _item_examples.case                suppress-item
+    _item_examples.detail              'The action to suppress the release of the data item with this context'
+    #
+    loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+   'suppress-item'  'The action to suppress the release of the data item with this context'
+   'suppress-value' 'The action to suppress the release of the data item value with this context'
+   'suppress-row'   'The action to suppress the release of the row of item values with this context'
+     save_
+
+
+## ----
+save_pdbx_conditional_context_list
+   _category.description
+;
+     Attributes which define contextual conditions among target items.
+;
+
+   _category.id              pdbx_conditional_context_list
+   _category.mandatory_code  no
+   _category.implicit_key    mmcif_ddl.dic
+   #
+   loop_
+   _category_key.id
+   _category_key.name
+      pdbx_conditional_context_list  "_pdbx_conditional_context_list.context_id"
+      pdbx_conditional_context_list  "_pdbx_conditional_context_list.ordinal_id"
+   #
+   loop_
+   _category_group.id
+   _category_group.category_id
+     ddl_group        pdbx_conditional_context_list
+     item_group       pdbx_conditional_context_list
+     extension_group  pdbx_conditional_context_list
+   #
+   _pdbx_category_context.category_id      pdbx_conditional_context_list
+   _pdbx_category_context.type             DATA
+   #
+save_
+#
+save__pdbx_conditional_context_list.context_id
+   _item_description.name         "_pdbx_conditional_context_list.context_id"
+   _item_description.description
+;
+     The an identifier for each conditional context.
+;
+
+   #
+   _item.name            "_pdbx_conditional_context_list.context_id"
+   _item.category_id     pdbx_conditional_context_list
+   _item.mandatory_code  yes
+   #
+   _item_type.name  "_pdbx_conditional_context_list.context_id"
+   _item_type.code  code
+   #
+save_
+
+save__pdbx_conditional_context_list.ordinal_id
+   _item_description.name         "_pdbx_conditional_context_list.ordinal_id"
+   _item_description.description
+;
+     The ordinal identifier for each condition within a context.
+;
+
+   #
+   _item.name            "_pdbx_conditional_context_list.ordinal_id"
+   _item.category_id     pdbx_conditional_context_list
+   _item.mandatory_code  yes
+   #
+   _item_type.name  "_pdbx_conditional_context_list.ordinal_id"
+   _item_type.code  int
+   #
+save_
+#
+save__pdbx_conditional_context_list.target_item_name
+   _item_description.name         "_pdbx_conditional_context_list.target_item_name"
+   _item_description.description
+;
+     Name of the target data item for the condition.
+;
+
+   #
+   _item.name            "_pdbx_conditional_context_list.target_item_name"
+   _item.category_id     pdbx_conditional_context_list
+   _item.mandatory_code  yes
+   #
+   _item_type.name  "_pdbx_conditional_context_list.target_item_name"
+   _item_type.code  name
+   #
+   _item_linked.child_name   "_pdbx_conditional_context_list.target_item_name"
+   _item_linked.parent_name  "_item.name"
+   #
+save_
+#
+save__pdbx_conditional_context_list.target_item_value
+   _item_description.name         "_pdbx_conditional_context_list.target_item_value"
+   _item_description.description
+;
+     Value of the value data item for the condition.
+;
+
+   #
+   _item.name            "_pdbx_conditional_context_list.target_item_value"
+   _item.category_id     pdbx_conditional_context_list
+   _item.mandatory_code  no
+   #
+   _item_type.name  "_pdbx_conditional_context_list.target_item_value"
+   _item_type.code  any
+   #
+save_
+#
+save__pdbx_conditional_context_list.dependent_item_name
+   _item_description.name         "_pdbx_conditional_context_list.dependent_item_name"
+   _item_description.description
+;
+     Name of the dependent data item for the condition.
+;
+
+   #
+   _item.name            "_pdbx_conditional_context_list.dependent_item_name"
+   _item.category_id     pdbx_conditional_context_list
+   _item.mandatory_code  no
+   #
+   _item_type.name  "_pdbx_conditional_context_list.dependent_item_name"
+   _item_type.code  name
+   #
+   _item_linked.child_name   "_pdbx_conditional_context_list.dependent_item_name"
+   _item_linked.parent_name  "_item.name"
+   #
+save_
+#
+save__pdbx_conditional_context_list.cmp_op
+   _item_description.name         "_pdbx_conditional_context_list.cmp_op"
+   _item_description.description
+;
+     Comparison operation for the condition applied to either the target item value or
+     to the value of the dependent item.
+;
+
+   #
+   _item.name            "_pdbx_conditional_context_list.cmp_op"
+   _item.category_id     pdbx_conditional_context_list
+   _item.mandatory_code  yes
+   #
+   _item_type.name  "_pdbx_conditional_context_list.cmp_op"
+   _item_type.code  char
+   #
+   _item_linked.child_name   "_pdbx_conditional_context_list.cmp_op"
+   _item_linked.parent_name  "_pdbx_comparison_operator_list.code"
+   #
+save_
+#
+save__pdbx_conditional_context_list.log_op
+   _item_description.name         "_pdbx_conditional_context_list.log_op"
+   _item_description.description
+;
+     The logical conjunction for combining multiple conditions.
+;
+
+   #
+   _item.name            "_pdbx_conditional_context_list.log_op"
+   _item.category_id     pdbx_conditional_context_list
+   _item.mandatory_code  no
+   #
+   _item_type.name  "_pdbx_conditional_context_list.log_op"
+   _item_type.code  code
+   #
+   _item_default.name   "_pdbx_conditional_context_list.log_op"
+   _item_default.value  and
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+     and  "conditions are satisfied simultaneously"
+     or   "any condition is satisfied"
+   #
+save_
+#
