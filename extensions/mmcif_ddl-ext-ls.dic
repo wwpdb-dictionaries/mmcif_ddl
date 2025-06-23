@@ -1,0 +1,114 @@
+# get better name for extension
+data_mmcif_ddl-ext-ls.dic
+
+
+save_item_mandatory_condition
+	_category.description
+;
+	 This category holds information for items whose values maybe be affected by conditional context
+;
+	_category.id	            item_mandatory_condition
+	_category.mandatory_code    no
+	_category.implicit_key      mmcif_ddl.dic
+	loop_
+	_category_key.id
+	_category_key.name
+		item_mandatory_condition	'_item_mandatory_condition.id'
+	loop_
+	_category_group.id
+	_category_group.category_id
+		'ddl_group'	            item_mandatory_condition
+		'category_group'	    item_mandatory_condition
+     save_
+
+
+save__item_mandatory_condition.id
+    _item.name                        '_item_mandatory_condition.id'
+    _item.category_id                   item_mandatory_condition
+    _item.mandatory_code                implicit
+    _item_description.name            '_item_mandatory_condition.id'
+    _item_description.description
+;
+     Data id of the defined item.
+;
+    _item_type.name                   '_item_mandatory_condition.id'
+    _item_type.code                     idname
+    _item_linked.child_name           '_item_mandatory_condition.id'
+    _item_linked.parent_name          '_item.category_id'
+     save_
+
+
+# ------------------------------------------------------------------------------------------
+save_category_secondary_key
+	_category.description
+;
+	 This category holds a list of the item names that uniquely
+     identify the elements of the category that are not primary keys.
+;
+	_category.id	            category_secondary_key
+	_category.mandatory_code    no
+	_category.implicit_key      mmcif_ddl.dic
+    loop_
+	_category_key.id          
+	_category_key.name          
+    category_secondary_key      '_category_secondary_key.id'
+    category_secondary_key      '_category_secondary_key.key_id'
+    category_secondary_key      '_category_secondary_key.item_name'
+	
+    loop_
+	_category_group.id
+	_category_group.category_id
+		'ddl_group'	            category_secondary_key
+		'category_group'	    category_secondary_key
+		'extension_group'	    category_secondary_key
+save_
+
+
+save__category_secondary_key.id
+	_item.name	                '_category_secondary_key.id'
+	_item.category_id	        category_secondary_key
+	_item.mandatory_code	    implicit
+	_item_description.name      '_category_secondary_key.id'
+	_item_description.description
+;
+	The identifier of each category
+;
+	_item_type.name	            '_category_secondary_key.id'
+	_item_type.code	            idname
+    _item_linked.child_name     '_category_secondary_key.id'
+    _item_linked.parent_name    '_category.id'
+	 save_
+
+
+save__category_secondary_key.key_id
+	_item.name                  '_category_secondary_key.key_id'
+	_item.category_id	        category_secondary_key
+	_item.mandatory_code        yes
+	_item_description.name      '_category_secondary_key.key_id'
+	_item_description.description
+;
+	The identifier of the unique category, groups together secondary keys
+;
+	_item_type.name	            '_category_secondary_key.key_id'
+	_item_type.code	            code
+	 save_
+
+
+save__category_secondary_key.item_name
+	_item.name	                '_category_secondary_key.item_name'
+	_item.category_id	        category_secondary_key
+	_item.mandatory_code	    yes
+	_item_description.name      '_category_secondary_key.item_name'
+	_item_description.description
+;
+	The name of a data item that is a member of the secondary key category
+;
+	_item_type.name	            '_category_secondary_key.item_name'
+	_item_type.code	            name
+	  
+	loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+        '_category_secondary_key.item_name'       '_item.name'
+	 save_
+	
