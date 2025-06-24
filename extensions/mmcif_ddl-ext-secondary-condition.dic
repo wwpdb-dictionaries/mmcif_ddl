@@ -1,5 +1,5 @@
 # get better name for extension
-data_mmcif_ddl-ext-ls.dic
+data_mmcif_ddl-ext-secondary-condition.dic
 
 
 save_item_mandatory_condition
@@ -106,9 +106,7 @@ save__category_secondary_key.item_name
 	_item_type.name	            '_category_secondary_key.item_name'
 	_item_type.code	            name
 	  
-	loop_
-    _item_linked.child_name
-    _item_linked.parent_name
-        '_category_secondary_key.item_name'       '_item.name'
+    _item_linked.child_name		'_category_secondary_key.item_name'
+    _item_linked.parent_name	'_item.name'
 	 save_
 	
