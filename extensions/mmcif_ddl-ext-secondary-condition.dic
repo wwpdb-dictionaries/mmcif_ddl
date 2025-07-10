@@ -2,7 +2,7 @@ data_mmcif_ddl-ext-secondary-condition.dic
 _pdbx_dictionary_component.datablock_id   	mmcif_ddl-ext-secondary-condition.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_ddl-ext-secondary-condition.dic
 _pdbx_dictionary_component.title          	"mmCIF DDL PDBx Secondary Key Extensions"
-_pdbx_dictionarycomponent.version        	0.0.1
+_pdbx_dictionary_component.version        	0.0.1
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -24,7 +24,11 @@ _pdbx_item_linked_group.condition_id
 #
 
 category_secondary_key   1   category_secondary_key:category:1                   . .
-category_secondary_key   2   category_secondarykey:item:2                        . .
+category_secondary_key   2   category_secondary_key:item:2                       . .
+pdbx_category_conditional_mandatory	1	pdbx_category_conditional_mandatory:category:1                   					  . .
+pdbx_category_conditional_mandatory	2	pdbx_category_conditional_mandatory:pdbx_conditional_context_list:2                   . .
+pdbx_item_conditional_mandatory		1	pdbx_item_conditional_mandatory:item:1                   							  . .
+pdbx_item_conditional_mandatory		2	pdbx_item_conditional_mandatory:pdbx_conditional_context_list:2                   	  . .
 
 #
 loop_
@@ -36,41 +40,113 @@ _pdbx_item_linked_group_list.parent_category_id
 #
 category_secondary_key     1 '_category_secondary_key.id'             '_category.id'                          category
 category_secondary_key     2 '_category_secondary_key.item_name'      '_item.name'                            item
+pdbx_category_conditional_mandatory	1	'_pdbx_category_conditional_mandatory.category_id'	'_category.id'	  								category
+pdbx_category_conditional_mandatory	2	'_pdbx_category_conditional_mandatory.context_id'	'_pdbx_conditional_context_list.context_id'		pdbx_conditional_context_list
+pdbx_item_conditional_mandatory		1	'_pdbx_item_conditional_mandatory.item_name'		'_item.name'	  								item
+pdbx_item_conditional_mandatory		2	'_pdbx_item_conditional_mandatory.context_id'		'_pdbx_conditional_context_list.context_id'		pdbx_conditional_context_list
 
-
-save_item_mandatory_condition
+save_pdbx_category_conditional_mandatory
 	_category.description
 ;
-	 This category holds information for items whose values maybe be affected by conditional context
+	 This category holds information for categories that are mandatory based on the values/presence of other attributes
 ;
-	_category.id	            item_mandatory_condition
+	_category.id	            pdbx_category_conditional_mandatory
 	_category.mandatory_code    no
 	_category.implicit_key      mmcif_ddl.dic
 	loop_
 	_category_key.id
 	_category_key.name
-		item_mandatory_condition	'_item_mandatory_condition.id'
+		pdbx_category_conditional_mandatory	'_pdbx_category_conditional_mandatory.category_id'
+		pdbx_category_conditional_mandatory	'_pdbx_category_conditional_mandatory.context_id'
 	loop_
 	_category_group.id
 	_category_group.category_id
-		'ddl_group'	            item_mandatory_condition
-		'category_group'	    item_mandatory_condition
+		'ddl_group'	            pdbx_category_conditional_mandatory
+		'category_group'	    pdbx_category_conditional_mandatory
+		'extension_group'	    pdbx_category_conditional_mandatory
      save_
 
 
-save__item_mandatory_condition.id
-    _item.name                        '_item_mandatory_condition.id'
-    _item.category_id                   item_mandatory_condition
+save__pdbx_category_conditional_mandatory.category_id
+    _item.name                        '_pdbx_category_conditional_mandatory.category_id'
+    _item.category_id                   pdbx_category_conditional_mandatory
     _item.mandatory_code                implicit
-    _item_description.name            '_item_mandatory_condition.id'
+    _item_description.name            '_pdbx_category_conditional_mandatory.category_id'
     _item_description.description
 ;
      Data id of the defined item.
 ;
-    _item_type.name                   '_item_mandatory_condition.id'
+    _item_type.name                   '_pdbx_category_conditional_mandatory.category_id'
     _item_type.code                     idname
-    _item_linked.child_name           '_item_mandatory_condition.id'
+    _item_linked.child_name           '_pdbx_category_conditional_mandatory.category_id'
     _item_linked.parent_name          '_category.id'
+     save_
+
+save__pdbx_category_conditional_mandatory.context_id
+    _item.name                        '_pdbx_category_conditional_mandatory.context_id'
+    _item.category_id                   pdbx_category_conditional_mandatory
+    _item.mandatory_code                implicit
+    _item_description.name            '_pdbx_category_conditional_mandatory.context_id'
+    _item_description.description
+;
+     Data id of the defined item.
+;
+    _item_type.name                   '_pdbx_category_conditional_mandatory.context_id'
+    _item_type.code                     code
+    _item_linked.child_name           '_pdbx_category_conditional_mandatory.context_id'
+    _item_linked.parent_name          '_pdbx_conditional_context_list.context_id'
+     save_
+
+save_pdbx_item_conditional_mandatory
+	_category.description
+;
+	 This category holds information for items that are mandatory based on the values/presence of other items
+;
+	_category.id	            pdbx_item_conditional_mandatory
+	_category.mandatory_code    no
+	_category.implicit_key      mmcif_ddl.dic
+	loop_
+	_category_key.id
+	_category_key.name
+		pdbx_item_conditional_mandatory	'_pdbx_item_conditional_mandatory.item_name'
+		pdbx_item_conditional_mandatory	'_pdbx_item_conditional_mandatory.context_id'
+	loop_
+	_category_group.id
+	_category_group.category_id
+		'ddl_group'	            pdbx_item_conditional_mandatory
+		'category_group'	    pdbx_item_conditional_mandatory
+		'extension_group'	    pdbx_item_conditional_mandatory
+     save_
+
+
+save__pdbx_item_conditional_mandatory.item_name
+    _item.name                        '_pdbx_item_conditional_mandatory.item_name'
+    _item.category_id                   pdbx_item_conditional_mandatory
+    _item.mandatory_code                implicit
+    _item_description.name            '_pdbx_item_conditional_mandatory.item_name'
+    _item_description.description
+;
+     Data id of the defined item.
+;
+    _item_type.name                   '_pdbx_item_conditional_mandatory.item_name'
+    _item_type.code                     name
+    _item_linked.child_name           '_pdbx_item_conditional_mandatory.item_name'
+    _item_linked.parent_name          '_item.name'
+     save_
+
+save__pdbx_item_conditional_mandatory.context_id
+    _item.name                        '_pdbx_item_conditional_mandatory.context_id'
+    _item.category_id                   pdbx_item_conditional_mandatory
+    _item.mandatory_code                implicit
+    _item_description.name            '_pdbx_item_conditional_mandatory.context_id'
+    _item_description.description
+;
+     Data id of the defined item.
+;
+    _item_type.name                   '_pdbx_item_conditional_mandatory.context_id'
+    _item_type.code                     code
+    _item_linked.child_name           '_pdbx_item_conditional_mandatory.context_id'
+    _item_linked.parent_name          '_pdbx_conditional_context_list.context_id'
      save_
 
 
