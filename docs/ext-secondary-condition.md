@@ -38,7 +38,7 @@ _category_secondary_key.item_name
 In the case of the example above, two secondary key combinations will be created. The first one, indicated by "id1", will contain combinations of values for the "_entity_poly_seq.entity_id" and "_entity_poly_seq.num" items. The second one (indicated by "id2) will contain combinations of values for "_entity_poly_seq.mon_id" and "_entity_poly_seq.num". 
 
 ### Enforcement of Secondary Keys
-When defining and checking for secondary keys in a Cif file using dictionary-related tools, a pair is created containing the key_id item and the item_name item for each row of the loop. item_name values are grouped by key_id and, for each row of a category table, the columns associated with each item_name are checked to make sure the combination of all column values is unique. 
+When defining and checking for secondary keys in a Cif file using dictionary-related tools, a pair is created containing the key_id item and the item_name item for each row of the loop. From this, item_name values are separated into vectors based on their key_id so that a given vector contains a list of all item names that were paired with the same key_id. A map containing all of the vectors is created and iterated through. For each vector in the map, the values of the category table are checked row by row based on the columns associated with each item_name in the vector. If the combination of all values in a row is unique, the secondary key is valid. 
 
 #### Example for key_id "id1"
 Below is a representation of the entity_poly_seq category table
@@ -80,7 +80,7 @@ The items present in pdbx_item_conditional_mandatory are _pdbx_item_conditional_
 ### DDL2 Implementation
 
 #### Conditional Mandatory Categories DDL2 Implementation and Example
-The pdbx_category_conditional_mandatory category must be included in the definition of the category that is to be conditionally mandatory. The pdbx_category_conditional_mandatory category can be looped if needed, allowing for multiple target item-context id pairs for one conditional mandatory category. 
+The pdbx_category_conditional_mandatory category must be included in the definition of the conditional mandatory category. The pdbx_category_conditional_mandatory category can be looped if needed, allowing for multiple conditional mandatory category-context id pairs. 
 
 ```
 save_entity_poly
@@ -93,7 +93,7 @@ _pdbx_category_conditional_mandatory.category_id entity_poly
 ```
 
 To determine whether a conditional mandatory category should be required, the pdbx_conditional_context_list (introduced in the mmCIF DDL PDBx Contextual Extensions extension)
-category must also be defined within the conditional mandatory category, containing the condition to be searched for to determine whether the category should be treated as mandatory. For the implementation of pdbx_category_conditional_mandatory above, this may look like:
+category must also be defined within the conditional mandatory category. The pdbx_conditional_context_list category contains information on the condition to be searched for to determine whether the category should be treated as mandatory or not. For the implementation of pdbx_category_conditional_mandatory above, this may look like:
 ```
 save_entity_poly
 
@@ -112,7 +112,7 @@ _pdbx_conditional_context_list.log_op
 In the case above, the category "entity_poly" will be required if the value of "_entity.type" is equal to "polymer", linked by the context id "TYPE_POLY". 
 
 #### Conditional Mandatory Items DDL2 Implementation and Example
-The structure for defining conditional mandatory items using the pdbx_item_conditional_mandatory category is similar to that of using pdbx_category_conditional_mandatory for categories. The pdbx_item_conditional_mandatory category must be included in the definition of the item that is to be conditionally mandatory. The pdbx_item_conditional_mandatory category can be looped if needed, allowing for multiple target item-context id pairs for one conditional mandatory item. 
+The structure for defining conditional mandatory items using the pdbx_item_conditional_mandatory category is similar to that of using pdbx_category_conditional_mandatory for categories. The pdbx_item_conditional_mandatory category must be included in the definition of the item that is to be conditionally mandatory. The pdbx_item_conditional_mandatory category can be looped if needed, allowing for multiple conditional mandatory item-context id pairs.
 
 ```
 save__struct_ref.pdbx_align_begin
@@ -125,7 +125,7 @@ _pdbx_item_conditional_mandatory.item_name   "_struct_ref.pdbx_align_begin"
 ```
 
 To determine whether a conditional mandatory item should be required, the pdbx_conditional_context_list (introduced in the mmCIF DDL PDBx Contextual Extensions extension)
-category must also be defined within the conditional mandatory item, containing the condition to be searched for to determine whether the item should be treated as mandatory nor not. For the implementation of pdbx_item_conditional_mandatory above, this may look like:
+category must also be defined within the conditional mandatory item. The pdbx_conditional_context_list category contains information on the condition to be searched for to determine whether the item should be treated as mandatory or not. For the implementation of pdbx_item_conditional_mandatory above, this may look like:
 ```
 save__struct_ref.pdbx_align_begin
 
@@ -144,7 +144,7 @@ _pdbx_conditional_context_list.log_op
 In the case above, the item "_struct_ref.pdbx_align_begin" will be required if the value of "_struct_ref.db_name" is equal to "UNP", linked by the context id "DB_UNP". 
 
 ### Enforcement of Conditional Mandatory Categories/Items
-Using dictionary-related tools (i.e. the cpp-dict-pack repository on GitHub), categories/items are determined to be conditionally mandatory by first getting the name of the category/item in question and obtaining all of the context ids associated with that name. For each context id, the condition connected to the context id (determined by the contents of the pdbx_conditional_context_list category) is tested. If the condition is fulfilled, the conditional mandatory category/item is marked as required; if it is not fulfilled, the next context id is tested. If the context id being tested is the last one in the list and the condition connected to the context id is not fulfilled, the conditional mandatory category/item is marked as not required.
+Using dictionary-related tools (i.e. the cpp-dict-pack repository on GitHub), categories/items are determined to be conditionally mandatory by first getting the name of the category/item in question and obtaining all of the context ids associated with that name. For each obtained context id, the condition connected to it (determined by the contents of the pdbx_conditional_context_list category) is tested. If the condition is fulfilled, the conditional mandatory category/item is marked as required; if it is not fulfilled, the next context id is tested. If the context id being tested is the last one in the list and the condition connected to it is not fulfilled, the conditional mandatory category/item is marked as not required.
 
 #### Example for Conditional Mandatory Category "entity_poly"
 For conditional mandatory categories, only one instance of the target item (in this case "_entity.type") has to fulfill the condition in order for the category to be required. If the conditional is never satisfied, the category will not be required. If the condition is satisfied for the category but the category is missing from the Cif file, an error will be thrown stating that the category is conditionally mandatory, but is not in datablock.
