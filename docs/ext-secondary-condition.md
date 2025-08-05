@@ -10,7 +10,7 @@ The category_secondary_key category has three items, all of which are required a
 
 1. category_secondary_key.id </br>
 
-    The category_secondary_key.id item is a child of the "_category.id" item, and consists of the category id that contains the secondary keys. This item is implicit and does not need to be explicitly defined.
+    The category_secondary_key.id item is a child of the "_category.id" item, and consists of the category id that contains the secondary keys. This item is implicit and does not need to be defined by the user.
 
 2. category_secondary_key.key_id </br>
 
@@ -35,12 +35,14 @@ _category_secondary_key.item_name
     id2   "_entity_poly_seq.num"
 ```
 
-The values for _category_secondary_key.key_id can be anything as long as it is comprised of a single word. The values for _category_secondary_key.item_name must correspond to the name of an item that is present in the category of interest. The values for both of these items must be present; missing or inapplicable values are not allowed. In the case of the example above, two secondary key combinations will be created. The first one, indicated by "id1", will contain combinations of values for the "_entity_poly_seq.entity_id" and "_entity_poly_seq.num" items. The second one (indicated by "id2) will contain combinations of values for "_entity_poly_seq.mon_id" and "_entity_poly_seq.num". 
+The values for _category_secondary_key.key_id can be anything as long as it is comprised of a single word. The values for _category_secondary_key.item_name must correspond to the name of an item that is present in the category of interest. The values for both of these items must be present; missing or inapplicable values are not allowed. In the case of the example above, two secondary keys will be created. The first one, indicated by "id1", will contain combinations of values for the "_entity_poly_seq.entity_id" and "_entity_poly_seq.num" items. The second one (indicated by "id2) will contain combinations of values for "_entity_poly_seq.mon_id" and "_entity_poly_seq.num". 
 
 ### Enforcement of Secondary Keys
 When defining and checking for secondary keys in a Cif file using dictionary-related tools, a pair is created containing the key_id item and the item_name item for each row of the loop. From this, item_name values are separated into vectors based on their key_id so that a given vector contains a list of all item names that were paired with the same key_id. A map containing all of the vectors is created and iterated through. For each vector in the map, the values of the category table are checked row by row based on the columns associated with each item_name in the vector. If the combination of all values in a row is unique, the secondary key is valid. 
 
 Unknown values are allowed in item_name columns as long as the combination of all secondary keys is unique. Inapplicable values are treated as unknown values, so if two rows have identical values for all item_name columns save for one row having a "?" and the other having a "." in the same column, the rows are treated as duplicates.
+
+The checking and validating of secondary keys performed by the CifCheck executable can be disabled by using the -disableSecKeyChecks flag.
 
 #### Example 1 for key_id "id1"
 Below is a representation of the entity_poly_seq category table
@@ -115,8 +117,7 @@ _pdbx_category_conditional_mandatory.category_id entity_poly
 ```
 By defining "_pdbx_category_conditional_mandatory.category_id" with a value of "entity_poly" inside of the "entity_poly" category, the category is established as a conditional mandatory category. The "_pdbx_category_conditional_mandatory.context_id" item contains the identifier for the conditional mandatory category, which is necessary for defining and finding the condition needed for the category to be treated as mandatory.
 
-To determine whether a conditional mandatory category should be required, the pdbx_conditional_context_list (introduced in the mmCIF DDL PDBx Contextual Extensions extension)
-category must also be defined within the conditional mandatory category. For the implementation of pdbx_category_conditional_mandatory above, this may look like:
+To determine whether a conditional mandatory category should be required, the pdbx_conditional_context_list (introduced in the mmCIF DDL PDBx Contextual Extensions extension) category must also be defined within the conditional mandatory category. For the implementation of pdbx_category_conditional_mandatory above, this may look like:
 ```
 save_entity_poly
 
@@ -185,6 +186,8 @@ In the case above, the item "_struct_ref.pdbx_align_begin" will be required if t
 
 ### Enforcement of Conditional Mandatory Categories/Items
 Using dictionary-related tools (i.e. the cpp-dict-pack repository on GitHub), categories/items are determined to be conditionally mandatory by first getting the name of the category/item in question and obtaining all of the context ids associated with that name. For each obtained context id, the condition connected to it (determined by the contents of the pdbx_conditional_context_list category) is tested. If the condition is fulfilled, the conditional mandatory category/item is marked as required; if it is not fulfilled, the next context id is tested. If the context id being tested is the last one in the list and the condition connected to it is not fulfilled, the conditional mandatory category/item is marked as not required.
+
+The checking and validating of conditional mandatory categories and items performed by the CifCheck executable can be disabled by using the -disableCondMandatoryCatChecks and -disableCondMandatoryItemChecks flags respectively.
 
 #### Example for Conditional Mandatory Category "entity_poly"
 Below is a section of the Cif file for human deoxyhemoglobin (PDB ID: 4HHB; Extended PDB ID: pdb_00004hhb) for the entity category.
@@ -267,7 +270,7 @@ LKGTFATLSELHCDKLHVDPENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH
 ```
 Since only the first instance of the item fulfills the condition ("_struct_ref.db_name" = "UNP"), only that instance is required. The second instance has a value of "PDB", which does not fulfill the condition, so it is treated as not mandatory. If the "_struct_ref.pdbx_align_begin" item was unconditionally mandatory, the second instance would result in an error as the value is listed as unknown. However, since the item is conditional mandatory and the condition for that instance is not fulfilled, no error is produced.
 
-##### ____________________________________________________________________________
+#### Potential Causes of Error in Conditional Mandatory Items
 There are two potential ways for a conditionally mandatory item to result in an error: 
 1. the condition for a conditionally mandatory item is fulfilled but the value for the conditionally mandatory item is missing in the data
 2. the condition for a conditionally mandatory item is fulfilled but the conditionally mandatory item itself is missing from the category 
