@@ -149,6 +149,75 @@ save__pdbx_item_conditional_mandatory.context_id
     _item_linked.parent_name          '_pdbx_conditional_context_list.context_id'
      save_
 
+# ------------------------------------------------------------------------------------------
+save_pdbx_item_conditional_linked
+	_category.description
+;
+	 This category holds information for items that are linked within/between categories based on the values/presence of other items
+;
+	_category.id	            pdbx_item_conditional_linked
+	_category.mandatory_code    no
+	_category.implicit_key      mmcif_ddl.dic
+    loop_
+	_category_key.id          
+	_category_key.name          
+    pdbx_item_conditional_linked      '_pdbx_item_conditional_linked.child_name'
+    pdbx_item_conditional_linked      '_pdbx_item_conditional_linked.parent_name'
+    pdbx_item_conditional_linked      '_pdbx_item_conditional_linked.context_id'
+	
+    loop_
+	_category_group.id
+	_category_group.category_id
+		'ddl_group'	            pdbx_item_conditional_linked
+		'category_group'	    pdbx_item_conditional_linked
+		'extension_group'	    pdbx_item_conditional_linked
+save_
+
+
+save__pdbx_item_conditional_linked.child_name
+	_item.name	                '_pdbx_item_conditional_linked.child_name'
+	_item.category_id	        pdbx_item_conditional_linked
+	_item.mandatory_code	    yes
+	_item_description.name      '_pdbx_item_conditional_linked.child_name'
+	_item_description.description
+;
+	Name of the child data item subject to the value condition.
+;
+	_item_type.name	            '_pdbx_item_conditional_linked.child_name'
+	_item_type.code	            name
+    _item_linked.child_name     '_pdbx_item_conditional_linked.child_name'
+    _item_linked.parent_name    '_item.name'
+	 save_
+
+save__pdbx_item_conditional_linked.parent_name
+	_item.name	                '_pdbx_item_conditional_linked.parent_name'
+	_item.category_id	        pdbx_item_conditional_linked
+	_item.mandatory_code	    yes
+	_item_description.name      '_pdbx_item_conditional_linked.parent_name'
+	_item_description.description
+;
+	Name of the parent data item.
+;
+	_item_type.name	            '_pdbx_item_conditional_linked.parent_name'
+	_item_type.code	            name
+    _item_linked.child_name     '_pdbx_item_conditional_linked.parent_name'
+    _item_linked.parent_name    '_item.name'
+	 save_
+
+save__pdbx_item_conditional_linked.context_id
+	_item.name                   '_pdbx_item_conditional_linked.context_id'
+    _item.category_id            pdbx_item_conditional_linked
+    _item.mandatory_code         yes
+    _item_description.name       '_pdbx_item_conditional_linked.context_id'
+    _item_description.description
+;
+     Data id of the defined item.
+;
+    _item_type.name              '_pdbx_item_conditional_linked.context_id'
+    _item_type.code              code
+    _item_linked.child_name      '_pdbx_item_conditional_linked.context_id'
+    _item_linked.parent_name     '_pdbx_conditional_context_list.context_id'
+     save_
 
 # ------------------------------------------------------------------------------------------
 save_category_secondary_key
