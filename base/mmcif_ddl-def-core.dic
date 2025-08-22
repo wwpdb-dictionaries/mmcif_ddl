@@ -829,6 +829,8 @@ save__item.mandatory_code
          implicit 'required item but may be determined from context'
        '_item.mandatory_code'
          implicit-ordinal 'required item determined from the row index of the category'
+       '_item.mandatory_code'
+         conditional      'required item determined based on the status of another item'
      save_
 
 

@@ -20,6 +20,8 @@ mmcif_ddl-ext-pdbx.dic      extensions/mmcif_ddl-ext-pdbx-local.dic      extend 
 #
 mmcif_ddl-ext-rcsb.dic      extensions/mmcif_ddl-ext-rcsb.dic      extend rcsb  rcsb
 #
+mmcif_ddl-ext-secondary-condition.dic     extensions/mmcif_ddl-ext-secondary-condition.dic        extend .   .
+#
 mmcif_ddl-data-ilg.dic      base/mmcif_ddl-data-ilg.dic extend . .
 
 loop_

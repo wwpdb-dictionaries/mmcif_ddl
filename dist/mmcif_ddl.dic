@@ -431,74 +431,75 @@ _pdbx_dictionary_component.datablock_id
 _pdbx_dictionary_component.dictionary_component_id
 _pdbx_dictionary_component.title
 _pdbx_dictionary_component.version
-mmcif_ddl-ext-nx.dic         mmcif_ddl-ext-nx.dic         "mmCIF DDL Nexus (NX) extensions"                    1.1.0   
-mmcif_ddl-ext-ndb.dic        mmcif_ddl-ext-ndb.dic        "mmCIF DDL Nucleic Acid Database (NDB) extensions"   1.4.0   
-mmcif_ddl-ext-pdbx.dic       mmcif_ddl-ext-pdbx.dic       "mmCIF DDL Protein Data Bank (PDBx) extensions"      1.10.0  
-mmcif_ddl-ext-compose.dic    mmcif_ddl-ext-compose.dic    "mmCIF DDL PDBx Dictionary Composition Extensions"   1.1.0   
-mmcif_ddl-ext-condition.dic  mmcif_ddl-ext-condition.dic  "mmCIF DDL PDBx Conditional Value Extensions"        1.2.0   
-mmcif_ddl-ext-rcsb.dic       mmcif_ddl-ext-rcsb.dic       "mmCIF DDL RCSB Protein Data Bank (PDB) extensions"  1.1.0   
+mmcif_ddl-ext-nx.dic                   mmcif_ddl-ext-nx.dic                   "mmCIF DDL Nexus (NX) extensions"                    1.1.0   
+mmcif_ddl-ext-ndb.dic                  mmcif_ddl-ext-ndb.dic                  "mmCIF DDL Nucleic Acid Database (NDB) extensions"   1.4.0   
+mmcif_ddl-ext-pdbx.dic                 mmcif_ddl-ext-pdbx.dic                 "mmCIF DDL Protein Data Bank (PDBx) extensions"      1.10.0  
+mmcif_ddl-ext-compose.dic              mmcif_ddl-ext-compose.dic              "mmCIF DDL PDBx Dictionary Composition Extensions"   1.1.0   
+mmcif_ddl-ext-condition.dic            mmcif_ddl-ext-condition.dic            "mmCIF DDL PDBx Conditional Value Extensions"        1.2.0   
+mmcif_ddl-ext-rcsb.dic                 mmcif_ddl-ext-rcsb.dic                 "mmCIF DDL RCSB Protein Data Bank (PDB) extensions"  1.1.0   
+mmcif_ddl-ext-secondary-condition.dic  mmcif_ddl-ext-secondary-condition.dic  "mmCIF DDL PDBx Secondary Key Extensions"            0.0.1   
 #
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
 _pdbx_dictionary_component_history.version
 _pdbx_dictionary_component_history.update
 _pdbx_dictionary_component_history.revision
-mmcif_ddl-ext-nx.dic         1.0.0   2013-09-23  
+mmcif_ddl-ext-nx.dic                   1.0.0   2013-09-23  
 ;
 Changes: (JW) -
 + Add item _category.NX_mapping_details for Nexus correspondences.
 ;
   
-mmcif_ddl-ext-nx.dic         1.1.0   2021-03-30  
+mmcif_ddl-ext-nx.dic                   1.1.0   2021-03-30  
 ;
 Changes (JW):
 + Migrate to dictionary component mmcif_ddl-ext-nx.dic.
 ;
   
-mmcif_ddl-ext-ndb.dic        1.0.0   2003-06-23  
+mmcif_ddl-ext-ndb.dic                  1.0.0   2003-06-23  
 ;
 Changes: (JW)
 + Preliminary version of NDB extensions including categories ndb_category_description,
   ndb_category_examples, ndb_item_description, ndb_item_enumeration, and ndb_item_examples
 ;
   
-mmcif_ddl-ext-ndb.dic        1.1.0   2009-01-15  
+mmcif_ddl-ext-ndb.dic                  1.1.0   2009-01-15  
 ;
 Changes: (JW)
 + _ndb_item_examples.detail make optional
 ;
   
-mmcif_ddl-ext-ndb.dic        1.2.0   2012-09-01  
+mmcif_ddl-ext-ndb.dic                  1.2.0   2012-09-01  
 ;
 Changes: (JW) -
 + Added categories ndb_item_range, ndb_item and ndb_item_type
 ;
   
-mmcif_ddl-ext-ndb.dic        1.3.0   2021-03-30  
+mmcif_ddl-ext-ndb.dic                  1.3.0   2021-03-30  
 ;
 Changes (JW):
 + Migrate to dictionary component mmcif_ddl-ext-ndb.dic.
 ;
   
-mmcif_ddl-ext-ndb.dic        1.4.0   2021-04-05  
+mmcif_ddl-ext-ndb.dic                  1.4.0   2021-04-05  
 ;
 Changes (JW):
 + Add to pdbx_item_linked_group and pdbx_item_linked_group_list details
 ;
   
-mmcif_ddl-ext-pdbx.dic       1.0.0   2008-10-31  
+mmcif_ddl-ext-pdbx.dic                 1.0.0   2008-10-31  
 ;
 Changes: (JW)
 + Add categories pdbx_item_link_group and pdbx_item_link_group_list
 ;
   
-mmcif_ddl-ext-pdbx.dic       1.1.0   2009-11-02  
+mmcif_ddl-ext-pdbx.dic                 1.1.0   2009-11-02  
 ;
 Changes: (JW)
 + Add categories pdbx_item_context and pdbx_category_context
 ;
   
-mmcif_ddl-ext-pdbx.dic       1.2.0   2012-09-01  
+mmcif_ddl-ext-pdbx.dic                 1.2.0   2012-09-01  
 ;
 Changes: (JW) -
 + Add alternate categories under PDBx prefix:
@@ -507,89 +508,89 @@ Changes: (JW) -
   and pdbx_item_examples.
 ;
   
-mmcif_ddl-ext-pdbx.dic       1.3.0   2013-10-14  
+mmcif_ddl-ext-pdbx.dic                 1.3.0   2013-10-14  
 ;
 Changes: (JW) -
 + Add category pdbx_item_enumeration_details describing additional controls
   for enumerated data items at deposition.
 ;
   
-mmcif_ddl-ext-pdbx.dic       1.4.0   2014-03-10  
+mmcif_ddl-ext-pdbx.dic                 1.4.0   2014-03-10  
 ;
 Changes: (JW) -
 + Add enumerations for pdbx_item_enumeration_details.closed_flag
 ;
   
-mmcif_ddl-ext-pdbx.dic       1.5.0   2019-04-04  
+mmcif_ddl-ext-pdbx.dic                 1.5.0   2019-04-04  
 ;
 Changes: (JW)
 + Add extension item _item_sub_category.pdbx_label
 ;
   
-mmcif_ddl-ext-pdbx.dic       1.6.0   2021-03-30  
+mmcif_ddl-ext-pdbx.dic                 1.6.0   2021-03-30  
 ;
 Changes (JW):
 + Migrate to dictionary component mmcif_ddl-ext-pdbx.dic.
 ;
   
-mmcif_ddl-ext-pdbx.dic       1.7.0   2021-04-05  
+mmcif_ddl-ext-pdbx.dic                 1.7.0   2021-04-05  
 ;
 Changes (JW):
 + Add pdbx_include_dictionary/pdbx_include_category for dictionary compose and value conditions extensions
 + Add to pdbx_item_linked_group and pdbx_item_linked_group_list details
 ;
   
-mmcif_ddl-ext-pdbx.dic       1.8.0   2021-05-29  
+mmcif_ddl-ext-pdbx.dic                 1.8.0   2021-05-29  
 ;
 Changes (JW):
 + Add _pdbx_item_enumeration.value_display and _item_enumeration.pdbx_value_display
 ;
   
-mmcif_ddl-ext-pdbx.dic       1.9.0   2021-06-02  
+mmcif_ddl-ext-pdbx.dic                 1.9.0   2021-06-02  
 ;
 Changes (JW):
 + Add categories pdbx_item_set and pdbx_item_set_type_list
 ;
   
-mmcif_ddl-ext-pdbx.dic       1.10.0  2021-08-31  
+mmcif_ddl-ext-pdbx.dic                 1.10.0  2021-08-31  
 ;
 Changes (EP):
 + Add conditional context extension. Adds categories pdbx_category_conditional_context,
   pdbx_item_conditional_context, pdbx_conditional_context_list.
 ;
   
-mmcif_ddl-ext-compose.dic    1.0.0   2017-08-17  
+mmcif_ddl-ext-compose.dic              1.0.0   2017-08-17  
 ;
 Changes (JW):
 + Preliminary versions of categories pdbx_include_dictionary, pdbx_include_category,
   pdbx_include_item, pdbx_dictionary_component and pdbx_dictionary_component_history
 ;
   
-mmcif_ddl-ext-compose.dic    1.1.0   2021-03-30  
+mmcif_ddl-ext-compose.dic              1.1.0   2021-03-30  
 ;
 Changes (JW):
 + Migrate to dictionary component mmcif_ddl-ext-compose.dic.
 ;
   
-mmcif_ddl-ext-compose.dic    1.2.0   2021-04-05  
+mmcif_ddl-ext-compose.dic              1.2.0   2021-04-05  
 ;
 Changes (JW):
 + Correct typo in pdbx_dictionary_component.dictionary_component_id item name.
 ;
   
-mmcif_ddl-ext-condition.dic  1.0.0   2017-08-17  
+mmcif_ddl-ext-condition.dic            1.0.0   2017-08-17  
 ;
 Changes (JW):
 + Preliminary versions of categories  pdbx_item_linked, pdbx_item_value_condition, and pdbx_item_value_condition_list
 ;
   
-mmcif_ddl-ext-condition.dic  1.1.0   2021-03-30  
+mmcif_ddl-ext-condition.dic            1.1.0   2021-03-30  
 ;
 Changes (JW):
 + Migrate to dictionary component mmcif_ddl-ext-condition.dic.
 ;
   
-mmcif_ddl-ext-condition.dic  1.2.0   2021-04-06  
+mmcif_ddl-ext-condition.dic            1.2.0   2021-04-06  
 ;
 Changes (JW):
 + Add data category pdbx_comparison_operator_list and items
@@ -597,16 +598,22 @@ Changes (JW):
  _pdbx_item_value_condition_list.log_op
 ;
   
-mmcif_ddl-ext-rcsb.dic       1.0.0   2020-06-05  
+mmcif_ddl-ext-rcsb.dic                 1.0.0   2020-06-05  
 ;
 Changes (JW):
 +  Add items _item_enumeration.rcsb_detail_brief and _item_enumeration.rcsb_type_units_code
 ;
   
-mmcif_ddl-ext-rcsb.dic       1.1.0   2021-03-30  
+mmcif_ddl-ext-rcsb.dic                 1.1.0   2021-03-30  
 ;
 Changes (JW):
 + Migrate to dictionary component mmcif_ddl-ext-rcsb.dic.
+;
+  
+mmcif_ddl-ext-secondary-condition.dic  0.0.1   2025-06-26  
+;
+Changes (LS):
++ Preliminary versions
 ;
   
 #
@@ -616,94 +623,100 @@ _pdbx_item_linked_group.link_group_id
 _pdbx_item_linked_group.label
 _pdbx_item_linked_group.context
 _pdbx_item_linked_group.condition_id
-ndb_item_range                     1  ndb_item_range:item:1                                              .  .  
-ndb_item_type                      1  ndb_item_type:item:1                                               .  .  
-ndb_item                           1  ndb_item:item:1                                                    .  .  
-ndb_category_description           1  ndb_category_description:category:1                                .  .  
-ndb_category_examples              1  ndb_category_examples:category:1                                   .  .  
-ndb_item_description               1  ndb_item_description:item:1                                        .  .  
-ndb_item_enumeration               1  ndb_item_enumeration:item:1                                        .  .  
-ndb_item_examples                  1  ndb_item_examples:item:1                                           .  .  
-pdbx_item_linked_group             1  pdbx_item_linked_group:category:1                                  .  .  
-pdbx_item_linked_group_list        1  pdbx_item_linked_group_list:item:1                                 .  .  
-pdbx_item_linked_group_list        2  pdbx_item_linked_group_list:item:2                                 .  .  
-pdbx_item_linked_group_list        3  pdbx_item_linked_group_list:pdbx_item_linked_group:3               .  .  
-pdbx_category_context              1  pdbx_category_context:category:1                                   .  .  
-pdbx_item_context                  1  pdbx_item_context:item:1                                           .  .  
-pdbx_item_enumeration_details      1  pdbx_item_enumeration_details:item:1                               .  .  
-pdbx_item_range                    1  pdbx_item_range:item:1                                             .  .  
-pdbx_item_type                     1  pdbx_item_type:item:1                                              .  .  
-pdbx_item                          1  pdbx_item:item:1                                                   .  .  
-pdbx_category_description          1  pdbx_category_description:category:1                               .  .  
-pdbx_category_examples             1  pdbx_category_examples:category:1                                  .  .  
-pdbx_item_description              1  pdbx_item_description:item:1                                       .  .  
-pdbx_item_enumeration              1  pdbx_item_enumeration:item:1                                       .  .  
-pdbx_item_examples                 1  pdbx_item_examples:item:1                                          .  .  
-pdbx_include_category              1  pdbx_include_category:pdbx_include_dictionary:1                    .  .  
-pdbx_include_item                  1  pdbx_include_item:pdbx_include_dictionary:1                        .  .  
-pdbx_dictionary_component          1  pdbx_dictionary_component:pdbx_dictionary_component_history:1      .  .  
-pdbx_dictionary_component_history  1  pdbx_dictionary_component_history:pdbx_dictionary_component:1      .  .  
-pdbx_item_value_condition          1  pdbx_item_value_condition:pdbx_item_value_condition_list:1         .  .  
-pdbx_item_value_condition_list     1  pdbx_item_value_condition_list:item:1                              .  .  
-pdbx_item_value_condition_list     2  pdbx_item_value_condition_list:item:2                              .  .  
-pdbx_item_value_condition_list     3  pdbx_item_value_condition_list:pdbx_comparison_operator_list:3     .  .  
-pdbx_item_linked                   1  pdbx_item_linked:item:1                                            .  .  
-pdbx_item_linked                   2  pdbx_item_linked:item:2                                            .  .  
-pdbx_item_linked                   3  pdbx_item_linked:item:3                                            .  .  
-pdbx_item_linked                   4  pdbx_item_linked:item:4                                            .  .  
-pdbx_item_linked                   5  pdbx_item_linked:pdbx_comparison_operator_list:5                   .  .  
-pdbx_item_set                      1  pdbx_item_set:pdbx_item_set_type_list:1                            .  .  
-pdbx_item_set                      2  pdbx_item_set:item:1                                               .  .  
-pdbx_category_conditional_context  1  pdbx_category_conditional_context:category:1                       .  .  
-pdbx_category_conditional_context  2  pdbx_category_conditional_context:pdbx_conditional_context_list:2  .  .  
-pdbx_conditional_context_list      1  pdbx_conditional_context_list:item:1                               .  .  
-pdbx_conditional_context_list      2  pdbx_conditional_context_list:item:2                               .  .  
-pdbx_conditional_context_list      3  pdbx_conditional_context_list:pdbx_comparison_list:3               .  .  
-pdbx_item_conditional_context      1  pdbx_item_conditional_context:item:1                               .  .  
-pdbx_item_conditional_context      2  pdbx_item_conditional_context:pdbx_conditional_context_list:2      .  .  
-category                           1  category:datablock:1                                               .  .  
-category_examples                  1  category_examples:category:1                                       .  .  
-category_group                     1  category_group:category:1                                          .  .  
-category_group                     2  category_group:category_group_list:2                               .  .  
-category_group_list                1  category_group_list:category_group_list:1                          .  .  
-category_key                       1  category_key:category:1                                            .  .  
-category_key                       2  category_key:item:2                                                .  .  
-category_methods                   1  category_methods:category:1                                        .  .  
-category_methods                   2  category_methods:method_list:2                                     .  .  
-datablock_methods                  1  datablock_methods:datablock:1                                      .  .  
-datablock_methods                  2  datablock_methods:method_list:2                                    .  .  
-dictionary                         1  dictionary:datablock:1                                             .  .  
-dictionary                         2  dictionary:dictionary_history:2                                    .  .  
-item                               1  item:category:1                                                    .  .  
-item_aliases                       1  item_aliases:item:1                                                .  .  
-item_default                       1  item_default:item:1                                                .  .  
-item_dependent                     1  item_dependent:item:1                                              .  .  
-item_dependent                     2  item_dependent:item:2                                              .  .  
-item_description                   1  item_description:item:1                                            .  .  
-item_enumeration                   1  item_enumeration:item:1                                            .  .  
-item_enumeration                   2  item_enumeration:item_units_list:2                                 .  .  
-item_examples                      1  item_examples:item:1                                               .  .  
-item_linked                        1  item_linked:item:1                                                 .  .  
-item_linked                        2  item_linked:item:2                                                 .  .  
-item_methods                       1  item_methods:item:1                                                .  .  
-item_methods                       2  item_methods:method_list:2                                         .  .  
-item_range                         1  item_range:item:1                                                  .  .  
-item_related                       1  item_related:item:1                                                .  .  
-item_related                       2  item_related:item:2                                                .  .  
-item_structure                     1  item_structure:item:1                                              .  .  
-item_structure                     2  item_structure:item_structure_list:2                               .  .  
-item_sub_category                  1  item_sub_category:item:1                                           .  .  
-item_sub_category                  2  item_sub_category:sub_category:2                                   .  .  
-item_type                          1  item_type:item:1                                                   .  .  
-item_type                          2  item_type:item_type_list:2                                         .  .  
-item_type_conditions               1  item_type_conditions:item:1                                        .  .  
-item_units                         1  item_units:item:1                                                  .  .  
-item_units                         2  item_units:item_units_list:2                                       .  .  
-item_units_conversion              1  item_units_conversion:item_units_list:1                            .  .  
-item_units_conversion              2  item_units_conversion:item_units_list:2                            .  .  
-sub_category_examples              1  sub_category_examples:sub_category:1                               .  .  
-sub_category_methods               1  sub_category_methods:method_list:1                                 .  .  
-sub_category_methods               2  sub_category_methods:sub_category:2                                .  .  
+ndb_item_range                       1  ndb_item_range:item:1                                                .  .  
+ndb_item_type                        1  ndb_item_type:item:1                                                 .  .  
+ndb_item                             1  ndb_item:item:1                                                      .  .  
+ndb_category_description             1  ndb_category_description:category:1                                  .  .  
+ndb_category_examples                1  ndb_category_examples:category:1                                     .  .  
+ndb_item_description                 1  ndb_item_description:item:1                                          .  .  
+ndb_item_enumeration                 1  ndb_item_enumeration:item:1                                          .  .  
+ndb_item_examples                    1  ndb_item_examples:item:1                                             .  .  
+pdbx_item_linked_group               1  pdbx_item_linked_group:category:1                                    .  .  
+pdbx_item_linked_group_list          1  pdbx_item_linked_group_list:item:1                                   .  .  
+pdbx_item_linked_group_list          2  pdbx_item_linked_group_list:item:2                                   .  .  
+pdbx_item_linked_group_list          3  pdbx_item_linked_group_list:pdbx_item_linked_group:3                 .  .  
+pdbx_category_context                1  pdbx_category_context:category:1                                     .  .  
+pdbx_item_context                    1  pdbx_item_context:item:1                                             .  .  
+pdbx_item_enumeration_details        1  pdbx_item_enumeration_details:item:1                                 .  .  
+pdbx_item_range                      1  pdbx_item_range:item:1                                               .  .  
+pdbx_item_type                       1  pdbx_item_type:item:1                                                .  .  
+pdbx_item                            1  pdbx_item:item:1                                                     .  .  
+pdbx_category_description            1  pdbx_category_description:category:1                                 .  .  
+pdbx_category_examples               1  pdbx_category_examples:category:1                                    .  .  
+pdbx_item_description                1  pdbx_item_description:item:1                                         .  .  
+pdbx_item_enumeration                1  pdbx_item_enumeration:item:1                                         .  .  
+pdbx_item_examples                   1  pdbx_item_examples:item:1                                            .  .  
+pdbx_include_category                1  pdbx_include_category:pdbx_include_dictionary:1                      .  .  
+pdbx_include_item                    1  pdbx_include_item:pdbx_include_dictionary:1                          .  .  
+pdbx_dictionary_component            1  pdbx_dictionary_component:pdbx_dictionary_component_history:1        .  .  
+pdbx_dictionary_component_history    1  pdbx_dictionary_component_history:pdbx_dictionary_component:1        .  .  
+pdbx_item_value_condition            1  pdbx_item_value_condition:pdbx_item_value_condition_list:1           .  .  
+pdbx_item_value_condition_list       1  pdbx_item_value_condition_list:item:1                                .  .  
+pdbx_item_value_condition_list       2  pdbx_item_value_condition_list:item:2                                .  .  
+pdbx_item_value_condition_list       3  pdbx_item_value_condition_list:pdbx_comparison_operator_list:3       .  .  
+pdbx_item_linked                     1  pdbx_item_linked:item:1                                              .  .  
+pdbx_item_linked                     2  pdbx_item_linked:item:2                                              .  .  
+pdbx_item_linked                     3  pdbx_item_linked:item:3                                              .  .  
+pdbx_item_linked                     4  pdbx_item_linked:item:4                                              .  .  
+pdbx_item_linked                     5  pdbx_item_linked:pdbx_comparison_operator_list:5                     .  .  
+pdbx_item_set                        1  pdbx_item_set:pdbx_item_set_type_list:1                              .  .  
+pdbx_item_set                        2  pdbx_item_set:item:1                                                 .  .  
+pdbx_category_conditional_context    1  pdbx_category_conditional_context:category:1                         .  .  
+pdbx_category_conditional_context    2  pdbx_category_conditional_context:pdbx_conditional_context_list:2    .  .  
+pdbx_conditional_context_list        1  pdbx_conditional_context_list:item:1                                 .  .  
+pdbx_conditional_context_list        2  pdbx_conditional_context_list:item:2                                 .  .  
+pdbx_conditional_context_list        3  pdbx_conditional_context_list:pdbx_comparison_list:3                 .  .  
+pdbx_item_conditional_context        1  pdbx_item_conditional_context:item:1                                 .  .  
+pdbx_item_conditional_context        2  pdbx_item_conditional_context:pdbx_conditional_context_list:2        .  .  
+category_secondary_key               1  category_secondary_key:category:1                                    .  .  
+category_secondary_key               2  category_secondary_key:item:2                                        .  .  
+pdbx_category_conditional_mandatory  1  pdbx_category_conditional_mandatory:category:1                       .  .  
+pdbx_category_conditional_mandatory  2  pdbx_category_conditional_mandatory:pdbx_conditional_context_list:2  .  .  
+pdbx_item_conditional_mandatory      1  pdbx_item_conditional_mandatory:item:1                               .  .  
+pdbx_item_conditional_mandatory      2  pdbx_item_conditional_mandatory:pdbx_conditional_context_list:2      .  .  
+category                             1  category:datablock:1                                                 .  .  
+category_examples                    1  category_examples:category:1                                         .  .  
+category_group                       1  category_group:category:1                                            .  .  
+category_group                       2  category_group:category_group_list:2                                 .  .  
+category_group_list                  1  category_group_list:category_group_list:1                            .  .  
+category_key                         1  category_key:category:1                                              .  .  
+category_key                         2  category_key:item:2                                                  .  .  
+category_methods                     1  category_methods:category:1                                          .  .  
+category_methods                     2  category_methods:method_list:2                                       .  .  
+datablock_methods                    1  datablock_methods:datablock:1                                        .  .  
+datablock_methods                    2  datablock_methods:method_list:2                                      .  .  
+dictionary                           1  dictionary:datablock:1                                               .  .  
+dictionary                           2  dictionary:dictionary_history:2                                      .  .  
+item                                 1  item:category:1                                                      .  .  
+item_aliases                         1  item_aliases:item:1                                                  .  .  
+item_default                         1  item_default:item:1                                                  .  .  
+item_dependent                       1  item_dependent:item:1                                                .  .  
+item_dependent                       2  item_dependent:item:2                                                .  .  
+item_description                     1  item_description:item:1                                              .  .  
+item_enumeration                     1  item_enumeration:item:1                                              .  .  
+item_enumeration                     2  item_enumeration:item_units_list:2                                   .  .  
+item_examples                        1  item_examples:item:1                                                 .  .  
+item_linked                          1  item_linked:item:1                                                   .  .  
+item_linked                          2  item_linked:item:2                                                   .  .  
+item_methods                         1  item_methods:item:1                                                  .  .  
+item_methods                         2  item_methods:method_list:2                                           .  .  
+item_range                           1  item_range:item:1                                                    .  .  
+item_related                         1  item_related:item:1                                                  .  .  
+item_related                         2  item_related:item:2                                                  .  .  
+item_structure                       1  item_structure:item:1                                                .  .  
+item_structure                       2  item_structure:item_structure_list:2                                 .  .  
+item_sub_category                    1  item_sub_category:item:1                                             .  .  
+item_sub_category                    2  item_sub_category:sub_category:2                                     .  .  
+item_type                            1  item_type:item:1                                                     .  .  
+item_type                            2  item_type:item_type_list:2                                           .  .  
+item_type_conditions                 1  item_type_conditions:item:1                                          .  .  
+item_units                           1  item_units:item:1                                                    .  .  
+item_units                           2  item_units:item_units_list:2                                         .  .  
+item_units_conversion                1  item_units_conversion:item_units_list:1                              .  .  
+item_units_conversion                2  item_units_conversion:item_units_list:2                              .  .  
+sub_category_examples                1  sub_category_examples:sub_category:1                                 .  .  
+sub_category_methods                 1  sub_category_methods:method_list:1                                   .  .  
+sub_category_methods                 2  sub_category_methods:sub_category:2                                  .  .  
 #
 loop_
 _pdbx_item_linked_group_list.child_category_id
@@ -711,97 +724,103 @@ _pdbx_item_linked_group_list.link_group_id
 _pdbx_item_linked_group_list.child_name
 _pdbx_item_linked_group_list.parent_name
 _pdbx_item_linked_group_list.parent_category_id
-ndb_category_description           1  "_ndb_category_description.id"                                "_category.id"                                         category                           
-ndb_category_examples              1  "_ndb_category_examples.id"                                   "_category.id"                                         category                           
-ndb_item_description               1  "_ndb_item_description.name"                                  "_item.name"                                           item                               
-ndb_item_enumeration               1  "_ndb_item_enumeration.name"                                  "_item.name"                                           item                               
-ndb_item_examples                  1  "_ndb_item_examples.name"                                     "_item.name"                                           item                               
-ndb_item_range                     1  "_ndb_item_range.name"                                        "_item.name"                                           item                               
-ndb_item_type                      1  "_ndb_item_type.name"                                         "_item.name"                                           item                               
-ndb_item                           1  "_ndb_item.name"                                              "_item.name"                                           item                               
-pdbx_item_linked_group             1  "_pdbx_item_linked_group.category_id"                         "_category.id"                                         category                           
-pdbx_item_linked_group_list        1  "_pdbx_item_linked_group_list.child_name"                     "_item.name"                                           item                               
-pdbx_item_linked_group_list        1  "_pdbx_item_linked_group_list.child_category_id"              "_item.category_id"                                    item                               
-pdbx_item_linked_group_list        2  "_pdbx_item_linked_group_list.parent_name"                    "_item.name"                                           item                               
-pdbx_item_linked_group_list        2  "_pdbx_item_linked_group_list.parent_category_id"             "_item.category_id"                                    item                               
-pdbx_item_linked_group_list        3  "_pdbx_item_linked_group_list.link_group_id"                  "_pdbx_item_linked_group.link_group_id"                pdbx_item_linked_group             
-pdbx_category_context              1  "_pdbx_category_context.category_id"                          "_category.id"                                         category                           
-pdbx_item_context                  1  "_pdbx_item_context.item_name"                                "_item.name"                                           item                               
-pdbx_item_enumeration_details      1  "_pdbx_item_enumeration_details.name"                         "_item.name"                                           item                               
-pdbx_category_description          1  "_pdbx_category_description.id"                               "_category.id"                                         category                           
-pdbx_category_examples             1  "_pdbx_category_examples.id"                                  "_category.id"                                         category                           
-pdbx_item_description              1  "_pdbx_item_description.name"                                 "_item.name"                                           item                               
-pdbx_item_enumeration              1  "_pdbx_item_enumeration.name"                                 "_item.name"                                           item                               
-pdbx_item_examples                 1  "_pdbx_item_examples.name"                                    "_item.name"                                           item                               
-pdbx_item_range                    1  "_pdbx_item_range.name"                                       "_item.name"                                           item                               
-pdbx_item_type                     1  "_pdbx_item_type.name"                                        "_item.name"                                           item                               
-pdbx_item                          1  "_pdbx_item.name"                                             "_item.name"                                           item                               
-pdbx_include_item                  1  "_pdbx_include_item.dictionary_id"                            "_pdbx_include_dictionary.dictionary_id"               pdbx_include_dictionary            
-pdbx_include_category              1  "_pdbx_include_category.dictionary_id"                        "_pdbx_include_dictionary.dictionary_id"               pdbx_include_dictionary            
-pdbx_dictionary_component          1  "_pdbx_dictionary_component.version"                          "_pdbx_dictionary_component_history.version"           pdbx_dictionary_component_history  
-pdbx_dictionary_component_history  1  "_pdbx_dictionary_component_history.dictionary_component_id"  "_pdbx_dictionary_component.dictionary_component_id"   pdbx_dictionary_component          
-pdbx_item_value_condition          1  "_pdbx_item_value_condition.item_name"                        "_pdbx_item_value_condition_list.target_item_name"     pdbx_item_value_condition_list     
-pdbx_item_value_condition          1  "_pdbx_item_value_condition.dependent_item_name"              "_pdbx_item_value_condition_list.dependent_item_name"  pdbx_item_value_condition_list     
-pdbx_item_value_condition_list     1  "_pdbx_item_value_condition_list.target_item_name"            "_item.name"                                           item                               
-pdbx_item_value_condition_list     2  "_pdbx_item_value_condition_list.dependent_item_name"         "_item.name"                                           item                               
-pdbx_item_value_condition_list     3  "_pdbx_item_value_condition_list.dependent_item_cmp_op"       "_pdbx_comparison_operator_list.code"                  pdbx_comparison_operator_list      
-pdbx_item_linked                   1  "_pdbx_item_linked.child_name"                                "_item.name"                                           item                               
-pdbx_item_linked                   2  "_pdbx_item_linked.parent_name"                               "_item.name"                                           item                               
-pdbx_item_linked                   3  "_pdbx_item_linked.condition_child_name"                      "_item.name"                                           item                               
-pdbx_item_linked                   4  "_pdbx_item_linked.condition_child_target_name"               "_item.name"                                           item                               
-pdbx_item_linked                   5  "_pdbx_item_linked.condition_child_cmp_op"                    "_pdbx_comparison_operator_list.code"                  pdbx_comparison_operator_list      
-pdbx_item_set                      1  "_pdbx_item_set.set_id"                                       "_pdbx_item_set_type_list.set_id"                      pdbx_item_set_type_list            
-pdbx_item_set                      2  "_pdbx_item_set.item_name"                                    "_item.name"                                           item                               
-pdbx_category_conditional_context  1  "_pdbx_category_conditional_context.category_id"              "_category.id"                                         category                           
-pdbx_category_conditional_context  2  "_pdbx_category_conditional_context.context_id"               "_pdbx_conditional_context_list.context_id"            pdbx_conditional_context_list      
-pdbx_conditional_context_list      1  "_pdbx_conditional_context_list.target_item_name"             "_item.name"                                           item                               
-pdbx_conditional_context_list      2  "_pdbx_conditional_context_list.dependent_item_name"          "_item.name"                                           item                               
-pdbx_conditional_context_list      3  "_pdbx_conditional_context_list.cmp_op"                       "_pdbx_comparison_operator_list.code"                  pdbx_comparison_operator_list      
-pdbx_item_conditional_context      1  "_pdbx_item_conditional_context.item_name"                    "_item.name"                                           item                               
-pdbx_item_conditional_context      2  "_pdbx_item_conditional_context.context_id"                   "_pdbx_conditional_context_list.context_id"            pdbx_conditional_context_list      
-category                           1  "_category.implicit_key"                                      "_datablock.id"                                        datablock                          
-category_examples                  1  "_category_examples.id"                                       "_category.id"                                         category                           
-category_group                     1  "_category_group.category_id"                                 "_category.id"                                         category                           
-category_group                     2  "_category_group.id"                                          "_category_group_list.id"                              category_group_list                
-category_group_list                1  "_category_group_list.parent_id"                              "_category_group_list.id"                              category_group_list                
-category_key                       1  "_category_key.id"                                            "_category.id"                                         category                           
-category_key                       2  "_category_key.name"                                          "_item.name"                                           item                               
-category_methods                   1  "_category_methods.category_id"                               "_category.id"                                         category                           
-category_methods                   2  "_category_methods.method_id"                                 "_method_list.id"                                      method_list                        
-datablock_methods                  1  "_datablock_methods.datablock_id"                             "_datablock.id"                                        datablock                          
-datablock_methods                  2  "_datablock_methods.method_id"                                "_method_list.id"                                      method_list                        
-dictionary                         1  "_dictionary.datablock_id"                                    "_datablock.id"                                        datablock                          
-dictionary                         2  "_dictionary.version"                                         "_dictionary_history.version"                          dictionary_history                 
-item                               1  "_item.category_id"                                           "_category.id"                                         category                           
-item_aliases                       1  "_item_aliases.name"                                          "_item.name"                                           item                               
-item_default                       1  "_item_default.name"                                          "_item.name"                                           item                               
-item_dependent                     1  "_item_dependent.name"                                        "_item.name"                                           item                               
-item_dependent                     2  "_item_dependent.dependent_name"                              "_item.name"                                           item                               
-item_description                   1  "_item_description.name"                                      "_item.name"                                           item                               
-item_enumeration                   1  "_item_enumeration.name"                                      "_item.name"                                           item                               
-item_enumeration                   2  "_item_enumeration.rcsb_type_units_code"                      "_item_units_list.code"                                item_units_list                    
-item_examples                      1  "_item_examples.name"                                         "_item.name"                                           item                               
-item_linked                        1  "_item_linked.child_name"                                     "_item.name"                                           item                               
-item_linked                        2  "_item_linked.parent_name"                                    "_item.name"                                           item                               
-item_methods                       1  "_item_methods.name"                                          "_item.name"                                           item                               
-item_methods                       2  "_item_methods.method_id"                                     "_method_list.id"                                      method_list                        
-item_range                         1  "_item_range.name"                                            "_item.name"                                           item                               
-item_related                       1  "_item_related.name"                                          "_item.name"                                           item                               
-item_related                       2  "_item_related.related_name"                                  "_item.name"                                           item                               
-item_structure                     1  "_item_structure.name"                                        "_item.name"                                           item                               
-item_structure                     2  "_item_structure.code"                                        "_item_structure_list.code"                            item_structure_list                
-item_sub_category                  1  "_item_sub_category.name"                                     "_item.name"                                           item                               
-item_sub_category                  2  "_item_sub_category.id"                                       "_sub_category.id"                                     sub_category                       
-item_type                          1  "_item_type.name"                                             "_item.name"                                           item                               
-item_type                          2  "_item_type.code"                                             "_item_type_list.code"                                 item_type_list                     
-item_type_conditions               1  "_item_type_conditions.name"                                  "_item.name"                                           item                               
-item_units                         1  "_item_units.name"                                            "_item.name"                                           item                               
-item_units                         2  "_item_units.code"                                            "_item_units_list.code"                                item_units_list                    
-item_units_conversion              1  "_item_units_conversion.from_code"                            "_item_units_list.code"                                item_units_list                    
-item_units_conversion              2  "_item_units_conversion.to_code"                              "_item_units_list.code"                                item_units_list                    
-sub_category_examples              1  "_sub_category_examples.id"                                   "_sub_category.id"                                     sub_category                       
-sub_category_methods               1  "_sub_category_methods.method_id"                             "_method_list.id"                                      method_list                        
-sub_category_methods               2  "_sub_category_methods.sub_category_id"                       "_sub_category.id"                                     sub_category                       
+ndb_category_description             1  "_ndb_category_description.id"                                "_category.id"                                         category                           
+ndb_category_examples                1  "_ndb_category_examples.id"                                   "_category.id"                                         category                           
+ndb_item_description                 1  "_ndb_item_description.name"                                  "_item.name"                                           item                               
+ndb_item_enumeration                 1  "_ndb_item_enumeration.name"                                  "_item.name"                                           item                               
+ndb_item_examples                    1  "_ndb_item_examples.name"                                     "_item.name"                                           item                               
+ndb_item_range                       1  "_ndb_item_range.name"                                        "_item.name"                                           item                               
+ndb_item_type                        1  "_ndb_item_type.name"                                         "_item.name"                                           item                               
+ndb_item                             1  "_ndb_item.name"                                              "_item.name"                                           item                               
+pdbx_item_linked_group               1  "_pdbx_item_linked_group.category_id"                         "_category.id"                                         category                           
+pdbx_item_linked_group_list          1  "_pdbx_item_linked_group_list.child_name"                     "_item.name"                                           item                               
+pdbx_item_linked_group_list          1  "_pdbx_item_linked_group_list.child_category_id"              "_item.category_id"                                    item                               
+pdbx_item_linked_group_list          2  "_pdbx_item_linked_group_list.parent_name"                    "_item.name"                                           item                               
+pdbx_item_linked_group_list          2  "_pdbx_item_linked_group_list.parent_category_id"             "_item.category_id"                                    item                               
+pdbx_item_linked_group_list          3  "_pdbx_item_linked_group_list.link_group_id"                  "_pdbx_item_linked_group.link_group_id"                pdbx_item_linked_group             
+pdbx_category_context                1  "_pdbx_category_context.category_id"                          "_category.id"                                         category                           
+pdbx_item_context                    1  "_pdbx_item_context.item_name"                                "_item.name"                                           item                               
+pdbx_item_enumeration_details        1  "_pdbx_item_enumeration_details.name"                         "_item.name"                                           item                               
+pdbx_category_description            1  "_pdbx_category_description.id"                               "_category.id"                                         category                           
+pdbx_category_examples               1  "_pdbx_category_examples.id"                                  "_category.id"                                         category                           
+pdbx_item_description                1  "_pdbx_item_description.name"                                 "_item.name"                                           item                               
+pdbx_item_enumeration                1  "_pdbx_item_enumeration.name"                                 "_item.name"                                           item                               
+pdbx_item_examples                   1  "_pdbx_item_examples.name"                                    "_item.name"                                           item                               
+pdbx_item_range                      1  "_pdbx_item_range.name"                                       "_item.name"                                           item                               
+pdbx_item_type                       1  "_pdbx_item_type.name"                                        "_item.name"                                           item                               
+pdbx_item                            1  "_pdbx_item.name"                                             "_item.name"                                           item                               
+pdbx_include_item                    1  "_pdbx_include_item.dictionary_id"                            "_pdbx_include_dictionary.dictionary_id"               pdbx_include_dictionary            
+pdbx_include_category                1  "_pdbx_include_category.dictionary_id"                        "_pdbx_include_dictionary.dictionary_id"               pdbx_include_dictionary            
+pdbx_dictionary_component            1  "_pdbx_dictionary_component.version"                          "_pdbx_dictionary_component_history.version"           pdbx_dictionary_component_history  
+pdbx_dictionary_component_history    1  "_pdbx_dictionary_component_history.dictionary_component_id"  "_pdbx_dictionary_component.dictionary_component_id"   pdbx_dictionary_component          
+pdbx_item_value_condition            1  "_pdbx_item_value_condition.item_name"                        "_pdbx_item_value_condition_list.target_item_name"     pdbx_item_value_condition_list     
+pdbx_item_value_condition            1  "_pdbx_item_value_condition.dependent_item_name"              "_pdbx_item_value_condition_list.dependent_item_name"  pdbx_item_value_condition_list     
+pdbx_item_value_condition_list       1  "_pdbx_item_value_condition_list.target_item_name"            "_item.name"                                           item                               
+pdbx_item_value_condition_list       2  "_pdbx_item_value_condition_list.dependent_item_name"         "_item.name"                                           item                               
+pdbx_item_value_condition_list       3  "_pdbx_item_value_condition_list.dependent_item_cmp_op"       "_pdbx_comparison_operator_list.code"                  pdbx_comparison_operator_list      
+pdbx_item_linked                     1  "_pdbx_item_linked.child_name"                                "_item.name"                                           item                               
+pdbx_item_linked                     2  "_pdbx_item_linked.parent_name"                               "_item.name"                                           item                               
+pdbx_item_linked                     3  "_pdbx_item_linked.condition_child_name"                      "_item.name"                                           item                               
+pdbx_item_linked                     4  "_pdbx_item_linked.condition_child_target_name"               "_item.name"                                           item                               
+pdbx_item_linked                     5  "_pdbx_item_linked.condition_child_cmp_op"                    "_pdbx_comparison_operator_list.code"                  pdbx_comparison_operator_list      
+pdbx_item_set                        1  "_pdbx_item_set.set_id"                                       "_pdbx_item_set_type_list.set_id"                      pdbx_item_set_type_list            
+pdbx_item_set                        2  "_pdbx_item_set.item_name"                                    "_item.name"                                           item                               
+pdbx_category_conditional_context    1  "_pdbx_category_conditional_context.category_id"              "_category.id"                                         category                           
+pdbx_category_conditional_context    2  "_pdbx_category_conditional_context.context_id"               "_pdbx_conditional_context_list.context_id"            pdbx_conditional_context_list      
+pdbx_conditional_context_list        1  "_pdbx_conditional_context_list.target_item_name"             "_item.name"                                           item                               
+pdbx_conditional_context_list        2  "_pdbx_conditional_context_list.dependent_item_name"          "_item.name"                                           item                               
+pdbx_conditional_context_list        3  "_pdbx_conditional_context_list.cmp_op"                       "_pdbx_comparison_operator_list.code"                  pdbx_comparison_operator_list      
+pdbx_item_conditional_context        1  "_pdbx_item_conditional_context.item_name"                    "_item.name"                                           item                               
+pdbx_item_conditional_context        2  "_pdbx_item_conditional_context.context_id"                   "_pdbx_conditional_context_list.context_id"            pdbx_conditional_context_list      
+category_secondary_key               1  "_category_secondary_key.id"                                  "_category.id"                                         category                           
+category_secondary_key               2  "_category_secondary_key.item_name"                           "_item.name"                                           item                               
+pdbx_category_conditional_mandatory  1  "_pdbx_category_conditional_mandatory.category_id"            "_category.id"                                         category                           
+pdbx_category_conditional_mandatory  2  "_pdbx_category_conditional_mandatory.context_id"             "_pdbx_conditional_context_list.context_id"            pdbx_conditional_context_list      
+pdbx_item_conditional_mandatory      1  "_pdbx_item_conditional_mandatory.item_name"                  "_item.name"                                           item                               
+pdbx_item_conditional_mandatory      2  "_pdbx_item_conditional_mandatory.context_id"                 "_pdbx_conditional_context_list.context_id"            pdbx_conditional_context_list      
+category                             1  "_category.implicit_key"                                      "_datablock.id"                                        datablock                          
+category_examples                    1  "_category_examples.id"                                       "_category.id"                                         category                           
+category_group                       1  "_category_group.category_id"                                 "_category.id"                                         category                           
+category_group                       2  "_category_group.id"                                          "_category_group_list.id"                              category_group_list                
+category_group_list                  1  "_category_group_list.parent_id"                              "_category_group_list.id"                              category_group_list                
+category_key                         1  "_category_key.id"                                            "_category.id"                                         category                           
+category_key                         2  "_category_key.name"                                          "_item.name"                                           item                               
+category_methods                     1  "_category_methods.category_id"                               "_category.id"                                         category                           
+category_methods                     2  "_category_methods.method_id"                                 "_method_list.id"                                      method_list                        
+datablock_methods                    1  "_datablock_methods.datablock_id"                             "_datablock.id"                                        datablock                          
+datablock_methods                    2  "_datablock_methods.method_id"                                "_method_list.id"                                      method_list                        
+dictionary                           1  "_dictionary.datablock_id"                                    "_datablock.id"                                        datablock                          
+dictionary                           2  "_dictionary.version"                                         "_dictionary_history.version"                          dictionary_history                 
+item                                 1  "_item.category_id"                                           "_category.id"                                         category                           
+item_aliases                         1  "_item_aliases.name"                                          "_item.name"                                           item                               
+item_default                         1  "_item_default.name"                                          "_item.name"                                           item                               
+item_dependent                       1  "_item_dependent.name"                                        "_item.name"                                           item                               
+item_dependent                       2  "_item_dependent.dependent_name"                              "_item.name"                                           item                               
+item_description                     1  "_item_description.name"                                      "_item.name"                                           item                               
+item_enumeration                     1  "_item_enumeration.name"                                      "_item.name"                                           item                               
+item_enumeration                     2  "_item_enumeration.rcsb_type_units_code"                      "_item_units_list.code"                                item_units_list                    
+item_examples                        1  "_item_examples.name"                                         "_item.name"                                           item                               
+item_linked                          1  "_item_linked.child_name"                                     "_item.name"                                           item                               
+item_linked                          2  "_item_linked.parent_name"                                    "_item.name"                                           item                               
+item_methods                         1  "_item_methods.name"                                          "_item.name"                                           item                               
+item_methods                         2  "_item_methods.method_id"                                     "_method_list.id"                                      method_list                        
+item_range                           1  "_item_range.name"                                            "_item.name"                                           item                               
+item_related                         1  "_item_related.name"                                          "_item.name"                                           item                               
+item_related                         2  "_item_related.related_name"                                  "_item.name"                                           item                               
+item_structure                       1  "_item_structure.name"                                        "_item.name"                                           item                               
+item_structure                       2  "_item_structure.code"                                        "_item_structure_list.code"                            item_structure_list                
+item_sub_category                    1  "_item_sub_category.name"                                     "_item.name"                                           item                               
+item_sub_category                    2  "_item_sub_category.id"                                       "_sub_category.id"                                     sub_category                       
+item_type                            1  "_item_type.name"                                             "_item.name"                                           item                               
+item_type                            2  "_item_type.code"                                             "_item_type_list.code"                                 item_type_list                     
+item_type_conditions                 1  "_item_type_conditions.name"                                  "_item.name"                                           item                               
+item_units                           1  "_item_units.name"                                            "_item.name"                                           item                               
+item_units                           2  "_item_units.code"                                            "_item_units_list.code"                                item_units_list                    
+item_units_conversion                1  "_item_units_conversion.from_code"                            "_item_units_list.code"                                item_units_list                    
+item_units_conversion                2  "_item_units_conversion.to_code"                              "_item_units_list.code"                                item_units_list                    
+sub_category_examples                1  "_sub_category_examples.id"                                   "_sub_category.id"                                     sub_category                       
+sub_category_methods                 1  "_sub_category_methods.method_id"                             "_method_list.id"                                      method_list                        
+sub_category_methods                 2  "_sub_category_methods.sub_category_id"                       "_sub_category.id"                                     sub_category                       
 ##
 save_datablock
    _category.description     
@@ -1668,6 +1687,7 @@ save__item.mandatory_code
      "_item.mandatory_code"  no                "optional item in this category"  
      "_item.mandatory_code"  implicit          "required item but may be determined from context"  
      "_item.mandatory_code"  implicit-ordinal  "required item determined from the row index of the category"  
+     "_item.mandatory_code"  conditional       "required item determined based on the status of another item"  
    #
 save_
 #
@@ -6809,6 +6829,220 @@ save__item_enumeration.rcsb_type_units_code
    #
    _item_type.name  "_item_enumeration.rcsb_type_units_code"
    _item_type.code  code
+   #
+save_
+#
+save_pdbx_category_conditional_mandatory
+   _category.description     
+;
+	 This category holds information for categories that are mandatory based on the values/presence of other attributes
+;
+
+   _category.id              pdbx_category_conditional_mandatory
+   _category.mandatory_code  no
+   _category.implicit_key    mmcif_ddl.dic
+   #
+   loop_
+   _category_key.id
+   _category_key.name
+     pdbx_category_conditional_mandatory  "_pdbx_category_conditional_mandatory.category_id"  
+     pdbx_category_conditional_mandatory  "_pdbx_category_conditional_mandatory.context_id"  
+   #
+   loop_
+   _category_group.id
+   _category_group.category_id
+     ddl_group        pdbx_category_conditional_mandatory  
+     category_group   pdbx_category_conditional_mandatory  
+     extension_group  pdbx_category_conditional_mandatory  
+   #
+save_
+#
+save__pdbx_category_conditional_mandatory.category_id
+   _item.name            "_pdbx_category_conditional_mandatory.category_id"
+   _item.category_id     pdbx_category_conditional_mandatory
+   _item.mandatory_code  implicit
+   #
+   _item_description.name         "_pdbx_category_conditional_mandatory.category_id"
+   _item_description.description  
+;
+     Data id of the defined item.
+;
+
+   #
+   _item_type.name  "_pdbx_category_conditional_mandatory.category_id"
+   _item_type.code  idname
+   #
+   _item_linked.child_name   "_pdbx_category_conditional_mandatory.category_id"
+   _item_linked.parent_name  "_category.id"
+   #
+save_
+#
+save__pdbx_category_conditional_mandatory.context_id
+   _item.name            "_pdbx_category_conditional_mandatory.context_id"
+   _item.category_id     pdbx_category_conditional_mandatory
+   _item.mandatory_code  yes
+   #
+   _item_description.name         "_pdbx_category_conditional_mandatory.context_id"
+   _item_description.description  
+;
+     Data id of the defined item.
+;
+
+   #
+   _item_type.name  "_pdbx_category_conditional_mandatory.context_id"
+   _item_type.code  code
+   #
+   _item_linked.child_name   "_pdbx_category_conditional_mandatory.context_id"
+   _item_linked.parent_name  "_pdbx_conditional_context_list.context_id"
+   #
+save_
+#
+save_pdbx_item_conditional_mandatory
+   _category.description     
+;
+	 This category holds information for items that are mandatory based on the values/presence of other items
+;
+
+   _category.id              pdbx_item_conditional_mandatory
+   _category.mandatory_code  no
+   _category.implicit_key    mmcif_ddl.dic
+   #
+   loop_
+   _category_key.id
+   _category_key.name
+     pdbx_item_conditional_mandatory  "_pdbx_item_conditional_mandatory.item_name"  
+     pdbx_item_conditional_mandatory  "_pdbx_item_conditional_mandatory.context_id"  
+   #
+   loop_
+   _category_group.id
+   _category_group.category_id
+     ddl_group        pdbx_item_conditional_mandatory  
+     category_group   pdbx_item_conditional_mandatory  
+     extension_group  pdbx_item_conditional_mandatory  
+   #
+save_
+#
+save__pdbx_item_conditional_mandatory.item_name
+   _item.name            "_pdbx_item_conditional_mandatory.item_name"
+   _item.category_id     pdbx_item_conditional_mandatory
+   _item.mandatory_code  implicit
+   #
+   _item_description.name         "_pdbx_item_conditional_mandatory.item_name"
+   _item_description.description  
+;
+     Data id of the defined item.
+;
+
+   #
+   _item_type.name  "_pdbx_item_conditional_mandatory.item_name"
+   _item_type.code  name
+   #
+   _item_linked.child_name   "_pdbx_item_conditional_mandatory.item_name"
+   _item_linked.parent_name  "_item.name"
+   #
+save_
+#
+save__pdbx_item_conditional_mandatory.context_id
+   _item.name            "_pdbx_item_conditional_mandatory.context_id"
+   _item.category_id     pdbx_item_conditional_mandatory
+   _item.mandatory_code  yes
+   #
+   _item_description.name         "_pdbx_item_conditional_mandatory.context_id"
+   _item_description.description  
+;
+     Data id of the defined item.
+;
+
+   #
+   _item_type.name  "_pdbx_item_conditional_mandatory.context_id"
+   _item_type.code  code
+   #
+   _item_linked.child_name   "_pdbx_item_conditional_mandatory.context_id"
+   _item_linked.parent_name  "_pdbx_conditional_context_list.context_id"
+   #
+save_
+#
+save_category_secondary_key
+   _category.description     
+;
+	 This category holds a list of the item names that uniquely
+     identify the elements of the category that are not primary keys.
+;
+
+   _category.id              category_secondary_key
+   _category.mandatory_code  no
+   _category.implicit_key    mmcif_ddl.dic
+   #
+   loop_
+   _category_key.id
+   _category_key.name
+     category_secondary_key  "_category_secondary_key.id"  
+     category_secondary_key  "_category_secondary_key.key_id"  
+     category_secondary_key  "_category_secondary_key.item_name"  
+   #
+   loop_
+   _category_group.id
+   _category_group.category_id
+     ddl_group        category_secondary_key  
+     category_group   category_secondary_key  
+     extension_group  category_secondary_key  
+   #
+save_
+#
+save__category_secondary_key.id
+   _item.name            "_category_secondary_key.id"
+   _item.category_id     category_secondary_key
+   _item.mandatory_code  implicit
+   #
+   _item_description.name         "_category_secondary_key.id"
+   _item_description.description  
+;
+	The identifier of each category
+;
+
+   #
+   _item_type.name  "_category_secondary_key.id"
+   _item_type.code  idname
+   #
+   _item_linked.child_name   "_category_secondary_key.id"
+   _item_linked.parent_name  "_category.id"
+   #
+save_
+#
+save__category_secondary_key.key_id
+   _item.name            "_category_secondary_key.key_id"
+   _item.category_id     category_secondary_key
+   _item.mandatory_code  yes
+   #
+   _item_description.name         "_category_secondary_key.key_id"
+   _item_description.description  
+;
+	The identifier of the unique category, groups together secondary keys
+;
+
+   #
+   _item_type.name  "_category_secondary_key.key_id"
+   _item_type.code  code
+   #
+save_
+#
+save__category_secondary_key.item_name
+   _item.name            "_category_secondary_key.item_name"
+   _item.category_id     category_secondary_key
+   _item.mandatory_code  yes
+   #
+   _item_description.name         "_category_secondary_key.item_name"
+   _item_description.description  
+;
+	The name of a data item that is a member of the secondary key category
+;
+
+   #
+   _item_type.name  "_category_secondary_key.item_name"
+   _item_type.code  name
+   #
+   _item_linked.child_name   "_category_secondary_key.item_name"
+   _item_linked.parent_name  "_item.name"
    #
 save_
 #
