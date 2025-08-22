@@ -6629,7 +6629,6 @@ save__pdbx_item_conditional_context.action
      suppress-item   "The action to suppress the release of the data item with this context"  
      suppress-value  "The action to suppress the release of the data item value with this context"  
      suppress-row    "The action to suppress the release of the row of item values with this context"  
-     require         "The action to require an item with this context"  
    #
 save_
 #
@@ -6881,7 +6880,7 @@ save_
 save__pdbx_category_conditional_mandatory.context_id
    _item.name            "_pdbx_category_conditional_mandatory.context_id"
    _item.category_id     pdbx_category_conditional_mandatory
-   _item.mandatory_code  implicit
+   _item.mandatory_code  yes
    #
    _item_description.name         "_pdbx_category_conditional_mandatory.context_id"
    _item_description.description  
@@ -6946,7 +6945,7 @@ save_
 save__pdbx_item_conditional_mandatory.context_id
    _item.name            "_pdbx_item_conditional_mandatory.context_id"
    _item.category_id     pdbx_item_conditional_mandatory
-   _item.mandatory_code  implicit
+   _item.mandatory_code  yes
    #
    _item_description.name         "_pdbx_item_conditional_mandatory.context_id"
    _item_description.description  

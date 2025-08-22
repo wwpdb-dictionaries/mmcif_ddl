@@ -6,7 +6,8 @@
 Allow for categories to have unique, non-mandatory, non-primary keys.
 
 ### Overview
-The category_secondary_key category has three items, all of which are required as keys for the category.
+#### New category: category_secondary_key
+The category_secondary_key category is a non-mandatory category that has three items, all of which are required as keys for the category.
 
 1. category_secondary_key.id </br>
 
@@ -18,7 +19,7 @@ The category_secondary_key category has three items, all of which are required a
 
 3. category_secondary_key.item_name </br>
 
-    The category_secondary_key.item_name item is a mandatory item that is designed to hold the name of an item that is to be used as a component of the secondary key. This is the item that will be directly used/evaluated as a member of a secondary key.
+    The category_secondary_key.item_name item is a child of _item.name, and is a mandatory item that is designed to hold the name of an item that is to be used as a component of the secondary key. This is the item that will be directly used/evaluated as a member of a secondary key.
 
 ### DDL2 Implementation
 To create secondary key values for a category, both _category_secondary_key.key_id and _category_secondary_key.item_name should be defined inside the category of interest. The category_secondary_key category has been designed to allow for the presence of multiple pairs of key_id and item_name values through looping of the category_secondary_key category. 
@@ -95,11 +96,27 @@ Allow for categories and items that can be mandatory or not mandatory based on w
 ### Overview
 Two categories were created to handle conditional madatory data: pdbx_category_conditional_mandatory and pdbx_item_conditional_mandatory, which addresses conditional mandatory categories and conditional mandatory items respectively. Both categories contain two items; an item linked to the name of the conditionally mandatory category/item in question and an item linked to an identifier called the context id.
 
-#### pdbx_category_conditional_mandatory (Conditional Mandatory Categories)
-The items present in pdbx_category_conditional_mandatory are _pdbx_category_conditional_mandatory.category_id (a child of _category.id), which contains the category id of the conditional mandatory category, and _pdbx_category_conditional_mandatory.context_id (a child of _pdbx_conditional_context_list.context_id), which contains a single word to be used as an identifier. Both items are keys for the category.
+#### New category: pdbx_category_conditional_mandatory (Conditional Mandatory Categories)
+The pdbx_category_conditional_mandatory category is a non-mandatory category that contains two items that are used to mark a category as conditionally mandatory. Both items are keys for the category.
 
-#### pdbx_item_conditional_mandatory (Conditional Mandatory Items)
-The items present in pdbx_item_conditional_mandatory are _pdbx_item_conditional_mandatory.item_name (a child of _item.name), which contains the item name of the conditional mandatory item, and _pdbx_item_conditional_mandatory.context_id (a child of _pdbx_conditional_context_list.context_id), which contains a single word to be used as an identifier. Both items are keys for the category.
+1. pdbx_category_conditional_mandatory.category_id </br>
+
+    The pdbx_category_conditional_mandatory.category_id item is a child of _category.id, and is an implicit item which contains the category id of the conditional mandatory category
+
+2. pdbx_category_conditional_mandatory.context_id </br>
+
+    The _pdbx_category_conditional_mandatory.context_id item is a child of _pdbx_conditional_context_list.context_id, and is a mandatory item which contains a single word to be used as an identifier.
+
+#### New category: pdbx_item_conditional_mandatory (Conditional Mandatory Items)
+The pdbx_item_conditional_mandatory category is a non-mandatory category that contains two items that are used to mark a category as conditionally mandatory. Both items are keys for the category.
+
+1. pdbx_item_conditional_mandatory.item_name </br>
+
+    The pdbx_item_conditional_mandatory.item_name item is a child of _item.name, and is an implicit item which contains the name of the conditional mandatory item
+
+2. pdbx_item_conditional_mandatory.context_id </br>
+
+    The pdbx_item_conditional_mandatory.context_id item is a child of _pdbx_conditional_context_list.context_id, and is a mandatory item which contains a single word to be used as an identifier.
 
 ### DDL2 Implementation
 

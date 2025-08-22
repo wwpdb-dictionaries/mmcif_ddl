@@ -85,7 +85,7 @@ save__pdbx_category_conditional_mandatory.category_id
 save__pdbx_category_conditional_mandatory.context_id
     _item.name                        '_pdbx_category_conditional_mandatory.context_id'
     _item.category_id                   pdbx_category_conditional_mandatory
-    _item.mandatory_code                implicit
+    _item.mandatory_code                yes
     _item_description.name            '_pdbx_category_conditional_mandatory.context_id'
     _item_description.description
 ;
@@ -137,7 +137,7 @@ save__pdbx_item_conditional_mandatory.item_name
 save__pdbx_item_conditional_mandatory.context_id
     _item.name                        '_pdbx_item_conditional_mandatory.context_id'
     _item.category_id                   pdbx_item_conditional_mandatory
-    _item.mandatory_code                implicit
+    _item.mandatory_code                yes
     _item_description.name            '_pdbx_item_conditional_mandatory.context_id'
     _item_description.description
 ;
